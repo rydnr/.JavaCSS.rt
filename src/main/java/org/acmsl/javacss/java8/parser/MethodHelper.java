@@ -8,6 +8,11 @@ public class MethodHelper {
     }
 
     public int countMethods() {
-        return 0;
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
     }
 }
