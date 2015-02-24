@@ -73,3 +73,5 @@ Then, we call the method associated to the grammar rule we are interested in, an
 get a ParseTree instance in return. Such class represents an AST.
 
 After adding the required imports and dependencies, the test should pass.
+
+*** Second test: Retrieve the list of declared types / classes
