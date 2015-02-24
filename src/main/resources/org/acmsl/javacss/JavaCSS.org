@@ -56,5 +56,14 @@ As with any other regular Java project, we'll start by investing some time in pr
 *** First test
 
 The simplest test is simple: we want to verify the parser supports Java8 code and generates valid AST instances.
+Since we just use ANTLR-provided Java grammar, the purpose of this test is a simple verification of the correctness of
+the generated parser. We won't write many tests, since they don't help guiding us in the process of JavaCSS development.
 
+Anyway, let's check if it is able to read the following Java code:
 
+public interface Resolver
+    extends Serializable {
+
+    public int resolve(String value);
+}
+    
