@@ -1,3 +1,11 @@
 package org.acmsl.javacss.java8.parser;
 
-import ja
+import org.junit.Test;
+import org.junit.Assert;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public Java8ParserTest {
+    @Test public void can_parse_an_interface_with_e
+        
