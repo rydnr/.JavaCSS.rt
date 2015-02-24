@@ -101,3 +101,4 @@ Even though we don't know if it'll be a wise decision, a MethodHelper class coul
 
   new MethodHelper(ast).countMethods();
 
+
