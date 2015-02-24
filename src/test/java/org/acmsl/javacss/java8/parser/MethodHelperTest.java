@@ -21,7 +21,6 @@ public class MethodHelperTest {
         throws Exception {
         String inputTemplate =
               "public class MyClass {\n"
-
             + "{0}" // the methods
             + "}\n";
 
