@@ -17,4 +17,11 @@ JavaCSS is a toolset to simplify writing Java code.
 ** Parser
 
 JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
-The parser and lexer are built by ANTLR from the pub [[https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4][Java8.g4]] grammar.
+The parser and lexer are built by ANTLR from the [[https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4][Java8.g4]] grammar already available in ANTLR's github repository.
+
+Looking at the grammar itself, its main entry point is the "compilationUnit" rule:
+  compilationUnit
+    :  packageDeclaration? importDeclaration* typeDeclaration* EOF
+    ;
+
+Our
