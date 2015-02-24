@@ -31,11 +31,11 @@ public class MethodHelperTest {
         StringBuilder methods = new StringBuilder();
         
         for (int i = 0; i < methodCount; i++) {
-            String method = new MessageFormat(methodTemplate).format(i);
+            String method = new MessageFormat(methodTemplate).format(new Object[] { i });
             methods.append(method);
         }
 
-        String input = new MessageFormat(inputTemplate).format(methods.toString());
+        String input = new MessageFormat(inputTemplate).format(new Object[] { methods.toString() });
         
         Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
     }
