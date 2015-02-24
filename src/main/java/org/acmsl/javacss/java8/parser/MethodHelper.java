@@ -19,7 +19,7 @@ public class MethodHelper {
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
-        ast.getChild()
+        for ()
         return 0;
     }
 
