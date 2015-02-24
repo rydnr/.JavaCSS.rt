@@ -24,4 +24,4 @@ Looking at the grammar itself, its main entry point is the "compilationUnit" rul
     :  packageDeclaration? importDeclaration* typeDeclaration* EOF
     ;
 
-Our
+JavaCSS needs to parse whole Java files as well as certain incomplete Java snippets. Initially, the above rule seems
