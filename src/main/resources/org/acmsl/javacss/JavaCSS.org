@@ -13,6 +13,10 @@
 # PROPERTIES:
 # +intro
 JavaCSS is a toolset to simplify writing Java code.
+
+Main benefits:
+- Automation of the output style and conventions.
+- Dependency management: import statement, pom.xml.
 # -intro
 ** Parser
 
