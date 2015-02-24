@@ -19,11 +19,16 @@ public class MethodHelperTest {
             + "{0}" // the methods
             + "}\n";
 
-        String method =
+        String methodTemplate =
             "    public int method{0}(String value) { return {0}; }\n"; // a counter
 
+        StringBuilder methods = new StringBuilder();
+        
         for (int i = 0; i < 6; i++) {
-            
+            String method = new MessageFormat(methodTemplate).format(i);
+            methods.append(method);
+        }
+        String input = new MessageFormat(inputTemplate).format(methos
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
