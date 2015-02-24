@@ -18,7 +18,10 @@ public class MethodHelperTest {
 
             + "    public int method1(String value) { return 1; }\n"
             + "}\n";
-            
+
+        String method =
+            "    public int method{0}(String value) { return {0}; }\n";
+
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
