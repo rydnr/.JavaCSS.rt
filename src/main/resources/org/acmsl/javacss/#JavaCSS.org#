@@ -76,4 +76,5 @@ After adding the required imports and dependencies, the test should pass.
 
 *** Second test: Retrieve the list of declared types / classes
 
-One of the 
+What JavaCSS pursues is to aid in writing Java code, and one of such aids is freeing the developer from the task of managing
+which e
