@@ -43,3 +43,12 @@ JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mec
 We'll refer to this feature as "template selectors".
 
 ** Prototype
+
+*** Project setup
+
+As with any other regular Java project, we'll start by investing some time in preparing the tool ecosystem:
+
+- Create a new repository in github.
+- Set up the folder structure expected by Maven.
+- Write the initial Maven's pom.xml
+- Create a new Jenkins job to listen to changes on the github repository.
