@@ -16,7 +16,7 @@ public class MethodHelperTest {
         String input =
               "public class MyClass {\n"
 
-            + "    public int resolve(String value) { retu\n"
+            + "    public int method1(String value) { return 1; }\n"
             + "}\n";
             
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
