@@ -22,7 +22,7 @@ public class MethodHelper {
         ParseTree ast = parser.compilationUnit();
 
         for (int i = 0; i < ast.getChildCount(); i++) {
-            if ()
+            if (isMethod())
         }
         return 0;
     }
