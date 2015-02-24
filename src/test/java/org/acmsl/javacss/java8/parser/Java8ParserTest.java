@@ -8,7 +8,7 @@ import org.junit.runners.JUnit4;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 @RunWith(JUnit4.class)
-public Java8ParserTest {
+public class Java8ParserTest {
     @Test public void can_parse_an_interface_with_extends_and_a_single_method()
         throws Exception {
         String input =
