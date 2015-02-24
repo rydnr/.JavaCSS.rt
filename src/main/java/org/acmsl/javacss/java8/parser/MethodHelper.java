@@ -21,13 +21,8 @@ public class MethodHelper {
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
-        for (int i = 0; i < ast.getChildCount(); i++) {
-            if (isMethod(ast.getChild(i))) {
-                result++;
-            } else {
-                result += countMethods(ast.getChild(i));
-            }
-        }
+        result = countMethods(ast);
+
         return result;
     }
 
