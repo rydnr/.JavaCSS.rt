@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import org.antlr.v4.runtime.tree.CommonTokenStream;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 @RunWith(JUnit4.class)
