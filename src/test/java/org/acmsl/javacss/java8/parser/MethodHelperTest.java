@@ -23,7 +23,7 @@ public class MethodHelperTest {
               "public class MyClass \\{\n"
 
             + "{0}" // the methods
-            + "}\n";
+            + "\\}\n";
 
         String methodTemplate =
             "    public int method{0}(String value) { return {0}; }\n"; // a counter
