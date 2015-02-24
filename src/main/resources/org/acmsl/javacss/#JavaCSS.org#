@@ -1,0 +1,54 @@
+* JavaCSS
+
+# 1. Choose a topic
+# 2. Find information
+# 3. State your thesis
+# 4. Make a tentative outline
+# 5. Organize your notes
+# 6. Write your first draft
+# 7. Revise your outline and draft
+# 8. Type final paper
+
+** Introduction
+# PROPERTIES:
+# +intro
+JavaCSS is a toolset to simplify writing Java code.
+
+Main benefits:
+- Automation of the output style and conventions.
+- Dependency management: import statement, pom.xml.
+# -intro
+*** Parser
+
+JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
+The parser and lexer are built by ANTLR from the [[https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4][Java8.g4]] grammar already available in ANTLR's github repository.
+
+Looking at the grammar itself, its main entry point is the "compilationUnit" rule:
+  compilationUnit
+    :  packageDeclaration? importDeclaration* typeDeclaration* EOF
+    ;
+
+JavaCSS needs to parse whole Java files as well as certain incomplete Java snippets. Initially, the above rule seems to fit JavaCSS
+requirements nicely.
+
+*** Generator
+
+The whole process consists of:
+- parsing Java code
+- generating an AST
+- AST processing
+- serializing the final AST
+
+JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mechanism to bind or associate templates to parts of the AST.
+We'll refer to this feature as "template selectors".
+
+** Prototype
+
+*** Project setup
+
+As with any other regular Java project, we'll start by investing some time in preparing the tool ecosystem:
+
+- Create a new repository in github.
+- Create 
+- Write the initial Maven's pom.xml
+- 
