@@ -10,5 +10,8 @@
 # 8. Type final paper
 
 ** Introduction
-
+# PROPERTIES:
+# +intro
 JavaCSS is a toolset to simplify writing Java code.
+# -intro
+** 
