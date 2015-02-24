@@ -30,7 +30,7 @@ public class MethodHelperTest {
         StringBuilder methods = new StringBuilder();
         
         for (int i = 0; i < methodCount; i++) {
-            String method = new MessageFormat(methodTemplate).format(new Object[] { i });
+            String method = new MessageFormat(methodTemplate).format(new Object[] { Integer.valueOf(i) });
             methods.append(method);
         }
 
