@@ -35,6 +35,8 @@ public class MethodHelperTest {
             methods.append(method);
         }
 
+        String input = new MessageFormat(inputTemplate).format(methods.toString());
+        
         Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
     }
 }
