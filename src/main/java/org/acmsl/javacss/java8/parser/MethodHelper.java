@@ -22,4 +22,8 @@ public class MethodHelper {
         ast.getChild()
         return 0;
     }
+
+    public boolean isMethod(ParseTree node) {
+
+    }
 }
