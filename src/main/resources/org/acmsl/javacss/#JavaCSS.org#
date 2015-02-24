@@ -81,4 +81,12 @@ which external classes the code uses. That will eventually require us to deal wi
 (which library/framework a class belongs to, and how to make sure it is available when compiling or at runtime), but for now
 we focus on browsing the AST to retrieve all declared types.
 
-It's worth reviewing when such type declaration occurs in a Java source file: class/interface parameterized c, method
+It's worth reviewing when such type declaration occurs in a Java source file:
+- parameterized class/interface definitions
+- static blocks
+- instance/class attributes
+- parameterized methods
+- method returns
+- method parameters
+- local variables in methods
+- local variablelambdas
