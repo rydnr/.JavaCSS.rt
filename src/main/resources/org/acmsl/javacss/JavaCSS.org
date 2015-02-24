@@ -39,4 +39,5 @@ The whole process consists of:
 - AST processing
 - serializing the final AST
 
-JavaCSS uses StringTemplate as generator tool.
+JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mechanism to bind or associate templates to parts of the AST.
+We'll refer to this feature as "template selectors".
