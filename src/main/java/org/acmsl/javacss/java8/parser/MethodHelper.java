@@ -36,12 +36,9 @@ public class MethodHelper {
 
         if (isMethod(node)) {
             result = 1;
-        }
-        for (int i = 0; i < ast.getChildCount(); i++) {
-            if (isMethod(ast.getChild(i))) {
-                result++;
-            } else {
-                result += countMethods(ast.getChild(i));
+        } else {
+            for (int i = 0; i < node.getChildCount(); i++) {
+                result += countMethods(node.getChild(i));
             }
         }
 
