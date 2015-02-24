@@ -31,4 +31,12 @@ Looking at the grammar itself, its main entry point is the "compilationUnit" rul
 JavaCSS needs to parse whole Java files as well as certain incomplete Java snippets. Initially, the above rule seems to fit JavaCSS
 requirements nicely.
 
-** 
+*** Generator
+
+The whole process consists of:
+- parsing Java code
+- generating an AST
+- AST processing
+- serializing the final AST
+
+JavaCSS uses StringTemplate as generator tool.
