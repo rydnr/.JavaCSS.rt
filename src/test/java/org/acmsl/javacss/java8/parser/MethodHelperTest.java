@@ -19,8 +19,8 @@ public class MethodHelperTest {
     
     protected void countMethodTest(int methodCount)
         throws Exception {
-        STString inputTemplate =
-            new STString(
+        ST inputTemplate =
+            new ST(
                 "public class MyClass {\n"
               + "<methods>\n"
                 + "}\n");
@@ -28,8 +28,8 @@ public class MethodHelperTest {
         StringBuilder methods = new StringBuilder();
         
         for (int i = 0; i < methodCount; i++) {
-            STString methodTemplate =
-                new STString("    public int method<counter>(String value) { return <counter>; }\n");
+            ST methodTemplate =
+                new ST("    public int method<counter>(String value) { return <counter>; }\n");
 
             methodTemplate.add("counter", Integer.valueOf(i));
             methods.append(methodTemplate.render());
