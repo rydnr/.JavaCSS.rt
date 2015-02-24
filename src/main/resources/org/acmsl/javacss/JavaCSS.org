@@ -96,3 +96,5 @@ But first we need to figure out how the AST itself looks like, how to distinguis
 It seems we tried to be too ambitious in our test. Let's change it: instead of retrieving the list of declared
 types, let's first count the methods.
 
+The test means asking someone "how many methods are in this Java code?", but there's no one listening, yet.
+
