@@ -23,6 +23,8 @@ public class MethodHelper {
 
         for (int i = 0; i < ast.getChildCount(); i++) {
             if (isMethod(ast.getChild(i))) {
+                result++;
+            }
         }
         return 0;
     }
