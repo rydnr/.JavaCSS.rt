@@ -97,5 +97,7 @@ It seems we tried to be too ambitious in our test. Let's change it: instead of r
 types, let's first count the methods.
 
 The test means asking someone "how many methods are in this Java code?", but there's no one listening, yet.
-Even though we don't know if it'll be a wise decision, a MethodHelper class could be handy in this context.
+Even though we don't know if it'll be a wise decision, a MethodHelper class could be handy in this context:
+
+  new MethodHelper(ast).countMethods();
 
