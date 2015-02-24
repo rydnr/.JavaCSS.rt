@@ -18,7 +18,11 @@ public class Java8ParserTest {
             + "    public int resolve(String value);\n"
             + "}\n";
             
-        Java8Parser parser = new Java8Parser(input);
+        Java8Lexer lexer =new Java8Lexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
         Assert.assertNotNull(ast);
     }
