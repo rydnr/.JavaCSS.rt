@@ -16,7 +16,7 @@ public class MethodHelperTest {
         String input =
               "public class MyClass {\n"
 
-            + "    public int method1(String value) { return 1; }\n"
+            + "{0}" // the methods
             + "}\n";
 
         String method =
