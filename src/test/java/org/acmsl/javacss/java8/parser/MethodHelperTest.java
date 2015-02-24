@@ -13,6 +13,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class MethodHelperTest {
     @Test public void can_count_the_number_of_methods()
         throws Exception {
+    }
+    
+    protected void countMethodTest(int methodCount)
+        throws Exception {
         String inputTemplate =
               "public class MyClass {\n"
 
@@ -24,18 +28,11 @@ public class MethodHelperTest {
 
         StringBuilder methods = new StringBuilder();
         
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < methodCount; i++) {
             String method = new MessageFormat(methodTemplate).format(i);
             methods.append(method);
         }
-        String input = new MessageFormat(inputTemplate).format(methods.toString());
 
-        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
-
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-        Java8Parser parser = new Java8Parser(tokens);
-        ParseTree ast = parser.compilationUnit();
-        Assert.assertNotNull(ast);
+        Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
     }
 }
