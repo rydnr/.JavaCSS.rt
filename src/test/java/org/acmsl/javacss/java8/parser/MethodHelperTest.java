@@ -20,7 +20,7 @@ public class MethodHelperTest {
     protected void countMethodTest(int methodCount)
         throws Exception {
         String inputTemplate =
-              "public class MyClass \{\n"
+              "public class MyClass \\{\n"
 
             + "{0}" // the methods
             + "}\n";
