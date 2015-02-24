@@ -71,3 +71,5 @@ To write the test, we need to remember the API ANTLR provides for the generated 
 we provide the text to build a Java8Lexer. Then, we instantiate a CommonTokenStream with the lexer, and pass it to the Java8Parser constructor.
 Then, we call the method associated to the grammar rule we are interested in, and
 get a ParseTree instance in return. Such class represents an AST.
+
+After adding the required imports and dependencies, the test should pass.
