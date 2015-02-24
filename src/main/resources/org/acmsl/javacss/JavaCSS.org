@@ -53,7 +53,7 @@ As with any other regular Java project, we'll start by investing some time in pr
 - Write the initial Maven's pom.xml
 - Create a new Jenkins job to listen to changes on the github repository.
 
-*** First test
+*** First test: Parsing an AST
 
 The simplest test is simple: we want to verify the parser supports Java8 code and generates valid AST instances.
 Since we just use ANTLR-provided Java grammar, the purpose of this test is a simple verification of the correctness of
