@@ -24,6 +24,6 @@ public class MethodHelper {
     }
 
     public boolean isMethod(ParseTree node) {
-        return node.getPayload() == null
+        return node.getPayload() == null;
     }
 }
