@@ -12,6 +12,8 @@ public class MethodHelper {
     }
 
     public int countMethods() {
+        int result = 0;
+
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -20,7 +22,7 @@ public class MethodHelper {
         ParseTree ast = parser.compilationUnit();
 
         for (int i = 0; i < ast.getChildCount(); i++) {
-
+            result +=
         }
         return 0;
     }
