@@ -89,6 +89,19 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-maven-plugin</artifactId>
+        <goals>
+          <goal>antlr4</goal>
+        </goals>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <listener>true</listener>
+          <visitor>true</visitor>
+          <outputDirectory>${project.build.directory}/generated-sources/</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
       </plugin>
