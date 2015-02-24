@@ -41,6 +41,6 @@ public class MethodHelper {
     }
 
     public boolean isMethod(ParseTree node) {
-        return node.getPayload() instanceof ;
+        return node.getPayload() instanceof Java8Parser.MethodDeclarationContext;
     }
 }
