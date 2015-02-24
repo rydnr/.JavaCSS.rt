@@ -66,4 +66,7 @@ public interface Resolver
 
     public int resolve(String value);
 }
-    
+
+To write the test, we need to remember the API ANTLR provides for the generated parser. To build the parser instance,
+we provide the text to parse to its constructor. Then, we call the method associated to the grammar rule we are interested in, and
+get a ParseTree instance in return.
