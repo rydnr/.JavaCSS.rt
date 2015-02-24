@@ -4,10 +4,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.acmsl</groupId>
-  <artifactId>devdel</artifactId>
+  <artifactId>javacss</artifactId>
   <packaging>jar</packaging>
   <version>latest-SNAPSHOT</version>
-  <name>DevDel</name>
+  <name>JavaCSS</name>
   <url>http://www.acm-sl.org</url>
   <inceptionYear>2002</inceptionYear>
   <licenses>
@@ -29,20 +29,20 @@
   </parent>
 
   <scm>
-    <connection>scm:git:http://github.com/rydnr/devdel.git</connection>
-    <developerConnection>scm:git:http://github.com/rydnr/devdel.git</developerConnection>
-    <url>scm:git:http://github.com/rydnr/devdel.git</url>
+    <connection>scm:git:http://github.com/rydnr/javacss.git</connection>
+    <developerConnection>scm:git:http://github.com/rydnr/javacss.git</developerConnection>
+    <url>scm:git:http://github.com/rydnr/javacss.git</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>github</system>
-    <url>http://github.com/rydnr/devdel.git/</url>
+    <url>http://github.com/rydnr/javacss.git/</url>
   </issueManagement>
 
   <ciManagement>
     <system>Jenkins</system>
-    <url>http://jenkins.acm-sl.org/job/devdel</url>
+    <url>http://jenkins.acm-sl.org/job/javacss</url>
     <notifiers>
       <notifier>
         <type>mail</type>
