@@ -91,5 +91,6 @@ It's worth reviewing when such type declaration occurs in a Java source file:
 - local variables in methods
 - local variables in lambdas
 
-To start simple, and to allow us to get used to traversing ASTs, let's start with method returns.
+To start simple, and to allow us to get used to traversing ASTs, method returns seem a good starting point.
+But first we need to figure out how the AST itself looks like, how to distinguish a node from another, etc.
 
