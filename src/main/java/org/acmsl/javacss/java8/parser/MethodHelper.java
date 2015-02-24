@@ -25,7 +25,7 @@ public class MethodHelper {
             if (isMethod(ast.getChild(i))) {
                 result++;
             } else {
-                result += countMethods(ast.getChild())
+                result += countMethods(ast.getChild(i));
             }
         }
         return 0;
