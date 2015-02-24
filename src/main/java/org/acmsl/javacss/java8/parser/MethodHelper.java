@@ -28,7 +28,21 @@ public class MethodHelper {
                 result += countMethods(ast.getChild(i));
             }
         }
-        return 0;
+        return result;
+    }
+
+    public int countMethods(ParseTree node) {
+        int result = 0;
+
+        for (int i = 0; i < ast.getChildCount(); i++) {
+            if (isMethod(ast.getChild(i))) {
+                result++;
+            } else {
+                result += countMethods(ast.getChild(i));
+            }
+        }
+
+        return result;
     }
 
     public boolean isMethod(ParseTree node) {
