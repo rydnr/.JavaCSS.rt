@@ -60,7 +60,7 @@
   <dependencies>
     <dependency>
       <groupId>org.antlr</groupId>
-      <artifactId>antlr</artifactId>
+      <artifactId>antlr4</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
