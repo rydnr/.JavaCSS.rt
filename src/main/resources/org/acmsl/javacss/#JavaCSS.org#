@@ -1,0 +1,19 @@
+* JavaCSS
+
+# 1. Choose a topic
+# 2. Find information
+# 3. State your thesis
+# 4. Make a tentative outline
+# 5. Organize your notes
+# 6. Write your first draft
+# 7. Revise your outline and draft
+# 8. Type final paper
+
+** Introduction
+# PROPERTIES:
+# +intro
+JavaCSS is a toolset to simplify writing Java code.
+# -intro
+** Parser
+
+JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
