@@ -52,3 +52,9 @@ As with any other regular Java project, we'll start by investing some time in pr
 - Set up the folder structure expected by Maven.
 - Write the initial Maven's pom.xml
 - Create a new Jenkins job to listen to changes on the github repository.
+
+*** First test
+
+The simplest test is simple: we want to verify the parser supports Java8 code and generates valid AST instances.
+
+
