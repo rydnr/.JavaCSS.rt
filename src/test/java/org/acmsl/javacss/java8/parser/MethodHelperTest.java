@@ -13,6 +13,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class MethodHelperTest {
     @Test public void can_count_the_number_of_methods()
         throws Exception {
+
+        for (int i = 0; i < 10; i++) {
+            countMethodTest(i);
+        }
     }
     
     protected void countMethodTest(int methodCount)
