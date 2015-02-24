@@ -14,4 +14,7 @@
 # +intro
 JavaCSS is a toolset to simplify writing Java code.
 # -intro
-** 
+** Parser
+
+JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
+
