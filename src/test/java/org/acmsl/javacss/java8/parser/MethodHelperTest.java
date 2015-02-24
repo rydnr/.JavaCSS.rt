@@ -20,7 +20,7 @@ public class MethodHelperTest {
             + "}\n";
 
         String method =
-            "    public int method{0}(String value) { return {0}; }\n";
+            "    public int method{0}(String value) { return {0}; }\n"; // a counter
 
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
