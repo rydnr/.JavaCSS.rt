@@ -26,7 +26,7 @@ public class MethodHelperTest {
             + "\\}\n";
 
         String methodTemplate =
-            "    public int method{0}(String value) { return {0}; }\n"; // a counter
+            "    public int method{0}(String value) \\{ return {0}; \\}\n"; // a counter
 
         StringBuilder methods = new StringBuilder();
         
