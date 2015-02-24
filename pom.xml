@@ -59,14 +59,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.acmsl</groupId>
-      <artifactId>java-commons</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.antlr</groupId>
-          <artifactId>ST4</artifactId>
-        </exclusion>
-      </exclusions>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
