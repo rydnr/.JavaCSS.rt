@@ -74,7 +74,7 @@ get a ParseTree instance in return. Such class represents an AST.
 
 After adding the required imports and dependencies, the test should pass.
 
-*** Second test: Retrieve the list of declared types / classes
+*** Second test
 
 What JavaCSS pursues is to aid in writing Java code, and one of such aids is freeing the developer from the task of managing
 which external classes the code uses. That will eventually require us to deal with dependency management
@@ -93,4 +93,6 @@ It's worth reviewing when such type declaration occurs in a Java source file:
 
 To start simple, and to allow us to get used to traversing ASTs, method returns seem a good starting point.
 But first we need to figure out how the AST itself looks like, how to distinguish a node from another, etc.
+It seems we tried to be too ambitious in our test. Let's change it: instead of retrieving the list of declared
+types, let's first count the methods.
 
