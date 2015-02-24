@@ -1,6 +1,6 @@
 package org.acmsl.javacss.java8.parser;
 
-import org.stringtemplate.v4.STString;
+import org.stringtemplate.v4.ST;
 
 import org.junit.Test;
 import org.junit.Assert;
