@@ -19,14 +19,14 @@ public class MethodHelperTest {
     
     protected void countMethodTest(int methodCount)
         throws Exception {
-        String inputTemplate =
+        STString inputTemplate =
             new STString(
                 "public class MyClass {\n"
               + "<methods>\n"
-              + "}\n";
+                + "}\n");
 
-        String methodTemplate =
-            "    public int method{0}(String value) { return {0}; }\n"; // a counter
+        STString methodTemplate =
+            "    public int method<counter>(String value) { return <counter>; }\n";
 
         StringBuilder methods = new StringBuilder();
         
