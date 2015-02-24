@@ -13,14 +13,22 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class MethodHelperTest {
     @Test public void can_count_the_number_of_methods()
         throws Exception {
-        String input =
+        String inputTemplate =
               "public class MyClass {\n"
 
             + "{0}" // the methods
             + "}\n";
 
-        String method =
+        String methodTemplate =
             "    public int method{0}(String value) { return {0}; }\n"; // a counter
+
+        StringBuilder methods = new StringBuilder();
+        
+        for (int i = 0; i < 6; i++) {
+            String method = new MessageFormat(methodTemplate).format(i);
+            methods.append(method);
+        }
+        String input = new MessageFormat(inputTemplate).format(methods.toString());
 
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
