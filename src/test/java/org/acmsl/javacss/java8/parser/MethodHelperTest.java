@@ -1,5 +1,7 @@
 package org.acmsl.javacss.java8.parser;
 
+import java.text.MessageFormat;
+
 import org.junit.Test;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
