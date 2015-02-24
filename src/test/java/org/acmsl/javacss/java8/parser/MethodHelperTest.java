@@ -25,17 +25,18 @@ public class MethodHelperTest {
               + "<methods>\n"
                 + "}\n");
 
-        STString methodTemplate =
-            "    public int method<counter>(String value) { return <counter>; }\n";
-
         StringBuilder methods = new StringBuilder();
         
         for (int i = 0; i < methodCount; i++) {
-            String method = new MessageFormat(methodTemplate).format(new Object[] { Integer.valueOf(i) });
-            methods.append(method);
+            STString methodTemplate =
+                new STString("    public int method<counter>(String value) { return <counter>; }\n");
+
+            methodTemplate.add("counter", Integer.valueOf(i));
+            methods.append(methodTemplate.render());
         }
 
-        String input = new MessageFormat(inputTemplate).format(new Object[] { methods.toString() });
+        inputTemplate.add("methods", methods);
+        String input = inputTemplate.render();
         
         Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
     }
