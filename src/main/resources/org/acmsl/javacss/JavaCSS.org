@@ -101,4 +101,5 @@ Even though we don't know if it'll be a wise decision, a MethodHelper class coul
 
   new MethodHelper(ast).countMethods();
 
-
+However, at this point we need to dig deeper into how an AST looks like. From the grammar, the rule we are
+interested in is "methodDeclaration".
