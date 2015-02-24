@@ -77,4 +77,8 @@ After adding the required imports and dependencies, the test should pass.
 *** Second test: Retrieve the list of declared types / classes
 
 What JavaCSS pursues is to aid in writing Java code, and one of such aids is freeing the developer from the task of managing
-which external classes the code uses. That will eventually require us to deal with dependency management (which library/framework a class belongs to, and how to make sure it is available at comp)
+which external classes the code uses. That will eventually require us to deal with dependency management
+(which library/framework a class belongs to, and how to make sure it is available when compiling or at runtime), but for now
+we focus on browsing the AST to retrieve all declared types.
+
+It's worth reviewing when such type declaration occurs in a Java source file: class/interface parameterized c, method
