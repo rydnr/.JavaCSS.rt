@@ -1,6 +1,7 @@
 package org.acmsl.javacss.java8.parser;
 
 import org.acmsl.javacss.java8.parser.Java8Parser.MethodDeclaratorContext;
+import org.acmsl.javacss.java8.parser.Java8Parser.MethodHeaderContext;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -84,6 +85,11 @@ public class MethodHelper {
 
         private final List<String> returnTypes = new ArrayList<String>();
 
+        @Override
+        public void exitMethodHeader(@NotNull final MethodHeaderContext ctx)
+        {
+            super.exitMethodHeader(ctx);
+        }
 
         public void exitMethodHeader(@NotNull final MethodDeclaratorContext ctx) {
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
