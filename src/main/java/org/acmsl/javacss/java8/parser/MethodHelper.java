@@ -41,7 +41,7 @@ public class MethodHelper {
         return listener.getMethodCount();
     }
 
-    public List<String> retrieveReturnTypesOfMethods(String input)
+    public List<String> retrieveReturnTypesOfMethods()
     {
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
