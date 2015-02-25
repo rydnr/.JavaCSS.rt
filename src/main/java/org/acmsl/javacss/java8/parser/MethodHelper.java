@@ -64,6 +64,9 @@ public class MethodHelper {
             if (node instanceof TerminalNode) {
                 result.add(((TerminalNode) node).getText());
             }
+            else {
+                result.add()
+            }
         }
 
         return result;
