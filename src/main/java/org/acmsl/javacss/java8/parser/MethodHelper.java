@@ -82,7 +82,7 @@ public class MethodHelper {
     protected static class ReturnTypesOfMethodsListener
         extends Java8BaseListener {
 
-        private List<String> ;
+        private final List<String> returnTypes = new ArrayList<String>();
 
         @Override
         public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
