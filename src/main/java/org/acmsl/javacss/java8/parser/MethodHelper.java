@@ -89,7 +89,7 @@ public class MethodHelper {
         @Override
         public void exitMethodHeader(@NotNull final MethodHeaderContext ctx)
         {
-            List<TerminalNode>
+            List<TerminalNode> tokens = ctx.getTokens(Java8Parser.RULE_result)
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodHeader(ctx);
