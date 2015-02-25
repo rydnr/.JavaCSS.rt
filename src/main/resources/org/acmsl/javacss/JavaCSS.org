@@ -101,11 +101,19 @@ Even though we don't know if it'll be a wise decision, a MethodHelper class coul
 
   new MethodHelper(ast).countMethods();
 
-However, at this point we need to dig deeper into how an AST looks like. From the grammar, the rule we are
-interested in is "methodDeclaration". After some debugging, we can check whether a node in the tree is
+However, at this point we need to dig deeper into how an AST looks like. From the grammar, we can see that rule we are
+interested in is "methodDeclaration". But first, we need to learn more about ANTLR. In our context, we
+can work with ParseTree objects instead of AST nodes. They are meant to be a concrete, particularized representations.
+Besides that, we have three options:
+1. Traverse the nodes recursively for each child, checking if the node corresponds to a method declaration.
+1. Use a listener.
+1. Use a visitor.
+
+
 a MethodDeclaration by checking if its associated "payload" is of type Java8Parser.MethodDeclarationContext.
-However, we'll review this later, once we learn more about processing ASTs in ANTLR.
+
+However, ANTLR4 deals with our use case explicitly, in its [[https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Parse%2BTree%2BMatching%2Band%2BXPath][Parse Tree Matching and XPath]] article.
 
 *** Third test: Retrieve the types the methods return
 
-From ParseTree Javadoc, we see each node in the AST can contain text.
+So far, we've 
