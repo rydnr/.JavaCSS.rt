@@ -7,6 +7,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MethodHelper {
@@ -41,7 +42,7 @@ public class MethodHelper {
 
     public List<String> retrieveReturnTypesOfMethods(String input)
     {
-        List<String> result
+        List<String> result = new ArrayList<>()
     }
 
     protected static class MethodCountListener
