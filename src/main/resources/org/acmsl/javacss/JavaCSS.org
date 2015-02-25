@@ -103,5 +103,5 @@ Even though we don't know if it'll be a wise decision, a MethodHelper class coul
 
 However, at this point we need to dig deeper into how an AST looks like. From the grammar, the rule we are
 interested in is "methodDeclaration". After some debugging, we can check whether a node in the tree is
-a MethodDeclaration if its associated "payload" is of type Java8Parser.MethodDeclarationContext.
+a MethodDeclaration by checking if its associated "payload" is of type Java8Parser.MethodDeclarationContext.
 However, we'll review this later, once we learn more about processing ASTs in ANTLR.
