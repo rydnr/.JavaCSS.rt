@@ -92,7 +92,7 @@ public class MethodHelper {
             List<TerminalNode> tokens = ctx.getTokens(Java8Parser.RULE_result);
 
             ParseTree node = ctx.getChild(1);
-            Token token = node.getSymbol();
+            Token token = node
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodHeader(ctx);
