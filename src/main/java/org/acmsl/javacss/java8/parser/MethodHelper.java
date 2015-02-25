@@ -44,6 +44,11 @@ public class MethodHelper {
     {
         List<String> result = new ArrayList<>();
 
+        ParseTreeWalker walker = new ParseTreeWalker();
+        MethodCountListener listener = new MethodCountListener();
+        walker.walk(listener, node);
+
+        return listener.getMethodCount();
         return result;
     }
 
