@@ -35,7 +35,7 @@ public class MethodHelper {
                 public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
                     super.exitMethodDeclarator(ctx);
                 }
-            }
+            };
         int result = 0;
 
         if (isMethod(node)) {
