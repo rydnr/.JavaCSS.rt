@@ -7,6 +7,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +89,7 @@ public class MethodHelper {
         @Override
         public void exitMethodHeader(@NotNull final MethodHeaderContext ctx)
         {
+            List<TerminalNode>
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodHeader(ctx);
