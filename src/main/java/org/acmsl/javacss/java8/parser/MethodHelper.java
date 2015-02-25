@@ -85,7 +85,7 @@ public class MethodHelper {
         private final List<String> returnTypes = new ArrayList<String>();
 
         @Override
-        public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
+        public void exitMethodHeader(@NotNull final MethodDeclaratorContext ctx) {
             returnTypes.add(ctx.getTokens(Java8Lexer.Identifier));
             super.exitMethodDeclarator(ctx);
         }
