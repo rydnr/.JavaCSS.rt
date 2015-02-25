@@ -114,8 +114,8 @@ classes. However, I followed it the first time, by implementing a method to chec
 node was a method (by checking the class of node.getPayload()), and calling recursively itself for each
 one of the children and incrementing the count.
 
-The other options require calling ANTLR's Maven plugin with specific options, but it's pretty
-simple: add <listener>true</listener> for generating the listener API, and <visitor>true</visitor> for visitors.
+However, ANTLR has anticipated our needs, and provides better options, and exported them as configuration
+settings in ANTLR's Maven plugin: add <listener>true</listener> for generating the listener API, and <visitor>true</visitor> for visitors.
 
 For this specific test, a listener-based approach fits nicely: we don't need any parsing context besides the
 "methodDeclaration" rule's itself, and we don't need to tune the parsing process either.
