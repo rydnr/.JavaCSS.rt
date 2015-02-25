@@ -72,7 +72,7 @@ public class MethodHelperTest {
 
         for (String type : returnTypes) {
             ST methodTemplate =
-                new ST("    public int method<counter>(String value) { return <counter>; }\n");
+                new ST("    public " method<counter>(String value) { return <counter>; }\n");
 
             methodTemplate.add("counter", i);
             methods.append(methodTemplate.render());
