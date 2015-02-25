@@ -84,7 +84,7 @@ public class MethodHelperTest {
 
         List<String> types = new MethodHelper(input).retrieveReturnTypesOfMethods();
         Assert.assertNotNull(types);
-        Assert.assertEquals(returnTypes.size())
+        Assert.assertEquals(returnTypes.size(), types.size());
     }
 
 }
