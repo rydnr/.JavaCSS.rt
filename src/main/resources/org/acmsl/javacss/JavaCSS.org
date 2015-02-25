@@ -158,4 +158,8 @@ Using the XPath expression "//methodHeader/result//*/!typeArguments" and calling
 the grammar (correctly) builds different subtrees depending on the actual input and rules matched.
 
 At this point, the only solution I see is to first ensure we are in the first occurrence of "result" within "methodHeader"; and second directly
-call getText() on the rule context, regardless of the subtree therein.
+call getText() on the rule context, regardless of the subtree therein. The latter is easy, but the former is not. How can we ensure we are processing exactly the
+first "result" rule? ANTLR suggest to use labels in the grammar, but then we cannot use external, official grammars, verbatim.
+
+Let's face it programatically. We know it's the first node once we're inside "methodHeader". There're no previous optional nodes to take care
+of.
