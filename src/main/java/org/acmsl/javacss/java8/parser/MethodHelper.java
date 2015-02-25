@@ -29,6 +29,8 @@ public class MethodHelper {
     }
 
     public int countMethods(ParseTree node) {
+        int result = 0;
+
         Java8Listener listener =
             new Java8BaseListener() {
                 @Override
@@ -36,7 +38,6 @@ public class MethodHelper {
                     super.exitMethodDeclarator(ctx);
                 }
             };
-        int result = 0;
 
         if (isMethod(node)) {
             result = 1;
