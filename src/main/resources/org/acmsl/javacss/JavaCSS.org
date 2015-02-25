@@ -122,4 +122,4 @@ and retrieve the counter value inside the custom listener.
 
 *** Third test: Retrieve the types the methods return
 
-So far, we've 
+Now that we know how to count the methods, we can aim higher and find the return types of the methods.
