@@ -91,7 +91,7 @@ public class MethodHelper {
             super.exitMethodDeclarator(ctx);
         }
 
-        public int getReturnTypesOfMethods() {
+        public List<String> getReturnTypesOfMethods() {
             return this.returnTypes;
         }
     }
