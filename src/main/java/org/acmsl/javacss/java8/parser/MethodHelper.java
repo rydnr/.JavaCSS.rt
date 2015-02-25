@@ -60,7 +60,7 @@ public class MethodHelper {
     {
         List<String> result = new ArrayList<>();
 
-        result = XPath.findAll(node, "//methodHeader/result/*/STRING", parser);
+        result.addAll(XPath.findAll(node, "//methodHeader/result/*/STRING", parser));
 
         return result;
     }
