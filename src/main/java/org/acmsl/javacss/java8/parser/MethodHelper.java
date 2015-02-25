@@ -64,7 +64,7 @@ public class MethodHelper {
         {
             ParseTreeWalker walker = new ParseTreeWalker();
             ReturnTypesOfMethodsListener listener = new ReturnTypesOfMethodsListener();
-            walker.walk(listener, node);
+            walker.walk(listener, node.getChild(0));
             result.addAll(listener.getReturnTypesOfMethods());
         }
 
