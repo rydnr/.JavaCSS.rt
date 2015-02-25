@@ -119,7 +119,7 @@ public class MethodHelper {
         private final List<String> returnTypes = new ArrayList<String>();
 
         @Override
-        public void exitMethodHeader(@NotNull final MethodHeaderContext ctx)
+        public void exitReturn(@NotNull final MethodHeaderContext ctx)
         {
             List<TerminalNode> tokens = ctx.getTokens(Java8Parser.RULE_result);
 
