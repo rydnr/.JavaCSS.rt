@@ -49,7 +49,6 @@ public class MethodHelper {
         walker.walk(listener, node);
 
         return listener.getMethodCount();
-        return result;
     }
 
     protected static class MethodCountListener
