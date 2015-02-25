@@ -42,7 +42,9 @@ public class MethodHelper {
 
     public List<String> retrieveReturnTypesOfMethods(String input)
     {
-        List<String> result = new ArrayList<>()
+        List<String> result = new ArrayList<>();
+
+        return result;
     }
 
     protected static class MethodCountListener
