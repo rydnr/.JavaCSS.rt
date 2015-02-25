@@ -60,7 +60,7 @@ public class MethodHelper {
     {
         List<String> result = new ArrayList<>();
 
-        XPath.findAll(node, )
+        XPath.findAll(node, "//methodHeader/result/*/STRING")
         ParseTreeWalker walker = new ParseTreeWalker();
         ReturnTypesOfMethodsListener listener = new ReturnTypesOfMethodsListener();
         walker.walk(listener, node);
