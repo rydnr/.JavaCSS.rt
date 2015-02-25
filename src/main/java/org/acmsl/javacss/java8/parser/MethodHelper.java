@@ -65,9 +65,10 @@ public class MethodHelper {
             ParseTreeWalker walker = new ParseTreeWalker();
             ReturnTypesOfMethodsListener listener = new ReturnTypesOfMethodsListener();
             walker.walk(listener, node);
+            result.addAll(listener.getReturnTypesOfMethods());
         }
 
-        return listener.getReturnTypesOfMethods();
+        return result;
     }
 
     public List<String> retrieveReturnTypesOfMethodsXpath(ParseTree tree, Java8Parser parser)
