@@ -123,3 +123,5 @@ and retrieve the counter value inside the custom listener.
 *** Third test: Retrieve the types the methods return
 
 Now that we know how to count the methods, we can aim higher and find the return types of the methods.
+At this stage, there's no real need to switch to a visitor approach. Eventually we'd probably rather skip processing
+certain nodes in the tree, which we know we are not going to deal with, but not now.
