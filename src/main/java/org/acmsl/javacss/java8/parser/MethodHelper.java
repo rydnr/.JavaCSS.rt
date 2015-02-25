@@ -1,7 +1,9 @@
 package org.acmsl.javacss.java8.parser;
 
+import org.acmsl.javacss.java8.parser.Java8Parser.MethodDeclaratorContext;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 public class MethodHelper {
@@ -29,7 +31,11 @@ public class MethodHelper {
     public int countMethods(ParseTree node) {
         Java8Listener listener =
             new Java8BaseListener() {
-
+                @Override
+                public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx)
+                {
+                    super.exitMethodDeclarator(ctx);
+                }
             }
         int result = 0;
 
