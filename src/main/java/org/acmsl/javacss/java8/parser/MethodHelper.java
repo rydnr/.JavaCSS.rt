@@ -63,9 +63,8 @@ public class MethodHelper {
         for (ParseTree node : XPath.findAll(tree, "//methodHeader/result//*/!typeArguments", parser)) {
             if (node instanceof TerminalNode) {
                 result.add(((TerminalNode) node).getText());
-            }
-            else {
-                result.add()
+            } else {
+                result.add(node.getText());
             }
         }
 
