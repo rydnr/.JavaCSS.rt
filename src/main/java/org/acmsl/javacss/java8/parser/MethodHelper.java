@@ -55,7 +55,7 @@ public class MethodHelper {
         return retrieveReturnTypesOfMethods(ast);
     }
 
-    public List<String> retrieveReturnTypesOfMethods2(ParseTree node)
+    public List<String> retrieveReturnTypesOfMethods(ParseTree node)
     {
         List<String> result = new ArrayList<>();
 
