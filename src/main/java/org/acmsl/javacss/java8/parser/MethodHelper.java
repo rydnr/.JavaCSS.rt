@@ -44,6 +44,14 @@ public class MethodHelper {
     {
         List<String> result = new ArrayList<>();
 
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        result = countMethods(ast);
         ParseTreeWalker walker = new ParseTreeWalker();
         ReturnTypesOfMethodsistener listener = new ReturnTypesOfMethodsListener();
         walker.walk(listener, node);
