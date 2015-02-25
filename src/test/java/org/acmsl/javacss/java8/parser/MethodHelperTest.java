@@ -82,7 +82,7 @@ public class MethodHelperTest {
         inputTemplate.add("methods", methods);
         String input = inputTemplate.render();
 
-        Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
+        Assert.assertEquals(methodCount, new MethodHelper(input).retrieveReturnMethods());
     }
 
 }
