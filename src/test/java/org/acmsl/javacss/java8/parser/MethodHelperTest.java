@@ -53,7 +53,7 @@ public class MethodHelperTest {
 
         for (int i = 0; i < 10; i++) {
             returnTypes = new ArrayList<String>(i);
-
+            returnTypes[]
             retrieveReturnTypeOfMethodTest(returnTypes);
         }
     }
