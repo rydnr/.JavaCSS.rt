@@ -33,7 +33,7 @@ public class MethodHelper {
         int result = 0;
 
         ParseTreeWalker walker = new ParseTreeWalker(node);
-        MethodCountListener listener = new MethodCountListener();
+        MethodCountListener listener = new MethodCountListener(walker);
 
 
         return result;
