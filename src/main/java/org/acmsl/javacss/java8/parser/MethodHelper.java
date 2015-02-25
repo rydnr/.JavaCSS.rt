@@ -62,7 +62,7 @@ public class MethodHelper {
 
         for (ParseTree node : XPath.findAll(tree, "//methodHeader/result/*/STRING", parser)) {
             if (node instanceof TerminalNode) {
-
+                result.add()
             }
         }
 
