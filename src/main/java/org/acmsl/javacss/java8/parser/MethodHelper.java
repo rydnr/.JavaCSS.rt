@@ -90,7 +90,7 @@ public class MethodHelper {
         {
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
-            super.exitMethodDeclarator(ctx);
+            super.exitMethodHeader(ctx);
         }
 
         public List<String> getReturnTypesOfMethods() {
