@@ -27,7 +27,7 @@ public class MethodHelper {
     }
 
     public int countMethods(ParseTree node) {
-
+        Java8Listener listener =
         int result = 0;
 
         if (isMethod(node)) {
