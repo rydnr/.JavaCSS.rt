@@ -30,13 +30,11 @@ public class MethodHelper {
     }
 
     public int countMethods(ParseTree node) {
-        int result = 0;
-
         ParseTreeWalker walker = new ParseTreeWalker();
         MethodCountListener listener = new MethodCountListener();
         walker.walk(listener, node);
 
-        return result;
+        return listener.getMethodCount();
     }
 
     public boolean isMethod(ParseTree node) {
