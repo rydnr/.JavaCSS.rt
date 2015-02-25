@@ -138,4 +138,7 @@ by our parser are the same as the original list.
 The implementation is defined similarly to the previous use case: two overloaded methods. First, one that retrieves the
 AST/ParseTree after parsing the input. Second, another that takes a node and uses a listener to annotate each return type.
 But now, we find the first problem. Inside the exitMethodDeclarator() method, we can't retrieve the return type. We need to be
-in the exitMethodHeader rule. Well, in the "result" rule, but within the "methodHeader" context.
+in the exitMethodHeader rule. Well, in the "result" rule, but within the "methodHeader" context. And, if the return is not "void",
+within the "unannType" rule, and either within "unannPrimitiveType" or "unannReferenceType". As you can see, this approach is
+going nowhere. What we do need is processing all terminal nodes which are descendant of the first "result" node, in all "methodHeader"
+contexts.
