@@ -41,7 +41,7 @@ public class MethodHelper {
 
     public List<String> retrieveReturnTypesOfMethods()
     {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return
     }
 
     protected static class MethodCountListener
