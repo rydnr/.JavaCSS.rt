@@ -137,5 +137,5 @@ by our parser are the same as the original list.
 
 The implementation is defined similarly to the previous use case: two overloaded methods. First, one that retrieves the
 AST/ParseTree after parsing the input. Second, another that takes a node and uses a listener to annotate each return type.
-
-But
+But now, we find the first problem. Inside the exitMethodDeclarator() method, we can't retrieve the return type. We need to be
+in the exitMethodHeader rule.
