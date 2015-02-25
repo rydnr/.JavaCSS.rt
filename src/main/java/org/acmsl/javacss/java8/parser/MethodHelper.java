@@ -27,6 +27,7 @@ public class MethodHelper {
     }
 
     public int countMethods(ParseTree node) {
+
         int result = 0;
 
         if (isMethod(node)) {
