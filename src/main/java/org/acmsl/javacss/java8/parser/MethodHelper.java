@@ -53,14 +53,14 @@ public class MethodHelper {
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
-        return retrieveReturnTypesOfMethods(ast);
+        return retrieveReturnTypesOfMethods(ast, parser);
     }
 
-    public List<String> retrieveReturnTypesOfMethods(ParseTree node)
+    public List<String> retrieveReturnTypesOfMethods(ParseTree node, Java8Parser parser)
     {
         List<String> result = new ArrayList<>();
 
-        XPath.findAll(node, "//methodHeader/result/*/STRING", parser)
+        XPath.findAll(node, "//methodHeader/result/*/STRING", parser);
         ParseTreeWalker walker = new ParseTreeWalker();
         ReturnTypesOfMethodsListener listener = new ReturnTypesOfMethodsListener();
         walker.walk(listener, node);
