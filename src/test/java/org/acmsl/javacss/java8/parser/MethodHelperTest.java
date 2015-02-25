@@ -47,7 +47,7 @@ public class MethodHelperTest {
         throws Exception {
 
         List<String> returnTypes;
-        String[] { }
+        String[] availableTypes = { ""}
 
         for (int i = 0; i < 10; i++) {
             retrieveReturnTypeOfMethodTest(i);
