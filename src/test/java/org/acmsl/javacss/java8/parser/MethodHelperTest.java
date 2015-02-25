@@ -86,7 +86,7 @@ public class MethodHelperTest {
         Assert.assertNotNull(types);
         Assert.assertEquals(returnTypes.size(), types.size());
         for (String type : returnTypes) {
-            Assert.assertEquals()
+            Assert.assertTrue()
         }
     }
 
