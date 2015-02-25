@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 public class MethodHelper {
     private final String input;
@@ -31,7 +32,7 @@ public class MethodHelper {
     public int countMethods(ParseTree node) {
         int result = 0;
 
-        Java8BaseListener
+        ParseTreeWalker walker = new ParseTreeWalker()
         MethodCountListener listener = new MethodCountListener();
 
 
