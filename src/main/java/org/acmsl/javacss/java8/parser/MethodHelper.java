@@ -61,7 +61,9 @@ public class MethodHelper {
         List<String> result = new ArrayList<>();
 
         for (ParseTree node : XPath.findAll(tree, "//methodHeader/result/*/STRING", parser)) {
+            if (node instanceof TerminalNode) {
 
+            }
         }
 
         return result;
