@@ -47,7 +47,8 @@ public class MethodHelperTest {
         throws Exception {
 
         List<String> returnTypes;
-        String[] availableTypes = { "void", "String", "int", "List<?>", "Map" }
+        String[] availableTypes = { "void", "String", "int", "List<?>", "Map" };
+
 
         for (int i = 0; i < 10; i++) {
             retrieveReturnTypeOfMethodTest(i);
