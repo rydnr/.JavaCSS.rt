@@ -42,8 +42,6 @@ public class MethodHelper {
 
     public List<String> retrieveReturnTypesOfMethods(String input)
     {
-        List<String> result = new ArrayList<>();
-
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -51,12 +49,7 @@ public class MethodHelper {
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
-        result = countMethods(ast);
-        ParseTreeWalker walker = new ParseTreeWalker();
-        ReturnTypesOfMethodsistener listener = new ReturnTypesOfMethodsListener();
-        walker.walk(listener, node);
-
-        return listener.getReturnTypesOfMethods();
+        return retrieveReturnTypesOfMethods(ast);
     }
 
     public List<String> retrieveReturnTypesOfMethods(ParseTree node)
