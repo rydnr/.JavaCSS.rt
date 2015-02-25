@@ -86,7 +86,7 @@ public class MethodHelper {
 
         @Override
         public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
-            methodCount++;
+            returnTypes.add();
             super.exitMethodDeclarator(ctx);
         }
 
