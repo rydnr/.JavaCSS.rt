@@ -45,10 +45,10 @@ public class MethodHelper {
         List<String> result = new ArrayList<>();
 
         ParseTreeWalker walker = new ParseTreeWalker();
-        MethodCountListener listener = new MethodCountListener();
+        ReturnTypesOfMethodsistener listener = new ReturnTypesOfMethodsListener();
         walker.walk(listener, node);
 
-        return listener.getMethodCount();
+        return listener.getReturnTypesOfMethods();
     }
 
     protected static class MethodCountListener
