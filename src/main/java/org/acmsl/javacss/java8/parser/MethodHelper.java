@@ -119,9 +119,9 @@ public class MethodHelper {
         private final List<String> returnTypes = new ArrayList<String>();
 
         @Override
-        public void exitReturn(@NotNull final ResultContext ctx)
+        public void exitReturn(@NotNull final Java8Parser.ResultContext ctx)
         {
-            returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
+            returnTypes.add(ctx.getText());
 
             super.exitMethodHeader(ctx);
         }
