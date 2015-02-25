@@ -40,4 +40,12 @@ public class MethodHelperTest {
         
         Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
     }
+
+    @Test public void can_retrieves_the_number_of_methods()
+        throws Exception {
+
+        for (int i = 0; i < 10; i++) {
+            countMethodTest(i);
+        }
+    }
 }
