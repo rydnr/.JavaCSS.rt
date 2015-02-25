@@ -41,7 +41,7 @@ public class MethodHelper {
 
     public List<String> retrieveReturnTypesOfMethods()
     {
-        return
+        List<String>
     }
 
     protected static class MethodCountListener
