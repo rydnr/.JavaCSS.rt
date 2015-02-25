@@ -60,7 +60,7 @@ public class MethodHelperTest {
         }
     }
 
-    protected void retrieveReturnTypeOfMethodTest(int methodCount)
+    protected void retrieveReturnTypeOfMethodTest(List<String> returnTypes)
         throws Exception {
         ST inputTemplate =
             new ST(
