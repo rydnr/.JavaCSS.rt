@@ -50,6 +50,8 @@ public class MethodHelper {
 
     protected static class MethodCountListener
         extends Java8BaseListener {
+
+
         @Override
         public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
             super.exitMethodDeclarator(ctx);
