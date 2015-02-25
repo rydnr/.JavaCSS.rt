@@ -31,7 +31,7 @@ public class MethodHelperTest {
             ST methodTemplate =
                 new ST("    public int method<counter>(String value) { return <counter>; }\n");
 
-            methodTemplate.add("counter", Integer.valueOf(i));
+            methodTemplate.add("counter", i);
             methods.append(methodTemplate.render());
         }
 
