@@ -91,7 +91,7 @@ public class MethodHelper {
         {
             List<TerminalNode> tokens = ctx.getTokens(Java8Parser.RULE_result);
 
-
+            ctx.getChild(1);
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodHeader(ctx);
