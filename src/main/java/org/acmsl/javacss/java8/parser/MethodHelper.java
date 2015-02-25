@@ -32,7 +32,7 @@ public class MethodHelper {
     public int countMethods(ParseTree node) {
         int result = 0;
 
-        ParseTreeWalker walker = new ParseTreeWalker()
+        ParseTreeWalker walker = new ParseTreeWalker(node);
         MethodCountListener listener = new MethodCountListener();
 
 
