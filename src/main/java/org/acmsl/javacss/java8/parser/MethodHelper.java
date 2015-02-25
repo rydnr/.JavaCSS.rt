@@ -37,10 +37,6 @@ public class MethodHelper {
         return listener.getMethodCount();
     }
 
-    public boolean isMethod(ParseTree node) {
-        return node.getPayload() instanceof Java8Parser.MethodDeclarationContext;
-    }
-
     protected static class MethodCountListener
         extends Java8BaseListener {
 
