@@ -109,6 +109,9 @@ Besides that, we have three options:
 1. Use a listener.
 1. Use a visitor.
 
+The first option is not recommended, since it adds no value and it's already implemented by ANTLR-generated
+classes. The other options require calling ANTLR's Maven plugin with specific options, but it's pretty
+simple: add <listener>true</listener> for generating the listener API, and <visitor>true</visitor> for visitors.
 
 a MethodDeclaration by checking if its associated "payload" is of type Java8Parser.MethodDeclarationContext.
 
