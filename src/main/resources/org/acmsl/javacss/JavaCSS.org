@@ -128,7 +128,7 @@ and retrieve the counter value inside the custom listener.
 
 Now that we know how to count the methods, we can aim higher and find the return types of the methods.
 At this stage, it seems there's no real need to switch to a visitor approach. Eventually we'd probably rather skip processing
-certain nodes in the tree, which we know we are not going to deal with, but not now.
+certain nodes in the tree, which we know we are not going to deal with, but not now. Or so I thought.
 
 The new test seems to be similar to the previous one, but we are adding some variety for the types of the methods: one iteration
 to build inputs with a number of methods ranging from 1 to 10, and another nested loop to provide the return types for
