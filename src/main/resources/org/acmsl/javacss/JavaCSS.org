@@ -162,6 +162,6 @@ call getText() on the rule context, regardless of the subtree therein. The latte
 first "result" rule? ANTLR suggest to use labels in the grammar, but then we cannot use external, official grammars, verbatim.
 
 Let's face it programatically. We know it's the first node once we're inside "methodHeader". There're no previous optional nodes to take care
-of.
+of. By using a walker to process the first "result", and implementing a listener for that specific rule, we are done, finally.
 
 
