@@ -62,7 +62,7 @@ public class MethodHelper {
 
         result = XPath.findAll(node, "//methodHeader/result/*/STRING", parser);
 
-        return listener.getReturnTypesOfMethods();
+        return result;
     }
 
     public List<String> retrieveReturnTypesOfMethods2(ParseTree node)
