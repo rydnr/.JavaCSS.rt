@@ -35,7 +35,7 @@ public class MethodHelper {
             new Java8BaseListener() {
                 @Override
                 public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
-
+                    result++;
                     super.exitMethodDeclarator(ctx);
                 }
             };
