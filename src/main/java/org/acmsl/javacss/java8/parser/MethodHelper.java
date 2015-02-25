@@ -86,7 +86,7 @@ public class MethodHelper {
 
         @Override
         public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
-            returnTypes.add(ctx.getTokens(Jav));
+            returnTypes.add(ctx.getTokens(Java8Lexer.Identifier));
             super.exitMethodDeclarator(ctx);
         }
 
