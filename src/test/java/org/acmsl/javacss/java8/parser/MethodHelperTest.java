@@ -70,9 +70,9 @@ public class MethodHelperTest {
 
         StringBuilder methods = new StringBuilder();
 
-        for (String type : returnTypes) {
+        for (int i = 0; i < returnTypes.size(); i++) {
             ST methodTemplate =
-                new ST("    public " method<counter>(String value) { return <counter>; }\n");
+                new ST("    public " + returnTypes.get(i) int method<counter>(String value) { return <counter>; }\n");
 
             methodTemplate.add("counter", i);
             methods.append(methodTemplate.render());
