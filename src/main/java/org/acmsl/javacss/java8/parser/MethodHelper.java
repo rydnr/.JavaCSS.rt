@@ -34,7 +34,7 @@ public class MethodHelper {
 
         ParseTreeWalker walker = new ParseTreeWalker();
         MethodCountListener listener = new MethodCountListener();
-        walker.walk();
+        walker.walk(listener, );
 
 
         return result;
