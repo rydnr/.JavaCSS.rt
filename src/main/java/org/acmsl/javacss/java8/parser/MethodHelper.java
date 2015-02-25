@@ -7,6 +7,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import java.util.List;
+
 public class MethodHelper {
     private final String input;
 
@@ -35,6 +37,10 @@ public class MethodHelper {
         walker.walk(listener, node);
 
         return listener.getMethodCount();
+    }
+
+    public List<String> retrieveReturnTypesOfMethods()
+    {
     }
 
     protected static class MethodCountListener
