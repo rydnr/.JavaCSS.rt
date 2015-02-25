@@ -74,7 +74,7 @@ public class MethodHelperTest {
             ST methodTemplate =
                 new ST("    public <type> method<counter>(String value) { return <counter>; }\n");
 
-            methodTemplate.add("type", );
+            methodTemplate.add("type", returnTypes.get(i));
             methodTemplate.add("counter", i);
             methods.append(methodTemplate.render());
         }
