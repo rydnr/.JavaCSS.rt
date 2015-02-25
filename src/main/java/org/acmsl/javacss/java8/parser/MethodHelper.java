@@ -78,4 +78,20 @@ public class MethodHelper {
             return this.methodCount;
         }
     }
+
+    protected static class ReturnTypesOfMethodsListener
+        extends Java8BaseListener {
+
+        private List<String> ;
+
+        @Override
+        public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
+            methodCount++;
+            super.exitMethodDeclarator(ctx);
+        }
+
+        public int getMethodCount() {
+            return this.methodCount;
+        }
+    }
 }
