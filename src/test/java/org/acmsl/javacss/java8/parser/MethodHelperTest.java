@@ -51,7 +51,8 @@ public class MethodHelperTest {
 
 
         for (int i = 0; i < 10; i++) {
-            retrieveReturnTypeOfMethodTest();
+            returnTypes =
+            retrieveReturnTypeOfMethodTest(returnTypes);
         }
     }
 
