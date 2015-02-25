@@ -33,6 +33,7 @@ public class MethodHelper {
 
         Java8Listener listener =
             new Java8BaseListener(int count) {
+                public
                 @Override
                 public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
                     result++;
