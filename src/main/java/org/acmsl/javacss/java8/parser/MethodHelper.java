@@ -123,7 +123,7 @@ public class MethodHelper {
         {
             returnTypes.add(ctx.getText());
 
-            super.exitMethodHeader(ctx);
+            super.exitResult(ctx);
         }
 
         public List<String> getReturnTypesOfMethods() {
