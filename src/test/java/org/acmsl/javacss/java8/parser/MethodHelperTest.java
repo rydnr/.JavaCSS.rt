@@ -48,4 +48,29 @@ public class MethodHelperTest {
             retrieveReturnTypeOfMethodTest(i);
         }
     }
+
+    protected void retrieveReturnTypeOfMethodTest(int methodCount)
+        throws Exception {
+        ST inputTemplate =
+            new ST(
+                "public class MyClass {\n"
+                + "<methods>\n"
+                + "}\n");
+
+        StringBuilder methods = new StringBuilder();
+
+        for (int i = 0; i < methodCount; i++) {
+            ST methodTemplate =
+                new ST("    public int method<counter>(String value) { return <counter>; }\n");
+
+            methodTemplate.add("counter", i);
+            methods.append(methodTemplate.render());
+        }
+
+        inputTemplate.add("methods", methods);
+        String input = inputTemplate.render();
+
+        Assert.assertEquals(methodCount, new MethodHelper(input).countMethods());
+    }
+
 }
