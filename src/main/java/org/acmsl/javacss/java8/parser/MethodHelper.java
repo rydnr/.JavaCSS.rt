@@ -39,9 +39,9 @@ public class MethodHelper {
         return listener.getMethodCount();
     }
 
-    public List<String> retrieveReturnTypesOfMethods()
+    public List<String> retrieveReturnTypesOfMethods(String input)
     {
-        List<String>
+        List<String> result
     }
 
     protected static class MethodCountListener
