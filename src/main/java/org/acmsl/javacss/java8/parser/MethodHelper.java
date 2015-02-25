@@ -32,12 +32,6 @@ public class MethodHelper {
         int result = 0;
 
         Java8Listener listener =
-            new Java8BaseListener() {
-                @Override
-                public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
-                    super.exitMethodDeclarator(ctx);
-                }
-            };
 
         if (isMethod(node)) {
             result = 1;
@@ -53,4 +47,11 @@ public class MethodHelper {
     public boolean isMethod(ParseTree node) {
         return node.getPayload() instanceof Java8Parser.MethodDeclarationContext;
     }
+
+    new Java8BaseListener() {
+        @Override
+        public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx) {
+            super.exitMethodDeclarator(ctx);
+        }
+    };
 }
