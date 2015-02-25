@@ -55,6 +55,7 @@ public class MethodHelperTest {
             returnTypes = new ArrayList<String>(i);
             for (int j = 0; j < i; j++) {
                 returnTypes.add(availableTypes[(int) (Math.random() * availableTypes.length]);
+            }
             retrieveReturnTypeOfMethodTest(returnTypes);
         }
     }
