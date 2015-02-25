@@ -36,7 +36,6 @@ public class MethodHelper {
         MethodCountListener listener = new MethodCountListener();
         walker.walk(listener, node);
 
-
         return result;
     }
 
