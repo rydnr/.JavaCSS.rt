@@ -156,3 +156,6 @@ to find all terminal nodes matching "//methodHeader/result//*".
 It works perfectly for most cases, but if the type is a generic one, it contains one terminal node for the types and the '<', '>' and '?' symbols.
 Using the XPath expression "//methodHeader/result//*/!typeArguments" and calling "getText()" for any non-terminal nodes doesn't work either, since
 the grammar (correctly) builds different subtrees depending on the actual input and rules matched.
+
+At this point, the only solution I see is to first ensure we are in the first occurrence of "result" within "methodHeader"; and second directly
+call getText() on the rule context, regardless of the subtree therein.
