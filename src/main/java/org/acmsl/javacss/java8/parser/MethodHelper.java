@@ -121,12 +121,6 @@ public class MethodHelper {
         @Override
         public void exitReturn(@NotNull final ReturnContext ctx)
         {
-            List<TerminalNode> tokens = ctx.getTokens(Java8Parser.RULE_result);
-
-            ParseTree node = ctx.getChild(0);
-            Java8Parser.ResultContext resultContext = (Java8Parser.ResultContext) node.getPayload();
-            Java8Parser.UnannTypeContext c = (Java8Parser.UnannTypeContext) resultContext.getChild(0);
-            TerminalNode s = (TerminalNode) c.getChild(0);
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodHeader(ctx);
