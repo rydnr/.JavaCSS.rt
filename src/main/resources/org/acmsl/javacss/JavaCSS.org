@@ -116,6 +116,10 @@ simple: add <listener>true</listener> for generating the listener API, and <visi
 For this specific test, a listener-based approach fits nicely: we don't need any parsing context besides the
 "methodDeclaration" rule's itself, and we don't need to tune the parsing process either.
 
+The implementation is simple: extend Java8BaseListener to override exitMethodDeclaration(), which increments an
+internal counter. Then, to retrieve the number of methods, create a ParseTreeWalker instance, call its walk(listener, node) method,
+and retrieve the counter value inside the custom listener.
+
 *** Third test: Retrieve the types the methods return
 
 So far, we've 
