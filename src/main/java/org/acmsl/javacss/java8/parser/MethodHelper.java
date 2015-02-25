@@ -119,7 +119,7 @@ public class MethodHelper {
         private final List<String> returnTypes = new ArrayList<String>();
 
         @Override
-        public void exitReturn(@NotNull final Java8Parser.ResultContext ctx)
+        public void exitResult(@NotNull final Java8Parser.ResultContext ctx)
         {
             returnTypes.add(ctx.getText());
 
