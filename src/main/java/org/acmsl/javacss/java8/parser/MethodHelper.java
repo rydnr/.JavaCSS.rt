@@ -31,15 +31,8 @@ public class MethodHelper {
     public int countMethods(ParseTree node) {
         int result = 0;
 
-        Java8Listener listener = new MethodCountListener();
+        MethodCountListener listener = new MethodCountListener();
 
-        if (isMethod(node)) {
-            result = 1;
-        } else {
-            for (int i = 0; i < node.getChildCount(); i++) {
-                result += countMethods(node.getChild(i));
-            }
-        }
 
         return result;
     }
