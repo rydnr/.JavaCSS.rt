@@ -113,9 +113,8 @@ The first option is not recommended, since it adds no value and it's already imp
 classes. The other options require calling ANTLR's Maven plugin with specific options, but it's pretty
 simple: add <listener>true</listener> for generating the listener API, and <visitor>true</visitor> for visitors.
 
-a MethodDeclaration by checking if its associated "payload" is of type Java8Parser.MethodDeclarationContext.
-
-However, ANTLR4 deals with our use case explicitly, in its [[https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Parse%2BTree%2BMatching%2Band%2BXPath][Parse Tree Matching and XPath]] article.
+For this specific test, a listener-based approach fits nicely: we don't need any parsing context besides the
+"methodDeclaration" rule's itself, and we don't need to tune the parsing process either.
 
 *** Third test: Retrieve the types the methods return
 
