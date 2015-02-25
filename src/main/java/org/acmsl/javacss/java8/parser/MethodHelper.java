@@ -56,11 +56,13 @@ public class MethodHelper {
         return retrieveReturnTypesOfMethods(ast, parser);
     }
 
-    public List<String> retrieveReturnTypesOfMethods(ParseTree node, Java8Parser parser)
+    public List<String> retrieveReturnTypesOfMethods(ParseTree tree, Java8Parser parser)
     {
         List<String> result = new ArrayList<>();
 
-        for (ParseTree node : XPath.findAll(node, "//methodHeader/result/*/STRING", parser))
+        for (ParseTree node : XPath.findAll(tree, "//methodHeader/result/*/STRING", parser)) {
+
+        }
 
         return result;
     }
