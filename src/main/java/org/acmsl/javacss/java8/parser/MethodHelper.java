@@ -32,8 +32,7 @@ public class MethodHelper {
         Java8Listener listener =
             new Java8BaseListener() {
                 @Override
-                public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx)
-                {
+                public void exitMethodDeclarator(@NotNull final MethodDeclaratorContext ctx)          {
                     super.exitMethodDeclarator(ctx);
                 }
             }
