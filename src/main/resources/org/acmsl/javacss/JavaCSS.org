@@ -107,3 +107,5 @@ a MethodDeclaration by checking if its associated "payload" is of type Java8Pars
 However, we'll review this later, once we learn more about processing ASTs in ANTLR.
 
 *** Third test: Retrieve the types the methods return
+
+From ParseTree Javadoc, we see each node in the AST can contain text.
