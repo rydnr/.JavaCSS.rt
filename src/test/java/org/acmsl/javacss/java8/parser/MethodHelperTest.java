@@ -70,6 +70,7 @@ public class MethodHelperTest {
 
         StringBuilder methods = new StringBuilder();
 
+        for ()
         for (int i = 0; i < returnTypes.size(); i++) {
             ST methodTemplate =
                 new ST("    public int method<counter>(String value) { return <counter>; }\n");
