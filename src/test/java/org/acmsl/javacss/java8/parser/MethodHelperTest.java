@@ -7,6 +7,8 @@ import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.List;
+
 @RunWith(JUnit4.class)
 public class MethodHelperTest {
     @Test public void can_count_the_number_of_methods()
@@ -44,7 +46,7 @@ public class MethodHelperTest {
     @Test public void can_retrieves_the_return_types_of_methods()
         throws Exception {
 
-        List<>
+        List<String> returnTypes
         for (int i = 0; i < 10; i++) {
             retrieveReturnTypeOfMethodTest(i);
         }
