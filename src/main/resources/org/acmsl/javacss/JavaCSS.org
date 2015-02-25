@@ -144,4 +144,4 @@ going nowhere. What we do need is processing all terminal nodes which are descen
 contexts.
 
 Before dealing with that problem, let's review other built-in capabilities of ANTLR. It supports XPath-like expressions, so we could try
-to find all nodes matching "//methodHeader/result/*/STRING".
+to find all nodes matching "//methodHeader/result//*". 
