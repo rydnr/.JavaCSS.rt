@@ -88,10 +88,6 @@ public class MethodHelper {
         @Override
         public void exitMethodHeader(@NotNull final MethodHeaderContext ctx)
         {
-            super.exitMethodHeader(ctx);
-        }
-
-        public void exitMethodHeader(@NotNull final MethodDeclaratorContext ctx) {
             returnTypes.add(ctx.getTokens(Java8Parser.RULE_result).get(0).getText());
 
             super.exitMethodDeclarator(ctx);
