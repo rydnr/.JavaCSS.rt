@@ -46,7 +46,8 @@ public class MethodHelperTest {
     @Test public void can_retrieves_the_return_types_of_methods()
         throws Exception {
 
-        List<String> returnTypes = ;
+        List<String> returnTypes;
+
 
         for (int i = 0; i < 10; i++) {
             retrieveReturnTypeOfMethodTest(i);
