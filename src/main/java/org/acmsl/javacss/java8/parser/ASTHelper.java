@@ -62,4 +62,7 @@ public class ASTHelper
     }
 
 
+    public void addImport(final String myType)
+    {
+    }
 }
