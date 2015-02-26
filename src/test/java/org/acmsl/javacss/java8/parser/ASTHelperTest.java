@@ -66,7 +66,7 @@ public class ASTHelperTest
         ParseTree tree = buildAST();
         Assert.assertNotNull(tree);
 
-
+        ASTHelper
     }
 
     protected ParseTree buildAST()
