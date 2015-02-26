@@ -338,4 +338,4 @@ adding a subtree which seemed good enough, but it was made up completely. It pas
 #        }
 #    }
 
-It was a start
+It was a start. But how to be sure our new tree is equivalent to a tree parsed by ANTLR 
