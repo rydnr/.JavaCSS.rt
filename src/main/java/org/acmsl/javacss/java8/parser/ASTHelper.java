@@ -81,7 +81,7 @@ public class ASTHelper
         public Object visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
             List<ImportDeclarationContext> imports = ctx.importDeclaration();
-            ImportDeclarationContext import = new ImportDeclarationContext()
+            ImportDeclarationContext import = new ImportDeclarationContext(ctx, )
             TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
         }
