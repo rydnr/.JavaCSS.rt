@@ -84,7 +84,8 @@ public class ASTHelper
         public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
-            SingleTypeImportDeclarationContext singleTypeImportDeclarationContext = new SingleTypeImportDeclarationContext(newImport)
+            SingleTypeImportDeclarationContext singleTypeImportDeclarationContext =
+                new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
             newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
             ctx.addChild(newImport);
