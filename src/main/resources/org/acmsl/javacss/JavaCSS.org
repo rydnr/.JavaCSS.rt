@@ -303,9 +303,11 @@ Now that the test looks fine, we can proceed to defining the required skeleton a
 #    }
 
 Unfortunately, it fails with an unexpected exception:
+
     java.lang.IllegalArgumentException: import at index 2 isn't a valid rule name
 	at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
 	at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
+
 Maybe we chose an invalid XPath selector. Yes, we did. The grammar rule is not "import", but "importDeclaration".
 Now the test fails as it should, which allows us to move forward. The idea is to implement a visitor for the rule where
 an "importDeclaration" occurs, and add the new subtree therein. Honestly, I didn't know how to do it, so I ended up
