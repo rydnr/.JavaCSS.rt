@@ -204,3 +204,4 @@ before we get feedback and thus decide if the approach makes sense or not, as so
 So, in this particular context, what are we trying to do? Learn how to add specific new nodes to a ParseTree. And how
 can we verify it's working correctly? Well, we could generate code based on the AST and check whether the import statements
 are there. But again, we are nowhere near to that point. We haven't dealt with the generation phase yet.
+The simplest way to check in the new nodes are added correctly is to use ANTLR's XPath searches.
