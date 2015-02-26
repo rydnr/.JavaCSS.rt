@@ -65,7 +65,7 @@ public class ASTHelperTest
     {
     }
 
-    protected void add_new_AST
+    protected ParseTree buildAST()
         throws Exception {
         String input =
             "public interface Resolver\n"
