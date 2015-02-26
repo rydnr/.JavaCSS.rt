@@ -77,7 +77,8 @@ public class ASTHelper
 
         ImportAddOperation visitor = new ImportAddOperation(myType);
 
-        Java8Parser parser
+        Java8Parser parser;
+        parser.
 
 
     }
