@@ -86,7 +86,7 @@ public class ASTHelperTest
                 ParseTree child = node.getChild(index);
                 if (child instanceof TerminalNode) {
 
-                    TerminalNode leaf = (TerminalNode) node;
+                    TerminalNode leaf = (TerminalNode) child;
 
                     if (myType.equals(leaf.getText()))
                     {
