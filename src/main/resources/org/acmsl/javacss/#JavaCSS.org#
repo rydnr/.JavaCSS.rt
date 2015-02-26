@@ -207,4 +207,5 @@ are there. But again, we are nowhere near to that point. We haven't dealt with t
 The simplest way to check in the new nodes are added correctly is to use ANTLR's XPath searches. To retrieve a ParseTree, we
 can parse the samples used for some of the already implemented tests.
 
+Let's start by creating a new test ASTHelperTest.
 
