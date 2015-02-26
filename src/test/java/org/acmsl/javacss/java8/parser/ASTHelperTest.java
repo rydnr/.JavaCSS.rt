@@ -83,7 +83,7 @@ public class ASTHelperTest
 
         for (ParseTree node : imports) {
             for (int index = 0; index < node.getChildCount(); index++) {
-
+                ParseTree child =
             }
             if (node instanceof ImportDeclarationContext) {
 
