@@ -63,6 +63,10 @@ public class ASTHelperTest
     public void add_new_AST_node()
         throws Exception
     {
+        ParseTree tree = buildAST();
+        Assert.assertNotNull(tree);
+
+
     }
 
     protected ParseTree buildAST()
@@ -79,7 +83,6 @@ public class ASTHelperTest
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         Java8Parser parser = new Java8Parser(tokens);
-        ParseTree ast = parser.compilationUnit();
-        Assert.assertNotNull(ast);
+        return parser.compilationUnit();
     }
 }
