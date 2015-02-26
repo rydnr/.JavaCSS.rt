@@ -43,7 +43,9 @@ import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.SingleTypeImportDeclarationContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.TypeNameContext;
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonToken;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 /*
@@ -90,6 +92,11 @@ public class ASTHelper
                 new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
             newImport.addChild(singleTypeImportDeclarationContext);
             singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
+            Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(this.importType));
+
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+            return new Java8Parser(tokens);
             Java8Parser typeParser
             TypeNameContext typeNameContext = (TypeNameContext)
                 new TypeNameContext(singleTypeImportDeclarationContext, singleTypeImportDeclarationContext.invokingState);
