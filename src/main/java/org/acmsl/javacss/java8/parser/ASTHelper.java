@@ -54,7 +54,7 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class ASTHelper
 {
-    private ParseTree tree;
+    private final ParseTree tree;
 
-    public ASTHelper(ParseTree node)
+    public ASTHelper(ParseTree ast) {}
 }
