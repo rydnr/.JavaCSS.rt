@@ -301,3 +301,8 @@ Now that the test looks fine, we can proceed to defining the required skeleton a
 #        public void addImport(final String myType) {
 #        }
 #    }
+
+Unfortunately, it fails with an unexpected exception:
+    java.lang.IllegalArgumentException: import at index 2 isn't a valid rule name
+	at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
+	at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
