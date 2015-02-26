@@ -51,6 +51,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.Collection;
+
 /**
  * Tests for {@link ASTHelper}.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
@@ -70,8 +72,9 @@ public class ASTHelperTest
 
         ASTHelper astHelper = new ASTHelper(tree);
 
+        Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
 
-        for (ParseTree node : XPath.findAll(tree, "//import", parser)) {
+        for (ParseTree node : imports) {
 
     }
 
