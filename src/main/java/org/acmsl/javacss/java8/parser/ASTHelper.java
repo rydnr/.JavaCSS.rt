@@ -38,6 +38,7 @@ package org.acmsl.javacss.java8.parser;
 /*
  * Importing JetBrains annotations.
  */
+import com.sun.deploy.panel.JavaPanel;
 import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.SingleTypeImportDeclarationContext;
@@ -89,6 +90,7 @@ public class ASTHelper
                 new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
             newImport.addChild(singleTypeImportDeclarationContext);
             singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
+            Java8Parser
             TypeNameContext typeNameContext = (TypeNameContext)
                 new TypeNameContext(singleTypeImportDeclarationContext, singleTypeImportDeclarationContext.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.DOT, "."));
