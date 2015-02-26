@@ -164,4 +164,21 @@ first "result" rule? ANTLR suggest to use labels in the grammar, but then we can
 Let's face it programatically. We know it's the first node once we're inside "methodHeader". There're no previous optional nodes to take care
 of. By using a walker to process the first "result", and implementing a listener for that specific rule, we are done, finally.
 
+#     protected static class ReturnTypesOfMethodsListener
+#        extends Java8BaseListener {
+#
+#        private final List<String> returnTypes = new ArrayList<String>();
+#
+#        @Override
+#        public void exitResult(@NotNull final Java8Parser.ResultContext ctx)
+#        {
+#            returnTypes.add(ctx.getText());
+#
+#            super.exitResult(ctx);
+#        }
+#
+#        public List<String> getReturnTypesOfMethods() {
+#            return this.returnTypes;
+#        }
+#    }
 
