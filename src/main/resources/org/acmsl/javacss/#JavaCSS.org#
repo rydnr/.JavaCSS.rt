@@ -232,3 +232,6 @@ Similarly as we did before for retrieving the declared types for the methods, we
 Such class will add some logic in ParseTree we could use: "addImport(className)". But before that, we have to be confident
 we can detect whether the import nodes are added indeed. Let's add the XPath filters to the test first.
 
+Damn it, we need the Parser instance for the XPath logic. Since Java don't allow methods returning tuples, we have two options: either split
+the buildAST() method in two (one for creating the parser,
+
