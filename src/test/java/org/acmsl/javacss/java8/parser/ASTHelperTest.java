@@ -79,7 +79,7 @@ public class ASTHelperTest
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
         Assert.assertNotNull(imports);
         for (ParseTree node : imports) {
-            if (node instanceof TerminalNode) {
+            if (node instanceof TerminalNode)
 
             }
         }
