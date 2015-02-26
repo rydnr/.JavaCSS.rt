@@ -70,8 +70,11 @@ public class ASTHelperTest
         ParseTree tree = buildAST(parser);
         Assert.assertNotNull(tree);
 
+        String myType = ASTHelperTest.class.getName();
+
         ASTHelper astHelper = new ASTHelper(tree);
-        astHelper.addImport()
+        astHelper.addImport(myType);
+
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
         Assert.assertNotNull(imports);
         Assert.assertTrue(imports.contains(myType));
