@@ -82,7 +82,7 @@ public class ASTHelperTest
             if (node instanceof TerminalNode) {
                 TerminalNode leaf = (TerminalNode) node;
 
-                if ()
+                if (leaf.getText())
 
             }
         }
