@@ -199,4 +199,4 @@ of. By using a walker to process the first "result", and implementing a listener
 We're now one step closer towards the first requirement: automatic management of import statements.
 For our upcoming tests, we could use the logic we've just implemented, and perform some AST manipulations
 based on the return types of the methods. But that misses the point we pursue: invest the minimum time and effort
-before we get feedback and decide if the approach makes sense.
+before we get feedback and thus decide if the approach makes sense or not, as soon as possible.
