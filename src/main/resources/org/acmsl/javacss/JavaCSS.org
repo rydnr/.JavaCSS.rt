@@ -17,8 +17,6 @@ JavaCSS is a toolset to simplify writing Java code.
 Main benefits:
 - Automation of the output style and conventions.
 - Dependency management: import statement, pom.xml.
-# -intro
-*** Parser
 
 JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
 The parser and lexer are built by ANTLR from the [[https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4][Java8.g4]] grammar already available in ANTLR's github repository.
@@ -31,8 +29,6 @@ Looking at the grammar itself, its main entry point is the "compilationUnit" rul
 JavaCSS needs to parse whole Java files as well as certain incomplete Java snippets. Initially, the above rule seems to fit JavaCSS
 requirements nicely.
 
-*** Generator
-
 The whole process consists of:
 - parsing Java code
 - generating an AST
@@ -41,6 +37,8 @@ The whole process consists of:
 
 JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mechanism to bind or associate templates to parts of the AST.
 We'll refer to this feature as "template selectors".
+
+# -intro
 
 ** Project setup
 
@@ -197,3 +195,4 @@ of. By using a walker to process the first "result", and implementing a listener
 #       return result;
 #   }
 
+** 
