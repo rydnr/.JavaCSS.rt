@@ -84,11 +84,10 @@ public class ASTHelper
         @Override
         public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
-            List<ImportDeclarationContext> imports = ctx.importDeclaration();
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.IMPORT));
             newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
-            ctx.addChild()
+            ctx.addChild(newImport);
             return super.visitCompilationUnit(ctx);
         }
     }
