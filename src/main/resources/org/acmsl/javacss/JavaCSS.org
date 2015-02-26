@@ -341,4 +341,39 @@ adding a subtree which seemed good enough, but it was made up completely. It pas
 It was a start. But how to be sure our new tree is equivalent to a tree as if it was parsed by ANTLR? By looking at the grammar.
 In our current code, we are not respecting the grammar rules. Our import type must by represented by a tree of typeNameContext.
 
+# graph antlr_tree {
+#   label="ANTLR Parse Tree for Java8.g4"
+#   node [style=filled]
 # 
+#   importDeclaration [label="[importDeclarationContext]"];
+# 
+#   node [label="[packageOrTypeNameContext]"]
+#   packageOrTypeName1; packageOrTypeName2;
+# 
+#   typeName [label="[TypeNameContext]"];
+# 
+#   singleTypeImport [label="[singleTypeImportDeclarationContext]"];
+# 
+#   import [label="import"];
+#   java [label="java"];
+#   util [label="util"];
+#   list [label="List"];
+#   colon [label=";"];
+#   node [label="."]
+#   dot1; dot2;
+# 
+#   import -- singleTypeImport;
+#   singleTypeImport -- importDeclaration;
+#   typeName -- singleTypeImport;
+#   colon -- singleTypeImport;
+# 
+#   packageOrTypeName1 -- typeName;
+#   dot2 -- typeName;
+#   list -- typeName;
+# 
+#   packageOrTypeName2 -- packageOrTypeName1;
+#   dot1 -- packageOrTypeName1;
+#   util -- packageOrTypeName1;
+#   
+#   java -- packageOrTypeName2;
+# }
