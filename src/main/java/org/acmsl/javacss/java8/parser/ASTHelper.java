@@ -61,7 +61,7 @@ public class ASTHelper
         this.tree = ast;
     }
 
-    public void addImport(final String myType)
-    {
+    public void addImport(final String myType) {
+
     }
 }
