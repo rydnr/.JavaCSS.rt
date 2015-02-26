@@ -90,7 +90,7 @@ public class ASTHelper
                 new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
             newImport.addChild(singleTypeImportDeclarationContext);
             singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
-            Java8Parser
+            Java8Parser typeParser
             TypeNameContext typeNameContext = (TypeNameContext)
                 new TypeNameContext(singleTypeImportDeclarationContext, singleTypeImportDeclarationContext.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.DOT, "."));
