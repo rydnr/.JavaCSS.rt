@@ -93,10 +93,9 @@ public class ASTHelper
             newImport.addChild(singleTypeImportDeclarationContext);
             singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
             Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(this.importType));
-
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-            return new Java8Parser(tokens);
+            Java8Parser parser = new Java8Parser(tokens);
+            parser.typeName()
             Java8Parser typeParser
             TypeNameContext typeNameContext = (TypeNameContext)
                 new TypeNameContext(singleTypeImportDeclarationContext, singleTypeImportDeclarationContext.invokingState);
