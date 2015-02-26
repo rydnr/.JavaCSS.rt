@@ -1,4 +1,4 @@
-% Created 2015-02-25 Wed 21:46
+% Created 2015-02-27 Fri 00:21
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -40,8 +40,6 @@ Main benefits:
 \item Automation of the output style and conventions.
 \item Dependency management: import statement, pom.xml.
 \end{itemize}
-\subsubsection{Parser}
-\label{sec-1-1-1}
 
 JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and generates an Abstract Syntax Tree (AST).
 The parser and lexer are built by ANTLR from the \href{https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4}{Java8.g4} grammar already available in ANTLR's github repository.
@@ -56,13 +54,9 @@ packageDeclaration? importDeclaration* typeDeclaration* EOF
 JavaCSS needs to parse whole Java files as well as certain incomplete Java snippets. Initially, the above rule seems to fit JavaCSS
 requirements nicely.
 
-\subsubsection{Generator}
-\label{sec-1-1-2}
-
 The whole process consists of:
 \begin{itemize}
-\item parsing Java code
-\item generating an AST
+\item parsing Java code, and generating an AST
 \item AST processing
 \item serializing the final AST
 \end{itemize}
@@ -70,11 +64,8 @@ The whole process consists of:
 JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mechanism to bind or associate templates to parts of the AST.
 We'll refer to this feature as "template selectors".
 
-\subsection{Prototype}
+\subsection{Project setup}
 \label{sec-1-2}
-
-\subsubsection{Project setup}
-\label{sec-1-2-1}
 
 As with any other regular Java project, we'll start by investing some time in preparing the tool ecosystem:
 
@@ -85,8 +76,11 @@ As with any other regular Java project, we'll start by investing some time in pr
 \item Create a new Jenkins job to listen to changes on the github repository.
 \end{itemize}
 
+\subsection{Prototype}
+\label{sec-1-3}
+
 \subsubsection{First test: Parsing an AST}
-\label{sec-1-2-2}
+\label{sec-1-3-1}
 
 The simplest test is simple: we want to verify the parser supports Java8 code and generates valid AST instances.
 Since we just use ANTLR-provided Java grammar, the purpose of this test is a simple verification of the correctness of
@@ -108,7 +102,7 @@ get a ParseTree instance in return. Such class represents an AST.
 After adding the required imports and dependencies, the test should pass.
 
 \subsubsection{Second test: Count methods}
-\label{sec-1-2-3}
+\label{sec-1-3-2}
 
 What JavaCSS pursues is to aid in writing Java code, and one of such aids is freeing the developer from the task of managing
 which external classes the code uses. That will eventually require us to deal with dependency management
@@ -163,7 +157,7 @@ internal counter. Then, to retrieve the number of methods, create a ParseTreeWal
 and retrieve the counter value inside the custom listener.
 
 \subsubsection{Third test: Retrieve the types the methods return}
-\label{sec-1-2-4}
+\label{sec-1-3-3}
 
 Now that we know how to count the methods, we can aim higher and find the return types of the methods.
 At this stage, it seems there's no real need to switch to a visitor approach. Eventually we'd probably rather skip processing
@@ -196,5 +190,70 @@ first "result" rule? ANTLR suggest to use labels in the grammar, but then we can
 
 Let's face it programatically. We know it's the first node once we're inside "methodHeader". There're no previous optional nodes to take care
 of. By using a walker to process the first "result", and implementing a listener for that specific rule, we are done, finally.
+
+\subsubsection{Fourth test: adding imports to the AST}
+\label{sec-1-3-4}
+
+We're now one step closer towards the first requirement: automatic management of import statements.
+For our upcoming tests, we could use the logic we've just implemented, and perform some AST manipulations
+based on the return types of the methods. But that misses the point we pursue: invest the minimum time and effort
+before we get feedback and thus decide if the approach makes sense or not, as soon as possible.
+
+So, in this particular context, what are we trying to do? Learn how to add specific new nodes to a ParseTree. And how
+can we verify it's working correctly? Well, we could generate code based on the AST and check whether the import statements
+are there. But again, we are nowhere near to that point. We haven't dealt with the generation phase yet.
+The simplest way to check in the new nodes are added correctly is to use ANTLR's XPath searches. To retrieve a ParseTree, we
+can parse the samples used for some of the already implemented tests.
+
+Let's start by creating a new test ASTHelperTest, and a new test "add$_{\text{new}}$$_{\text{AST}}$$_{\text{node}}$()". The first step then is to
+build a ParseTree instance, so let's copy our first test "can$_{\text{parse}}$$_{\text{an}}$$_{\text{interface}}$$_{\text{with}}$$_{\text{extends}}$$_{\text{and}}$$_{\text{a}}$$_{\text{single}}$$_{\text{method}}$()" into 
+a "buildAST()" helper method for the tests.
+
+
+Similarly as we did before for retrieving the declared types for the methods, we can start with a simple helper class: "ASTHelper".
+Such class will add some logic in ParseTree we could use: "addImport(className)". But before that, we have to be confident
+we can detect whether the import nodes are added indeed. Let's add the XPath filters to the test first.
+
+Damn it, we need the Parser instance for the XPath logic. Since Java don't allow methods returning tuples, we have two options: either split
+the buildAST() method in two (one for creating the parser, and the other for building the tree), or write an inner class representing a tuple.
+The simplest and cleanest option is the former.
+
+
+We only need now to verify the new import is contained in the XPath matches.
+
+
+Now that the test looks fine, we can proceed to defining the required skeleton and see if the test fails.
+
+
+Unfortunately, it fails with an unexpected exception:
+    java.lang.IllegalArgumentException: import at index 2 isn't a valid rule name
+        at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
+        at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
+Maybe we chose an invalid XPath selector. Yes, we did. The grammar rule is not "import", but "importDeclaration".
+Now the test fails as it should, which allows us to move forward. The idea is to implement a visitor for the rule where
+an "importDeclaration" occurs, and add the new subtree therein. Honestly, I didn't know how to do it, so I ended up
+adding a subtree which seemed good enough, but it was made up completely. It passed the test, though.
+
+
+It was a start. But how to be sure our new tree is equivalent to a tree as if it was parsed by ANTLR? By looking at the grammar.
+In our current code, we are not respecting the grammar rules. Our import type must by represented by a tree of typeNameContext.
+
+
+An easy way to review what our tree should look like is by adding a valid import statement to our test. It's pretty straightforward,
+but there's one more thing we have to take care of. We need to find out how to build a subtree of "packageOrTypeNameContext" from our type.
+But wait! Our grammar should handle that, we only need to parse our type, calling the "typeName" rule.
+
+
+The test now passes, but when debugging I saw something suspicious: an error message was logged in the console, and one
+node in the tree was referencing an exception. Then, reviewing the code, I decided it was much clearer if I let ANTLR
+do the whole parsing, not just part of it.
+
+
+Now it's a little more readable, and it's parsing the import correctly with no complaints. But it still contains that redundant
+ImportDeclarationContext object that we've made up for no reason. ANTLR can handle it if we start parsing one level higher.
+
+
+Now it's much better. Let's hope it's not too expensive in terms of performance. Clearly, we should reuse the lexer and tokens from the initial parsing stage. We'll fix it
+when time is ready.
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}
