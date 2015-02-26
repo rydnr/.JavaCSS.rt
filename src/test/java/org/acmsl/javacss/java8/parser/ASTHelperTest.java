@@ -82,7 +82,7 @@ public class ASTHelperTest
         boolean found = false;
 
         for (ParseTree node : imports) {
-            for (ParseTree )
+            for (int index = 0; index < node.getChildCount(); index++) {
             if (node instanceof ImportDeclarationContext) {
 
                 TerminalNode leaf = (TerminalNode) node;
