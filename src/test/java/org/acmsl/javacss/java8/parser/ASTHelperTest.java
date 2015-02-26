@@ -84,7 +84,7 @@ public class ASTHelperTest
         for (ParseTree node : imports) {
             for (int index = 0; index < node.getChildCount(); index++) {
                 ParseTree child = node.getChild(index);
-                if (child instanceof ImportDeclarationContext) {
+                if (child instanceof TerminalNode) {
 
                     TerminalNode leaf = (TerminalNode) node;
 
