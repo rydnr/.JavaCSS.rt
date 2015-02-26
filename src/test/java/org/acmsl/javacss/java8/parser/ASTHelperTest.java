@@ -1,7 +1,7 @@
 /*
                         JavaCSS
 
-    Copyright (C) 2002-today  Jose San Leandro Armendariz
+    Copyright (C) 2015-today  Jose San Leandro Armendariz
                               chous@acm-sl.org
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public
@@ -40,14 +40,13 @@ package org.acmsl.javacss.java8.parser;
 import org.jetbrains.annotations.NotNull;
 
 /*
- * Importing checkthread.org annotations.
+ * Importing JUnit classes.
  */
-import org.checkthread.annotations.ThreadSafe;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- *
+ * Tests for
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/02/26 14:56
