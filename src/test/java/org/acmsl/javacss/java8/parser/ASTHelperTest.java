@@ -73,7 +73,7 @@ public class ASTHelperTest
         ASTHelper astHelper = new ASTHelper(tree);
 
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
-
+        Assert.assertNotNull();
         for (ParseTree node : imports) {
 
     }
