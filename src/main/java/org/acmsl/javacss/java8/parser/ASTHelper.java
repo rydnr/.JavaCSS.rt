@@ -75,7 +75,9 @@ public class ASTHelper
 
     public void addImport(final String myType) {
 
-        ParseTreeWalker walker = new ParseTreeWalker();
+        ImportAddOperation
+
+
     }
 
     protected static class ImportAddOperation
