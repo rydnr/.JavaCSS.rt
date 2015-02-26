@@ -85,7 +85,7 @@ public class ASTHelper
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(
                 new CommonToken(Java8Parser.IMPORT));
-            newImport.addChild(new CommonToken(Java8Parser))
+            newImport.addChild(new CommonToken(Java8Parser.Identifier))
             )
             TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
