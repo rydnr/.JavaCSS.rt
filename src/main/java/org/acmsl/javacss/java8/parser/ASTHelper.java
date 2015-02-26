@@ -82,7 +82,6 @@ public class ASTHelper
         public Object visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
             List<ImportDeclarationContext> imports = ctx.importDeclaration();
-            ImportDeclarationContext sampleImport
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(
                 new CommonToken(Java8Parser.IMPORT)
