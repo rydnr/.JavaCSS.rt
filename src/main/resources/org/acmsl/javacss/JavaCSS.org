@@ -42,9 +42,7 @@ The whole process consists of:
 JavaCSS uses StringTemplate as generator tool. However, it currently lacks a mechanism to bind or associate templates to parts of the AST.
 We'll refer to this feature as "template selectors".
 
-** Prototype
-
-*** Project setup
+** Project setup
 
 As with any other regular Java project, we'll start by investing some time in preparing the tool ecosystem:
 
@@ -52,6 +50,8 @@ As with any other regular Java project, we'll start by investing some time in pr
 - Set up the folder structure expected by Maven.
 - Write the initial Maven's pom.xml
 - Create a new Jenkins job to listen to changes on the github repository.
+
+** Parser prototype
 
 *** First test: Parsing an AST
 
