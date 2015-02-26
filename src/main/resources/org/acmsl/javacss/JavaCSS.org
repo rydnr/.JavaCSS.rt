@@ -288,3 +288,5 @@ We only need now to verify the new import is contained in the XPath matches.
 #        }
 #        Assert.assertTrue(found);
 #    }
+
+Now that the test looks fine, we can proceed to implementing the new logic.
