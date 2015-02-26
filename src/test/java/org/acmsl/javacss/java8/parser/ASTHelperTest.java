@@ -82,7 +82,7 @@ public class ASTHelperTest
         boolean found = false;
 
         for (ParseTree node : imports) {
-            for ()
+            for (org.antlr.runtime.tree.ParseTree)
             if (node instanceof ImportDeclarationContext) {
 
                 TerminalNode leaf = (TerminalNode) node;
