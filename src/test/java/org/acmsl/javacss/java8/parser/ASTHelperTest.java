@@ -63,7 +63,8 @@ public class ASTHelperTest
     public void add_new_AST_node()
         throws Exception
     {
-        ParseTree tree = buildAST();
+        Java8Parser parser = buildParser();
+        ParseTree tree = buildAST(parser);
         Assert.assertNotNull(tree);
 
         ASTHelper astHelper = new ASTHelper(tree);
