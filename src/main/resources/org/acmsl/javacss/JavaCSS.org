@@ -306,3 +306,4 @@ Unfortunately, it fails with an unexpected exception:
     java.lang.IllegalArgumentException: import at index 2 isn't a valid rule name
 	at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
 	at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
+Maybe we chose an invalid XPath selector, but that should trigger a checker exception instead.
