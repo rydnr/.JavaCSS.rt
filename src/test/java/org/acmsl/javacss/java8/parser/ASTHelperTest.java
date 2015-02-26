@@ -82,13 +82,7 @@ public class ASTHelperTest
         boolean found = false;
 
         for (ParseTree node : imports) {
-            for (int index = 0; index < node.getChildCount(); index++) {
-                ParseTree child = node.getChild(index);
-                if (child instanceof TerminalNode) {
-
-                    TerminalNode leaf = (TerminalNode) child;
-
-                    if (myType.equals(leaf.getText()))
+            if (myType.equals("i.getText()))
                     {
                         found = true;
                         break;
