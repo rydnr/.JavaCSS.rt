@@ -419,5 +419,6 @@ do the whole parsing, not just part of it.
 #             return super.visitCompilationUnit(ctx);
 #         }
 
-Let's hope it's not too expensive. Clearly, we should reuse the lexer and tokens from the initial parsing stage. We'll fix it
+Now it's a little more readable, and it's parsing the import correctly with no complaints.
+Let's hope it's not too expensive in terms of performance. Clearly, we should reuse the lexer and tokens from the initial parsing stage. We'll fix it
 when time is ready.
