@@ -82,7 +82,7 @@ public class ASTHelperTest
         boolean found = false;
 
         for (ParseTree node : imports) {
-            if ("importmyType.equals(node.getText()))
+            if ("import " + myType.equals(node.getText()))
                     {
                         found = true;
                         break;
