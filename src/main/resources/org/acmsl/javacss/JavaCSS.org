@@ -182,3 +182,18 @@ of. By using a walker to process the first "result", and implementing a listener
 #        }
 #    }
 
+#    public List<String> retrieveReturnTypesOfMethods(ParseTree tree, Java8Parser parser)
+#    {
+#        List<String> result = new ArrayList<>();
+#
+#        for (ParseTree node : XPath.findAll(tree, "//methodHeader", parser))
+#        {
+#            ParseTreeWalker walker = new ParseTreeWalker();
+#            ReturnTypesOfMethodsListener listener = new ReturnTypesOfMethodsListener();
+#            walker.walk(listener, node.getChild(0));
+#            result.addAll(listener.getReturnTypesOfMethods());
+#       }
+#
+#       return result;
+#   }
+
