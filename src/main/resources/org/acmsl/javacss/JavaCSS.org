@@ -307,3 +307,4 @@ Unfortunately, it fails with an unexpected exception:
 	at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
 	at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
 Maybe we chose an invalid XPath selector. Yes, we did. The grammar rule is not "import", but "importDeclaration".
+Now the test fails as it should.
