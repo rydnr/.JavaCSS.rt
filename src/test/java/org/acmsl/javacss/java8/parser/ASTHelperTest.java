@@ -37,6 +37,7 @@ package org.acmsl.javacss.java8.parser;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -81,7 +82,7 @@ public class ASTHelperTest
         boolean found = false;
 
         for (ParseTree node : imports) {
-            if (node instanceof TerminalNode) {
+            if (node instanceof ImportDeclarationContext) {
                 TerminalNode leaf = (TerminalNode) node;
 
                 if (myType.equals(leaf.getText())) {
