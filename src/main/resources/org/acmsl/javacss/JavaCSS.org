@@ -211,4 +211,19 @@ Let's start by creating a new test ASTHelperTest, and a new test "add_new_AST_no
 build a ParseTree instance, so let's copy our first test "can_parse_an_interface_with_extends_and_a_single_method()" into 
 a "buildAST()" helper method for the tests.
 
-
+#    protected ParseTree buildAST()
+#        throws Exception {
+#        String input =
+#            "public interface Resolver\n"
+#            + "    extends Serializable {\n\n"
+#
+#            + "    public int resolve(String value);\n"
+#            + "}\n";
+#
+#        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
+#
+#        CommonTokenStream tokens = new CommonTokenStream(lexer);
+#
+#        Java8Parser parser = new Java8Parser(tokens);
+#        return parser.compilationUnit();
+#    }
