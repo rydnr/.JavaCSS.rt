@@ -71,7 +71,7 @@ public class ASTHelperTest
         Assert.assertNotNull(tree);
 
         ASTHelper astHelper = new ASTHelper(tree);
-
+        astHelper.addImport()
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
         Assert.assertNotNull(imports);
         Assert.assertTrue(imports.contains(myType));
