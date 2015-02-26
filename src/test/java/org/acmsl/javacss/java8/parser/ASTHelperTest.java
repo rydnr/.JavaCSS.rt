@@ -78,17 +78,19 @@ public class ASTHelperTest
 
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
         Assert.assertNotNull(imports);
+        boolean found = false;
+
         for (ParseTree node : imports) {
             if (node instanceof TerminalNode) {
                 TerminalNode leaf = (TerminalNode) node;
 
                 if (myType.equals(leaf.getText())) {
-
+                    found = true;
+                    break;
                 }
-
             }
         }
-        Assert.assertTrue(imports.contains(myType));
+        Assert.assertTrue(found);
     }
 
     protected Java8Parser buildParser()
