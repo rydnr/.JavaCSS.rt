@@ -401,4 +401,3 @@ But wait! Our grammar should handle that, we only need to parse our type, callin
 #             return super.visitCompilationUnit(ctx);
 #         }
 
-We are close, but not yet done. Our test still fails. This time, it's the test itself. It doesn't compare the correct strings.
