@@ -378,4 +378,6 @@ In our current code, we are not respecting the grammar rules. Our import type mu
 #   java -- packageOrTypeName2;
 # }
 
-An easy way to review what our tree should look like is by adding a valid import statement to our test. It turns out that 
+An easy way to review what our tree should look like is by adding a valid import statement to our test. It's pretty straightforward,
+but there's one more thing we have to take care of. We need to find out how to build a subtree of "packageOrTypeNameContext" from our type.
+But wait! Our grammar should hand
