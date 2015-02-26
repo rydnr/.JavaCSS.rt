@@ -41,22 +41,12 @@ package org.acmsl.javacss.java8.parser;
 import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.antlr.v4.runtime.CommonToken;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
-import org.antlr.v4.runtime.tree.TerminalNode;
-import org.antlr.v4.runtime.tree.TerminalNodeImpl;
-import org.jetbrains.annotations.NotNull;
 
 /*
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
-
-import java.util.List;
 
 /**
  *
