@@ -64,5 +64,6 @@ public class ASTHelper
 
     public void addImport(final String myType)
     {
+        //To change body of created methods use File | Settings | File Templates.
     }
 }
