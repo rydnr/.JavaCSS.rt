@@ -56,5 +56,5 @@ import org.junit.runners.JUnit4;
 public class ASTHelperTest
 {
     @Test
-    public void add_
+    public void add_new_
 }
