@@ -38,7 +38,6 @@ package org.acmsl.javacss.java8.parser;
 /*
  * Importing JetBrains annotations.
  */
-import com.sun.deploy.panel.JavaPanel;
 import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.SingleTypeImportDeclarationContext;
