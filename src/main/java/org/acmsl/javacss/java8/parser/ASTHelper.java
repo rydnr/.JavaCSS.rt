@@ -94,8 +94,6 @@ public class ASTHelper
             Java8Parser parser = new Java8Parser(tokens);
             SingleTypeImportDeclarationContext singleTypeImportDeclaration = parser.singleTypeImportDeclaration();
             newImport.addChild(singleTypeImportDeclarationContext);
-            singleTypeImportDeclarationContext.addChild(typeNameContext);
-            singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.COLON, ";"));
 
             ctx.addChild(newImport);
             return super.visitCompilationUnit(ctx);
