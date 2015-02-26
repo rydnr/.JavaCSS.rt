@@ -78,7 +78,7 @@ public class ASTHelper
         public Object visitImportDeclaration(@org.antlr.v4.runtime.misc.NotNull final ImportDeclarationContext ctx)
         {
             TerminalNode leaf =
-                new TerminalNodeImpl()
+                new TerminalNodeImpl();
             return super.visitImportDeclaration(ctx);
         }
     }
