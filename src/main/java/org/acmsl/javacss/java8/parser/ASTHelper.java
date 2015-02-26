@@ -38,6 +38,7 @@ package org.acmsl.javacss.java8.parser;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.Token;
@@ -75,7 +76,7 @@ public class ASTHelper
     protected static class ImportVisitor
         extends Java8BaseVisitor {
         @Override
-        public Object visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final ImportDeclarationContext ctx)
+        public Object visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
             TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
