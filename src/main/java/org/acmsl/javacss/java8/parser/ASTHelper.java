@@ -91,7 +91,7 @@ public class ASTHelper
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             Java8Parser parser = new Java8Parser(tokens);
             SingleTypeImportDeclarationContext singleTypeImportDeclaration = parser.singleTypeImportDeclaration();
-            newImport.addChild(singleTypeImportDeclarationContext);
+            newImport.addChild(singleTypeImportDeclaration);
 
             ctx.addChild(newImport);
             return super.visitCompilationUnit(ctx);
