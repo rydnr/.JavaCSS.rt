@@ -40,6 +40,7 @@ package org.acmsl.javacss.java8.parser;
  */
 import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
+import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.misc.Interval;
@@ -82,7 +83,9 @@ public class ASTHelper
         {
             List<ImportDeclarationContext> imports = ctx.importDeclaration();
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
-            newImport.addChild()
+            newImport.addChild(
+                new CommonToken()
+            )
             TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
         }
