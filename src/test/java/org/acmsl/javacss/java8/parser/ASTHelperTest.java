@@ -87,20 +87,8 @@ public class ASTHelperTest
         return new Java8Parser(tokens);
     }
 
-    protected ParseTree buildAST()
+    protected ParseTree buildAST(Java8Parser parser)
         throws Exception {
-        String input =
-            "public interface Resolver\n"
-            + "    extends Serializable {\n\n"
-
-            + "    public int resolve(String value);\n"
-            + "}\n";
-
-        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
-
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-
-        Java8Parser parser = new Java8Parser(tokens);
         return parser.compilationUnit();
     }
 }
