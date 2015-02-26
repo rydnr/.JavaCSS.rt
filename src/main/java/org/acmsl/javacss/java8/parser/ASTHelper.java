@@ -56,5 +56,5 @@ public class ASTHelper
 {
     private ParseTree tree;
 
-    public ASTHelper()
+    public ASTHelper(ParseTree node)
 }
