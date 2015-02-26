@@ -339,7 +339,7 @@ adding a subtree which seemed good enough, but it was made up completely. It pas
 #    }
 
 It was a start. But how to be sure our new tree is equivalent to a tree as if it was parsed by ANTLR? By looking at the grammar.
-In our current code, we are not respecting the grammar rules. Our import type must by represented by a tree of typeNameContext.
+In our current code, we are not respecting the grammar rules. Our import type must be represented by a tree of typeNameContext.
 
 # graph antlr_tree {
 #   label="ANTLR Parse Tree for Java8.g4"
