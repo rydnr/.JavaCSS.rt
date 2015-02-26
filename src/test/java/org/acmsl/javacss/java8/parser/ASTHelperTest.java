@@ -61,6 +61,11 @@ public class ASTHelperTest
 {
     @Test
     public void add_new_AST_node()
+        throws Exception
+    {
+    }
+
+    protected void add_new_AST
         throws Exception {
         String input =
             "public interface Resolver\n"
