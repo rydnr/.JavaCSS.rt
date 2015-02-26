@@ -88,6 +88,7 @@ public class ASTHelper
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.IMPORT));
             newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
+
             return super.visitCompilationUnit(ctx);
         }
     }
