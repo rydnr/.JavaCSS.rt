@@ -102,7 +102,7 @@ public class ASTHelperTest
     protected Java8Parser buildParser()
         throws Exception {
         String input =
-              "import java.util.List"
+              "import java.util.List;"
             + "public interface Resolver\n"
             + "    extends Serializable {\n\n"
 
