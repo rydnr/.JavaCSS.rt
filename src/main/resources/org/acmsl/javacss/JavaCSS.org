@@ -236,3 +236,55 @@ Damn it, we need the Parser instance for the XPath logic. Since Java don't allow
 the buildAST() method in two (one for creating the parser, and the other for building the tree), or write an inner class representing a tuple.
 The simplest and cleanest option is the former.
 
+#    protected Java8Parser buildParser()
+#        throws Exception {
+#        String input =
+#            "public interface Resolver\n"
+#            + "    extends Serializable {\n\n"
+#
+#            + "    public int resolve(String value);\n"
+#            + "}\n";
+#
+#        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
+#
+#        CommonTokenStream tokens = new CommonTokenStream(lexer);
+#
+#        return new Java8Parser(tokens);
+#    }
+#
+#    protected ParseTree buildAST(Java8Parser parser)
+#        throws Exception {
+#        return parser.compilationUnit();
+#    }
+
+We only need now to verify the new import is contained in the XPath matches.
+
+#    @Test
+#    public void add_new_AST_node()
+#        throws Exception
+#    {
+#        Java8Parser parser = buildParser();
+#        ParseTree tree = buildAST(parser);
+#        Assert.assertNotNull(tree);
+#
+#        String myType = ASTHelperTest.class.getName();
+#
+#        ASTHelper astHelper = new ASTHelper(tree);
+#        astHelper.addImport(myType);
+#
+#        Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
+#        Assert.assertNotNull(imports);
+#        boolean found = false;
+#
+#        for (ParseTree node : imports) {
+#            if (node instanceof TerminalNode) {
+#                TerminalNode leaf = (TerminalNode) node;
+#
+#                if (myType.equals(leaf.getText())) {
+#                    found = true;
+#                    break;
+#                }
+#            }
+#        }
+#        Assert.assertTrue(found);
+#    }
