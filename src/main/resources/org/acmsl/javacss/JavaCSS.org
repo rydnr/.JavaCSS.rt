@@ -194,4 +194,6 @@ of. By using a walker to process the first "result", and implementing a listener
 #       return result;
 #   }
 
-** 
+** AST processing
+
+We're now one step closer towards the first requirement: automatic management of import statements.
