@@ -74,6 +74,7 @@ public class ASTHelper
 
     public void addImport(final String myType) {
 
+        new
     }
 
     protected static class ImportAddOperation
