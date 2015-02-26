@@ -40,6 +40,7 @@ package org.acmsl.javacss.java8.parser;
  */
 import org.acmsl.javacss.java8.parser.Java8Parser.CompilationUnitContext;
 import org.acmsl.javacss.java8.parser.Java8Parser.ImportDeclarationContext;
+import org.acmsl.javacss.java8.parser.Java8Parser.SingleTypeImportDeclarationContext;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -83,6 +84,7 @@ public class ASTHelper
         public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
+            SingleTypeImportDeclarationContext
             newImport.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
             newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
             ctx.addChild(newImport);
