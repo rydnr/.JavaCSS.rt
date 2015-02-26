@@ -77,7 +77,7 @@ public class ASTHelper
         @Override
         public Object visitImportDeclaration(@org.antlr.v4.runtime.misc.NotNull final ImportDeclarationContext ctx)
         {
-            TerminalNode leaf = new TerminalNodeImpl();
+            TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
         }
     }
