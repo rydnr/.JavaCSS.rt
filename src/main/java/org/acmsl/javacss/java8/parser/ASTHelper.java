@@ -77,7 +77,7 @@ public class ASTHelper
     }
 
     protected static class ImportVisitor
-        extends Java8BaseVisitor {
+        extends Java8BaseVisitor<CompilationUnitContext> {
 
         private String importType;
 
