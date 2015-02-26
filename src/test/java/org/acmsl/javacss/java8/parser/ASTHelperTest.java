@@ -40,6 +40,7 @@ package org.acmsl.javacss.java8.parser;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.jetbrains.annotations.NotNull;
 
 /*
@@ -69,6 +70,7 @@ public class ASTHelperTest
 
         ASTHelper astHelper = new ASTHelper(tree);
 
+        for (ParseTree node : XPath.findAll(tree, "//methodHeader/result//*/!typeArguments", parser)) {
 
     }
 
