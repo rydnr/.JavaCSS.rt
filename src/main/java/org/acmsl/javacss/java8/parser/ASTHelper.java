@@ -71,6 +71,7 @@ public class ASTHelper
         @Override
         public Object visitImportDeclaration(@org.antlr.v4.runtime.misc.NotNull final ImportDeclarationContext ctx)
         {
+
             return super.visitImportDeclaration(ctx);
         }
     }
