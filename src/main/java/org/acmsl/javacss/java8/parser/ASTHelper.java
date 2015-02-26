@@ -78,6 +78,9 @@ public class ASTHelper
 
     protected static class ImportVisitor
         extends Java8BaseVisitor {
+
+        private String importType;
+
         @Override
         public Object visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
@@ -85,9 +88,8 @@ public class ASTHelper
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(
                 new CommonToken(Java8Parser.IMPORT));
-            newImport.addChild(new CommonToken(Java8Parser.Identifier, ))
+            newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
             )
-            TerminalNode leaf = new TerminalNodeImpl(Java8Parser.SingleTypeImportDeclarationContext);
             return super.visitImportDeclaration(ctx);
         }
     }
