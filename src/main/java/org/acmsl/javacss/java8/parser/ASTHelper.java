@@ -98,6 +98,7 @@ public class ASTHelper
             TypeNameContext typeNameContext = parser.typeName();
             singleTypeImportDeclarationContext.addChild(typeNameContext);
             newImport.addChild(new CommonToken(Java8Parser.COLON, ";"));
+
             ctx.addChild(newImport);
             return super.visitCompilationUnit(ctx);
         }
