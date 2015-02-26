@@ -83,15 +83,16 @@ public class ASTHelperTest
 
         for (ParseTree node : imports) {
             for (int index = 0; index < node.getChildCount(); index++) {
-                ParseTree child = node.getChild()
-            }
-            if (node instanceof ImportDeclarationContext) {
+                ParseTree child = node.getChild(index);
+                if (child instanceof ImportDeclarationContext) {
 
-                TerminalNode leaf = (TerminalNode) node;
+                    TerminalNode leaf = (TerminalNode) node;
 
-                if (myType.equals(leaf.getText())) {
-                    found = true;
-                    break;
+                    if (myType.equals(leaf.getText()))
+                    {
+                        found = true;
+                        break;
+                    }
                 }
             }
         }
