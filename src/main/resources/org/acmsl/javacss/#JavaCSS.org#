@@ -308,4 +308,34 @@ Unfortunately, it fails with an unexpected exception:
 	at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
 Maybe we chose an invalid XPath selector. Yes, we did. The grammar rule is not "import", but "importDeclaration".
 Now the test fails as it should, which allows us to move forward. The idea is to implement a visitor for the rule where
-an "importDeclaration" occurs, and add the new subtree therein. Honestly, I didn't know 
+an "importDeclaration" occurs, and add the new subtree therein. Honestly, I didn't know how to do it, so I ended up
+adding a subtree which seemed good enough, but it was made up completely. It passed the test, though.
+
+#    public void addImport(final String myType) {
+#
+#        ImportAddOperation visitor = new ImportAddOperation(myType);
+#
+#        visitor.visit(this.tree);
+#    }
+#
+#    protected static class ImportAddOperation
+#        extends Java8BaseVisitor<CompilationUnitContext> {
+#
+#        private final String importType;
+#
+#        public ImportAddOperation(String newType) {
+#            importType = newType;
+#        }
+#
+#        @Override
+#        public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
+#        {
+#            ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
+#            newImport.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
+#            newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
+#            ctx.addChild(newImport);
+#            return super.visitCompilationUnit(ctx);
+#        }
+#    }
+
+It was a start
