@@ -56,5 +56,7 @@ import org.junit.runners.JUnit4;
 public class ASTHelperTest
 {
     @Test
-    public void add_new_ast_node()
+    public void add_new_AST_node() {
+
+    }
 }
