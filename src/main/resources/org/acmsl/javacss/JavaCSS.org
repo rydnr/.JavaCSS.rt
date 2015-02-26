@@ -201,4 +201,5 @@ For our upcoming tests, we could use the logic we've just implemented, and perfo
 based on the return types of the methods. But that misses the point we pursue: invest the minimum time and effort
 before we get feedback and thus decide if the approach makes sense or not, as soon as possible.
 
-So, in this particular context, what are we trying to do? Learn how to add specific new nodes to a ParseTree.
+So, in this particular context, what are we trying to do? Learn how to add specific new nodes to a ParseTree. And how
+can we verify it's working correctly?
