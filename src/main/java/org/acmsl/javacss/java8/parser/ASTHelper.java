@@ -81,7 +81,7 @@ public class ASTHelper
 
         private String importType;
 
-        public ImportVisitor()
+        public ImportAddOperation(String )
         @Override
         public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
         {
