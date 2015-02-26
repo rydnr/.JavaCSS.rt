@@ -65,5 +65,5 @@ public class ASTHelper
 
     }
 
-    protected static Java8BaseVisitor
+    protected static class Java8BaseVisitor
 }
