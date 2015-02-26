@@ -89,11 +89,11 @@ public class ASTHelper
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             SingleTypeImportDeclarationContext singleTypeImportDeclarationContext =
                 new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
-            newImport.addChild(singleTypeImportDeclarationContext);
             Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream("import " + this.importType + ";"));
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             Java8Parser parser = new Java8Parser(tokens);
             SingleTypeImportDeclarationContext singleTypeImportDeclaration = parser.singleTypeImportDeclaration();
+            newImport.addChild(singleTypeImportDeclarationContext);
             singleTypeImportDeclarationContext.addChild(typeNameContext);
             singleTypeImportDeclarationContext.addChild(new CommonToken(Java8Parser.COLON, ";"));
 
