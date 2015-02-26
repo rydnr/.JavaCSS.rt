@@ -289,4 +289,4 @@ We only need now to verify the new import is contained in the XPath matches.
 #        Assert.assertTrue(found);
 #    }
 
-Now that the test looks fine, we can proceed to implementing the new logic.
+Now that the test looks fine, we can proceed to defining the required skeleton and see if the test fails.
