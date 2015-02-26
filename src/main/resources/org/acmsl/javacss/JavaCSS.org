@@ -206,3 +206,7 @@ can we verify it's working correctly? Well, we could generate code based on the 
 are there. But again, we are nowhere near to that point. We haven't dealt with the generation phase yet.
 The simplest way to check in the new nodes are added correctly is to use ANTLR's XPath searches. To retrieve a ParseTree, we
 can parse the samples used for some of the already implemented tests.
+
+Let's start by creating a new test ASTHelperTest, and a new test "add_new_AST_node()". The first step then is to
+build a ParseTree instance, so let's copy our first test "can_parse_an_interface_with_extends_and_a_single_method()".
+
