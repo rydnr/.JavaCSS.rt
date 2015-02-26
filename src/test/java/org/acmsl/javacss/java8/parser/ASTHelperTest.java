@@ -37,11 +37,15 @@ package org.acmsl.javacss.java8.parser;
 /*
  * Importing JetBrains annotations.
  */
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.jetbrains.annotations.NotNull;
 
 /*
  * Importing JUnit classes.
  */
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -56,7 +60,21 @@ import org.junit.runners.JUnit4;
 public class ASTHelperTest
 {
     @Test
-    public void add_new_AST_node() {
+    public void add_new_AST_node()
+        throws Exception {
+        String input =
+            "public interface Resolver\n"
+            + "    extends Serializable {\n\n"
 
+            + "    public int resolve(String value);\n"
+            + "}\n";
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+        Assert.assertNotNull(ast);
     }
 }
