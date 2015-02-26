@@ -83,6 +83,7 @@ public class ASTHelperTest
 
         for (ParseTree node : imports) {
             for ()
+            if (node instanceof ImportDeclarationContext) {
 
                 TerminalNode leaf = (TerminalNode) node;
 
