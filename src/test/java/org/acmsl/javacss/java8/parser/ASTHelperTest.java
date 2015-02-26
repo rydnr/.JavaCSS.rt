@@ -75,8 +75,6 @@ public class ASTHelperTest
         Collection<ParseTree> imports = XPath.findAll(tree, "//import", parser);
         Assert.assertNotNull(imports);
         Assert.assertTrue(imports.contains(myType));
-        for (ParseTree node : imports) {
-
     }
 
     protected Java8Parser buildParser()
