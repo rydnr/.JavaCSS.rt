@@ -401,3 +401,4 @@ But wait! Our grammar should handle that, we only need to parse our type, callin
 #             return super.visitCompilationUnit(ctx);
 #         }
 
+Let's hope it's not too expensive. Clearly, we should reuse the lexer and tokens from the initial parsing stage.
