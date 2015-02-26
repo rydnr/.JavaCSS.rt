@@ -76,8 +76,8 @@ public class ASTHelper
         @Override
         public Object visitImportDeclaration(@org.antlr.v4.runtime.misc.NotNull final ImportDeclarationContext ctx)
         {
-            TerminalNode new TerminalNode()
-            {
+            TerminalNode leaf =
+                new TerminalNode() {
                 @Override
                 public Token getSymbol()
                 {
