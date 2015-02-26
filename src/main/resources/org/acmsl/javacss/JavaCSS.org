@@ -227,3 +227,6 @@ a "buildAST()" helper method for the tests.
 #        Java8Parser parser = new Java8Parser(tokens);
 #        return parser.compilationUnit();
 #    }
+
+Similarly as we did before for retrieving the declared types for the methods, we can start with a simple helper class: "ASTHelper".
+Such class will add some logic in ParseTree we could use: "addImport(className)".
