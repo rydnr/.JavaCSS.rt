@@ -30,8 +30,7 @@ JavaCSS needs to parse whole Java files as well as certain incomplete Java snipp
 requirements nicely.
 
 The whole process consists of:
-- parsing Java code
-- generating an AST
+- parsing Java code, and generating an AST
 - AST processing
 - serializing the final AST
 
