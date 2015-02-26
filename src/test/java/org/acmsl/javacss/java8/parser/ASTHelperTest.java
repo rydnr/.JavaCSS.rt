@@ -80,7 +80,7 @@ public class ASTHelperTest
         Assert.assertNotNull(imports);
         for (ParseTree node : imports) {
             if (node instanceof TerminalNode) {
-                TerminalNode
+                TerminalNode leaf =
 
             }
         }
