@@ -568,7 +568,7 @@ But don't have that ANTLR->StringTemplate conversion, and still we want to gener
 I see two options: either build that tool ourselves, or build the StringTemplate templates we need for our particular purpose.
 Let's explore both options in detail.
 
-**** Option A: Build an ANTLR->StringTemplate translator
+- Option A: Build an ANTLR->StringTemplate translator
 
 We're pretty confident that, for a clean (no semantic predicates, no embedded logic) ANTLR grammar, there exist a
 set of StringTemplate templates which can generate valid input for such grammar.
@@ -577,7 +577,7 @@ Such translator would involve:
 - An ANTLR meta-parser, which reads an ANTLR grammar and generates the StringTemplate templates.
 - An AST runtime decorator, which lets StringTemplate access the child nodes via getters.
 
-**** Option B: Hand-code the templates for Java8.g4
+- Option B: Hand-code the templates for Java8.g4
 
 We've already felt the pain, above. Counting the parser rules gives us an astounding 271 rules. Of course, we could
 reduce that number to certain extent. But it's a lot of work indeed. Besides that, our work is not usable for other languages
