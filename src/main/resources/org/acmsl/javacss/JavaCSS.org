@@ -564,3 +564,4 @@ We could think of analogous StringTemplate rules:
 
 I hope you get the idea. There seems to exist an automatically-generated template set for a given ANTLR grammar, given the AST/ParseTree
 provides getters for each subtree, so StringTemplate can access them.
+But don't have that ANTLR->StringTemplate conversion, and still we want to generate code from a AST modelling a Java source file.
