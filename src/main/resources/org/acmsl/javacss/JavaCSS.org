@@ -582,3 +582,6 @@ Such translator would involve:
 We've already felt the pain, above. Counting the parser rules gives us an astounding 271 rules. Of course, we could
 reduce that number to certain extent. But it's a lot of work indeed. Besides that, our work is not usable for other languages
 in the future, and forces us maintaining the generator manually.
+
+So given this scenario, what would you decide? Each option has pros and cons. If we apply Lean philosophy, we should try to
+obtain feedback as soon as possible, regardless of the option.
