@@ -523,10 +523,17 @@ We could think of analogous StringTemplate rules:
   >>
 
   normalAnnotation(a) ::= <<
-  @<typeName(a=a)>(<if(a.elementValuePairList)><a.elementValuePairList:{ p |<elementValuePairList(pair=p)>}><endif>)
+  @<typeName(i=a)>(<if(a.elementValuePairList)><a.elementValuePairList:{ p |<elementValuePairList(pair=p)>}><endif>)
   >>
 
   markerAnnotation(a) ::= <<
-  @<typeName(a=a)>
+  @<typeName(i=a)>
   >>
   
+  singleElementAnnotation(a) ::= <<
+  @<typeName(i=a)>(<a.elementValue>)
+  >>
+
+  typeName(i, p) ::= <<
+  <if(p)><p>.<i><else><i><endif>
+  >>
