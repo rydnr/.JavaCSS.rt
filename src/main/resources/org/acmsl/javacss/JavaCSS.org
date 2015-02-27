@@ -574,8 +574,8 @@ We're pretty confident that, for a clean (no semantic predicates, no embedded lo
 set of StringTemplate templates which can generate valid input for such grammar.
 
 Such translator would involve:
-- An ANTLR meta-parser, which reads an ANTLR grammar and generates the StringTemplate templates.
-- An AST runtime decorator, which lets StringTemplate access the child nodes via getters.
+a) An ANTLR meta-parser, which reads an ANTLR grammar and generates the StringTemplate templates.
+b) An AST runtime decorator, which lets StringTemplate access the child nodes via getters.
 
 - Option B: Hand-code the templates for Java8.g4
 
