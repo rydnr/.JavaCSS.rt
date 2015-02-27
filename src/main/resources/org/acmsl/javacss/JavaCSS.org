@@ -588,3 +588,4 @@ obtain feedback as soon as possible, regardless of the option. Under that perspe
 each option.
 
 - Hypothesis for A: the automatic generation is feasible for any grammar, given it doesn't include logic or semantic predicates.
+How could we possibly validate the hypothesis? 
