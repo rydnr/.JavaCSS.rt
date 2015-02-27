@@ -458,14 +458,46 @@ On the top of my mind, I dream of finding a way to somehow mirror a grammar auto
     :  annotation
     ;
 
-annotation
+  annotation
 	:	normalAnnotation
 	|	markerAnnotation
 	|	singleElementAnnotation
 	;
 
-normalAnnotation
+  normalAnnotation
 	:	'@' typeName '(' elementValuePairList? ')'
+	;
+
+  markerAnnotation
+	:	'@' typeName
+	;
+
+  singleElementAnnotation
+	:	'@' typeName '(' elementValue ')'
+	;
+
+  typeName
+	:	Identifier
+	|	packageOrTypeName '.' Identifier
+	;
+
+  packageOrTypeName
+	:	Identifier
+	|	packageOrTypeName '.' Identifier
+	;
+
+  elementValuePairList
+	:	elementValuePair (',' elementValuePair)*
+	;
+
+  elementValuePair
+	:	Identifier '=' elementValue
+	;
+
+elementValue
+	:	conditionalExpression
+	|	elementValueArrayInitializer
+	|	annotation
 	;
 
 We could think of an analogous StringTemplate rule:
