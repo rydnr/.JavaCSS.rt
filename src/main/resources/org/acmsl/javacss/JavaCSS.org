@@ -443,3 +443,66 @@ when time is ready.
 
 So far we've got ourselves familiar with the first two steps in the process: reading source code, and manipulating it. Now it's time to
 work on generating code from an AST.
+
+Needless to say, we'll use StringTemplate. It's the natural counterpart of ANTLR, it is easy to learn, and promotes good habits.
+In our situation, we are trying to answer the question "how can I generate Java sources?", but that's overly ambitious for a
+first test.
+
+On the top of my mind, I dream of finding a way to somehow mirror a grammar automatically. Let's consider the following rules from our grammar:
+
+  packageDeclaration
+    :  packageModifier* 'package' Identifier ('.' Identifier)* ';'
+    ;
+
+  packageModifier
+    :  annotation
+    ;
+
+  annotation
+	:	normalAnnotation
+	|	markerAnnotation
+	|	singleElementAnnotation
+	;
+
+  normalAnnotation
+	:	'@' typeName '(' elementValuePairList? ')'
+	;
+
+  markerAnnotation
+	:	'@' typeName
+	;
+
+  singleElementAnnotation
+	:	'@' typeName '(' elementValue ')'
+	;
+
+  typeName
+	:	Identifier
+	|	packageOrTypeName '.' Identifier
+	;
+
+  packageOrTypeName
+	:	Identifier
+	|	packageOrTypeName '.' Identifier
+	;
+
+  elementValuePairList
+	:	elementValuePair (',' elementValuePair)*
+	;
+
+  elementValuePair
+	:	Identifier '=' elementValue
+	;
+
+  elementValue
+	:	conditionalExpression
+	|	elementValueArrayInitializer
+	|	annotation
+	;
+
+We could think of an analogous StringTemplate rule:
+
+  packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
+    <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
+  >>
+
