@@ -576,3 +576,9 @@ set of StringTemplate templates which can generate valid input for such grammar.
 Such translator would involve:
 - An ANTLR meta-parser, which reads an ANTLR grammar and generates the StringTemplate templates.
 - An AST runtime decorator, which lets StringTemplate access the child nodes via getters.
+
+**** Option B: Hand-code the templates for Java8.g4
+
+We've already felt the pain, above. Counting the parser rules gives us an astounding 271 rules. Of course, we could
+reduce that number to certain extent. But it's a lot of work indeed, and our work is not usable for other languages
+in the future.
