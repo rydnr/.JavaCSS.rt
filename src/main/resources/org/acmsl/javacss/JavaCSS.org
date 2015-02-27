@@ -500,7 +500,7 @@ On the top of my mind, I dream of finding a way to somehow mirror a grammar auto
 	|	annotation
 	;
 
-We could think of an analogous StringTemplate rule:
+We could think of analogous StringTemplate rules:
 
   packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
     <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
