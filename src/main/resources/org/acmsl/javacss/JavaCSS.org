@@ -520,3 +520,4 @@ We could think of analogous StringTemplate rules:
       singleElementAnnotation(a=a)><
     endif><
   endif>
+  >>
