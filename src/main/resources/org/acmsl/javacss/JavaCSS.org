@@ -566,3 +566,6 @@ I hope you get the idea. There seems to exist an automatically-generated templat
 provides getters for each subtree, so StringTemplate can access them.
 But don't have that ANTLR->StringTemplate conversion, and still we want to generate code from a AST modelling a Java source file.
 I see two options: either build that tool ourselves, or build the StringTemplate templates we need for our particular purpose.
+Let's explore both options in detail.
+
+**** Option A: Build an ANTLR->StringTemplate translator
