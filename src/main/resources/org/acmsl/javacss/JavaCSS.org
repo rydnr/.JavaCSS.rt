@@ -537,3 +537,28 @@ We could think of analogous StringTemplate rules:
   typeName(i, p) ::= <<
   <if(p)><p>.<i><else><i><endif>
   >>
+
+  packageOrTypeName(i, p) ::= << <! it's the same as typeName !>
+  <if(p)><p>.<i><else><i><endif>
+  >>
+
+  elementValuePairList(pair) ::= <<
+  <pair:{ p |<elementValuePair(i=p.identifier, v=p.elementValue)>}; separator=",">
+  >>
+
+  elementValuePair(p, v) ::= <<
+  <i>=<elementValue(v=v)>
+  >>
+
+  elementValue(v) ::= <<
+  <if(v.conditionalExpression)><
+    conditionalExpression(e=v)><
+  else><
+    if(v.elementValueArrayInitializer)><
+      elementValueArrayInitializer(i=v)><
+    else><
+      annotation(a=v)><
+    endif><
+  endif>
+  >>
+
