@@ -572,3 +572,7 @@ Let's explore both options in detail.
 
 We're pretty confident that, for a clean (no semantic predicates, no embedded logic) ANTLR grammar, there exist a
 set of StringTemplate templates which can generate valid input for such grammar.
+
+Such translator would involve:
+- An ANTLR meta-parser, which reads an ANTLR grammar and generates the StringTemplate templates.
+- An AST runtime decorator, which lets StringTemplate access the child nodes via getters.
