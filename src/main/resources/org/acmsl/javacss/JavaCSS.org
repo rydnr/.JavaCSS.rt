@@ -590,3 +590,6 @@ each option.
 - Hypothesis for A: the automatic generation is feasible for any grammar, given it doesn't include logic or semantic predicates.
 How could we possibly validate the hypothesis? If it doesn't hold, the whole point of building a generator is unclear. We can inspect
 some grammars already available for ANTLR, to check for some situations which were not anticipated.
+
+- Hypothesis for B: A custom generator for Java8.g4 is doable for sure, but it'll take a lot of time, and we'll have to write tests for
+lots of language constructs.
