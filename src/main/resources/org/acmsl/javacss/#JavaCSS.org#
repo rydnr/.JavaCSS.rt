@@ -439,4 +439,7 @@ ImportDeclarationContext object that we've made up for no reason. ANTLR can hand
 Now it's much better. Let's hope it's not too expensive in terms of performance. Clearly, we should reuse the lexer and tokens from the initial parsing stage. We'll fix it
 when time is ready.
 
-*** Fi
+*** Fifth test: Generating code
+
+So far we've get ourselves familiar with the first two steps in the process: reading source code, and manipulating it. Now it's time to
+work on generating code from a
