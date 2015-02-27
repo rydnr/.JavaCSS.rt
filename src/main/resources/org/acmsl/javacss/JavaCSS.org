@@ -584,4 +584,7 @@ reduce that number to certain extent. But it's a lot of work indeed. Besides tha
 in the future, and forces us maintaining the generator manually.
 
 So given this scenario, what would you decide? Each option has pros and cons. If we apply Lean philosophy, we should try to
-obtain feedback as soon as possible, regardless of the option.
+obtain feedback as soon as possible, regardless of the option. Under that perspective, let's review the actual hypothesis behind
+each option.
+
+- Hypothesis for A: the automatic generation is feasible for any grammar, given it doesn't include logic or semantic predicates.
