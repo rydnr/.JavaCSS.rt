@@ -543,7 +543,17 @@ We could think of analogous StringTemplate rules:
   >>
 
   elementValuePairList(pair) ::= <<
-  <pair:{ p |<elementValuePair(p=p)>}; separator=",">
+  <pair:{ p |<elementValuePair(i=p.identifier, v=p.elementValue)>}; separator=",">
   >>
 
-  elementValuePair
+  elementValuePair(p, v) ::= <<
+  <i>=<elementValue(v=v)>
+  >>
+
+  elementValue(v) ::= <<
+  <if(v.conditionalExpression)><
+    conditionalExpression(e=v)><
+  else><
+    if(v.elementValueArrayInitializer)><
+  
+  >>
