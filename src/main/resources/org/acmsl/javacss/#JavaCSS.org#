@@ -444,4 +444,5 @@ when time is ready.
 So far we've got ourselves familiar with the first two steps in the process: reading source code, and manipulating it. Now it's time to
 work on generating code from an AST.
 
-Needless to say, we'll use StringTemplate. It's
+Needless to say, we'll use StringTemplate. It's the natural counterpart of ANTLR, it is easy to learn, and promotes good habits.
+In our situation, we are trying to answer the question "how can I generate Java sources?"
