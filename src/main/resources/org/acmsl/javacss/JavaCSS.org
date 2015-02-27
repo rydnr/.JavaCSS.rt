@@ -580,5 +580,5 @@ Such translator would involve:
 **** Option B: Hand-code the templates for Java8.g4
 
 We've already felt the pain, above. Counting the parser rules gives us an astounding 271 rules. Of course, we could
-reduce that number to certain extent. But it's a lot of work indeed, and our work is not usable for other languages
-in the future.
+reduce that number to certain extent. But it's a lot of work indeed. Besides that, our work is not usable for other languages
+in the future, and forces us maintaining the generator manually.
