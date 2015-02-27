@@ -445,4 +445,12 @@ So far we've got ourselves familiar with the first two steps in the process: rea
 work on generating code from an AST.
 
 Needless to say, we'll use StringTemplate. It's the natural counterpart of ANTLR, it is easy to learn, and promotes good habits.
-In our situation, we are trying to answer the question "how can I generate Java sources?"
+In our situation, we are trying to answer the question "how can I generate Java sources?", but that's overly ambitious for a
+first test.
+
+On the top of my mind, I dream of finding a way to somehow mirror a grammar automatically. Using a rule from our grammar:
+
+  packageDeclaration
+    :  packageModifier* 'package' Identifier ('.' Identifier)* ';'
+    ;
+
