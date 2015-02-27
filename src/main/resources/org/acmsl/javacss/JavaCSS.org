@@ -569,3 +569,6 @@ I see two options: either build that tool ourselves, or build the StringTemplate
 Let's explore both options in detail.
 
 **** Option A: Build an ANTLR->StringTemplate translator
+
+We're pretty confident that, for a clean (no semantic predicates, no embedded logic) ANTLR grammar, there exist a
+set of StringTemplate templates which can generate valid input for such grammar.
