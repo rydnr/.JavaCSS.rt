@@ -451,12 +451,12 @@ first test.
 On the top of my mind, I dream of finding a way to somehow mirror a grammar automatically. Let's consider the following rules from our grammar:
 
   packageDeclaration
-    :  packageModifier* 'package' Identifier ('.' Identifier)* ';'
-    ;
+	:	packageModifier* 'package' Identifier ('.' Identifier)* ';'
+	;
 
   packageModifier
-    :  annotation
-    ;
+	:	annotation
+	;
 
   annotation
 	:	normalAnnotation
