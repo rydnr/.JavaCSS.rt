@@ -503,6 +503,20 @@ On the top of my mind, I dream of finding a way to somehow mirror a grammar auto
 We could think of analogous StringTemplate rules:
 
   packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
-    <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
+  <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
   >>
 
+  packageModifier(mod) ::= <<
+  <annotation(a=mod)>
+  >>
+
+  annotation(a) ::= <<
+  <if(a.normal)><
+    normalAnnotation(a=a)><
+  else><
+    if(a.marker)><
+      markerAnnotation(a=a)><
+    else><
+      singleElementAnnotation(a=a)><
+    endif><
+  endif>
