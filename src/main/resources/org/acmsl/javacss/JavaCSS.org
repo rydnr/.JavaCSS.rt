@@ -521,3 +521,12 @@ We could think of analogous StringTemplate rules:
     endif><
   endif>
   >>
+
+  normalAnnotation(a) ::= <<
+  @<typeName(a=a)>(<if(a.elementValuePairList)><a.elementValuePairList:{ p |<elementValuePairList(pair=p)>}><endif>)
+  >>
+
+  markerAnnotation(a) ::= <<
+  @<typeName(a=a)>
+  >>
+  
