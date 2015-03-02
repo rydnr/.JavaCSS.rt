@@ -661,3 +661,7 @@ not compatible in some cases.
 Anyway, let's try to implement such DSL, starting with a test.
 
 *** First test: Parsing the CSS-like DSL
+
+This first test consists of invoking logic on a new StringTemplateCSSParser class to parse the above examples. The output
+will consist of a list of maps. A list since the selectors are an ordered collection of items, with precedence semantics.
+A map since the properties are a flattened JSON-like structure of key-value tuples.
