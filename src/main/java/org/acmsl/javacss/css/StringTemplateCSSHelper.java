@@ -38,6 +38,8 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
+import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.tree.ParseTree;
