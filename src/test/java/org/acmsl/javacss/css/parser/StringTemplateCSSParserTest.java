@@ -34,10 +34,6 @@ public class StringTemplateCSSParserTest
     content: "\n\n";
   }
 
-.packageDeclaration #identifier::before {\n"
-            + "    content: \"  \";\n"
-            + "}\n";
-
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
