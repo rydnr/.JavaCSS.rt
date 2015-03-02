@@ -71,10 +71,10 @@ public class StringTemplateCSSHelper
 
         if (result == null)
         {
+            initialize();
             result = new ArrayList<String>();
             this.selectors = result;
 
-            initialize
         }
     }
 }
