@@ -49,7 +49,7 @@ import org.junit.runners.JUnit4;
 
 /**
  *
- * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
+ * @author <a href="mailto:jose@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/02 16:52
  */
