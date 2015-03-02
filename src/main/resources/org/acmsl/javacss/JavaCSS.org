@@ -637,7 +637,7 @@ Let's try to define selectors for each one of the identified elements:
 - .packageDeclaration #identifier : to modify the way the identifier value is printed.
 - .packageDeclaration #extraIdentifiers : again, needed to overwrite the separator.
 - .packageDeclaration ";"::before : to optionally add text before the semicolon.
-- .packageDeclaration ";" "\\s*" : to change whether there's a new line after the semicolon.
+- .packageDeclaration ";" "s*" : to change whether there's a new line after the semicolon.
 
 This is just an initial example, trying to adapt the standard [[http://www.w3.org/TR/2011/REC-css3-selectors-20110929/][CSS selectors]] to this scenario. What we are doing here is
 modeling the template itself as a DOM or AST, and filtering certain nodes or properties of such tree. But before worrying
