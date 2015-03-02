@@ -49,5 +49,5 @@ import org.junit.runners.JUnit4;
 public class StringTemplateCSSHelperTest
 {
     @Test
-    public void retrieves_
+    public void retrieves_properties_for_a_simple_input
 }
