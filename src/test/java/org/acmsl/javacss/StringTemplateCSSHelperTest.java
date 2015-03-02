@@ -65,6 +65,6 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(selectors);
 
-        Assert.assertTrue()
+        Assert.assertEquals(1, selectors.size());
     }
 }
