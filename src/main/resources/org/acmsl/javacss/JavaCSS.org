@@ -59,10 +59,10 @@ the generated parser. We won't write many tests, since they don't help guiding u
 Anyway, let's check if it is able to read the following Java code:
 
 public interface Resolver
-    extends Serializable {
+    extends Serializable \{
 
     public int resolve(String value);
-}
+\}
 
 To write the test, we need to remember the API ANTLR provides for the generated parser. To build the parser instance,
 we provide the text to build a Java8Lexer. Then, we instantiate a CommonTokenStream with the lexer, and pass it to the Java8Parser constructor.
