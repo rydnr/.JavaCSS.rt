@@ -597,3 +597,7 @@ lots of language constructs.
 
 How long would it be? Hours? Days? We could implement just the templates above, for the "package" rule, and with that information
 try to estimate the whole grammar.
+
+** 
+
+We could discuss each of the options endlessly, and still miss the important challenge we are actually facing.
