@@ -38,6 +38,7 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.antlr.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.jetbrains.annotations.NotNull;
 
@@ -78,6 +79,8 @@ public class StringTemplateCSSHelper
 
     protected void initialize(String input)
     {
-        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream()input);
+        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens =
     }
 }
