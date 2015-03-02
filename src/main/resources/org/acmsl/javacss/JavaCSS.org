@@ -856,7 +856,10 @@ That fixes the first test. The second input is clearly not supported by our curr
 #   	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
 #   	;
 
+*** Second test: Reading properties
 
+Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
+the ANTLR-generated parser and builds a Map containing the properties for a selector.
 
 
 
