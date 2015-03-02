@@ -12,7 +12,7 @@ selector
 	;
 
 property
-	:	Identifier ':' ('\' StringLiteral '\' | '"' StringLiteral '"') ';'
+	:	Identifier ':' StringLiteral ';'
 	;
 
 StringLiteral
