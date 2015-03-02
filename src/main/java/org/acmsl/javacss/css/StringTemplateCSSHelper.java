@@ -77,6 +77,6 @@ public class StringTemplateCSSHelper
 
     protected void initialize()
     {
-        //To change body of created methods use File | Settings | File Templates.
+        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer()
     }
 }
