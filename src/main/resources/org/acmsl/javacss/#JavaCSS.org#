@@ -662,4 +662,5 @@ Anyway, let's try to implement such DSL, starting with a test.
 
 *** First test: Parsing the CSS-like DSL
 
-This first test i
+This first test consists of invoking logic on a new StringTemplateCSSParser class to parse the above examples. The output
+will co
