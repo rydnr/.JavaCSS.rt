@@ -814,3 +814,20 @@ Our test succeeds. We can live with that "Java" rules in the lexer, since they p
 specification we are trying to emulate as accurate as possible.
 
 Let's check if the other input we wrote before is parsed correctly as well:
+
+#       @Test
+#       public void parses_another_simple_input() {
+#           String input =
+#                 "  .packageDeclaration \";\"::after {\n"
+#               + "    content: \"\\n\\n\";\n"
+#               + "  }";
+#   
+#           StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+#   
+#           CommonTokenStream tokens = new CommonTokenStream(lexer);
+#   
+#           StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+#           ParseTree ast = parser.css();
+#           Assert.assertNotNull(ast);
+#       }
+
