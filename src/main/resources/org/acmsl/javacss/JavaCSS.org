@@ -899,4 +899,35 @@ We can now proceed writing the skeleton of the class to ensure the code compiles
 #       }
 #   }
 
-Now that we have our beloved red light, we can try to implement the logic. Notice I'm bypassing the "dumb" implementation here.
+Now that we have our beloved red light, we can try to implement the logic. Notice I'm bypassing the "dumb" implementation here. Anyway, my first attempt wasn't much better either.
+
+#       public List<String> getSelectors()
+#       {
+#           if (this.selectors == null)
+#           {
+#               initialize(this.input);
+#           }
+#           
+#           return this.selectors;
+#       }
+#   
+#       protected void initialize(String input)
+#       {
+#           StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+#   
+#           CommonTokenStream tokens = new CommonTokenStream(lexer);
+#   
+#           StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+#   
+#           ParseTree tree = parser.css();
+#   
+#           Collection<ParseTree> selectorEntries = XPath.findAll(tree, "//selector", parser);
+#   
+#           this.selectors = new ArrayList<String>(selectorEntries.size());
+#   
+#           for (ParseTree selectorEntry : selectorEntries)
+#           {
+#               this.selectors.add(selectorEntry.getText());
+#           }
+#       }
+
