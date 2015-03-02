@@ -8,7 +8,7 @@ css
 	;
 
 selector
-	:	('.' | '#') identifier (
+	:	('.' | '#') identifier (':' ':' ("before" | "after"))?
 	;
 
 packageModifier
