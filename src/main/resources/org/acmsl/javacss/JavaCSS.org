@@ -598,7 +598,7 @@ lots of language constructs.
 How long would it be? Hours? Days? We could implement just the templates above, for the "package" rule, and with that information
 try to estimate the whole grammar.
 
-** 
+** Pivoting the prototype
 
 We could discuss each of the options endlessly, and still miss the important challenge we are actually facing. We want to implement
 a way to customize certain aspects and behavior of the generation templates, ortogonally to the templates themselves. It makes
