@@ -69,13 +69,13 @@ public class StringTemplateCSSHelper
     {
         if (this.selectors == null)
         {
-            initialize();
+            initialize(this.input);
         }
         
         return this.selectors;
     }
 
-    protected void initialize()
+    protected void initialize(String input)
     {
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(input);
     }
