@@ -88,6 +88,6 @@ public class StringTemplateCSSHelper
 
         ParseTree tree = parser.css();
 
-        XPath.findAll(tree, "selector")
+        XPath.findAll(tree, "selector");
     }
 }
