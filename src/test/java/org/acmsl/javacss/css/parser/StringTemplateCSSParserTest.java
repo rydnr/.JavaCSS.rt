@@ -38,7 +38,7 @@ public class StringTemplateCSSParserTest
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
-        parser.setErrorHandler(
+        parser.setErrorHandler(new BailErrorStrategy
             new ANTLRErrorStrategy()
             {
                 @Override
