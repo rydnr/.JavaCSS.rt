@@ -81,6 +81,8 @@ public class StringTemplateCSSHelper
     {
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
 
-        CommonTokenStream tokens =
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+
     }
 }
