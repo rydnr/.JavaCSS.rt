@@ -71,7 +71,8 @@ public class StringTemplateCSSHelper
 
         if (result == null)
         {
-
+            result = new ArrayList<String>();
+            this.selectors = result;
         }
     }
 }
