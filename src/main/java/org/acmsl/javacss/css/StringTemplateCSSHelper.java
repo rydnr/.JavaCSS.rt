@@ -93,6 +93,9 @@ public class StringTemplateCSSHelper
 
         this.selectors = new ArrayList<String>(selectorEntries.size());
 
-        for (ParseTree selectorEtr)
+        for (ParseTree selectorEntry : selectorEntries)
+        {
+
+        }
     }
 }
