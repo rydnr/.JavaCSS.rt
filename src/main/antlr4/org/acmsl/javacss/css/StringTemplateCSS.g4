@@ -12,7 +12,7 @@ selector
 	;
 
 property
-	:	Identifier ':' ('\' text
+	:	Identifier ':' ('\' text '\' | '"' text '"') ';'
 	;
 
 importDeclaration
