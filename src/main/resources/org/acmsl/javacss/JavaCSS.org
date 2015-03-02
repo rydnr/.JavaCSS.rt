@@ -850,5 +850,12 @@ The problem was that we described the consecutive colons as two tokens, whereas 
 #   	:	('.' | '#') Identifier (COLONCOLON ('before' | 'after'))?
 #   	;
 
-That fixes the first test. The second input is clearly not supported by our current grammar. We'll need to implement it.
+That fixes the first test. The second input is clearly not supported by our current grammar. We'll need to implement it, but it is not difficult.
+
+#   selector
+#   	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
+#   	;
+
+
+
 
