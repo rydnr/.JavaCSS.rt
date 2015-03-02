@@ -648,5 +648,5 @@ The next piece in the puzzle is defining the CSS-like properties to apply to the
 If we wanted to use two spaces after the "package" word, and two new lines after the semicolon, we would write it as follows:
 
 .packageDeclaration #identifier {
-  ::b
+  ::before
 }
