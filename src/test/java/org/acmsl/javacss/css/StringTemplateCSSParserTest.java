@@ -12,7 +12,7 @@ public class StringTemplateCSSParserTest
     public void parses_a_simple_input() {
         String input =
             ".packageDeclaration #identifier::before {\n"
-          + "    content: \"  \";\n
+          + "    content: \"  \";\n"
           + "}\n";
 
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
