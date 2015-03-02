@@ -95,7 +95,7 @@ public class StringTemplateCSSHelper
 
         for (ParseTree selectorEntry : selectorEntries)
         {
-
+            this.selectors.add(selectorEntry.getText());
         }
     }
 }
