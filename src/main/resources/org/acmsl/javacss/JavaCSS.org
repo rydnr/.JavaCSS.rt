@@ -813,4 +813,4 @@ ones.
 Our test succeeds. We can live with that "Java" rules in the lexer, since they probably hold true for the CSS
 specification we are trying to emulate as accurate as possible.
 
-Let's check if the other input we wrote before is parsed correctly as well.
+Let's check if the other input we wrote before is parsed correctly as well:
