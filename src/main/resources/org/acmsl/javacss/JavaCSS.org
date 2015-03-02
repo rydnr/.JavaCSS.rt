@@ -898,3 +898,5 @@ We can now proceed writing the skeleton of the class to ensure the code compiles
 #           return this.selectors;
 #       }
 #   }
+
+Now that we have our beloved red light, we can try to implement the logic. Notice I'm bypassing the "dumb" implementation here.
