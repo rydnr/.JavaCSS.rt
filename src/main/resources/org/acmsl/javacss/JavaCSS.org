@@ -931,3 +931,4 @@ Now that we have our beloved red light, we can try to implement the logic. Notic
 #           }
 #       }
 
+The test doesn't pass because it expects just one selector, and the helper is returning two. 
