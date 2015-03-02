@@ -655,3 +655,5 @@ If we wanted to use two spaces after the "package" word, and two new lines after
     content: "\n\n";
   }
 
+CSS Text defines certain properties we could reuse, but only to a certain extent, since their meaning and units are
+not compatible in some cases.
