@@ -91,6 +91,8 @@ public class StringTemplateCSSHelper
 
         Collection<ParseTree> selectorEntries = XPath.findAll(tree, "selector", parser);
 
+        this.selectors = new ArrayList<String>(selectorEntries.size());
 
+        for ()
     }
 }
