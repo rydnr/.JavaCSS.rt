@@ -936,3 +936,23 @@ because it's what the grammar dictates. For now, I feel more confortable with th
 to one selector, even though it's not really true. It's the combination of selectors (and some relationships among them) what allow us
 to match certain pieces of each template. But again, we'll leave that for later. Meanwhile, let's update the grammar to
 wrap all selectors into one.
+
+#   css
+#   	:	selectorCombination '{' property+ '}' EOF
+#   	;
+#   
+#   selectorCombination
+#   	:	selector+
+#   	;
+
+Voilà! It did the trick, although the test is not passing yet, but this time is the test's fault.
+
+#   retrieves_selectors_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+#   org.junit.ComparisonFailure: expected:<.packageDeclaration[ ]#identifier::before> but was:<.packageDeclaration[]#identifier::before>
+#           at org.junit.Assert.assertEquals(Assert.java:115)
+#           at org.junit.Assert.assertEquals(Assert.java:144)
+#           at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_selectors_for_a_simple_input(StringTemplateCSSHelperTest.java:70)
+
+In our test, we are calling getText() on non-terminal nodes of our ParseTree. In our grammar the whitespace is not meaningful, so it's
+discarded by the lexer and omitted in the token stream and in the final tree. Therefore it's not returning the same input text, and
+we have to take it into account in our checks.
