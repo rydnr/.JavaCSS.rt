@@ -932,4 +932,6 @@ Now that we have our beloved red light, we can try to implement the logic. Notic
 #       }
 
 The test doesn't pass because it expects just one selector, and the helper is returning two. And we're returning two
-because it's what the grammar dictates.
+because it's what the grammar dictates. For now, I feel more confortable with the idea that each block belongs
+to one selector, even though it's not really true. It's the combination of selectors (and some relationships among them) what allow us
+to match certain pieces of each template.
