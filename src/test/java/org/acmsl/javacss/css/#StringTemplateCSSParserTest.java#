@@ -1,7 +1,21 @@
 package org.acmsl.javacss.css;
 
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-imp
+import org.junit.Test;
+
 @RunWith(JUnit4.class)
-public 
+public class StringTemplateCSSParserTest
+{
+    @Test
+    public void parses_a_simple_input() {
+        String input =
+          ".packageDeclaration #identifier::before {\n"
+          +    content: "  ";
+  }
+
+
+        StringTemplateCSSParser parser = 
+    }
+}
