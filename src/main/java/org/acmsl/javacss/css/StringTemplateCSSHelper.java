@@ -40,6 +40,7 @@ package org.acmsl.javacss.css;
  */
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.jetbrains.annotations.NotNull;
 
 /*
@@ -85,6 +86,6 @@ public class StringTemplateCSSHelper
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
 
-        parser.
+        ParseTree tree = parser.css();
     }
 }
