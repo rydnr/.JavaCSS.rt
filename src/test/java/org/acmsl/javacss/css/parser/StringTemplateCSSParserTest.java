@@ -1,4 +1,4 @@
-package org.acmsl.javacss.css;
+package org.acmsl.javacss.css.parser;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
