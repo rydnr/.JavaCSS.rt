@@ -30,7 +30,11 @@ public class StringTemplateCSSParserTest
     @Test
     public void parses_another_simple_input() {
         String input =
-            ".packageDeclaration #identifier::before {\n"
+            "  .packageDeclaration ";"::after {
+    content: "\n\n";
+  }
+
+.packageDeclaration #identifier::before {\n"
             + "    content: \"  \";\n"
             + "}\n";
 
