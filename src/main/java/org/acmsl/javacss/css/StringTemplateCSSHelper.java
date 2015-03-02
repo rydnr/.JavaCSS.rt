@@ -45,6 +45,8 @@ import org.jetbrains.annotations.NotNull;
  */
 import org.checkthread.annotations.ThreadSafe;
 
+import java.util.List;
+
 /**
  *
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
@@ -62,4 +64,7 @@ public class StringTemplateCSSHelper
     }
 
 
+    public List<String> getSelectors()
+    {
+    }
 }
