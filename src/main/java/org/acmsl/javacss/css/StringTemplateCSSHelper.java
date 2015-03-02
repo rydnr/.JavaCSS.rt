@@ -77,6 +77,6 @@ public class StringTemplateCSSHelper
 
     protected void initialize()
     {
-        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer()
+        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(input);
     }
 }
