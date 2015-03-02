@@ -58,7 +58,7 @@ import java.util.List;
 public class StringTemplateCSSHelper
 {
     private final String input;
-    private List<String> selectors = new ArrayList<String>();
+    private List<String> selectors = ;
 
     public StringTemplateCSSHelper(final String input)
     {
