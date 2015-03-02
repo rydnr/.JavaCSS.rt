@@ -2,6 +2,7 @@ package org.acmsl.javacss.css;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
