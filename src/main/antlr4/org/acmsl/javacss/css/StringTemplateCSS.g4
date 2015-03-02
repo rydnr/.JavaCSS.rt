@@ -47,6 +47,11 @@ OctalEscape
 	;
 
 fragment
+OctalDigit
+	:	[0-7]
+	;
+
+fragment
 ZeroToThree
 	:	[0-3]
 	;
