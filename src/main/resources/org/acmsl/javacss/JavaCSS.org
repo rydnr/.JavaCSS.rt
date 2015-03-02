@@ -619,4 +619,14 @@ as separator.
 - Add the "package" word.
 - Append the identifier value.
 - If there're any extra identifiers (the package is part of a tree), then append each part, preceded by a dot.
-- Append a semicolon and a new line.
+- Append a semicolon.
+- Append a new line.
+
+We'd like to be able to change how the template behaves:
+- The separator used when calling "packageModifier" templates.
+- The blank space.
+- The "package" word.
+- The identifier value.
+- The separator used when calling the anonymous template.
+- The semicolon.
+- The new line.
