@@ -28,7 +28,7 @@ public class StringTemplateCSSParserTest
     }
 
     @Test
-    public void parses_a_simple_input() {
+    public void parses_another_simple_input() {
         String input =
             ".packageDeclaration #identifier::before {\n"
             + "    content: \"  \";\n"
