@@ -611,3 +611,12 @@ Let's start with the same template to output Java package declarations:
   packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
   <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
   >>
+
+That template is saying:
+- If there're any package modifiers, then run the "packageModifier" template for each of them, using a blank space
+as separator.
+- Append a blank space.
+- Add the "package" word.
+- Append the identifier value.
+- If there're any extra identifiers (the package is part of a tree), then append each part, preceded by a dot.
+- Append a semicolon and a new line.
