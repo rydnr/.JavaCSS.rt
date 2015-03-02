@@ -33,7 +33,7 @@
  * Time: 16:52
  *
  */
-package org.acmsl.javacss;
+package org.acmsl.javacss.css;
 
 import org.acmsl.javacss.css.StringTemplateCSSHelper;
 import org.junit.Assert;
