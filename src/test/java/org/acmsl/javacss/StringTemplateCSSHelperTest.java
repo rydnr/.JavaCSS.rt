@@ -35,9 +35,12 @@
  */
 package org.acmsl.javacss;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.List;
 
 /**
  * Tests for {@link org.acmsl.javacss.StringTemplateCSSHelper}.
@@ -58,6 +61,10 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
 
-        helper.getSelectors()
+        List<String> selectors = helper.getSelectors();
+
+        Assert.assertNotNull(selectors);
+
+
     }
 }
