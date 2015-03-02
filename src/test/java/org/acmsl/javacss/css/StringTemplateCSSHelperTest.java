@@ -35,7 +35,6 @@
  */
 package org.acmsl.javacss.css;
 
-import org.acmsl.javacss.css.StringTemplateCSSHelper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,7 +43,7 @@ import org.junit.runners.JUnit4;
 import java.util.List;
 
 /**
- * Tests for {@link org.acmsl.javacss.StringTemplateCSSHelper}.
+ * Tests for {@link StringTemplateCSSHelper}.
  * @author <a href="mailto:jose@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/02 16:52
