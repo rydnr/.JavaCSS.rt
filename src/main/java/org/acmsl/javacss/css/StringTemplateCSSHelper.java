@@ -67,11 +67,15 @@ public class StringTemplateCSSHelper
 
     public List<String> getSelectors()
     {
-        List<String> result = this.selectors;
-
-        if (result == null)
+        if (this.selectors == null)
         {
             initialize();
         }
+        
+        return this.selectors;
+    }
+
+    private void initialize()
+    {
     }
 }
