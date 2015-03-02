@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: Tests for StringTemplateCSSHelper.
  *
  * Date: 2015/03/02
  * Time: 16:52
