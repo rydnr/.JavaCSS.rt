@@ -881,3 +881,4 @@ We'll envelop this in a StringTemplateCSSHelper class for now.
 #           Assert.assertEquals(".packageDeclaration #identifier::before", selectors.get(0));
 #       }
 
+We can now proceed writing the skeleton of the class to ensure the code compiles.
