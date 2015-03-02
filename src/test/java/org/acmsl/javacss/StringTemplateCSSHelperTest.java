@@ -35,6 +35,7 @@
  */
 package org.acmsl.javacss;
 
+import org.acmsl.javacss.css.StringTemplateCSSHelper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
