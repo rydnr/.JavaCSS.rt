@@ -953,4 +953,5 @@ Voilà! It did the trick, although the test is not passing yet, but this time is
 #           at org.junit.Assert.assertEquals(Assert.java:144)
 #           at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_selectors_for_a_simple_input(StringTemplateCSSHelperTest.java:70)
 
-ANTRL
+In our test, we are calling getText() on non-terminal nodes of our ParseTree. In our grammar the whitespace is not meaningful, so it's
+discarded by , in their getText() method, doesn't
