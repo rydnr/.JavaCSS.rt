@@ -58,7 +58,7 @@ import java.util.List;
 public class StringTemplateCSSHelper
 {
     private final String input;
-    private List<String> selectors = ;
+    private List<String> selectors;
 
     public StringTemplateCSSHelper(final String input)
     {
@@ -70,5 +70,8 @@ public class StringTemplateCSSHelper
         List<String> result = this.selectors;
 
         if (result == null)
+        {
+
+        }
     }
 }
