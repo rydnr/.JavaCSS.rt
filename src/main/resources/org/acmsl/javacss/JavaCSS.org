@@ -606,4 +606,8 @@ much more sense to focus on that particular problem, than whether we can automat
 
 *** Background
 
-Let's start with some examples. At some point, we'll 
+Let's start with the same template to output Java package declarations:
+
+  packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
+  <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
+  >>
