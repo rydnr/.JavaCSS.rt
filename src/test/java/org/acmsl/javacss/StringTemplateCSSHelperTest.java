@@ -49,5 +49,5 @@ import org.junit.runners.JUnit4;
 public class StringTemplateCSSHelperTest
 {
     @Test
-    public void
+    public void retrieves_
 }
