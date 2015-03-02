@@ -640,4 +640,5 @@ Let's try to define selectors for each one of the identified elements:
 - .packageDeclaration ";" "\s*" : to change whether there's a new line after the semicolon.
 
 This is just an initial example, trying to adapt the standard [[http://www.w3.org/TR/2011/REC-css3-selectors-20110929/][CSS selectors]] to this scenario. What we are doing here is
-modeling the template itself as a DOM or AST, and filtering certain nodes or properties of such tree.
+modeling the template itself as a DOM or AST, and filtering certain nodes or properties of such tree. Before worrying
+about that, we need to implement a DSL for the new CSS-like grammar.
