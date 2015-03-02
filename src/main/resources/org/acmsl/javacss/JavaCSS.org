@@ -844,4 +844,4 @@ For now, it's more important to fix the tests. Changing the ErrorHandler to a le
 #        parser.setErrorHandler(new BailErrorStrategy());
 
 Now the tests fail as they should, we deal with why the grammar doesn't expect "::" in the first test. The second part of the selector, #identifier::before, is not a valid selector according to our grammar.
-The problem was that we described the consecutive colons as two tokens, whereas the lexer identified them as COLONCOLON.
+The problem was that we described the consecutive colons as two tokens, whereas the lexer identified them as COLONCOLON:
