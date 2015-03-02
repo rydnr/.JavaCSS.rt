@@ -75,7 +75,8 @@ public class StringTemplateCSSHelper
         return this.selectors;
     }
 
-    private void initialize()
+    protected void initialize()
     {
+        //To change body of created methods use File | Settings | File Templates.
     }
 }
