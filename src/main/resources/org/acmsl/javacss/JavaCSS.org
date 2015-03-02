@@ -643,3 +643,5 @@ This is just an initial example, trying to adapt the standard [[http://www.w3.or
 modeling the template itself as a DOM or AST, and filtering certain nodes or properties of such tree. But before worrying
 about that, we need to implement a DSL for the new CSS-like grammar. And that requires us to go on with our initial
 outline of what we'd like to build.
+
+The next piece in the puzzle is defining the CSS-like properties to apply to the nodes matched by the selectors.
