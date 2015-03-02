@@ -65,45 +65,12 @@ SEMI : ';';
 COMMA : ',';
 DOT : '.';
 
-// §3.12 Operators
-
-ASSIGN : '=';
 GT : '>';
 LT : '<';
-BANG : '!';
 TILDE : '~';
-QUESTION : '?';
 COLON : ':';
-EQUAL : '==';
-LE : '<=';
-GE : '>=';
-NOTEQUAL : '!=';
-AND : '&&';
-OR : '||';
-INC : '++';
-DEC : '--';
-ADD : '+';
-SUB : '-';
 MUL : '*';
-DIV : '/';
-BITAND : '&';
-BITOR : '|';
-CARET : '^';
-MOD : '%';
-ARROW : '->';
 COLONCOLON : '::';
-
-ADD_ASSIGN : '+=';
-SUB_ASSIGN : '-=';
-MUL_ASSIGN : '*=';
-DIV_ASSIGN : '/=';
-AND_ASSIGN : '&=';
-OR_ASSIGN : '|=';
-XOR_ASSIGN : '^=';
-MOD_ASSIGN : '%=';
-LSHIFT_ASSIGN : '<<=';
-RSHIFT_ASSIGN : '>>=';
-URSHIFT_ASSIGN : '>>>=';
 
 // §3.8 Identifiers (must appear after all keywords in the grammar)
 
