@@ -681,3 +681,7 @@ A map since the properties are a flattened JSON-like structure of key-value tupl
 #        ParseTree ast = parser.css();
 #        Assert.assertNotNull(ast);
 #    }
+
+As for the grammar itself, we can reuse the Java8 one, removing almost all the parser rules, and keeping the some of the lexer
+ones.
+
