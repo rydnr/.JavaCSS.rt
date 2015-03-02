@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NotNull;
  */
 import org.checkthread.annotations.ThreadSafe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,7 +58,7 @@ import java.util.List;
 public class StringTemplateCSSHelper
 {
     private final String input;
-    private List<String> selectors = ;
+    private List<String> selectors = new ArrayList<String>();
 
     public StringTemplateCSSHelper(final String input)
     {
