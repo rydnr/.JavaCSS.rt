@@ -63,7 +63,6 @@ public class StringTemplateCSSHelper
         this.input = input;
     }
 
-
     public List<String> getSelectors()
     {
         return null;  //To change body of created methods use File | Settings | File Templates.
