@@ -809,3 +809,6 @@ ones.
 #   LINE_COMMENT
 #       :   '//' ~[\r\n]* -> skip
 #       ;
+
+Our test succeeds. We can live with that "Java" rules in the lexer, since they probably hold true for the CSS
+specification we are trying to emulate as accurate as possible.
