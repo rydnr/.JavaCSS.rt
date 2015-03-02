@@ -31,8 +31,8 @@ public class StringTemplateCSSParserTest
     public void parses_another_simple_input() {
         String input =
             "  .packageDeclaration \";\"::after {\n"
-            + "    content: \"\\n\\n\";
-  }
+            + "    content: \"\\n\\n\";\n"
+            + " }
 
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
 
