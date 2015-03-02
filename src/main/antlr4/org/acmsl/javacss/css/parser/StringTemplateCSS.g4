@@ -8,7 +8,7 @@ css
 	;
 
 selector
-	:	('.' | '#') Identifier (':' ':' ('before' | 'after'))?
+	:	('.' | '#') Identifier (COLONCOLON ('before' | 'after'))?
 	;
 
 property
