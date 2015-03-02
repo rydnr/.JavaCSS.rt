@@ -8,7 +8,7 @@ css
 	;
 
 selector
-	:	('.' | '#') Identifier (COLONCOLON ('before' | 'after'))?
+	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
 	;
 
 property
