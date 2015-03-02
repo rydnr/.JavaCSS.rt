@@ -83,6 +83,6 @@ public class StringTemplateCSSHelper
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-        StringTemplateCSSParser parser = new
+        StringTemplateCSSParser parser = new StringTemplateCSSParser()
     }
 }
