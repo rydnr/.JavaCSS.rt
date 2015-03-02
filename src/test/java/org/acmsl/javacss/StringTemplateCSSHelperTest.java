@@ -67,6 +67,6 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(1, selectors.size());
 
-        Assert.assertEquals("")
+        Assert.assertEquals(".packageDeclaration")
     }
 }
