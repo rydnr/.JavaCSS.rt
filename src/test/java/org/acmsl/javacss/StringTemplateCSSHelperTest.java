@@ -48,7 +48,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests for {@link org.acmsl.javacss.StringTemplateCSSHelper}
+ * Tests for {@link org.acmsl.javacss.StringTemplateCSSHelper}.
  * @author <a href="mailto:jose@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/02 16:52
