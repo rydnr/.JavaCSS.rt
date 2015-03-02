@@ -52,7 +52,7 @@ import java.util.List;
 public class StringTemplateCSSHelperTest
 {
     @Test
-    public void retrieves_properties_for_a_simple_input()
+    public void retrieves_selectors_for_a_simple_input()
     {
         String input =
             ".packageDeclaration #identifier::before {\n"
@@ -66,5 +66,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertNotNull(selectors);
 
         Assert.assertEquals(1, selectors.size());
+
+        Assert.assertEquals("")
     }
 }
