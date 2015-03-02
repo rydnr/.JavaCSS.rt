@@ -49,6 +49,7 @@ import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.checkthread.annotations.ThreadSafe;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -88,6 +89,6 @@ public class StringTemplateCSSHelper
 
         ParseTree tree = parser.css();
 
-        XPath.findAll(tree, "selector", parser);
+        Collection<ParseTree> XPath.findAll(tree, "selector", parser);
     }
 }
