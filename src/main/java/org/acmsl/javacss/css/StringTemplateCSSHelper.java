@@ -67,6 +67,6 @@ public class StringTemplateCSSHelper
 
     public List<String> getSelectors()
     {
-        return this.selectors;
+        List<String> result = this.selectors;
     }
 }
