@@ -58,6 +58,6 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
 
-        helper.get
+        helper.getSelectors()
     }
 }
