@@ -57,6 +57,7 @@ import java.util.List;
 public class StringTemplateCSSHelper
 {
     private final String input;
+    private List<String> selectors;
 
     public StringTemplateCSSHelper(final String input)
     {
@@ -65,6 +66,6 @@ public class StringTemplateCSSHelper
 
     public List<String> getSelectors()
     {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return this.selectors;
     }
 }
