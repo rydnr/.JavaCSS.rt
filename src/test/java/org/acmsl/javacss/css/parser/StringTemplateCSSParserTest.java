@@ -2,6 +2,7 @@ package org.acmsl.javacss.css.parser;
 
 import org.antlr.v4.runtime.ANTLRErrorStrategy;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.RecognitionException;
@@ -38,52 +39,7 @@ public class StringTemplateCSSParserTest
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
-        parser.setErrorHandler(new BailErrorStrategy
-            new ANTLRErrorStrategy()
-            {
-                @Override
-                public void reset(final Parser parser)
-                {
-
-                }
-
-                @Override
-                public Token recoverInline(final Parser parser) throws RecognitionException
-                {
-                    return null;
-                }
-
-                @Override
-                public void recover(final Parser parser, final RecognitionException e) throws RecognitionException
-                {
-
-                }
-
-                @Override
-                public void sync(final Parser parser) throws RecognitionException
-                {
-
-                }
-
-                @Override
-                public boolean inErrorRecoveryMode(final Parser parser)
-                {
-                    return false;
-                }
-
-                @Override
-                public void reportMatch(final Parser parser)
-                {
-
-                }
-
-                @Override
-                public void reportError(final Parser parser, final RecognitionException e)
-                {
-
-                }
-            }
-        );
+        parser.setErrorHandler(new BailErrorStrategy());
         ParseTree ast = parser.css();
         Assert.assertNotNull(ast);
     }
