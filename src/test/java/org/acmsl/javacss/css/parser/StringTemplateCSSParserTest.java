@@ -34,7 +34,9 @@ public class StringTemplateCSSParserTest
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
-        parser.setErrorHandler();
+        parser.setErrorHandler(
+            new
+        );
         ParseTree ast = parser.css();
         Assert.assertNotNull(ast);
     }
