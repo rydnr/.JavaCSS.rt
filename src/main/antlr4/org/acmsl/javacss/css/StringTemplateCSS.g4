@@ -57,16 +57,6 @@ UnicodeEscape
     :   '\\' 'u' HexDigit HexDigit HexDigit HexDigit
     ;
 
-// §3.10.7 The Null Literal
-
-NullLiteral
-	:	'null'
-	;
-
-// §3.11 Separators
-
-LPAREN : '(';
-RPAREN : ')';
 LBRACE : '{';
 RBRACE : '}';
 LBRACK : '[';
