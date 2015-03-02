@@ -68,5 +68,7 @@ public class StringTemplateCSSHelper
     public List<String> getSelectors()
     {
         List<String> result = this.selectors;
+
+        if (result == null)
     }
 }
