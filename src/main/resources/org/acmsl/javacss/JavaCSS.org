@@ -882,3 +882,19 @@ We'll envelop this in a StringTemplateCSSHelper class for now.
 #       }
 
 We can now proceed writing the skeleton of the class to ensure the code compiles.
+
+#   public class StringTemplateCSSHelper
+#   {
+#       private final String input;
+#       private List<String> selectors = new ArrayList<String>();
+#   
+#       public StringTemplateCSSHelper(final String input)
+#       {
+#           this.input = input;
+#       }
+#   
+#       public List<String> getSelectors()
+#       {
+#           return this.selectors;
+#       }
+#   }
