@@ -19,29 +19,7 @@ public class StringTemplateCSSParserTest
      * @return such {@link ErrorManager}.
      */
     protected ErrorManager buildErrorManager() {
-        return
-            new ErrorManager(
-                new STErrorListener() {
-                    @Override
-                    public void compileTimeError(final STMessage msg) {
-                        Assert.fail(msg.toString());
-                    }
-
-                    @Override
-                    public void runTimeError(final STMessage msg) {
-                        Assert.fail(msg.toString());
-                    }
-
-                    @Override
-                    public void IOError(final STMessage msg) {
-                        Assert.fail(msg.toString());
-                    }
-
-                    @Override
-                    public void internalError(final STMessage msg) {
-                        Assert.fail(msg.toString());
-                    }
-                });
+        return null;
     }
 
     @Test
@@ -56,6 +34,7 @@ public class StringTemplateCSSParserTest
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+        parser.setErrorHandler();
         ParseTree ast = parser.css();
         Assert.assertNotNull(ast);
     }
