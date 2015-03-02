@@ -839,3 +839,4 @@ detect when the parsing is failing.
 #   line 1:22 extraneous input '";"' expecting {'#', '{', '.'}
 #   Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
 
+For now, it's more important to fix the test.
