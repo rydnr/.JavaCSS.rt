@@ -856,7 +856,9 @@ That fixes the first test. The second input is clearly not supported by our curr
 #   	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
 #   	;
 
-*** Second test: 
+*** Second test: Reading properties
+
+Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start wi
 
 
 
