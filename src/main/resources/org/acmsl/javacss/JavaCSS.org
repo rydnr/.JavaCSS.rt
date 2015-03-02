@@ -601,4 +601,5 @@ try to estimate the whole grammar.
 ** 
 
 We could discuss each of the options endlessly, and still miss the important challenge we are actually facing. We want to implement
-a way to customize certain aspects and behavior of the generation templates, ortogonally to the templates themselves.
+a way to customize certain aspects and behavior of the generation templates, ortogonally to the templates themselves. It makes
+much more sense to focus on that particular problem, than whether we can automate default templates from grammars.
