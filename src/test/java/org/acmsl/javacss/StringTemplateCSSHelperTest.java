@@ -35,15 +35,10 @@
  */
 package org.acmsl.javacss;
 
-/*
- * Importing JetBrains annotations.
- */
-import org.jetbrains.annotations.NotNull;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /*
- * Importing checkthread.org annotations.
- */
-import org.checkthread.annotations.ThreadSafe;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
