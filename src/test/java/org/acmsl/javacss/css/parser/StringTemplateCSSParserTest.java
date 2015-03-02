@@ -26,4 +26,20 @@ public class StringTemplateCSSParserTest
         ParseTree ast = parser.css();
         Assert.assertNotNull(ast);
     }
+
+    @Test
+    public void parses_a_simple_input() {
+        String input =
+            ".packageDeclaration #identifier::before {\n"
+            + "    content: \"  \";\n"
+            + "}\n";
+
+        StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+        ParseTree ast = parser.css();
+        Assert.assertNotNull(ast);
+    }
 }
