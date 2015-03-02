@@ -8,11 +8,11 @@ css
 	;
 
 selector
-	:	('.' | '#') identifier (':' ':' ("before" | "after"))?
+	:	('.' | '#') Identifier (':' ':' ('before' | 'after'))?
 	;
 
-packageModifier
-	:	annotation
+property
+	:	Identifier ':' ('\' text
 	;
 
 importDeclaration
