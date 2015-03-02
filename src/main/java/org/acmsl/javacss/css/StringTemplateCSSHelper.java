@@ -54,4 +54,8 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class StringTemplateCSSHelper
 {
+    public StringTemplateCSSHelper(final String input)
+    {
+        //To change body of created methods use File | Settings | File Templates.
+    }
 }
