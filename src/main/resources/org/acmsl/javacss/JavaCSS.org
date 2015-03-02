@@ -630,3 +630,7 @@ We'd like to be able to change how the template behaves:
 - The separator used when calling the anonymous template.
 - The semicolon.
 - The new line.
+
+Let's try to define selectors for each one of the identified elements:
+- .packageDeclaration .packageModifier:child , .packageDeclaration .packageModifier:last-child : To overwrite the "separator" directive.
+- .packageDeclaration .packageModifier + \s+
