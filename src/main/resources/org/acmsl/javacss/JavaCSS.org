@@ -633,4 +633,7 @@ We'd like to be able to change how the template behaves:
 
 Let's try to define selectors for each one of the identified elements:
 - .packageDeclaration .packageModifier:child , .packageDeclaration .packageModifier:last-child : To overwrite the "separator" directive.
-- .packageDeclaration .packageModifier + \s+
+- .packageDeclaration "package"::before : To tune the blank space before the "package".
+- .packageDeclaration #identifier : to modify the way the identifier value is printed.
+- .packageDeclaration 
+- 
