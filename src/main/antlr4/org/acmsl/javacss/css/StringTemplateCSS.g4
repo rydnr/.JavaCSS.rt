@@ -62,6 +62,11 @@ UnicodeEscape
     :   '\\' 'u' HexDigit HexDigit HexDigit HexDigit
     ;
 
+fragment
+HexDigit
+	:	[0-9a-fA-F]
+	;
+
 LBRACE : '{';
 RBRACE : '}';
 LBRACK : '[';
