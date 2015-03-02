@@ -16,7 +16,7 @@ property
 	;
 
 StringLiteral
-	:	'"' StringCharacters? '"'
+	:	'"' StringCharacters? '"' | '\'' StringCharacters? '\''
 	;
 
 fragment
