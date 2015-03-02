@@ -831,3 +831,11 @@ Let's check if the other input we wrote before is parsed correctly as well:
 #           Assert.assertNotNull(ast);
 #       }
 
+The test passes, but ANTLR complains in the console. There're two issues: first, the grammar is not parsing the input correctly; second, the test (and the previous one as well) doesn't
+detect when the parsing is failing.
+
+#   Running org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
+#   line 1:31 extraneous input '::' expecting {'#', '{', '.'}
+#   line 1:22 extraneous input '";"' expecting {'#', '{', '.'}
+#   Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
+
