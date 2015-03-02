@@ -32,7 +32,7 @@ public class StringTemplateCSSParserTest
         String input =
               "  .packageDeclaration \";\"::after {\n"
             + "    content: \"\\n\\n\";\n"
-            + "  }
+            + "  }";
 
         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
 
