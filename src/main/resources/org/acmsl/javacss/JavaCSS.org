@@ -1116,3 +1116,61 @@ As expected, the test fails.
 #         at org.junit.Assert.assertNotNull(Assert.java:631)
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:123)
 
+My first attempt to implement this was:
+
+#     private Map<String, Map<String, String>> properties;
+# 
+#     [..]
+# 
+#     protected void initialize(String input)
+#     {
+#         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+# 
+#         CommonTokenStream tokens = new CommonTokenStream(lexer);
+# 
+#         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+# 
+#         ParseTree tree = parser.css();
+# 
+#         Collection<ParseTree> selectorEntries = XPath.findAll(tree, "//selectorCombination", parser);
+# 
+#         this.selectors = new ArrayList<String>(selectorEntries.size());
+#         this.properties = new HashMap<String, Map<String, String>>();
+# 
+#         for (ParseTree selectorEntry : selectorEntries)
+#         {
+#             String text = selectorEntry.getText();
+#             this.selectors.add(text);
+#             Map<String, String> block = retrieveProperties(selectorEntry, parser);
+# 
+#             this.properties.put(text, block);
+#         }
+#     }
+# 
+#     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+#     {
+#         Map<String, String> result;
+# 
+#         Collection<ParseTree> properties = XPath.findAll(selectorEntry, "//property", parser);
+# 
+#         result = new HashMap<String, String>(properties.size());
+# 
+#         for (ParseTree property : properties)
+#         {
+#             String key = property.getChild(0).getText();
+#             String value = property.getChild(2).getText();
+#             result.put(key, value);
+#         }
+# 
+#         return result;
+#     }
+# 
+#     public Map<String, String> getProperties(String selector)
+#     {
+#         if (this.properties == null)
+#         {
+#             initialize(this.input);
+#         }
+# 
+#         return this.properties.get(selector);
+#     }
