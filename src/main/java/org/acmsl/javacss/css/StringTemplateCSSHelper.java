@@ -136,7 +136,9 @@ public class StringTemplateCSSHelper
         Collection<ParseTree> result;
 
         ParseTree parent = selectorEntry.getParent();
-        parent.accept(new PropertyVisitor());
+        PropertyVisitor visitor = new PropertyVisitor();
+        parent.accept(visitor);
+
 
         return result;
     }
