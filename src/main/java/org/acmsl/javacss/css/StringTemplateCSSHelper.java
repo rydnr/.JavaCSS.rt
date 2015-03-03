@@ -66,7 +66,7 @@ public class StringTemplateCSSHelper
 {
     private final String input;
     private List<String> selectors;
-
+    private Map<String, String> properties;
 
     public StringTemplateCSSHelper(final String input)
     {
