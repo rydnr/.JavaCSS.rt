@@ -110,7 +110,7 @@ public class StringTemplateCSSHelperTest
         {
             input.append(".packageDeclaration #identifier");
             input.append(index);
-            input.append("::before {\n"
+            input.append("::before {\n");
             + "    content: \"  \";\n"
             + "}\n";
 
