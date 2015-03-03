@@ -70,6 +70,27 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 
+    protected void retrieves_selectors_for_an_input_with_several_blocks()
+    {
+        StringBuilder input =
+            new StringBuilder(".packageDeclaration #identifier");
+
+        for (int index = 0; index < 10; index++)
+        {
+            input.append("::before {\n    content: \"  \";\n}\n");
+        }
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
+
+        List<String> selectors = helper.getSelectors();
+
+        Assert.assertNotNull(selectors);
+
+        Assert.assertEquals(1, selectors.size());
+
+        Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
+    }
+
     @Test
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
