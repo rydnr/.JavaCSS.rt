@@ -856,9 +856,9 @@ That fixes the first test. The second input is clearly not supported by our curr
 #   	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
 #   	;
 
-*** Second test: Reading properties
+*** Second test: Listing selectors
 
-Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
+Next, we want to define how to list all selectors defined. As before, we'll start with a simple helper which uses
 the ANTLR-generated parser and provides the two collections we need: the list of selectors, and a Map of Maps containing the properties for each selector.
 We'll envelop this in a StringTemplateCSSHelper class for now.
 
@@ -964,4 +964,10 @@ we have to take it into account in our checks.
 #   
 #           Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
 #       }
+
+*** Third test: Reading properties
+
+Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
+the ANTLR-generated parser and provides the two collections we need: the list of selectors, and a Map of Maps containing the properties for each selector.
+We'll envelop this in a StringTemplateCSSHelper class for now.
 
