@@ -1188,7 +1188,62 @@ However, it didn't make the test pass.
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:125)
 
 The reason is that our XPath expression, "//property", is not finding anything. If we review the code, we can figure out why: the first argument to the "retrieveProperties()" should be the "css" node, and we are passing the "selectorCombination" node.
-A simple change to passing "selectorEntry.getParent()" allows the block to be parsed successfully. But the test still fails.
+A simple change to passing "selectorEntry.getParent()" allows the block to be parsed successfully.
+
+#     protected void initialize(String input)
+#     {
+#         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+# 
+#         CommonTokenStream tokens = new CommonTokenStream(lexer);
+# 
+#         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+# 
+#         ParseTree tree = parser.css();
+# 
+#         Collection<ParseTree> selectorEntries = XPath.findAll(tree, "//selectorCombination", parser);
+# 
+#         this.selectors = new ArrayList<String>(selectorEntries.size());
+#         this.properties = new HashMap<String, Map<String, String>>();
+# 
+#         for (ParseTree selectorEntry : selectorEntries)
+#         {
+#             String text = selectorEntry.getText();
+#             this.selectors.add(text);
+#             Map<String, String> block = retrieveProperties(selectorEntry.getParent(), parser);
+# 
+#             this.properties.put(text, block);
+#         }
+#     }
+# 
+#     protected Map<String, String> retrieveProperties(ParseTree cssEntry, StringTemplateCSSParser parser)
+#     {
+#         Map<String, String> result;
+# 
+#         Collection<ParseTree> properties = XPath.findAll(cssEntry, "//property", parser);
+# 
+#         result = new HashMap<String, String>(properties.size());
+# 
+#         for (ParseTree property : properties)
+#         {
+#             String key = property.getChild(0).getText();
+#             String value = property.getChild(2).getText();
+#             result.put(key, value);
+#         }
+# 
+#         return result;
+#     }
+# 
+#     public Map<String, String> getProperties(String selector)
+#     {
+#         if (this.properties == null)
+#         {
+#             initialize(this.input);
+#         }
+# 
+#         return this.properties.get(selector);
+#     }
+
+But the test still fails.
 
 # retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 # org.junit.ComparisonFailure: expected:<[  ]> but was:<["  "]>
