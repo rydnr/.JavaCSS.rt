@@ -1347,3 +1347,118 @@ The logic should be: for a "selectorCombination" node, its associated "propertie
 We could write a specific test for that, but we'd probably need to use a mock framework to build the tree. On the other hand, we are
 already building such trees in our tests. Let's assume that new logic is indirectly tested already.
 Anyway, why don't we implement it using a Visitor pattern instead?
+
+#     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+#     {
+#         Map<String, String> result;
+# 
+#         Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+# 
+#         result = new HashMap<String, String>(properties.size());
+# 
+#         for (ParseTree property : properties)
+#         {
+#             String key = property.getChild(0).getText();
+#             String value = property.getChild(2).getText();
+#             result.put(key, value);
+#         }
+# 
+#         return result;
+#     }
+# 
+#     protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
+#     {
+#         ParseTree parent = selectorEntry.getParent();
+#         PropertyVisitor visitor = new PropertyVisitor();
+#         parent.accept(visitor);
+# 
+#         return visitor.properties;
+#     }
+# 
+#     public Map<String, String> getProperties(String selector)
+#     {
+#         if (this.properties == null)
+#         {
+#             initialize(this.input);
+#         }
+# 
+#         return this.properties.get(selector);
+#     }
+# 
+#     protected static class PropertyVisitor
+#         extends StringTemplateCSSBaseVisitor<ParseTree>
+#     {
+#         final List<ParseTree> properties = new ArrayList<ParseTree>();
+# 
+#         public PropertyVisitor(final ParseTree parent)
+#         {
+#             this.parent = parent;
+#         }
+# 
+#         @Override
+#         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
+#         {
+#             this.properties.add(ctx);
+#             return super.visitProperty(ctx);
+#         }
+#     }
+
+
+#     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+#     {
+#         Map<String, String> result;
+# 
+#         Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+# 
+#         result = new HashMap<String, String>(properties.size());
+# 
+#         for (ParseTree property : properties)
+#         {
+#             String key = property.getChild(0).getText();
+#             String value = property.getChild(2).getText();
+#             result.put(key, value);
+#         }
+# 
+#         return result;
+#     }
+# 
+#     protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
+#     {
+#         ParseTree parent = selectorEntry.getParent();
+#         PropertyVisitor visitor = new PropertyVisitor(selectorEntry.getParent());
+#         parent.accept(visitor);
+# 
+#         return visitor.properties;
+#     }
+# 
+#     public Map<String, String> getProperties(String selector)
+#     {
+#         if (this.properties == null)
+#         {
+#             initialize(this.input);
+#         }
+# 
+#         return this.properties.get(selector);
+#     }
+# 
+#     protected static class PropertyVisitor
+#         extends StringTemplateCSSBaseVisitor<ParseTree>
+#     {
+#         final List<ParseTree> properties = new ArrayList<ParseTree>();
+#         final ParseTree parent;
+# 
+#         public PropertyVisitor(final ParseTree parent)
+#         {
+#             this.parent = parent;
+#         }
+# 
+#         @Override
+#         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
+#         {
+#             if (ctx.getParent() == this.parent)
+#             {
+#                 this.properties.add(ctx);
+#             }
+#             return super.visitProperty(ctx);
+#         }
+#     }
