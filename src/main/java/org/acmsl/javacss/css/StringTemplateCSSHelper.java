@@ -105,6 +105,11 @@ public class StringTemplateCSSHelper
 
     public Map<String, String> getProperties(String selector)
     {
-        return null;
+        if (this.properties == null)
+        {
+            initialize(this.input);
+        }
+
+        return this.properties;
     }
 }
