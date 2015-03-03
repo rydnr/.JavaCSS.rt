@@ -134,7 +134,7 @@ public class StringTemplateCSSHelperTest
             Assert.assertEquals(1, properties.size());
 
             Assert.assertTrue(properties.containsKey("content"));
-            Assert.assertEquals("\"  \"", properties.get("content"));
+            Assert.assertEquals(index, properties.get("content"));
     }
 
     @Test
