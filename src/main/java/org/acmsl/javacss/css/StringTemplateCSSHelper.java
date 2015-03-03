@@ -156,6 +156,10 @@ public class StringTemplateCSSHelper
         final List<ParseTree> properties = new ArrayList<ParseTree>();
         ParseTree parent;
 
+        public PropertyVisitor(final ParseTree parent)
+        {
+            this.parent = parent;
+        }
 
         @Override
         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
