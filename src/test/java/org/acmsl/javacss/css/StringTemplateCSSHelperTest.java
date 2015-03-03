@@ -102,8 +102,7 @@ public class StringTemplateCSSHelperTest
         multipleBlockTests((int) (Math.random() * 10));
     }
 
-    @Test
-    public void retrieves_properties_for_a_simple_input()
+    protected void multipleBlo()
     {
         String input =
             ".packageDeclaration #identifier::before {\n"
@@ -126,5 +125,10 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertTrue(properties.containsKey("content"));
         Assert.assertEquals("\"  \"", properties.get("content"));
+    }
+
+    @Test
+    public void retrieves_properties_for_a_simple_input()
+    {
     }
 }
