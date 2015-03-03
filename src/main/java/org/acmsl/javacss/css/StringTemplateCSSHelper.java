@@ -150,4 +150,7 @@ public class StringTemplateCSSHelper
 
     protected static class PropertyVisitor
         extends StringTemplateCSSVisitor
+    {
+
+    }
 }
