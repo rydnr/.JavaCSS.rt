@@ -109,6 +109,10 @@ public class StringTemplateCSSHelper
         }
     }
 
+    private Map<String,String> retrieveProperties(final ParseTree selectorEntry)
+    {
+    }
+
     public Map<String, String> getProperties(String selector)
     {
         if (this.properties == null)
