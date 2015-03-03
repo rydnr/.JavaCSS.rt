@@ -965,6 +965,7 @@ we have to take it into account in our checks.
 #           Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
 #       }
 
+We should extend this test to verify it is prepared for input containing more than one block.
 *** Third test: Reading properties
 
 Next, we want to define how to retrieve the properties associated to a selector. 
