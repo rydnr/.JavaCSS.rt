@@ -125,11 +125,13 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(count, selectors.size());
 
-        Map<String, String> properties = helper.getProperties(selectors.get(0));
+        for (int index = 0; index < count; index++)
+        {
+            Map<String, String> properties = helper.getProperties(selectors.get(index));
 
-        Assert.assertNotNull(properties);
+            Assert.assertNotNull(properties);
 
-        Assert.assertEquals(1, properties.size());
+            Assert.assertEquals(1, properties.size());
 
         Assert.assertTrue(properties.containsKey("content"));
         Assert.assertEquals("\"  \"", properties.get("content"));
