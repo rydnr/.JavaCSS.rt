@@ -1288,3 +1288,4 @@ detected in previous tests: when we are retrieving all "property" nodes in the P
 over the selectors, and then associate the properties. Due to this bug, and since in our test all keys are the same, all values get overriden in
 each iteration. We have to retrieve just the properties belonging to the specific selector, and therefore the XPath.findAll() call is
 not correct.
+The logic should be: for a "selectorCombination" node, its associated "properties" are the next-to-the-right siblings of type "property".
