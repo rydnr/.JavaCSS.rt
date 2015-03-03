@@ -113,7 +113,7 @@ public class StringTemplateCSSHelper
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties = find
+        Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
 
         result = new HashMap<String, String>(properties.size());
 
@@ -125,6 +125,10 @@ public class StringTemplateCSSHelper
         }
 
         return result;
+    }
+
+    private Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
+    {
     }
 
     public Map<String, String> getProperties(String selector)
