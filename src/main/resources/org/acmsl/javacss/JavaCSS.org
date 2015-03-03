@@ -1484,3 +1484,5 @@ expensive at runtime, though.
 #     }
 
 We're now back into the green zone.
+
+*** Fourth test: 
