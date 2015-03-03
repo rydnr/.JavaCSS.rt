@@ -1282,5 +1282,6 @@ To make debugging simpler, it's better to return to a deterministic testing cont
 #     }
 
 It still fails, so it's not depending on how many blocks, but only if there's more than one. We've been here already. Probably the input
-the test builds is incorrect, but ANTLR is not complaining. After a debugging session, I found out the issue. It's a bug that remained
-undetected.
+the test builds is incorrect, but ANTLR is not complaining. After a debugging session, I found out the issue. It's a bug that was not
+detected in previous tests: when we are retrieving all "property" nodes in the ParseTree, we use an XPath expresion "//property" on the
+"css" root node. However, that collection is the same, regardless which "css" or block we are processing.
