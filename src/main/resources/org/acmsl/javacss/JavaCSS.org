@@ -1244,4 +1244,4 @@ As we did previously, let's make sure the properties are parsed correctly if the
 #         multipleBlockPropertyTests(1);
 #     }
 
-This new test is equilavent to the previous one, and passes.
+This new test is equilavent to the previous one, and passes. Let's check what happens for random number of blocks.
