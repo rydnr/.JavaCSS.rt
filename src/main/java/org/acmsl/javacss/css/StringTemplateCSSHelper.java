@@ -110,6 +110,6 @@ public class StringTemplateCSSHelper
             initialize(this.input);
         }
 
-        return this.properties;
+        return this.properties.get(selector);
     }
 }
