@@ -1060,12 +1060,15 @@ If we review our grammar, the problem is obvious. The "css" rule is expecting ju
 
 Now it works, so let's revert the test to a random number of blocks.
 
-*** Third test: Reading properties
-
-Next, we want to define how to retrieve the properties associated to a selector. A basic test would simply ask for all properties contained in a block, and verify its contents. Our current "multipleBlockTests" method should be "multipleBlockSelectorTests" instead, so let's change that first.
+Our current "multipleBlockTests" method should be "multipleBlockSelectorTests" instead, so let's change that first.
 
 #     protected void multipleBlockSelectorTests(int count)
 #     {
 #         [..]
 #     }
+
+
+*** Third test: Reading properties
+
+Next, we want to define how to retrieve the properties associated to a selector. A basic test would simply ask for all properties contained in a block, and verify its contents. 
 
