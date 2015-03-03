@@ -1421,7 +1421,8 @@ Unfortunately it still fails.
 
 The problem now is that in our current grammar, each "css" node becomes the parent of the next "css" node to the right. And that
 layout makes our visitor end up visiting all "property" nodes. To fix this, there're two options: changing the node tree (the grammar), or
-ensuring we filter out all "property" nodes whose parent is not matching the selector's.
+ensuring we filter out all "property" nodes whose parent is not matching the selector's. The latter is simpler, but more
+expensive at runtime.
 
 #     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
 #     {
