@@ -1200,3 +1200,4 @@ We have two options. Process the value of each property to remove any surroundin
 
 #         Assert.assertEquals("\"  \"", properties.get("content"));
 
+As we did previously, let's make sure the properties are parsed correctly if the input contains several blocks. Also, we're interested in verifying the properties are specific for each block.
