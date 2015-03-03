@@ -90,7 +90,7 @@ public class StringTemplateCSSHelperTest
 
         for (int index = 0; index < count; index++)
         {
-            Assert.assertEquals(".packageDeclaration#identifier" + index + "::before", selectors.get(0));
+            Assert.assertEquals(".packageDeclaration#identifier" + index + "::before", selectors.get(index));
         }
 
     }
