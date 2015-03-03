@@ -86,7 +86,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(selectors);
 
-        Assert.assertEquals(1, selectors.size());
+        Assert.assertEquals(count, selectors.size());
 
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
