@@ -41,9 +41,11 @@ package org.acmsl.javacss.css;
 import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
+import org.acmsl.javacss.css.parser.StringTemplateCSSParser.PropertyContext;
 import org.acmsl.javacss.css.parser.StringTemplateCSSVisitor;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 
@@ -152,6 +154,10 @@ public class StringTemplateCSSHelper
     protected static class PropertyVisitor
         extends StringTemplateCSSBaseVisitor<ParseTree>
     {
-
+        @Override
+        public ParseTree visitProperty(@NotNull final PropertyContext ctx)
+        {
+            return super.visitProperty(ctx);
+        }
     }
 }
