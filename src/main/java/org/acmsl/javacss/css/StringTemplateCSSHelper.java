@@ -133,15 +133,11 @@ public class StringTemplateCSSHelper
 
     protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
     {
-        Collection<ParseTree> result;
-
         ParseTree parent = selectorEntry.getParent();
         PropertyVisitor visitor = new PropertyVisitor();
         parent.accept(visitor);
 
-        result.addAll(visitor.properties);
-
-        return result;
+        return visitor.properties;
     }
 
     public Map<String, String> getProperties(String selector)
