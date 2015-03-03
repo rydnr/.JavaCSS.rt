@@ -113,11 +113,11 @@ public class StringTemplateCSSHelper
         }
     }
 
-    protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+    protected Map<String, String> retrieveProperties(ParseTree cssEntry, StringTemplateCSSParser parser)
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+        Collection<ParseTree> properties = findPropertyNodes(cssEntry);
 
         result = new HashMap<String, String>(properties.size());
 
