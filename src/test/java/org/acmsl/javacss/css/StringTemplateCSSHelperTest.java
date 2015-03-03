@@ -78,7 +78,7 @@ public class StringTemplateCSSHelperTest
         {
             input.append(".packageDeclaration #identifier");
             input.append(index);
-            input.append("::before {\n    content: \"  \";\n}\n");
+            input.append("::before {\n    content: \"  \";\n}\n\n");
         }
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
