@@ -99,9 +99,9 @@ public class StringTemplateCSSHelper
         this.selectors = new ArrayList<String>(selectorEntries.size());
         this.properties = new HashMap<String, Map<String, String>>();
 
-        for (ParseTree block : selectorEntries)
+        for (ParseTree selectorEntry : selectorEntries)
         {
-            String text = block.getText();
+            String text = selectorEntry.getText();
             this.selectors.add(text);
             Map<String, String> block = retrieveProperties(select)
 
