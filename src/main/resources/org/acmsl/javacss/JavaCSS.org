@@ -1253,6 +1253,7 @@ This new test is equilavent to the previous one, and passes. Let's check what ha
 #     }
 
 It doesn't. It's a bit frustrating, but it also gives a great sense of progress.
+
 # Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
 # retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 # org.junit.ComparisonFailure: expected:<"[0]"> but was:<"[4]">
