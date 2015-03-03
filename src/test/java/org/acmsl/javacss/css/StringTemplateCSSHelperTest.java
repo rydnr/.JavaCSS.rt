@@ -41,6 +41,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Tests for {@link StringTemplateCSSHelper}.
@@ -117,7 +118,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(1, selectors.size());
 
-        Map<String, String>
+        Map<String, String> properties =
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 }
