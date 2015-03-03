@@ -81,7 +81,7 @@ public class StringTemplateCSSHelperTest
             input.append("::before {\n    content: \"  \";\n}\n");
         }
 
-        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
 
         List<String> selectors = helper.getSelectors();
 
