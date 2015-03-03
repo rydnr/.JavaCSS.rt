@@ -1188,3 +1188,4 @@ However, it didn't make the test pass.
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:125)
 
 The reason is that our XPath expression, "//property", is not finding anything. If we review the code, we can figure out why: the first argument to the "retrieveProperties()" should be the "css" node, and we are passing the "selectorCombination" node.
+A simple change to passing "selectorEntry.getParent()" makes the test pass successfully.
