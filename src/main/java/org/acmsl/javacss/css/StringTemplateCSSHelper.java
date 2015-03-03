@@ -113,7 +113,7 @@ public class StringTemplateCSSHelper
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties = XPath.findAll(selectorEntry, "//property", parser);
+        Collection<ParseTree> properties =
 
         result = new HashMap<String, String>(properties.size());
 
