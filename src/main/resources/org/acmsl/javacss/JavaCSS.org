@@ -1280,3 +1280,5 @@ To make debugging simpler, it's better to return to a deterministic testing cont
 # //        multipleBlockPropertyTests((int) (Math.random() * 10));
 #         multipleBlockPropertyTests(2);
 #     }
+
+It still fails, so it's not depending on how many blocks, but only if there's more than one. We've been here already.
