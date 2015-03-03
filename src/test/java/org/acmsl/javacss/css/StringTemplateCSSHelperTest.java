@@ -104,6 +104,7 @@ public class StringTemplateCSSHelperTest
 
     protected void multipleBlockPropertyTests(int count)
     {
+
         String input =
             ".packageDeclaration #identifier::before {\n"
             + "    content: \"  \";\n"
