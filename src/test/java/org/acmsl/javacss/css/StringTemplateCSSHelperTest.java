@@ -74,7 +74,7 @@ public class StringTemplateCSSHelperTest
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
         StringBuilder input =
-            ".packageDeclaration #identifier::before {\n"
+            new StringBuilder(".packageDeclaration #identifier::before {\n"
             + "    content: \"  \";\n"
             + "}\n";
 
