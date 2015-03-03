@@ -120,6 +120,7 @@ public class StringTemplateCSSHelperTest
 
         Map<String, String> properties = helper.getProperties(selectors.get(0));
 
+        Assert.assertTrue()
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 }
