@@ -1054,4 +1054,4 @@ Here's the mismatched input error:
 Running org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
 line 5:0 mismatched input '.' expecting <EOF>
 
-If we review our grammar, the problem is obvious. The "css" rule is expecting just one block.
+If we review our grammar, the problem is obvious. The "css" rule is expecting just one block, so let's make it recursive.
