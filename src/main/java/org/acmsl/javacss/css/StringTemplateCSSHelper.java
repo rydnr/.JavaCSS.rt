@@ -159,6 +159,7 @@ public class StringTemplateCSSHelper
         @Override
         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
         {
+            this.properties.add()
             return super.visitProperty(ctx);
         }
     }
