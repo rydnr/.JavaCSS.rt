@@ -70,7 +70,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 
-    protected void multipleBlockTest()
+    protected void multipleBlockTests(int )
     {
         StringBuilder input =
             new StringBuilder(".packageDeclaration #identifier");
