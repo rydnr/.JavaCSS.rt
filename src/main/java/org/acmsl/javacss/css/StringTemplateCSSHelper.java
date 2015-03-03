@@ -132,7 +132,7 @@ public class StringTemplateCSSHelper
         Collection<ParseTree> result;
 
         ParseTree parent = selectorEntry.getParent();
-        selectorEntry.accept()
+        parent.accept(
         return result;
     }
 
