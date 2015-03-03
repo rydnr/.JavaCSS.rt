@@ -1099,3 +1099,9 @@ Next, we want to define how to retrieve the properties associated to a selector.
 #     }
 
 As always, we need to provide the skeleton to make it compile.
+
+#     public Map<String, String> getProperties(String selector)
+#     {
+#         return null;
+#     }
+
