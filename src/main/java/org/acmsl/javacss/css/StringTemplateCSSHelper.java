@@ -38,6 +38,7 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
 import org.acmsl.javacss.css.parser.StringTemplateCSSVisitor;
@@ -149,7 +150,7 @@ public class StringTemplateCSSHelper
     }
 
     protected static class PropertyVisitor
-        extends StringTemplateCSSVisitor
+        extends StringTemplateCSSBaseVisitor<>
     {
 
     }
