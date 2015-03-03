@@ -967,7 +967,4 @@ we have to take it into account in our checks.
 
 *** Third test: Reading properties
 
-Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
-the ANTLR-generated parser and provides the two collections we need: the list of selectors, and a Map of Maps containing the properties for each selector.
-We'll envelop this in a StringTemplateCSSHelper class for now.
-
+Next, we want to define how to retrieve the properties associated to a selector. 
