@@ -1013,3 +1013,29 @@ However, the input we are building to test our helper is not valid. It generates
 }
 
 I forgot the ".packageDeclaration #identifier" part, and we'd better off appending the count to make rules different from each another.
+
+#    protected void multipleBlockTests(int count)
+#    {
+#        StringBuilder input = new StringBuilder();
+#
+#        for (int index = 0; index < count; index++)
+#        {
+#            input.append(".packageDeclaration #identifier");
+#            input.append(index);
+#            input.append("::before {\n    content: \"  \";\n}\n\n");
+#        }
+#
+#        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
+#
+#        List<String> selectors = helper.getSelectors();
+#
+#        Assert.assertNotNull(selectors);
+#
+#        Assert.assertEquals(count, selectors.size());
+#
+#        for (int index = 0; index < count; index++)
+#        {
+#            Assert.assertEquals(".packageDeclaration#identifier" + index + "::before", selectors.get(index));
+#        }
+#    }
+
