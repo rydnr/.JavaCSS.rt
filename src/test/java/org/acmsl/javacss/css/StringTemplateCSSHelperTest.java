@@ -71,7 +71,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 
-    protected void multipleBlockTests(int count)
+    protected void multipleBlockSelectorTests(int count)
     {
         StringBuilder input = new StringBuilder();
 
@@ -99,7 +99,7 @@ public class StringTemplateCSSHelperTest
     @Test
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
-        multipleBlockTests((int) (Math.random() * 10));
+        multipleBlockSelectorTests((int) (Math.random() * 10));
     }
 
     protected void multipleBlockPropertyTests()
