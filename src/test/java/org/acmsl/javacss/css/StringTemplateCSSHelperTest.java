@@ -122,7 +122,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(properties);
 
-        Assert.assertTrue(1, properties.size());
+        Assert.assertEquals(1, properties.size());
 
         Assert.assertTrue(properties.containsKey("content"));
         Assert.assertEquals("  ", properties.get("content"));
