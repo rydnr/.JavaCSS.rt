@@ -1064,7 +1064,7 @@ Now it works, so let's revert the test to a random number of blocks.
 
 Next, we want to define how to retrieve the properties associated to a selector. A basic test would simply ask for all properties contained in a block, and verify its contents. Our current "multipleBlockTests" method should be "multipleBlockSelectorTests" instead, so let's change that first.
 
-#     protected void multipleBlockTests(int count)
+#     protected void multipleBlockSelectorTests(int count)
 #     {
 #         [..]
 #     }
