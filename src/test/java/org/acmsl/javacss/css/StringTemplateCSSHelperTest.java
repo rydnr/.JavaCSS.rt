@@ -108,7 +108,9 @@ public class StringTemplateCSSHelperTest
 
         for (int index = 0; index < count; index++)
         {
-            input.append(".packageDeclaration #identifier::before {\n"
+            input.append(".packageDeclaration #identifier");
+            input.append(index);
+            input.append("::before {\n"
             + "    content: \"  \";\n"
             + "}\n";
 
