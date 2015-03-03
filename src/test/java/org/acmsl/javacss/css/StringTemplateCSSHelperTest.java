@@ -88,7 +88,11 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(count, selectors.size());
 
-        Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
+        for (int index = 0; index < count; index++)
+        {
+            Assert.assertEquals(".packageDeclaration#identifier" + ::before", selectors.get(0));
+        }
+
     }
 
     @Test
