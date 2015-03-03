@@ -92,7 +92,6 @@ public class StringTemplateCSSHelperTest
         {
             Assert.assertEquals(".packageDeclaration#identifier" + index + "::before", selectors.get(index));
         }
-
     }
 
     @Test
