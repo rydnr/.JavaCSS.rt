@@ -52,6 +52,7 @@ import org.checkthread.annotations.ThreadSafe;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -96,10 +97,12 @@ public class StringTemplateCSSHelper
         Collection<ParseTree> selectorEntries = XPath.findAll(tree, "//selectorCombination", parser);
 
         this.selectors = new ArrayList<String>(selectorEntries.size());
+        this.properties = new HashMap<String, Map<String, String>>();
 
         for (ParseTree selectorEntry : selectorEntries)
         {
             this.selectors.add(selectorEntry.getText());
+
         }
     }
 
