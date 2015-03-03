@@ -131,10 +131,10 @@ public class StringTemplateCSSHelperTest
 
             Assert.assertNotNull(properties);
 
-            Assert.assertEquals(, properties.size());
+            Assert.assertEquals(1, properties.size());
 
-        Assert.assertTrue(properties.containsKey("content"));
-        Assert.assertEquals("\"  \"", properties.get("content"));
+            Assert.assertTrue(properties.containsKey("content"));
+            Assert.assertEquals("\"  \"", properties.get("content"));
     }
 
     @Test
