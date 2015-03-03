@@ -111,12 +111,17 @@ public class StringTemplateCSSHelper
 
     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
     {
+        Map<String, String> result;
+
         Collection<ParseTree> properties = XPath.findAll(selectorEntry, "//property", parser);
 
+        result = new HashMap<>()
         for (ParseTree property : properties)
         {
             String key = property.getChild(0).getText();
             String value = property.getChild(2).getText();
+            result.put(key, value);
+        }
     }
 
     public Map<String, String> getProperties(String selector)
