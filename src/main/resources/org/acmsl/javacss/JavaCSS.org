@@ -1201,3 +1201,46 @@ We have two options. Process the value of each property to remove any surroundin
 #         Assert.assertEquals("\"  \"", properties.get("content"));
 
 As we did previously, let's make sure the properties are parsed correctly if the input contains several blocks. Also, we're interested in verifying the properties are specific for each block.
+
+#     protected void multipleBlockPropertyTests(int count)
+#     {
+#         StringBuilder input = new StringBuilder();
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             input.append(".packageDeclaration #identifier");
+#             input.append(index);
+#             input.append("::before {\n");
+#             input.append("    content: ");
+#             input.append(index);
+#             input.append(";\n");
+#             input.append("}\n");
+#         }
+# 
+#         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
+# 
+#         List<String> selectors = helper.getSelectors();
+# 
+#         Assert.assertNotNull(selectors);
+# 
+#         Assert.assertEquals(count, selectors.size());
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             Map<String, String> properties = helper.getProperties(selectors.get(index));
+# 
+#             Assert.assertNotNull(properties);
+# 
+#             Assert.assertEquals(1, properties.size());
+# 
+#             Assert.assertTrue(properties.containsKey("content"));
+#             Assert.assertEquals(String.valueOf(index), properties.get("content"));
+#         }
+#     }
+# 
+#     @Test
+#     public void retrieves_properties_for_a_simple_input()
+#     {
+#         multipleBlockPropertyTests(2);
+#     }
+
