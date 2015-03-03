@@ -104,9 +104,11 @@ public class StringTemplateCSSHelperTest
 
     protected void multipleBlockPropertyTests(int count)
     {
+        StringBuilder input = new StringBuilder();
 
-        String input =
-            ".packageDeclaration #identifier::before {\n"
+        for (int index = 0; index < count; index++)
+        {
+            input.append(".packageDeclaration #identifier::before {\n"
             + "    content: \"  \";\n"
             + "}\n";
 
