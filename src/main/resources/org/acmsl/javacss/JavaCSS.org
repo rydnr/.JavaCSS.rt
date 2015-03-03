@@ -857,6 +857,9 @@ That fixes the first test. The second input is clearly not supported by our curr
 #   	;
 
 *** Second test: Reading properties
+    :PROPERTIES:
+    :ATTACH_DIR_INHERIT: t
+    :END:
 
 Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
 the ANTLR-generated parser and provides the two collections we need: the list of selectors, and a Map of Maps containing the properties for each selector.
