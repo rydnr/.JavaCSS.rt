@@ -53,6 +53,7 @@ import org.checkthread.annotations.ThreadSafe;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -99,5 +100,9 @@ public class StringTemplateCSSHelper
         {
             this.selectors.add(selectorEntry.getText());
         }
+    }
+
+    public Map<String,String> getProperties(final String s)
+    {
     }
 }
