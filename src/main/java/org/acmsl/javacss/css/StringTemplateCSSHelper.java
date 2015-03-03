@@ -99,11 +99,11 @@ public class StringTemplateCSSHelper
         this.selectors = new ArrayList<String>(selectorEntries.size());
         this.properties = new HashMap<String, Map<String, String>>();
 
-        for (ParseTree selectorEntry : selectorEntries)
+        for (ParseTree block : selectorEntries)
         {
             String text = selectorEntry.getText();
             this.selectors.add(text);
-            Map<String, String> block = retrieveProperties()
+            Map<String, String> block = retrieveProperties(select)
 
             this.properties.put(text, block);
         }
