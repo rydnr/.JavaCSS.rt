@@ -135,10 +135,12 @@ public class StringTemplateCSSHelperTest
 
             Assert.assertTrue(properties.containsKey("content"));
             Assert.assertEquals(String.valueOf(index), properties.get("content"));
+        }
     }
 
     @Test
     public void retrieves_properties_for_a_simple_input()
     {
+        multipleBlockPropertyTests();
     }
 }
