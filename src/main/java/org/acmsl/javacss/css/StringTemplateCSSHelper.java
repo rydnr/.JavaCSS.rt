@@ -103,7 +103,7 @@ public class StringTemplateCSSHelper
         {
             String text = selectorEntry.getText();
             this.selectors.add(text);
-            Map<String, String> block = retrieveProperties(selectorEntry, parser);
+            Map<String, String> block = retrieveProperties(selectorEntry.getParent(), parser);
 
             this.properties.put(text, block);
         }
@@ -113,7 +113,7 @@ public class StringTemplateCSSHelper
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties = XPath.findAll(selectorEntry, "/property", parser);
+        Collection<ParseTree> properties = XPath.findAll(selectorEntry, "//property", parser);
 
         result = new HashMap<String, String>(properties.size());
 
