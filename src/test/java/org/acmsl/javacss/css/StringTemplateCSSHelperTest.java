@@ -125,7 +125,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertTrue(1, properties.size());
 
         Assert.assertTrue(properties.containsKey("content"));
-        Assert.assertTrue()
+        Assert.assertTrue("  ")
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 }
