@@ -1186,3 +1186,4 @@ However, it didn't make the test pass.
 #         at org.junit.Assert.assertEquals(Assert.java:555)
 #         at org.junit.Assert.assertEquals(Assert.java:542)
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:125)
+
