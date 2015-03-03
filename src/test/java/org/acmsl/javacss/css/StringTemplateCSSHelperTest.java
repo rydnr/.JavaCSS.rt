@@ -72,13 +72,12 @@ public class StringTemplateCSSHelperTest
 
     protected void multipleBlockTests(int count)
     {
-        StringBuilder input =
-            new StringBuilder(".packageDeclaration #identifier");
+        StringBuilder input = new StringBuilder();
 
         for (int index = 0; index < count; index++)
         {
             input.append(".packageDeclaration #identifier");
-            input.append(index)
+            input.append(index);
             input.append("::before {\n    content: \"  \";\n}\n");
         }
 
