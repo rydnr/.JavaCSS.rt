@@ -112,7 +112,7 @@ public class StringTemplateCSSHelperTest
             input.append(index);
             input.append("::before {\n");
             input.append("    content: \"");
-            input.append()\";\n"
+            input.append(index)\";\n"
             + "}\n";
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
