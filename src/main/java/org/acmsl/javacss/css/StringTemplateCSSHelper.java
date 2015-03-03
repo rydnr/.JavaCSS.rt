@@ -103,7 +103,9 @@ public class StringTemplateCSSHelper
         {
             String text = selectorEntry.getText();
             this.selectors.add(text);
-            this.properties.put(text, )
+            Map<String, String> block = new HashMap<String, String>();
+
+            this.properties.put(text, block);
         }
     }
 
