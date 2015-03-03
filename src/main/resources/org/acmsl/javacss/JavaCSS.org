@@ -1482,3 +1482,5 @@ expensive at runtime, though.
 #             return super.visitProperty(ctx);
 #         }
 #     }
+
+We're now back into the green zone.
