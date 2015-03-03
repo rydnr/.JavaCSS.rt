@@ -1097,3 +1097,5 @@ Next, we want to define how to retrieve the properties associated to a selector.
 #         Assert.assertTrue(properties.containsKey("content"));
 #         Assert.assertEquals("  ", properties.get("content"));
 #     }
+
+As always, we need to provide the skeleton to make it compile.
