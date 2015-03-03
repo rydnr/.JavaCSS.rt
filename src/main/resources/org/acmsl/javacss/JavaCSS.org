@@ -967,9 +967,7 @@ we have to take it into account in our checks.
 
 We should extend this test to verify it is prepared for input containing more than one block.
 
-*** Third test: Reading properties
-
-Next, we want to define how to retrieve the properties associated to a selector. It's easy to make the test generic and don't assume a fixed number of blocks, at the cost of making
+It's easy to make the test generic and don't assume a fixed number of blocks, at the cost of making
 the test non-deterministic.
 
 #    protected void multipleBlockTests(int count)
