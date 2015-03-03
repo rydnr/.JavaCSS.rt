@@ -1211,9 +1211,9 @@ As we did previously, let's make sure the properties are parsed correctly if the
 #             input.append(".packageDeclaration #identifier");
 #             input.append(index);
 #             input.append("::before {\n");
-#             input.append("    content: ");
+#             input.append("    content: \"");
 #             input.append(index);
-#             input.append(";\n");
+#             input.append("\";\n");
 #             input.append("}\n");
 #         }
 # 
@@ -1234,13 +1234,12 @@ As we did previously, let's make sure the properties are parsed correctly if the
 #             Assert.assertEquals(1, properties.size());
 # 
 #             Assert.assertTrue(properties.containsKey("content"));
-#             Assert.assertEquals(String.valueOf(index), properties.get("content"));
+#             Assert.assertEquals("\"" + index + "\"", properties.get("content"));
 #         }
 #     }
 # 
 #     @Test
 #     public void retrieves_properties_for_a_simple_input()
 #     {
-#         multipleBlockPropertyTests(2);
+#         multipleBlockPropertyTests(1);
 #     }
-
