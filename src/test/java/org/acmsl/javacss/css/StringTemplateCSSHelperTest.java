@@ -97,7 +97,7 @@ public class StringTemplateCSSHelperTest
     @Test
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
-        multipleBlockTests(Math.random() * 10);
+        multipleBlockTests((int) (Math.random() * 10));
         StringBuilder input =
             new StringBuilder(".packageDeclaration #identifier");
 
