@@ -107,17 +107,17 @@ public class StringTemplateCSSHelper
         {
             String text = selectorEntry.getText();
             this.selectors.add(text);
-            Map<String, String> block = retrieveProperties(selectorEntry.getParent(), parser);
+            Map<String, String> block = retrieveProperties(selectorEntry, parser);
 
             this.properties.put(text, block);
         }
     }
 
-    protected Map<String, String> retrieveProperties(ParseTree cssEntry, StringTemplateCSSParser parser)
+    protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties = findPropertyNodes(cssEntry);
+        Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
 
         result = new HashMap<String, String>(properties.size());
 
