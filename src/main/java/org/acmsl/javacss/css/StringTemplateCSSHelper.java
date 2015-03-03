@@ -134,7 +134,7 @@ public class StringTemplateCSSHelper
     protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
     {
         ParseTree parent = selectorEntry.getParent();
-        PropertyVisitor visitor = new PropertyVisitor();
+        PropertyVisitor visitor = new PropertyVisitor(selectorEntry.getParent());
         parent.accept(visitor);
 
         return visitor.properties;
