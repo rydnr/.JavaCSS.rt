@@ -70,12 +70,12 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(".packageDeclaration#identifier::before", selectors.get(0));
     }
 
-    protected void multipleBlockTests(int )
+    protected void multipleBlockTests(int count)
     {
         StringBuilder input =
             new StringBuilder(".packageDeclaration #identifier");
 
-        for (int index = 0; index < 10; index++)
+        for (int index = 0; index < count; index++)
         {
             input.append("::before {\n    content: \"  \";\n}\n");
         }
