@@ -1245,3 +1245,18 @@ As we did previously, let's make sure the properties are parsed correctly if the
 #     }
 
 This new test is equilavent to the previous one, and passes. Let's check what happens for random number of blocks.
+
+# Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
+# retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+# org.junit.ComparisonFailure: expected:<"[0]"> but was:<"[4]">
+#         at org.junit.Assert.assertEquals(Assert.java:115)
+#         at org.junit.Assert.assertEquals(Assert.java:144)
+#         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.multipleBlockPropertyTests(StringTemplateCSSHelperTest.java:137)
+#         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:144)
+# 
+# 
+# Results :
+# 
+# Failed tests: 
+#   StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input:144->multipleBlockPropertyTests:137 expected:<"[0]"> but was:<"[4]">
+
