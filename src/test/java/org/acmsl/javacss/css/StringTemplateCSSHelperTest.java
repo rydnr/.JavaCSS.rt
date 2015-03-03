@@ -102,7 +102,7 @@ public class StringTemplateCSSHelperTest
         multipleBlockTests((int) (Math.random() * 10));
     }
 
-    protected void multipleBlock()
+    protected void multipleBlockPropertyTests()
     {
         String input =
             ".packageDeclaration #identifier::before {\n"
