@@ -154,6 +154,7 @@ public class StringTemplateCSSHelper
     protected static class PropertyVisitor
         extends StringTemplateCSSBaseVisitor<ParseTree>
     {
+
         @Override
         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
         {
