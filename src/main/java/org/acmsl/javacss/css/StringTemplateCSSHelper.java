@@ -127,8 +127,12 @@ public class StringTemplateCSSHelper
         return result;
     }
 
-    private Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
+    protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
     {
+        Collection<ParseTree> result;
+
+
+        return result;
     }
 
     public Map<String, String> getProperties(String selector)
