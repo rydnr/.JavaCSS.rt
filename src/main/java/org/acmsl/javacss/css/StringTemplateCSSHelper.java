@@ -113,7 +113,7 @@ public class StringTemplateCSSHelper
     {
         Map<String, String> result;
 
-        Collection<ParseTree> properties =
+        Collection<ParseTree> properties = find
 
         result = new HashMap<String, String>(properties.size());
 
