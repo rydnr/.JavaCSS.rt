@@ -143,4 +143,10 @@ public class StringTemplateCSSHelperTest
     {
         multipleBlockPropertyTests((int) (Math.random() * 10));
     }
+
+    @Test
+    public void retrieves_properties_for_an_input()
+    {
+        multipleBlockPropertyTests((int) (Math.random() * 10));
+    }
 }
