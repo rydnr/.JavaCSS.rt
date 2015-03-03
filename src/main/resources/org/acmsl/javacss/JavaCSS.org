@@ -1059,3 +1059,7 @@ If we review our grammar, the problem is obvious. The "css" rule is expecting ju
 # 	;
 
 Now it works, so let's revert the test to a random number of blocks.
+
+*** Third test: Reading properties
+
+Next, we want to define how to retrieve the properties associated to a selector.
