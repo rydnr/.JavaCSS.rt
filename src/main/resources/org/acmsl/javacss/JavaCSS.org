@@ -1001,3 +1001,15 @@ the test non-deterministic.
 #    {
 #        multipleBlockTests((int) (Math.random() * 10));
 #    }
+
+However, the input we are building to test our helper is not valid. It generates texts like
+
+.packageDeclaration #identifier::before {
+    content: "  ";
+}
+
+::before {
+    content: "  ";
+}
+
+I forgot the ".packageDeclaration #identifier" part, and obviously appending the count to make rules different from each another.
