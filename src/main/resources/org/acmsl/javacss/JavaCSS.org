@@ -1196,7 +1196,7 @@ A simple change to passing "selectorEntry.getParent()" allows the block to be pa
 #         at org.junit.Assert.assertEquals(Assert.java:144)
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:128)
 
-We have two options. Process the value of each property to remove any surrounding quotes, or leave them as they are, and update the test. Since we are not dealing with the nature of the property values, I can live with a test assuming the values can be quoted until it's time to focus on the values.
+We have two options. Process the value of each property to remove any surrounding quotes, or leave them as they are, and update the test. Since we are not dealing with the nature of the property values, I can live with a test assuming the values can be quoted until it's time to focus on the property values.
 
 #         Assert.assertEquals("\"  \"", properties.get("content"));
 
