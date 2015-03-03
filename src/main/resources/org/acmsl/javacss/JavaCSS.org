@@ -1060,4 +1060,4 @@ If we review our grammar, the problem is obvious. The "css" rule is expecting ju
 # 	:	selectorCombination '{' property+ '}' css* EOF
 # 	;
 
-
+Now it works, so let's revert the test to a random number of blocks.
