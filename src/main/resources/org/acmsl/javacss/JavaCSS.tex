@@ -1,4 +1,4 @@
-% Created 2015-03-02 Mon 20:44
+% Created 2015-03-03 Tue 20:11
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -545,10 +545,10 @@ The problem was that we described the consecutive colons as two tokens, whereas 
 
 That fixes the first test. The second input is clearly not supported by our current grammar. We'll need to implement it, but it is not difficult.
 
-\subsubsection{Second test: Reading properties}
+\subsubsection{Second test: Listing selectors}
 \label{sec-1-4-3}
 
-Next, we want to define how to retrieve the properties associated to a selector. As before, we'll start with a simple helper which uses
+Next, we want to define how to list all selectors defined. As before, we'll start with a simple helper which uses
 the ANTLR-generated parser and provides the two collections we need: the list of selectors, and a Map of Maps containing the properties for each selector.
 We'll envelop this in a StringTemplateCSSHelper class for now.
 
@@ -572,5 +572,109 @@ Voilà! It did the trick, although the test is not passing yet, but this time is
 In our test, we are calling getText() on non-terminal nodes of our ParseTree. In our grammar the whitespace is not meaningful, so it's
 discarded by the lexer and omitted in the token stream and in the final tree. Therefore it's not returning the same input text, and
 we have to take it into account in our checks.
+
+
+We should extend this test to verify it is prepared for input containing more than one block.
+
+It's easy to make the test generic and don't assume a fixed number of blocks, at the cost of making
+the test non-deterministic.
+
+
+However, the input we are building to test our helper is not valid. It generates texts like
+
+.packageDeclaration \#identifier::before \{
+    content: "  ";
+\}
+
+::before \{
+    content: "  ";
+\}
+
+I forgot the ".packageDeclaration \#identifier" part, and we'd better off appending the count to make rules different from each another.
+
+
+Now some tests pass, some doesn't. For a count of 2 it doesn't work. Let's force that test to dig into the issue. The input we are parsing is:
+
+
+Here's the mismatched input error: 
+
+Running org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
+line 5:0 mismatched input '.' expecting <EOF>
+
+If we review our grammar, the problem is obvious. The "css" rule is expecting just one block, so let's make it recursive.
+
+
+Now it works, so let's revert the test to a random number of blocks.
+
+Our current "multipleBlockTests" method should be "multipleBlockSelectorTests" instead, so let's change that first.
+
+
+\subsubsection{Third test: Reading properties}
+\label{sec-1-4-4}
+
+Next, we want to define how to retrieve the properties associated to a selector. A basic test would simply ask for all properties contained in a block, and verify its contents. 
+
+
+As always, we need to provide the skeleton to make it compile.
+
+
+As expected, the test fails.
+
+
+My first attempt to implement this was:
+
+
+However, it didn't make the test pass.
+
+
+The reason is that our XPath expression, "//property", is not finding anything. If we review the code, we can figure out why: the first argument to the "retrieveProperties()" should be the "css" node, and we are passing the "selectorCombination" node.
+A simple change to passing "selectorEntry.getParent()" allows the block to be parsed successfully.
+
+
+But the test still fails.
+
+
+We have two options. Process the value of each property to remove any surrounding quotes, or leave them as they are, and update the test. Since we are not dealing with the nature of the property values, I can live with a test assuming the values can be quoted until it's time to focus on the property values.
+
+
+As we did previously, let's make sure the properties are parsed correctly if the input contains several blocks. Also, we're interested in verifying the properties are specific for each block.
+
+
+This new test is equilavent to the previous one, and passes. Let's check what happens for random number of blocks.
+
+
+It doesn't. It's a bit frustrating, but it also gives a great sense of progress.
+
+
+To make debugging simpler, it's better to return to a deterministic testing context.
+
+
+
+It still fails, so it's not depending on how many blocks, but only if there's more than one. We've been here already. Probably the input
+the test builds is incorrect, but ANTLR is not complaining. After a debugging session, I found out the issue. It's a bug that was not
+detected in previous tests: when we are retrieving all "property" nodes in the ParseTree, we use an XPath expresion "//property" on the
+"css" root node. However, that collection is the same, regardless which "css" or block we are processing. So at runtime, we iterate
+over the selectors, and then associate the properties. Due to this bug, and since in our test all keys are the same, all values get overriden in
+each iteration. We have to retrieve just the properties belonging to the specific selector, and therefore the XPath.findAll() call is
+not correct.
+The logic should be: for a "selectorCombination" node, its associated "properties" are the next-to-the-right siblings of type "property".
+We could write a specific test for that, but we'd probably need to use a mock framework to build the tree. On the other hand, we are
+already building such trees in our tests. Let's assume that new logic is indirectly tested already.
+Anyway, why don't we implement it using a Visitor pattern instead?
+
+
+Unfortunately it still fails.
+
+
+The problem now is that in our current grammar, each "css" node becomes the parent of the next "css" node to the right. And that
+layout makes our visitor end up visiting all "property" nodes. To fix this, there're two options: changing the node tree (the grammar), or
+ensuring we filter out all "property" nodes whose parent is not matching the selector's. The latter is simpler, but more
+expensive at runtime, though.
+
+
+We're now back into the green zone.
+
+\subsubsection{Fourth test:}
+\label{sec-1-4-5}
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}
