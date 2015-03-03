@@ -104,6 +104,6 @@ public class StringTemplateCSSHelper
 
     public Map<String, String> getProperties(String selector)
     {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return null;
     }
 }
