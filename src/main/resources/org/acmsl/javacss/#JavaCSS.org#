@@ -1418,7 +1418,8 @@ Results :
 Failed tests:
   StringTemplateCSSHelperTest.retrieves_properties_for_an_input_with_multiple_blocks:151->multipleBlockPropertyTests:137 expected:<"[0]"> but was:<"[1]">
 
-The problem now is that 
+The problem now is that in our current grammar, each "css" node becomes the parent of the next "css" node to the right. And that
+layout makes our visitor end up visiting all "property" nodes, no
 #     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
 #     {
 #         Map<String, String> result;
