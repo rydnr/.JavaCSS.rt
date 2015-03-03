@@ -99,6 +99,6 @@ public class StringTemplateCSSHelperTest
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
 //        multipleBlockTests((int) (Math.random() * 10));
-        multipleBlockTests(8);
+        multipleBlockTests(2);
     }
 }
