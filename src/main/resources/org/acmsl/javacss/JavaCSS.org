@@ -1188,4 +1188,12 @@ However, it didn't make the test pass.
 #         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:125)
 
 The reason is that our XPath expression, "//property", is not finding anything. If we review the code, we can figure out why: the first argument to the "retrieveProperties()" should be the "css" node, and we are passing the "selectorCombination" node.
-A simple change to passing "selectorEntry.getParent()" makes the test pass successfully.
+A simple change to passing "selectorEntry.getParent()" allows the block to be parsed successfully. But the test still fails.
+
+# retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+# org.junit.ComparisonFailure: expected:<[  ]> but was:<["  "]>
+#         at org.junit.Assert.assertEquals(Assert.java:115)
+#         at org.junit.Assert.assertEquals(Assert.java:144)
+#         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:128)
+
+We have two options. Process the value of each property to remove any surrounding quotes, or leave them as they are, and update the test. Since we are not dealing with the nature of the property values, I can live with a test assuming the values can be quoted.
