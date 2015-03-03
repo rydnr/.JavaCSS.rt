@@ -101,7 +101,7 @@ public class StringTemplateCSSHelper
 
         for (ParseTree block : selectorEntries)
         {
-            String text = selectorEntry.getText();
+            String text = block.getText();
             this.selectors.add(text);
             Map<String, String> block = retrieveProperties(select)
 
