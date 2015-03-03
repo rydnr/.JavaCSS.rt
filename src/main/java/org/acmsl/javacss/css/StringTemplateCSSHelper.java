@@ -158,6 +158,7 @@ public class StringTemplateCSSHelper
         @Override
         public ParseTree visitProperty(@NotNull final PropertyContext ctx)
         {
+            if (ctx.getParent() == )
             this.properties.add(ctx);
             return super.visitProperty(ctx);
         }
