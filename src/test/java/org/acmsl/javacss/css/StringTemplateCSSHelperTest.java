@@ -76,7 +76,10 @@ public class StringTemplateCSSHelperTest
         StringBuilder input =
             new StringBuilder(".packageDeclaration #identifier");
 
-        for (int index = 0; index < ::before {\n"
+        for (int index = 0; index < 10; index++)
+        {
+            input.append()::
+        }before {\n"
             + "    content: \"  \";\n"
             + "}\n";
 
