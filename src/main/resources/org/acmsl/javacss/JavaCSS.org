@@ -1346,3 +1346,4 @@ not correct.
 The logic should be: for a "selectorCombination" node, its associated "properties" are the next-to-the-right siblings of type "property".
 We could write a specific test for that, but we'd probably need to use a mock framework to build the tree. On the other hand, we are
 already building such trees in our tests. Let's assume that new logic is indirectly tested already.
+Anyway, why don't we implement it using a Visitor pattern instead?
