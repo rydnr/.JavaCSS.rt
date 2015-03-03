@@ -1272,3 +1272,11 @@ It doesn't. It's a bit frustrating, but it also gives a great sense of progress.
 #   StringTemplateCSSHelperTest.retrieves_properties_for_an_input_with_multiple_blocks:150->multipleBlockPropertyTests:126 expected:<0> but was:<1>
 
 To make debugging simpler, it's better to return to a deterministic testing context.
+
+
+#     @Test
+#     public void retrieves_properties_for_an_input_with_multiple_blocks()
+#     {
+# //        multipleBlockPropertyTests((int) (Math.random() * 10));
+#         multipleBlockPropertyTests(2);
+#     }
