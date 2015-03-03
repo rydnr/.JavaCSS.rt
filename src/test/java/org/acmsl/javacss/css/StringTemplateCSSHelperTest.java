@@ -123,7 +123,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(selectors);
 
-        Assert.assertEquals(1, selectors.size());
+        Assert.assertEquals(count, selectors.size());
 
         Map<String, String> properties = helper.getProperties(selectors.get(0));
 
