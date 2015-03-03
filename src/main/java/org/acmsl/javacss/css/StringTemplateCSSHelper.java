@@ -139,7 +139,7 @@ public class StringTemplateCSSHelper
         PropertyVisitor visitor = new PropertyVisitor();
         parent.accept(visitor);
 
-        result.addAll()
+        result.addAll(visitor.properties);
 
         return result;
     }
