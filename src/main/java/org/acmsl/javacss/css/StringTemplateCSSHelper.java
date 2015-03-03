@@ -40,6 +40,7 @@ package org.acmsl.javacss.css;
  */
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
+import org.acmsl.javacss.css.parser.StringTemplateCSSVisitor;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -148,4 +149,5 @@ public class StringTemplateCSSHelper
     }
 
     protected static class PropertyVisitor
+        extends StringTemplateCSSVisitor
 }
