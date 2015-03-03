@@ -1039,4 +1039,43 @@ I forgot the ".packageDeclaration #identifier" part, and we'd better off appendi
 #        }
 #    }
 
-Now some tests pass, some doesn't. For a count of 8 it doesn't work. Let's force that test to dig into the issue.
+Now some tests pass, some doesn't. For a count of 8 it doesn't work. Let's force that test to dig into the issue. The input we are parsing is:
+
+.packageDeclaration #identifier0::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier1::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier2::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier3::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier4::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier5::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier6::before {
+    content: "  ";
+}
+
+.packageDeclaration #identifier7::before {
+    content: "  ";
+}
+
+Here's the mismatched input error: 
+
+Running org.acmsl.javacss.css.parser.StringTemplateCSSParserTest
+line 5:0 mismatched input '.' expecting <EOF>
+
+
