@@ -1286,4 +1286,5 @@ the test builds is incorrect, but ANTLR is not complaining. After a debugging se
 detected in previous tests: when we are retrieving all "property" nodes in the ParseTree, we use an XPath expresion "//property" on the
 "css" root node. However, that collection is the same, regardless which "css" or block we are processing. So at runtime, we iterate
 over the selectors, and then associate the properties. Due to this bug, and since in our test all keys are the same, all values get overriden in
-each iteration.
+each iteration. We have to retrieve just the properties belonging to the specific selector, and therefore the XPath.findAll() call is
+not correct.
