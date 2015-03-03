@@ -1403,7 +1403,7 @@ Anyway, why don't we implement it using a Visitor pattern instead?
 #         }
 #     }
 
-
+Unfortunately it still fails.
 #     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
 #     {
 #         Map<String, String> result;
