@@ -116,7 +116,7 @@ public class StringTemplateCSSHelper
         for (ParseTree property : properties)
         {
             String key = property.getChild(0).getText();
-            String value = property.getChild()
+            String value = property.getChild(2).getText()
     }
 
     public Map<String, String> getProperties(String selector)
