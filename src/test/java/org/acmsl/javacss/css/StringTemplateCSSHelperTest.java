@@ -158,7 +158,6 @@ public class StringTemplateCSSHelperTest
         multipleBlockPropertyTests(3);
     }
 
-    @Test
     public void finds_the_matching_selector()
     {
         String javaInput = "package com.foo.bar;";
