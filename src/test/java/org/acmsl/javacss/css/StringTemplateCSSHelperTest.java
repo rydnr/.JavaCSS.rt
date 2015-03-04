@@ -75,7 +75,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(1, selectors.size());
 
-        Assert.assertEquals(".packageDeclaration", "selectors.get(0).getText());
+        Assert.assertEquals(".packageDeclaration", selectors.get(0).getText());
                             Assert.assertEquals(".packageDeclaration", #identifier::before", " +
                                                                                           "selectors.get(0).getText());
     }
