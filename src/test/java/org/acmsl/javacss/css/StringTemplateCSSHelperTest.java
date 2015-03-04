@@ -171,7 +171,7 @@ public class StringTemplateCSSHelperTest
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
-        ParseTree ast = buildAST(javaInput);
+        ParseTree ast = parser.compilationUnit();
 
         ParseTree semiColon = XPath.findAll(ast, "//';'", parser);
     }
