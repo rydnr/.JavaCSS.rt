@@ -108,9 +108,9 @@ public class StringTemplateCSSHelper
             List<String> currentSelectors = new ArrayList<String>(selectorCombination.getChildCount());
             this.selectors.add(currentSelectors);
 
-            for (int index = 0; index < ParseTree selector: selectorCombination.getCh)
+            for (int index = 0; index < selectorCombination.getChildCount(); index++)
             {
-                String text = selector.getText();
+                String text = .getText();
                 currentSelectors.add(text);
             }
             Map<String, String> block = retrieveProperties(selectorCombination, parser);
