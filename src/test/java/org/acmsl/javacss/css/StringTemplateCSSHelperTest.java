@@ -46,6 +46,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -173,6 +174,7 @@ public class StringTemplateCSSHelperTest
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
+        Collection<ParseTree>
         ParseTree semiColon = XPath.findAll(ast, "//';'", parser);
     }
 }
