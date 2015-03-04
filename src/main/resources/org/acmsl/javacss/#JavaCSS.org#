@@ -1490,4 +1490,7 @@ We're now back into the green zone.
 The next logical step is to find all matching selectors, for a given AST. We'll use it in the context of StringTemplate templates, but
 need not to be constrained to any specific AST.
 
-We sh
+It's worth reviewing our selector syntax:
+
+- a rule starting with a dot matches node types.
+- a rule starting with 
