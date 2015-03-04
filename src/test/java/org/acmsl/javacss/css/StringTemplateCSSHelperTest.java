@@ -157,7 +157,7 @@ public class StringTemplateCSSHelperTest
 
         String cssInput =
             ".packageDeclaration \";\"::before {\n"
-            + ""
+            + "   content: \" \";"
     }
 }
 
