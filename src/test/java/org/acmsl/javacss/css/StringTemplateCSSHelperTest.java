@@ -155,7 +155,7 @@ public class StringTemplateCSSHelperTest
     {
         String javaInput = "package com.foo.bar;";
 
-        String cssInput = "."
+        String cssInput = ".packageDeclaration \";\"::before {\n
     }
 }
 
