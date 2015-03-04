@@ -161,6 +161,8 @@ public class StringTemplateCSSHelperTest
             + "}\n";
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+
     }
 }
 
