@@ -35,7 +35,6 @@
  */
 package org.acmsl.javacss.css;
 
-import javafx.scene.Parent;
 import org.acmsl.javacss.java8.parser.Java8Lexer;
 import org.acmsl.javacss.java8.parser.Java8Parser;
 import org.antlr.v4.runtime.CommonTokenStream;
