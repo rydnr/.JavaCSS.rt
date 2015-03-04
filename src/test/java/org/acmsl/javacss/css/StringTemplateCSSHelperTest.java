@@ -150,5 +150,6 @@ public class StringTemplateCSSHelperTest
         multipleBlockPropertyTests((int) (Math.random() * 10));
     }
 
-
+    @Test
+    public void
 }
