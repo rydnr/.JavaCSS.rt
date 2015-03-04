@@ -106,7 +106,8 @@ public class StringTemplateCSSHelper
         for (ParseTree selectorCombination : selectorCombinations)
         {
             for (ParseTree selector: selectorCombination)
-            String text = selectorCombination.getText();
+            {
+                String text = selectorCombination.getText();
             this.selectors.add(text);
             Map<String, String> block = retrieveProperties(selectorCombination, parser);
 
