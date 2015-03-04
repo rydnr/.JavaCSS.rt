@@ -101,12 +101,12 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(count, selectorCombinations.size());
 
+        for (int index = 0; index < count; index++)
+        {
         for (int index = 0; index < selectorCombinations.size(); index++)
         {
             List<String> selectors = selectorCombinations.get(index);
 
-        for (int index = 0; index < count; index++)
-        {
             Assert.assertEquals(".packageDeclaration#identifier" + index + "::before", selectorCombinations.get(index));
         }
     }
