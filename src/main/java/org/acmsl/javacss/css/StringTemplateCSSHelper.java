@@ -78,7 +78,7 @@ public class StringTemplateCSSHelper
         this.input = input;
     }
 
-    public List<String> getSelectors()
+    public List<List<String>> getSelectors()
     {
         if (this.selectors == null)
         {
