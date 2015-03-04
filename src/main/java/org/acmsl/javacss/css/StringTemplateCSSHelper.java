@@ -110,7 +110,7 @@ public class StringTemplateCSSHelper
 
             for (int index = 0; index < selectorCombination.getChildCount(); index++)
             {
-                String text = .getText();
+                String text = selectorCombination.getChild(index).getText();
                 currentSelectors.add(text);
             }
             Map<String, String> block = retrieveProperties(selectorCombination, parser);
