@@ -166,7 +166,7 @@ public class StringTemplateCSSHelperTest
 
         ParseTree ast = buildAST(javaInput);
 
-        ParseTree semiColon = XPath.findAll(ast, )
+        ParseTree semiColon = XPath.findAll(ast, "//")
     }
 }
 
