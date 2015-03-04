@@ -100,7 +100,7 @@ public class StringTemplateCSSHelper
 
         Collection<ParseTree> selectorEntries = XPath.findAll(tree, "//selectorCombination", parser);
 
-        this.selectors = new ArrayList<String>(selectorEntries.size());
+        this.selectors = new ArrayList<List<String>>(selectorEntries.size());
         this.properties = new HashMap<String, Map<String, String>>();
 
         for (ParseTree selectorEntry : selectorEntries)
