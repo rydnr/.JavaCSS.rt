@@ -1500,7 +1500,14 @@ It's worth reviewing our selector syntax:
 What would be a good scenario for checking if a selector is matching the correct node in a given AST? As always, start by
 something simple, and increase in complexity gradually.
 
-For our AST, a good fit could be the one associated to this package declaration:
+For our AST, a good fit could be the one produced by parsing this package declaration:
 
   package com.foo.bar;
 
+That is,
+
+# packageDeclaration;
+# packageLiteral [label="'package'"];
+# Identifier [label="[com]"];
+# dot [label="."];
+# 
