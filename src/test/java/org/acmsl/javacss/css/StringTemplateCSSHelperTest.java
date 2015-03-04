@@ -151,5 +151,5 @@ public class StringTemplateCSSHelperTest
     }
 
     @Test
-    public void finds_the_selector_for_a_simple_
+    public void finds_the_selector_
 }
