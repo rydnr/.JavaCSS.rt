@@ -167,7 +167,7 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
 
-        Java8Lexer lexer = new Java8Lexer()
+        Java8Lexer lexer = new Java8Lexer(javaInput);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = buildAST(javaInput);
