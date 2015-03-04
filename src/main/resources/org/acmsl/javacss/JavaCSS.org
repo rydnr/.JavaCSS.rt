@@ -1522,3 +1522,9 @@ That is,
 # dot2 -> packageDeclaration;
 # barIdentifier -> packageDeclaration;
 # semicolon -> packageDeclaration;
+
+For the CSS, this would be simple enough: add a blank space before the semicolon.
+
+# .packageDeclaration ";"::before {
+#    content: " ";
+# }
