@@ -1719,3 +1719,99 @@ Instead of a list of Strings, it makes more sense to describe it as a list of li
 # }
 
 The current StringTemplateCSSHelperTest needs to be modified because of the API changes.
+
+#     @Test
+#     public void retrieves_selectors_for_a_simple_input()
+#     {
+#         String input =
+#             ".packageDeclaration #identifier::before {\n"
+#             + "    content: \"  \";\n"
+#             + "}\n";
+# 
+#         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
+# 
+#         List<List<String>> selectorCombinations = helper.getSelectors();
+# 
+#         Assert.assertNotNull(selectorCombinations);
+# 
+#         Assert.assertEquals(1, selectorCombinations.size());
+# 
+#         List<String> selectors = selectorCombinations.get(0);
+#         Assert.assertEquals(2, selectors.size());
+# 
+#         Assert.assertEquals(".packageDeclaration", selectors.get(0));
+#         Assert.assertEquals("#identifier::before", selectors.get(1));
+#     }
+# 
+#     protected void multipleBlockSelectorTests(int count)
+#     {
+#         StringBuilder input = new StringBuilder();
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             input.append(".packageDeclaration #identifier");
+#             input.append(index);
+#             input.append("::before {\n    content: \"  \";\n}\n\n");
+#         }
+# 
+#         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
+# 
+#         List<List<String>> selectorCombinations = helper.getSelectors();
+# 
+#         Assert.assertNotNull(selectorCombinations);
+# 
+#         Assert.assertEquals(count, selectorCombinations.size());
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             List<String> selectors = selectorCombinations.get(index);
+# 
+#             Assert.assertEquals(".packageDeclaration", selectors.get(0));
+#             Assert.assertEquals("#identifier" + index + "::before", selectors.get(1));
+#         }
+#     }
+# 
+#     @Test
+#     public void retrieves_selectors_for_an_input_with_several_blocks()
+#     {
+#         multipleBlockSelectorTests((int) (Math.random() * 10));
+#     }
+# 
+#     protected void multipleBlockPropertyTests(int count)
+#     {
+#         StringBuilder input = new StringBuilder();
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             input.append(".packageDeclaration #identifier");
+#             input.append(index);
+#             input.append("::before {\n");
+#             input.append("    content: \"");
+#             input.append(index);
+#             input.append("\";\n");
+#             input.append("}\n");
+#         }
+# 
+#         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
+# 
+#         List<List<String>> selectors = helper.getSelectors();
+# 
+#         Assert.assertNotNull(selectors);
+# 
+#         Assert.assertEquals(count, selectors.size());
+# 
+#         for (int index = 0; index < count; index++)
+#         {
+#             Map<String, String> properties = helper.getProperties(selectors.get(index));
+# 
+#             Assert.assertNotNull(properties);
+# 
+#             Assert.assertEquals(1, properties.size());
+# 
+#             Assert.assertTrue(properties.containsKey("content"));
+#             Assert.assertEquals("\"" + index + "\"", properties.get("content"));
+#         }
+#     }
+# 
+#     [..]
+# }
