@@ -108,7 +108,7 @@ public class StringTemplateCSSHelper
             List<String> currentSelectors = new ArrayList<String>(selectorCombination.getChildCount());
             this.selectors.add(currentSelectors);
 
-            for (ParseTree selector: selectorCombination)
+            for (int index = 0; index < ParseTree selector: selectorCombination.getCh)
             {
                 String text = selector.getText();
                 currentSelectors.add(text);
