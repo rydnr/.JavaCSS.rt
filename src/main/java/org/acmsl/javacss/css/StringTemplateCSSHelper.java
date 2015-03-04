@@ -71,7 +71,7 @@ public class StringTemplateCSSHelper
 {
     private final String input;
     private List<List<String>> selectors;
-    private Map<String, Map<String, String>> properties;
+    private Map<List<String>, Map<String, String>> properties;
 
     public StringTemplateCSSHelper(final String input)
     {
@@ -101,7 +101,7 @@ public class StringTemplateCSSHelper
         Collection<ParseTree> selectorCombinations = XPath.findAll(tree, "//selectorCombination", parser);
 
         this.selectors = new ArrayList<List<String>>(selectorCombinations.size());
-        this.properties = new HashMap<String, Map<String, String>>();
+        this.properties = new HashMap<List<String>, Map<String, String>>();
 
         for (ParseTree selectorCombination : selectorCombinations)
         {
