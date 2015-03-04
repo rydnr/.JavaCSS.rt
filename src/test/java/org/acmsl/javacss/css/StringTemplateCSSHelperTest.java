@@ -101,7 +101,9 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(count, selectorCombinations.size());
 
-        List<String> selectors = selectorCombinations.get();
+        for (int index = 0; index < selectorCombinations.size(); index++)
+        {
+            List<String> selectors = selectorCombinations.get(index);
 
         for (int index = 0; index < count; index++)
         {
