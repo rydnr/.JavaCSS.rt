@@ -105,7 +105,7 @@ public class StringTemplateCSSHelper
 
         for (ParseTree selectorCombination : selectorCombinations)
         {
-            List<String> selector
+            List<String> selectors = new ArrayList<>
         }
             for (ParseTree selector: selectorCombination)
             {
