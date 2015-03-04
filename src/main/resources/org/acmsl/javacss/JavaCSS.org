@@ -1815,3 +1815,4 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
 # 
 #     [..]
 # }
+
