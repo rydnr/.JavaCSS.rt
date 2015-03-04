@@ -1494,4 +1494,4 @@ It's worth reviewing our selector syntax:
 
 - a rule starting with a dot matches node classes.
 - a rule starting with a hash identifies unique nodes.
-- a rule with surround
+- a rule with surrounding quotes selects nodes whose text matches the rule text.
