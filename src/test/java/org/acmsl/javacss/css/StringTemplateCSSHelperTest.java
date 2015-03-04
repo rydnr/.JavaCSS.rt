@@ -36,6 +36,7 @@
 package org.acmsl.javacss.css;
 
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -165,7 +166,7 @@ public class StringTemplateCSSHelperTest
 
         ParseTree ast = buildAST(javaInput);
 
-        ParseTree semiColo
+        ParseTree semiColon = XPath.findAll()
     }
 }
 
