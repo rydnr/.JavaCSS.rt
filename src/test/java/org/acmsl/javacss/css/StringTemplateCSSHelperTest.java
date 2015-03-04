@@ -38,6 +38,7 @@ package org.acmsl.javacss.css;
 import org.acmsl.javacss.java8.parser.Java8Lexer;
 import org.acmsl.javacss.java8.parser.Java8Parser;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.junit.Assert;
@@ -167,7 +168,7 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
 
-        Java8Lexer lexer = new Java8Lexer(javaInput);
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = buildAST(javaInput);
