@@ -174,8 +174,8 @@ public class StringTemplateCSSHelperTest
         Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = parser.compilationUnit();
 
-        Collection<ParseTree>
-        ParseTree semiColon = XPath.findAll(ast, "//';'", parser);
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+        ParseTree semiColon = matches.get(0);
     }
 }
 
