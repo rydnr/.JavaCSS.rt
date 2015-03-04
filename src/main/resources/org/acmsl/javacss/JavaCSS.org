@@ -1816,3 +1816,4 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
 #     [..]
 # }
 
+Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely.
