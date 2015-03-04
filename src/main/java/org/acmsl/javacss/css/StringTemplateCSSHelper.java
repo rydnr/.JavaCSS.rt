@@ -105,12 +105,11 @@ public class StringTemplateCSSHelper
 
         for (ParseTree selectorCombination : selectorCombinations)
         {
-            List<String> selectors = new ArrayList<>
-        }
+            List<String> selectors = new ArrayList<String>(selectorCombination.getChildCount());
+            this.selectors.add();
             for (ParseTree selector: selectorCombination)
             {
                 String text = selector.getText();
-            this.selectors.add(text);
             Map<String, String> block = retrieveProperties(selectorCombination, parser);
 
             this.properties.put(text, block);
