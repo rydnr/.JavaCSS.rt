@@ -1622,4 +1622,6 @@ And as expected, the null assertion makes the test fail.
 #   StringTemplateCSSHelperTest.finds_the_matching_selector:187 null
 
 Now we have to actually implement the "retrieveMatchingSelectors()" method. It's not straight-forward: we
-have to find which selector defines a set which includes the input AST.
+have to find which selector defines a set which includes the input AST. Currently, we are storing the combination of 
+selectors as one piece of text. Parsing it again makes no sense whatsoever, so we should invest some time fixing this first.
+Instead of a list of Strings, it makes more sense to describe it as a list of list of Strings.
