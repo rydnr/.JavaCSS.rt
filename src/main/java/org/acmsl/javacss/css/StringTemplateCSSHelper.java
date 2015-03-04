@@ -150,6 +150,10 @@ public class StringTemplateCSSHelper
         return this.properties.get(selector);
     }
 
+    public String retrieveMatchingSelectors(final ParseTree semiColon)
+    {
+    }
+
     protected static class PropertyVisitor
         extends StringTemplateCSSBaseVisitor<ParseTree>
     {
