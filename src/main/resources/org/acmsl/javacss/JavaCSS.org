@@ -1496,3 +1496,6 @@ It's worth reviewing our selector syntax:
 - a rule starting with a hash identifies unique nodes.
 - a rule with surrounding quotes selects nodes whose text matches the rule text.
 - any optional pseudo-element (::before or ::after) do not customize the nodes themselves, but add new siblings.
+
+What would be a good scenario for checking if a selector is matching the correct node in a given AST? As always, start by
+something simple, and increase in complexity gradually.
