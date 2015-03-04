@@ -1530,6 +1530,6 @@ For the CSS, this would be simple enough: add a blank space before the semicolon
 # }
 
 Notice we're not testing whether the final output included the blank space before the semicolon.
-For now, we only want to implement the logic to find out which CSS block applies to each node in the AST.
-
+For now, we only want to implement the logic to find out which CSS block applies to each node in the AST. Or even simpler:
+testing every node has no matching selectors, but the semicolon.
 
