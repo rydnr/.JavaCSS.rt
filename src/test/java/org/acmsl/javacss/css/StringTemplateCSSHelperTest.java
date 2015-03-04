@@ -165,7 +165,7 @@ public class StringTemplateCSSHelperTest
 
         ParseTree ast = buildAST(javaInput);
 
-
+        ParseTree semiColo
     }
 }
 
