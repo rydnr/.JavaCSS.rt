@@ -150,7 +150,7 @@ public class StringTemplateCSSHelper
         return this.properties.get(selector);
     }
 
-    public String retrieveMatchingSelectors(final ParseTree semiColon)
+    public String retrieveMatchingSelectors(ParseTree semiColon)
     {
         return null;
     }
