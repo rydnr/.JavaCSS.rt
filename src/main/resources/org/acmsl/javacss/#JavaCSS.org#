@@ -1523,4 +1523,5 @@ That is,
 # barIdentifier -> packageDeclaration;
 # semicolon -> packageDeclaration;
 
-For the 
+For the CSS, this would be simple enough:
+
