@@ -1506,6 +1506,7 @@ For our AST, a good fit could be the one produced by parsing this package declar
 
 That is,
 
+# dot-syntax:
 # packageDeclaration;
 # packageLiteral [label="package"];
 # comIdentifier [label="com"];
