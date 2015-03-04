@@ -146,7 +146,7 @@ public class StringTemplateCSSHelper
         return visitor.properties;
     }
 
-    public Map<String, String> getProperties(String selector)
+    public Map<String, String> getProperties(List<String> selector)
     {
         if (this.properties == null)
         {
