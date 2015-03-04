@@ -185,7 +185,7 @@ public class StringTemplateCSSHelperTest
 
         String matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
 
-        Assert.assertNotNull()
+        Assert.assertNotNull(matchedSelectors);
     }
 }
 
