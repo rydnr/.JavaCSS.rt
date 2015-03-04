@@ -115,7 +115,7 @@ public class StringTemplateCSSHelper
             }
             Map<String, String> block = retrieveProperties(selectorCombination, parser);
 
-            this.properties.put(, block);
+            this.properties.put(cun, block);
         }
     }
 
