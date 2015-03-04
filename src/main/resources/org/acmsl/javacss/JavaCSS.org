@@ -1534,3 +1534,36 @@ For now, we only want to implement the logic to find out which CSS block applies
 testing every node has no matching selectors, but the semicolon. Additionally, since we have no immediate need for a better
 design, we'll implement the logic in our current helper class.
 
+
+#     @Test
+#     public void finds_the_matching_selector()
+#     {
+#         String javaInput = "package com.foo.bar;";
+# 
+#         String cssInput =
+#               ".packageDeclaration \";\"::before {\n"
+#             + "   content: \" \";\n"
+#             + "}\n";
+# 
+#         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+# 
+#         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+#         CommonTokenStream tokens = new CommonTokenStream(lexer);
+#         Java8Parser parser = new Java8Parser(tokens);
+#         ParseTree ast = parser.compilationUnit();
+# 
+#         Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+# 
+#         Assert.assertNotNull(matches);
+#         Assert.assertEquals(1, matches.size());
+# 
+#         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+#         Assert.assertNotNull(semiColon);
+# 
+#         String matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
+# 
+#         Assert.assertNotNull(matchedSelectors);
+#         Assert.assertEquals(".packageDeclaration \";\"::before", matchedSelectors);
+#     }
+
+This test is more involved, and of course it won't compile until we write the new method "retrieveMatchingSelectors()".
