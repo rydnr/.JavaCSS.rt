@@ -154,6 +154,8 @@ public class StringTemplateCSSHelperTest
     public void finds_the_matching_selector()
     {
         String javaInput = "package com.foo.bar;";
+
+
     }
 }
 
