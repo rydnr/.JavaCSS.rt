@@ -1528,3 +1528,6 @@ For the CSS, this would be simple enough: add a blank space before the semicolon
 # .packageDeclaration ";"::before {
 #    content: " ";
 # }
+
+Notice we're not testing whether the final output included the blank space before the semicolon.
+For now, we only want to implement the logic to find out which CSS block applies to each node in the AST.
