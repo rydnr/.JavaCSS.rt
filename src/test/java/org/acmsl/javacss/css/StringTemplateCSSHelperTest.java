@@ -76,6 +76,8 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(1, selectorCombinations.size());
 
         List<String> selectors = selectorCombinations.get(0);
+        Assert.assertEquals(1, selectorCombinations.size());
+
         Assert.assertEquals(".packageDeclaration", selectors.get(0));
         Assert.assertEquals("#identifier::before", selectors.get(1));
     }
