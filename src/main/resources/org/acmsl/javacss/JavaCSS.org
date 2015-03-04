@@ -1495,4 +1495,4 @@ It's worth reviewing our selector syntax:
 - a rule starting with a dot matches node classes.
 - a rule starting with a hash identifies unique nodes.
 - a rule with surrounding quotes selects nodes whose text matches the rule text.
-- any optional pseudo-element (::before or ::after) allows customizing not the nodes themselves, but their siblings.
+- any optional pseudo-element (::before or ::after) do not customize the nodes themselves, but add new siblings.
