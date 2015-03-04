@@ -1510,6 +1510,12 @@ invalid input. Consequently, the parser complaints. Surprisingly, the XPath expr
 For now, let's annotate this for the next iteration: manage errors in ANTLR parsers / deal with invalid input. Meanwhile we have
 to ensure we are not testing empty or wrong inputs.
 
+#     @Test
+#     public void retrieves_properties_for_an_input_with_multiple_blocks()
+#     {
+#         multipleBlockPropertyTests((int) (Math.random() * 10) + 1);
+#     }
+
 *** Fourth test: Matching selectors
 
 The next logical step is to find all matching selectors, for a given AST. We'll use it in the context of StringTemplate templates, but
