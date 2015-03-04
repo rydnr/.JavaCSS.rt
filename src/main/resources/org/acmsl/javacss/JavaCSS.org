@@ -1499,3 +1499,9 @@ It's worth reviewing our selector syntax:
 
 What would be a good scenario for checking if a selector is matching the correct node in a given AST? As always, start by
 something simple, and increase in complexity gradually.
+
+For our AST, a good fit could be the associated to this package declaration:
+
+  package com.foo.bar;
+
+
