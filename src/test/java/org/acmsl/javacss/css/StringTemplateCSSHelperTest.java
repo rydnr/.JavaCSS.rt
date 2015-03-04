@@ -69,7 +69,7 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
 
-        List<String> selectors = helper.getSelectors();
+        List<List<String>> selectors = helper.getSelectors();
 
         Assert.assertNotNull(selectors);
 
