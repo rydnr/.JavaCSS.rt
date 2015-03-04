@@ -1507,7 +1507,8 @@ switching back to relying to input composed of a random number of blocks, the te
 This test is interesting, because it uncovers one aspect we are not dealing with: invalid inputs. The "multipleBlockPropertyTest()" method, when receiving a 0 as parameter, generates
 invalid input. Consequently, the parser complaints. Surprisingly, the XPath expression returns a match consisting of an empty string.
 
-For now, let's annotate this for the next iteration: manage errors in ANTLR parsers / deal with invalid input.
+For now, let's annotate this for the next iteration: manage errors in ANTLR parsers / deal with invalid input. Meanwhile we have
+to ensure we are not testing empty or wrong inputs.
 
 *** Fourth test: Matching selectors
 
