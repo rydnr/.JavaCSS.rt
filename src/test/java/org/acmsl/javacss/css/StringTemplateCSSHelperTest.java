@@ -126,7 +126,7 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input.toString());
 
-        List<String> selectors = helper.getSelectors();
+        List<List<String>> selectors = helper.getSelectors();
 
         Assert.assertNotNull(selectors);
 
@@ -134,7 +134,7 @@ public class StringTemplateCSSHelperTest
 
         for (int index = 0; index < count; index++)
         {
-            Map<String, String> properties = helper.getProperties(selectors.get(index));
+            Map<List<String>, String> properties = helper.getProperties(selectors.get(index));
 
             Assert.assertNotNull(properties);
 
