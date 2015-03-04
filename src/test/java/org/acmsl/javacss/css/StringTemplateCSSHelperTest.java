@@ -155,7 +155,7 @@ public class StringTemplateCSSHelperTest
     public void retrieves_properties_for_an_input_with_multiple_blocks()
     {
 //        multipleBlockPropertyTests((int) (Math.random() * 10));
-//        multipleBlockPropertyTests(3);
+        multipleBlockPropertyTests(0);
     }
 
     public void finds_the_matching_selector()
