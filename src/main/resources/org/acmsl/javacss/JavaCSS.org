@@ -1483,7 +1483,7 @@ expensive at runtime, though.
 #         }
 #     }
 
-We're now back into the green zone.
+We're now back into the green zone, but don't forget we're not calling "multipleBlockPropertyTests()" with random values. 
 
 *** Fourth test: Matching selectors
 
