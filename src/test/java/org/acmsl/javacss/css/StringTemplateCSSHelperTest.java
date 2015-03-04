@@ -183,7 +183,7 @@ public class StringTemplateCSSHelperTest
         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
         Assert.assertNotNull(semiColon);
 
-        Assert.assertTrue(helper)
+        Assert.assertTrue()
     }
 }
 
