@@ -77,8 +77,7 @@ public class StringTemplateCSSHelperTest
 
         List<String> selectors = selectorCombinations.get(0);
         Assert.assertEquals(".packageDeclaration", selectors.get(0));
-                            Assert.assertEquals(".packageDeclaration", #identifier::before", " +
-                                                                                          "selectors.get(0).getText());
+        Assert.assertEquals("#identifier::before", selectors.get(1));
     }
 
     protected void multipleBlockSelectorTests(int count)
