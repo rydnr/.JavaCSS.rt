@@ -1504,7 +1504,8 @@ switching back to relying to input composed of a random number of blocks, the te
 # Failed tests:
 #   StringTemplateCSSHelperTest.retrieves_properties_for_an_input_with_multiple_blocks:158->multipleBlockPropertyTests:133 expected:<0> but was:<1>
 
-This test is interesting, because it uncovers one aspect we are not 
+This test is interesting, because it uncovers one aspect we are not dealing with: invalid inputs. The "multipleBlockPropertyTest()" method, when receiving a 0 as parameter, generates
+invalid input. Consequently, the parser complaints. Surprisingly, the XPath expression retu
 *** Fourth test: Matching selectors
 
 The next logical step is to find all matching selectors, for a given AST. We'll use it in the context of StringTemplate templates, but
