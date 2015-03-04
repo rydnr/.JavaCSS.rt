@@ -1621,4 +1621,5 @@ And as expected, the null assertion makes the test fail.
 # Failed tests:
 #   StringTemplateCSSHelperTest.finds_the_matching_selector:187 null
 
-Now we have to actually implement the "retrieveMatchingSelectors()" method. It's not straight-forward.
+Now we have to actually implement the "retrieveMatchingSelectors()" method. It's not straight-forward: we
+have to find which selector defines a set which includes the input AST.
