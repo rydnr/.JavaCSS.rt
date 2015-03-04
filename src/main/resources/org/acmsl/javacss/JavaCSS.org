@@ -1483,7 +1483,8 @@ expensive at runtime, though.
 #         }
 #     }
 
-We're now back into the green zone, but don't forget we're not calling "multipleBlockPropertyTests()" with random values.
+We're now back into the green zone, but don't forget we're not calling "multipleBlockPropertyTests()" with random values. When
+switching back to relying to input composed of a random number of blocks, the test fails again.
 
 *** Fourth test: Matching selectors
 
