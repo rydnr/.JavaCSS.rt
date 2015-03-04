@@ -35,6 +35,7 @@
  */
 package org.acmsl.javacss.css;
 
+import javafx.scene.Parent;
 import org.acmsl.javacss.java8.parser.Java8Lexer;
 import org.acmsl.javacss.java8.parser.Java8Parser;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -176,7 +177,7 @@ public class StringTemplateCSSHelperTest
 
         Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
 
-        ParseTree semiColon = matches.toArray()[0];
+        ParseTree semiColon = matches.<ParseTree>toArray()[0];
     }
 }
 
