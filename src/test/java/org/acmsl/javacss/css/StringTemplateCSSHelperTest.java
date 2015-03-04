@@ -69,14 +69,14 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(input);
 
-        List<List<String>> selectors = helper.getSelectors();
+        List<List<String>> selectorCombinations = helper.getSelectors();
 
-        Assert.assertNotNull(selectors);
+        Assert.assertNotNull(selectorCombinations);
 
-        Assert.assertEquals(1, selectors.size());
+        Assert.assertEquals(1, selectorCombinations.size());
 
-        List<String>
-        Assert.assertEquals(".packageDeclaration", selectors.get(0));
+        List<String> selectors = selectorCombinations.get(0);
+        Assert.assertEquals(".packageDeclaration", selectors);
                             Assert.assertEquals(".packageDeclaration", #identifier::before", " +
                                                                                           "selectors.get(0).getText());
     }
