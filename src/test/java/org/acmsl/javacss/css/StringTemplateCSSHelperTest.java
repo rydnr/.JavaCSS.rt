@@ -160,7 +160,7 @@ public class StringTemplateCSSHelperTest
             + "   content: \" \";\n"
             + "}\n";
 
-
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper()
     }
 }
 
