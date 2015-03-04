@@ -37,7 +37,7 @@ package org.acmsl.javacss.css;
 
 import org.acmsl.javacss.java8.parser.Java8Lexer;
 import org.acmsl.javacss.java8.parser.Java8Parser;
-import org.antlr.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
