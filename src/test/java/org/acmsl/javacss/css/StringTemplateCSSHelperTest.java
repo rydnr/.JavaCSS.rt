@@ -36,6 +36,7 @@
 package org.acmsl.javacss.css;
 
 import org.acmsl.javacss.java8.parser.Java8Parser;
+import org.antlr.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.junit.Assert;
@@ -165,7 +166,8 @@ public class StringTemplateCSSHelperTest
 
         StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
 
-        Java8Parser parser = new Java8Parser()
+        CommonTokenStream tokens =
+        Java8Parser parser = new Java8Parser(tokens);
         ParseTree ast = buildAST(javaInput);
 
         ParseTree semiColon = XPath.findAll(ast, "//';'", parser);
