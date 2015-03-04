@@ -1625,3 +1625,97 @@ Now we have to actually implement the "retrieveMatchingSelectors()" method. It's
 have to find which selector defines a set which includes the input AST. Currently, we are storing the combination of 
 selectors as one piece of text. Parsing it again makes no sense whatsoever, so we should invest some time fixing this first.
 Instead of a list of Strings, it makes more sense to describe it as a list of list of Strings.
+
+# public class StringTemplateCSSHelper
+# {
+#     private final String input;
+#     private List<List<String>> selectors;
+#     private Map<List<String>, Map<String, String>> properties;
+# 
+#     public StringTemplateCSSHelper(final String input)
+#     {
+#         this.input = input;
+#     }
+# 
+#     public List<List<String>> getSelectors()
+#     {
+#         if (this.selectors == null)
+#         {
+#             initialize(this.input);
+#         }
+#         
+#         return this.selectors;
+#     }
+# 
+#     protected void initialize(String input)
+#     {
+#         StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+# 
+#         CommonTokenStream tokens = new CommonTokenStream(lexer);
+# 
+#         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+# 
+#         ParseTree tree = parser.css();
+# 
+#         Collection<ParseTree> selectorCombinations = XPath.findAll(tree, "//selectorCombination", parser);
+# 
+#         this.selectors = new ArrayList<List<String>>(selectorCombinations.size());
+#         this.properties = new HashMap<List<String>, Map<String, String>>();
+# 
+#         for (ParseTree selectorCombination : selectorCombinations)
+#         {
+#             List<String> currentSelectors = new ArrayList<String>(selectorCombination.getChildCount());
+#             this.selectors.add(currentSelectors);
+# 
+#             for (int index = 0; index < selectorCombination.getChildCount(); index++)
+#             {
+#                 String text = selectorCombination.getChild(index).getText();
+#                 currentSelectors.add(text);
+#             }
+#             Map<String, String> block = retrieveProperties(selectorCombination, parser);
+# 
+#             this.properties.put(currentSelectors, block);
+#         }
+#     }
+# 
+#     protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+#     {
+#         Map<String, String> result;
+# 
+#         Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+# 
+#         result = new HashMap<String, String>(properties.size());
+# 
+#         for (ParseTree property : properties)
+#         {
+#             String key = property.getChild(0).getText();
+#             String value = property.getChild(2).getText();
+#             result.put(key, value);
+#         }
+# 
+#         return result;
+#     }
+# 
+#     protected Collection<ParseTree> findPropertyNodes(final ParseTree selectorEntry)
+#     {
+#         ParseTree parent = selectorEntry.getParent();
+#         PropertyVisitor visitor = new PropertyVisitor(selectorEntry.getParent());
+#         parent.accept(visitor);
+# 
+#         return visitor.properties;
+#     }
+# 
+#     public Map<String, String> getProperties(List<String> selector)
+#     {
+#         if (this.properties == null)
+#         {
+#             initialize(this.input);
+#         }
+# 
+#         return this.properties.get(selector);
+#     }
+# 
+#     [..]
+# }
+
+The current StringTemplateCSSHelperTest needs to be modified because of the API changes.
