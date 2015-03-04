@@ -1493,4 +1493,5 @@ need not to be constrained to any specific AST.
 It's worth reviewing our selector syntax:
 
 - a rule starting with a dot matches node classes.
-- a rule starting with a hash matches node text.
+- a rule starting with a hash identifies unique nodes.
+- a rule with surround
