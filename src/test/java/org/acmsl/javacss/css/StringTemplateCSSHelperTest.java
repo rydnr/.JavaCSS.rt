@@ -175,6 +175,7 @@ public class StringTemplateCSSHelperTest
         ParseTree ast = parser.compilationUnit();
 
         Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
         ParseTree semiColon = matches.get(0);
     }
 }
