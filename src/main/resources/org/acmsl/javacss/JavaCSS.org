@@ -1514,3 +1514,10 @@ That is,
 # dot2 [label="."];
 # barIdentifier [label="bar"];
 # semicolon [label=";"];
+# packageLiteral -> packageDeclaration;
+# comIdentifier -> packageDeclaration;
+# dot1 -> packageDeclaration;
+# fooIdentifier -> packageDeclaration;
+# dot2 -> packageDeclaration;
+# barIdentifier -> packageDeclaration;
+# semicolon -> packageDeclaration;
