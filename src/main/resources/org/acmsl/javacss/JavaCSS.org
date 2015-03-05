@@ -984,7 +984,7 @@ to one selector, even though it's not really true. It's the combination of selec
 to match certain pieces of each template. But again, we'll leave that for later. Meanwhile, let's update the grammar to
 wrap all selectors into one.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC
 #   css
 #   	:	selectorCombination '{' property+ '}' EOF
 #   	;
