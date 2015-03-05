@@ -672,7 +672,7 @@ outline of what we'd like to build.
 The next piece in the puzzle is defining the CSS-like properties to apply to the nodes matched by the selectors.
 If we wanted to use two spaces after the "package" word, and two new lines after the semicolon, we would write it as follows:
 
-#+BEGIN_SRC java
+#+BEGIN_SRC css
   .packageDeclaration #identifier::before {
     content: "  ";
   }
