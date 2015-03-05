@@ -1322,7 +1322,7 @@ A simple change to passing "selectorEntry.getParent()" allows the block to be pa
 
 But the test still fails.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC sh
 # retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 # org.junit.ComparisonFailure: expected:<[  ]> but was:<["  "]>
 #         at org.junit.Assert.assertEquals(Assert.java:115)
