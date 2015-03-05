@@ -348,8 +348,7 @@ adding a subtree which seemed good enough, but it was made up completely. It pas
         }
 
         @Override
-        public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-        {
+        public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
             ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
             newImport.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
             newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
