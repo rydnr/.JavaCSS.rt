@@ -1057,7 +1057,7 @@ the test non-deterministic.
 
 However, the input we are building to test our helper is not valid. It generates texts like
 
-#+BEGIN_SRC java
+#+BEGIN_SRC css
 # .packageDeclaration #identifier::before {
 #     content: "  ";
 # }
