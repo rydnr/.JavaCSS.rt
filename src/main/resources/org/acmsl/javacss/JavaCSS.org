@@ -1639,8 +1639,7 @@ For our AST, a good fit could be the one produced by parsing this package declar
 
 That is,
 
-#+BEGIN_SRC java
-# dot-syntax:
+#+BEGIN_SRC dot
 # packageDeclaration;
 # packageLiteral [label="package"];
 # comIdentifier [label="com"];
