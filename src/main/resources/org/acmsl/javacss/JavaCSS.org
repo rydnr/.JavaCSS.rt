@@ -1,5 +1,4 @@
 * JavaCSS
-
 # 1. Choose a topic
 # 2. Find information
 # 3. State your thesis
@@ -22,7 +21,7 @@ JavaCSS contains an ANTLR-based Java parser. It reads Java source code, and gene
 The parser and lexer are built by ANTLR from the [[https://raw.githubusercontent.com/antlr/grammars-v4/master/java8/Java8.g4][Java8.g4]] grammar already available in ANTLR's github repository.
 
 Looking at the grammar itself, its main entry point is the "compilationUnit" rule:
-#+BEGIN_SRC java
+#+BEGIN_SRC 
 #   compilationUnit
 #     :  packageDeclaration? importDeclaration* typeDeclaration* EOF
 #     ;
