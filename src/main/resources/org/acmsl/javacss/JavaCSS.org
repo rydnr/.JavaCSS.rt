@@ -1659,7 +1659,7 @@ That is,
 
 For the CSS, this would be simple enough: add a blank space before the semicolon.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC css
 # .packageDeclaration ";"::before {
 #    content: " ";
 # }
