@@ -1715,7 +1715,7 @@ This test is more involved, and of course it won't compile until we write the ne
 
 And as expected, the null assertion makes the test fail.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC sh
 # Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
 # finds_the_matching_selector(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.007 sec  <<< FAILURE!
 # java.lang.AssertionError: null
