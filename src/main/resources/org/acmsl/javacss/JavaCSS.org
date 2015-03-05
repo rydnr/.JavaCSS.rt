@@ -430,8 +430,7 @@ do the whole parsing, not just part of it.
 
 #+BEGIN_SRC java
          @Override
-         public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx)
-         {
+         public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
              ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
              Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream("import " + this.importType + ";"));
              CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -449,8 +448,7 @@ ImportDeclarationContext object that we've made up for no reason. ANTLR can hand
 
 #+BEGIN_SRC java
          @Override
-         public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-         {
+         public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
              Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream("import " + this.importType + ";"));
              CommonTokenStream tokens = new CommonTokenStream(lexer);
              Java8Parser parser = new Java8Parser(tokens);
