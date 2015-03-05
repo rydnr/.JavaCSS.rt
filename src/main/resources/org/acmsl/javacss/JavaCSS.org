@@ -704,7 +704,8 @@ A map since the properties are a flattened JSON-like structure of key-value tupl
           + "}\n";
 
         StringTemplateCSSLexer lexer =
-            new StringTemplateCSSLexer(new ANTLRInputStream(input));
+            new StringTemplateCSSLexer(
+                new ANTLRInputStream(input));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
