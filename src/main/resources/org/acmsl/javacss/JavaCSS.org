@@ -891,7 +891,7 @@ The problem was that we described the consecutive colons as two tokens, whereas 
 
 That fixes the first test. The second input is clearly not supported by our current grammar. We'll need to implement it, but it is not difficult.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC
 #   selector
 #   	:	('.' | '#')? (Identifier | StringLiteral) (COLONCOLON ('before' | 'after'))?
 #   	;
