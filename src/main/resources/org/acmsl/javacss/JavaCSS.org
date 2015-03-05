@@ -717,7 +717,7 @@ A map since the properties are a flattened JSON-like structure of key-value tupl
 As for the grammar itself, we can reuse the Java8 one, removing almost all the parser rules, and keeping the some of the lexer
 ones.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC antlr
 #   css
 #   	:	selector+ '{' property+ '}' EOF
 #   	;
