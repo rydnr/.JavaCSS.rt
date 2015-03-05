@@ -473,6 +473,7 @@ first test.
 
 On the top of my mind, I dream of finding a way to somehow mirror a grammar automatically. Let's consider the following rules from our grammar:
 
+#+BEGIN_SRC
   packageDeclaration
 	:	packageModifier* 'package' Identifier ('.' Identifier)* ';'
 	;
@@ -522,9 +523,11 @@ On the top of my mind, I dream of finding a way to somehow mirror a grammar auto
 	|	elementValueArrayInitializer
 	|	annotation
 	;
+#+END_SRC
 
 We could think of analogous StringTemplate rules:
 
+#+BEGIN_SRC
   packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
   <modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
   >>
@@ -584,6 +587,7 @@ We could think of analogous StringTemplate rules:
     endif><
   endif>
   >>
+#+END_SRC
 
 I hope you get the idea. There seems to exist an automatically-generated template set for a given ANTLR grammar, given the AST/ParseTree
 provides getters for each subtree, so StringTemplate can access them.
