@@ -1,4 +1,4 @@
-% Created 2015-03-05 Thu 08:55
+% Created 2015-03-05 Thu 08:57
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -395,7 +395,44 @@ protected static class ImportAddOperation
 It was a start. But how to be sure our new tree is equivalent to a tree as if it was parsed by ANTLR? By looking at the grammar.
 In our current code, we are not respecting the grammar rules. Our import type must be represented by a tree of typeNameContext.
 
-\includegraphics[width=.9\linewidth]{antlr-tree.png}
+\begin{verbatim}
+graph antlr_tree {
+  label="ANTLR Parse Tree for Java8.g4"
+  node [style=filled]
+
+  importDeclaration [label="[importDeclarationContext]"];
+
+  node [label="[packageOrTypeNameContext]"]
+  packageOrTypeName1; packageOrTypeName2;
+
+  typeName [label="[TypeNameContext]"];
+
+  singleTypeImport [label="[singleTypeImportDeclarationContext]"];
+
+  import [label="import"];
+  java [label="java"];
+  util [label="util"];
+  list [label="List"];
+  colon [label=";"];
+  node [label="."]
+  dot1; dot2;
+
+  import -- singleTypeImport;
+  singleTypeImport -- importDeclaration;
+  typeName -- singleTypeImport;
+  colon -- singleTypeImport;
+
+  packageOrTypeName1 -- typeName;
+  dot2 -- typeName;
+  list -- typeName;
+
+  packageOrTypeName2 -- packageOrTypeName1;
+  dot1 -- packageOrTypeName1;
+  util -- packageOrTypeName1;
+
+  java -- packageOrTypeName2;
+}
+\end{verbatim}
 
 An easy way to review what our tree should look like is by adding a valid import statement to our test. It's pretty straightforward,
 but there's one more thing we have to take care of. We need to find out how to build a subtree of "packageOrTypeNameContext" from our type.
@@ -1666,7 +1703,23 @@ package com.foo.bar;
 
 That is,
 
-\includegraphics[width=.9\linewidth]{package-dot.png}
+\begin{verbatim}
+packageDeclaration;
+packageLiteral [label="package"];
+comIdentifier [label="com"];
+dot1 [label="."];
+fooIdentifier [label="foo"];
+dot2 [label="."];
+barIdentifier [label="bar"];
+semicolon [label=";"];
+packageLiteral -> packageDeclaration;
+comIdentifier -> packageDeclaration;
+dot1 -> packageDeclaration;
+fooIdentifier -> packageDeclaration;
+dot2 -> packageDeclaration;
+barIdentifier -> packageDeclaration;
+semicolon -> packageDeclaration;
+\end{verbatim}
 
 For the CSS, this would be simple enough: add a blank space before the semicolon.
 
