@@ -1176,7 +1176,7 @@ As always, we need to provide the skeleton to make it compile.
 
 As expected, the test fails.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC sh
 # Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
 # retrieves_properties_for_a_simple_input(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0 sec  <<< FAILURE!
 # java.lang.AssertionError: null
