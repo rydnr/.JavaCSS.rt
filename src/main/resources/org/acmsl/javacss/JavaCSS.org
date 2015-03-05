@@ -1397,7 +1397,7 @@ This new test is equilavent to the previous one, and passes. Let's check what ha
 
 It doesn't. It's a bit frustrating, but it also gives a great sense of progress.
 
-#+BEGIN_SRC java
+#+BEGIN_SRC shell
 # Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
 # retrieves_properties_for_an_input_with_multiple_blocks(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.007 sec  <<< FAILURE!
 # java.lang.AssertionError: expected:<0> but was:<1>
