@@ -285,4 +285,1505 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen104
 )
 (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
-Package: l
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count88
+\LTcapwidth=\dimen105
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count89
+\LT@rows=\count90
+\c@LT@tables=\count91
+\c@LT@chunks=\count92
+\LT@p@ftn=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count93
+\float@exts=\toks18
+\float@box=\box30
+\@float@everytoks=\toks19
+\@floatcapt=\box31
+)
+(/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen106
+\WF@size=\dimen107
+\c@WF@wrappedlines=\count94
+\WF@box=\box32
+\WF@everypar=\toks20
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count95
+\rotFPtop=\skip47
+\rotFPbot=\skip48
+\rot@float@box=\box33
+\rot@mess@toks=\toks21
+)
+(/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box34
+\UL@hyphenbox=\box35
+\UL@skip=\skip49
+\UL@hook=\toks22
+\UL@height=\dimen108
+\UL@pe=\count96
+\UL@pixel=\dimen109
+\ULC@box=\box36
+Package: ulem 2012/05/18
+\ULdepth=\dimen110
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks23
+\ex@=\dimen111
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen112
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box37
+\strutbox@=\box38
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks24
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks25
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks26
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/usr/share/texmf-dist/tex/latex/marvosym/marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
+)
+(/usr/share/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen120
+\Hy@linkcounter=\count109
+\Hy@pagecounter=\count110
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count111
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4062.
+Package hyperref Info: Link nesting OFF on input line 4067.
+Package hyperref Info: Hyper index ON on input line 4070.
+Package hyperref Info: Plain pages OFF on input line 4077.
+Package hyperref Info: Backreferencing OFF on input line 4082.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4300.
+\c@Hy@tempcnt=\count112
+
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4653.
+\Fld@menulength=\count113
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+Package hyperref Info: Hyper figures OFF on input line 5773.
+Package hyperref Info: Link nesting OFF on input line 5778.
+Package hyperref Info: Hyper index ON on input line 5781.
+Package hyperref Info: backreferencing OFF on input line 5788.
+Package hyperref Info: Link coloring OFF on input line 5793.
+Package hyperref Info: Link coloring with OCG OFF on input line 5798.
+Package hyperref Info: PDF/A mode OFF on input line 5803.
+LaTeX Info: Redefining \ref on input line 5843.
+LaTeX Info: Redefining \pageref on input line 5847.
+\Hy@abspage=\count114
+\c@Item=\count115
+\c@Hfootnote=\count116
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+\Fld@listcount=\count117
+\c@bookmark@seq@number=\count118
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip53
+) (.//JavaCSS.aux)
+\openout1 = `JavaCSS.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count119
+\scratchdimen=\dimen123
+\scratchbox=\box39
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen124
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks29
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box40
+Package hyperref Info: Link coloring OFF on input line 25.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count125
+)
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
+
+(.//JavaCSS.out) (.//JavaCSS.out)
+\@outlinefile=\write3
+\openout3 = `JavaCSS.out'.
+
+LaTeX Font Info:    Try loading font information for U+wasy on input line 28.
+
+(/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+(.//JavaCSS.toc)
+\tf@toc=\write4
+\openout4 = `JavaCSS.toc'.
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 47.
+
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 51--51
+[]  \T1/cmtt/m/n/10.95 :  packageDeclaration? importDeclaration* typeDeclaratio
+n* EOF[] 
+ []
+
+[2] [3] [4]
+Overfull \hbox (92.66968pt too wide) in paragraph at lines 187--187
+[]\T1/cmtt/m/n/10.95 for (ParseTree node : XPath.findAll(tree, "//methodHeader/
+result//*", parser)) {[] 
+ []
+
+[5]
+Overfull \hbox (30.4276pt too wide) in paragraph at lines 218--218
+[]    \T1/cmtt/m/n/10.95 private final List<String> returnTypes = new ArrayList
+<String>();[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 218--218
+[]    \T1/cmtt/m/n/10.95 public void exitResult(@NotNull final Java8Parser.Resu
+ltContext ctx)[] 
+ []
+
+
+Overfull \hbox (120.96153pt too wide) in paragraph at lines 235--235
+[] \T1/cmtt/m/n/10.95 public List<String> retrieveReturnTypesOfMethods(ParseTre
+e tree, Java8Parser parser)[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 235--235
+[]     \T1/cmtt/m/n/10.95 for (ParseTree node : XPath.findAll(tree, "//methodHe
+ader", parser))[] 
+ []
+
+
+Overfull \hbox (115.30316pt too wide) in paragraph at lines 235--235
+[]         \T1/cmtt/m/n/10.95 ReturnTypesOfMethodsListener listener = new Retur
+nTypesOfMethodsListener();[] 
+ []
+
+[6]
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 272--272
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+(input));[] 
+ []
+
+[7]
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 303--303
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+(input));[] 
+ []
+
+[8]
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 337--337
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> imports = XPath.findAll(tree, "/
+/import", parser);[] 
+ []
+
+[9]
+Overfull \hbox (29.54959pt too wide) in paragraph at lines 356--359
+\T1/cmr/m/n/10.95 name at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement
+(XPath.java:175)
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 392--392
+[]    \T1/cmtt/m/n/10.95 ImportAddOperation visitor = new ImportAddOperation(my
+Type);[] 
+ []
+
+
+Overfull \hbox (335.97963pt too wide) in paragraph at lines 392--392
+[]    \T1/cmtt/m/n/10.95 public CompilationUnitContext visitCompilationUnit(@or
+g.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)[] 
+ []
+
+
+Overfull \hbox (194.52036pt too wide) in paragraph at lines 392--392
+[]        \T1/cmtt/m/n/10.95 ImportDeclarationContext newImport = new ImportDec
+larationContext(ctx, ctx.invokingState);[] 
+ []
+
+
+Overfull \hbox (58.71945pt too wide) in paragraph at lines 392--392
+[]        \T1/cmtt/m/n/10.95 newImport.addChild(new CommonToken(Java8Parser.IMP
+ORT, "import"));[] 
+ []
+
+
+Overfull \hbox (92.66968pt too wide) in paragraph at lines 392--392
+[]        \T1/cmtt/m/n/10.95 newImport.addChild(new CommonToken(Java8Parser.Ide
+ntifier, importType));[] 
+ []
+
+[10]
+Overfull \hbox (313.34615pt too wide) in paragraph at lines 420--420
+[]\T1/cmtt/m/n/10.95 public CompilationUnitContext visitCompilationUnit(@org.an
+tlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)[] 
+ []
+
+
+Overfull \hbox (171.88687pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 ImportDeclarationContext newImport = new ImportDeclara
+tionContext(ctx, ctx.invokingState);[] 
+ []
+
+
+Overfull \hbox (64.37782pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 SingleTypeImportDeclarationContext singleTypeImportDec
+larationContext =[] 
+ []
+
+
+Overfull \hbox (109.64479pt too wide) in paragraph at lines 420--420
+[]        \T1/cmtt/m/n/10.95 new SingleTypeImportDeclarationContext(newImport, 
+newImport.invokingState);[] 
+ []
+
+
+Overfull \hbox (177.54524pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 singleTypeImportDeclarationContext.addChild(new Common
+Token(Java8Parser.IMPORT, "import"));[] 
+ []
+
+
+Overfull \hbox (75.69456pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+(this.importType));[] 
+ []
+
+
+Overfull \hbox (7.79411pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 singleTypeImportDeclarationContext.addChild(typeNameCo
+ntext);[] 
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 420--420
+[]    \T1/cmtt/m/n/10.95 newImport.addChild(new CommonToken(Java8Parser.COLON, 
+";"));[] 
+ []
+
+
+Overfull \hbox (313.34615pt too wide) in paragraph at lines 440--440
+[]\T1/cmtt/m/n/10.95 public CompilationUnitContext visitCompilationUnit(@org.an
+tlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)[] 
+ []
+
+
+Overfull \hbox (171.88687pt too wide) in paragraph at lines 440--440
+[]    \T1/cmtt/m/n/10.95 ImportDeclarationContext newImport = new ImportDeclara
+tionContext(ctx, ctx.invokingState);[] 
+ []
+
+
+Overfull \hbox (177.54524pt too wide) in paragraph at lines 440--440
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+("import " + this.importType + ";"));[] 
+ []
+
+
+Overfull \hbox (239.78732pt too wide) in paragraph at lines 440--440
+[]    \T1/cmtt/m/n/10.95 SingleTypeImportDeclarationContext singleTypeImportDec
+laration = parser.singleTypeImportDeclaration();[] 
+ []
+
+[11]
+Overfull \hbox (313.34615pt too wide) in paragraph at lines 457--457
+[]\T1/cmtt/m/n/10.95 public CompilationUnitContext visitCompilationUnit(@org.an
+tlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)[] 
+ []
+
+
+Overfull \hbox (177.54524pt too wide) in paragraph at lines 457--457
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+("import " + this.importType + ";"));[] 
+ []
+
+
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 457--457
+[]    \T1/cmtt/m/n/10.95 ImportDeclarationContext newImport = parser.importDecl
+aration();[] 
+ []
+
+[12]
+Overfull \hbox (3.05898pt too wide) in paragraph at lines 550--561
+[]\T1/cmr/m/n/10.95 annotation(a) ::= << <if(a.normal)>< nor-malAn-no-ta-tion(a
+=a)>< else><
+ []
+
+
+Overfull \hbox (157.96028pt too wide) in paragraph at lines 562--565
+[]\T1/cmr/m/n/10.95 normalAnnotation(a) ::= << @<type-Name(i=a)>(<if(a.elementV
+aluePairList)><a.elementValuePairList:{
+ []
+
+
+Overfull \hbox (14.99355pt too wide) in paragraph at lines 570--573
+[]\T1/cmr/m/n/10.95 singleElementAnnotation(a) ::= << @<type-Name(i=a)>(<a.elem
+entValue>)
+ []
+
+
+Overfull \hbox (24.40051pt too wide) in paragraph at lines 582--585
+[]\T1/cmr/m/n/10.95 elementValuePairList(pair) ::= << <pair:{ p |<el-e-ment-Val
+-ue-Pair(i=p.identifier,
+ []
+
+[13] [14] [15] [16]
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 743--743
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateCSSLe
+xer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 743--743
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplateCSS
+Parser(tokens);[] 
+ []
+
+[17]
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 873--873
+[]   \T1/cmtt/m/n/10.95 |   UnicodeEscape // This is not in the spec but preven
+ts having to preprocess the input[] 
+ []
+
+[18]
+Overfull \hbox (36.08597pt too wide) in paragraph at lines 873--873
+[]\T1/cmtt/m/n/10.95 // This is not in the spec but prevents having to preproce
+ss the input[] 
+ []
+
+
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 873--873
+[]\T1/cmtt/m/n/10.95 // Ÿ3.8 Identifiers (must appear after all keywords in the
+ grammar)[] 
+ []
+
+[19]
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 873--873
+[]     \T1/cmtt/m/n/10.95 | // covers all characters above 0xFF which are not a
+ surrogate[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 873--873
+[]     \T1/cmtt/m/n/10.95 | // covers UTF-16 surrogate pairs encodings for U+10
+000 to U+10FFFF[] 
+ []
+
+
+Overfull \hbox (251.10406pt too wide) in paragraph at lines 873--873
+[]         \T1/cmtt/m/n/10.95 {Character.isJavaIdentifierStart(Character.toCode
+Point((char)_input.LA(-2), (char)_input.LA(-1)))}?[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 873--873
+[]     \T1/cmtt/m/n/10.95 : [a-zA-Z0-9$_] // these are the "java letters or dig
+its" below 0xFF[] 
+ []
+
+
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 873--873
+[]     \T1/cmtt/m/n/10.95 | // covers all characters above 0xFF which are not a
+ surrogate[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 873--873
+[]     \T1/cmtt/m/n/10.95 | // covers UTF-16 surrogate pairs encodings for U+10
+000 to U+10FFFF[] 
+ []
+
+
+Overfull \hbox (245.4457pt too wide) in paragraph at lines 873--873
+[]         \T1/cmtt/m/n/10.95 {Character.isJavaIdentifierPart(Character.toCodeP
+oint((char)_input.LA(-2), (char)_input.LA(-1)))}?[] 
+ []
+
+[20]
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 896--896
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateCSSLe
+xer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 896--896
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplateCSS
+Parser(tokens);[] 
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 906--906
+[]\T1/cmtt/m/n/10.95 Running org.acmsl.javacss.css.parser.StringTemplateCSSPars
+erTest[] 
+ []
+
+
+Overfull \hbox (403.88008pt too wide) in paragraph at lines 906--906
+[]\T1/cmtt/m/n/10.95 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time ela
+psed: 0.004 sec - in org.acmsl.javacss.css.parser.StringTemplateCSSParserTest[]
+ 
+ []
+
+[21]
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 921--921
+[]     \T1/cmtt/m/n/10.95 : ('.' | '#') Identifier (COLONCOLON ('before' | 'aft
+er'))?[] 
+ []
+
+
+Overfull \hbox (109.64479pt too wide) in paragraph at lines 929--929
+[]     \T1/cmtt/m/n/10.95 : ('.' | '#')? (Identifier | StringLiteral) (COLONCOL
+ON ('before' | 'after'))?[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 957--957
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(input);[] 
+ []
+
+
+Overfull \hbox (120.96153pt too wide) in paragraph at lines 957--957
+[]    \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration #identifier::
+before", selectors.get(0));[] 
+ []
+
+[22]
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 1011--1011
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateCSSLe
+xer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 1011--1011
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplateCSS
+Parser(tokens);[] 
+ []
+
+
+Overfull \hbox (126.6199pt too wide) in paragraph at lines 1011--1011
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> selectorEntries = XPath.findAll(
+tree, "//selector", parser);[] 
+ []
+
+[23]
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 1011--1011
+[]    \T1/cmtt/m/n/10.95 this.selectors = new ArrayList<String>(selectorEntries
+.size());[] 
+ []
+
+
+Overfull \hbox (364.27148pt too wide) in paragraph at lines 1037--1037
+[]\T1/cmtt/m/n/10.95 retrieves_selectors_for_a_simple_input(org.acmsl.javacss.c
+ss.StringTemplateCSSHelperTest)  Time elapsed: 0.002 sec  <<< FAILURE![] 
+ []
+
+
+Overfull \hbox (386.90497pt too wide) in paragraph at lines 1037--1037
+[]\T1/cmtt/m/n/10.95 org.junit.ComparisonFailure: expected:<.packageDeclaration
+[ ]#identifier::before> but was:<.packageDeclaration[]#identifier::before>[] 
+ []
+
+
+Overfull \hbox (409.53845pt too wide) in paragraph at lines 1037--1037
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_selectors_for_a_simple_input(StringTemplateCSSHelperTest.java:70)[
+] 
+ []
+
+[24]
+Overfull \hbox (115.30316pt too wide) in paragraph at lines 1051--1051
+[]    \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration#identifier::b
+efore", selectors.get(0));[] 
+ []
+
+
+Overfull \hbox (109.64479pt too wide) in paragraph at lines 1088--1088
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(input.toString());[] 
+ []
+
+
+Overfull \hbox (234.12895pt too wide) in paragraph at lines 1088--1088
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration#identifie
+r" + index + "::before", selectors.get(index));[] 
+ []
+
+
+Overfull \hbox (13.45248pt too wide) in paragraph at lines 1088--1088
+[]\T1/cmtt/m/n/10.95 public void retrieves_selectors_for_an_input_with_several_
+blocks()[] 
+ []
+
+[25]
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 1129--1129
+[]        \T1/cmtt/m/n/10.95 input.append("::before {\n    content: \"  \";\n}\
+n\n");[] 
+ []
+
+
+Overfull \hbox (109.64479pt too wide) in paragraph at lines 1129--1129
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(input.toString());[] 
+ []
+
+
+Overfull \hbox (234.12895pt too wide) in paragraph at lines 1129--1129
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration#identifie
+r" + index + "::before", selectors.get(index));[] 
+ []
+
+[26] [27]
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1199--1199
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(input);[] 
+ []
+
+
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 1199--1199
+[]    \T1/cmtt/m/n/10.95 Map<String, String> properties = helper.getProperties(
+selectors.get(0));[] 
+ []
+
+
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1221--1221
+[]\T1/cmtt/m/n/10.95 Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.001 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (347.29637pt too wide) in paragraph at lines 1221--1221
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_a_simple_input(org.acmsl.javacss.
+css.StringTemplateCSSHelperTest)  Time elapsed: 0 sec  <<< FAILURE![] 
+ []
+
+
+Overfull \hbox (420.8552pt too wide) in paragraph at lines 1221--1221
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:123
+)[] 
+ []
+
+[28]
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateCSSLe
+xer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplateCSS
+Parser(tokens);[] 
+ []
+
+
+Overfull \hbox (188.86198pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> selectorEntries = XPath.findAll(
+tree, "//selectorCombination", parser);[] 
+ []
+
+
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 this.selectors = new ArrayList<String>(selectorEntries
+.size());[] 
+ []
+
+
+Overfull \hbox (7.79411pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 this.properties = new HashMap<String, Map<String, Stri
+ng>>();[] 
+ []
+
+
+Overfull \hbox (81.35294pt too wide) in paragraph at lines 1282--1282
+[]        \T1/cmtt/m/n/10.95 Map<String, String> block = retrieveProperties(sel
+ectorEntry, parser);[] 
+ []
+
+
+Overfull \hbox (234.12895pt too wide) in paragraph at lines 1282--1282
+[]\T1/cmtt/m/n/10.95 protected Map<String, String> retrieveProperties(ParseTree
+ selectorEntry, StringTemplateCSSParser parser)[] 
+ []
+
+
+Overfull \hbox (149.25339pt too wide) in paragraph at lines 1282--1282
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> properties = XPath.findAll(selec
+torEntry, "//property", parser);[] 
+ []
+
+[29]
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1296--1296
+[]\T1/cmtt/m/n/10.95 Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.006 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (369.92986pt too wide) in paragraph at lines 1296--1296
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_a_simple_input(org.acmsl.javacss.
+css.StringTemplateCSSHelperTest)  Time elapsed: 0.006 sec  <<< FAILURE![] 
+ []
+
+
+Overfull \hbox (420.8552pt too wide) in paragraph at lines 1296--1296
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:125
+)[] 
+ []
+
+
+Overfull \hbox (154.91176pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateCSSLe
+xer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplateCSS
+Parser(tokens);[] 
+ []
+
+[30]
+Overfull \hbox (188.86198pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> selectorEntries = XPath.findAll(
+tree, "//selectorCombination", parser);[] 
+ []
+
+
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 this.selectors = new ArrayList<String>(selectorEntries
+.size());[] 
+ []
+
+
+Overfull \hbox (7.79411pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 this.properties = new HashMap<String, Map<String, Stri
+ng>>();[] 
+ []
+
+
+Overfull \hbox (149.25339pt too wide) in paragraph at lines 1354--1354
+[]        \T1/cmtt/m/n/10.95 Map<String, String> block = retrieveProperties(sel
+ectorEntry.getParent(), parser);[] 
+ []
+
+
+Overfull \hbox (205.8371pt too wide) in paragraph at lines 1354--1354
+[]\T1/cmtt/m/n/10.95 protected Map<String, String> retrieveProperties(ParseTree
+ cssEntry, StringTemplateCSSParser parser)[] 
+ []
+
+
+Overfull \hbox (120.96153pt too wide) in paragraph at lines 1354--1354
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> properties = XPath.findAll(cssEn
+try, "//property", parser);[] 
+ []
+
+[31]
+Overfull \hbox (369.92986pt too wide) in paragraph at lines 1364--1364
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_a_simple_input(org.acmsl.javacss.
+css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< FAILURE![] 
+ []
+
+
+Overfull \hbox (420.8552pt too wide) in paragraph at lines 1364--1364
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_a_simple_input(StringTemplateCSSHelperTest.java:128
+)[] 
+ []
+
+
+Overfull \hbox (109.64479pt too wide) in paragraph at lines 1416--1416
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(input.toString());[] 
+ []
+
+[32]
+Overfull \hbox (115.30316pt too wide) in paragraph at lines 1416--1416
+[]        \T1/cmtt/m/n/10.95 Map<String, String> properties = helper.getPropert
+ies(selectors.get(index));[] 
+ []
+
+
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 1416--1416
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals("\"" + index + "\"", propertie
+s.get("content"));[] 
+ []
+
+
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 1426--1426
+[]\T1/cmtt/m/n/10.95 public void retrieves_properties_for_an_input_with_multipl
+e_blocks()[] 
+ []
+
+
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1447--1447
+[]\T1/cmtt/m/n/10.95 Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.007 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (454.80542pt too wide) in paragraph at lines 1447--1447
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_an_input_with_multiple_blocks(org
+.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.007 sec  <<< F
+AILURE![] 
+ []
+
+[33]
+Overfull \hbox (347.29637pt too wide) in paragraph at lines 1447--1447
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.multipleBlockPropertyTests(StringTemplateCSSHelperTest.java:126)[] 
+ []
+
+
+Overfull \hbox (505.73076pt too wide) in paragraph at lines 1447--1447
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_an_input_with_multiple_blocks(StringTemplateCSSHelp
+erTest.java:150)[] 
+ []
+
+
+Overfull \hbox (460.46379pt too wide) in paragraph at lines 1447--1447
+[]  \T1/cmtt/m/n/10.95 StringTemplateCSSHelperTest.retrieves_properties_for_an_
+input_with_multiple_blocks:150->multipleBlockPropertyTests:126 expected:<0> but
+ was:<1>[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1459--1459
+[]    \T1/cmtt/m/n/10.95 public void retrieves_properties_for_an_input_with_mul
+tiple_blocks()[] 
+ []
+
+
+Overfull \hbox (7.79411pt too wide) in paragraph at lines 1459--1459
+[]\T1/cmtt/m/n/10.95 //        multipleBlockPropertyTests((int) (Math.random() 
+* 10));[] 
+ []
+
+[34]
+Overfull \hbox (234.12895pt too wide) in paragraph at lines 1528--1528
+[]\T1/cmtt/m/n/10.95 protected Map<String, String> retrieveProperties(ParseTree
+ selectorEntry, StringTemplateCSSParser parser)[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1528--1528
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> properties = findPropertyNodes(s
+electorEntry);[] 
+ []
+
+
+Overfull \hbox (92.66968pt too wide) in paragraph at lines 1528--1528
+[]\T1/cmtt/m/n/10.95 protected Collection<ParseTree> findPropertyNodes(final Pa
+rseTree selectorEntry)[] 
+ []
+
+[35]
+Overfull \hbox (13.45248pt too wide) in paragraph at lines 1528--1528
+[]    \T1/cmtt/m/n/10.95 final List<ParseTree> properties = new ArrayList<Parse
+Tree>();[] 
+ []
+
+
+Overfull \hbox (36.08597pt too wide) in paragraph at lines 1528--1528
+[]    \T1/cmtt/m/n/10.95 public ParseTree visitProperty(@NotNull final Property
+Context ctx)[] 
+ []
+
+
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1546--1546
+[]\T1/cmtt/m/n/10.95 Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.001 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (454.80542pt too wide) in paragraph at lines 1546--1546
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_an_input_with_multiple_blocks(org
+.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.001 sec  <<< F
+AILURE![] 
+ []
+
+
+Overfull \hbox (347.29637pt too wide) in paragraph at lines 1546--1546
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.multipleBlockPropertyTests(StringTemplateCSSHelperTest.java:137)[] 
+ []
+
+
+Overfull \hbox (505.73076pt too wide) in paragraph at lines 1546--1546
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_an_input_with_multiple_blocks(StringTemplateCSSHelp
+erTest.java:151)[] 
+ []
+
+
+Overfull \hbox (505.73076pt too wide) in paragraph at lines 1546--1546
+[]  \T1/cmtt/m/n/10.95 StringTemplateCSSHelperTest.retrieves_properties_for_an_
+input_with_multiple_blocks:151->multipleBlockPropertyTests:137 expected:<"[0]">
+ but was:<"[1]">[] 
+ []
+
+
+Overfull \hbox (234.12895pt too wide) in paragraph at lines 1612--1612
+[]\T1/cmtt/m/n/10.95 protected Map<String, String> retrieveProperties(ParseTree
+ selectorEntry, StringTemplateCSSParser parser)[] 
+ []
+
+[36]
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1612--1612
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> properties = findPropertyNodes(s
+electorEntry);[] 
+ []
+
+
+Overfull \hbox (92.66968pt too wide) in paragraph at lines 1612--1612
+[]\T1/cmtt/m/n/10.95 protected Collection<ParseTree> findPropertyNodes(final Pa
+rseTree selectorEntry)[] 
+ []
+
+
+Overfull \hbox (75.69456pt too wide) in paragraph at lines 1612--1612
+[]    \T1/cmtt/m/n/10.95 PropertyVisitor visitor = new PropertyVisitor(selector
+Entry.getParent());[] 
+ []
+
+
+Overfull \hbox (13.45248pt too wide) in paragraph at lines 1612--1612
+[]    \T1/cmtt/m/n/10.95 final List<ParseTree> properties = new ArrayList<Parse
+Tree>();[] 
+ []
+
+[37]
+Overfull \hbox (36.08597pt too wide) in paragraph at lines 1612--1612
+[]    \T1/cmtt/m/n/10.95 public ParseTree visitProperty(@NotNull final Property
+Context ctx)[] 
+ []
+
+
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1635--1635
+[]\T1/cmtt/m/n/10.95 Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.008 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (454.80542pt too wide) in paragraph at lines 1635--1635
+[]\T1/cmtt/m/n/10.95 retrieves_properties_for_an_input_with_multiple_blocks(org
+.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.008 sec  <<< F
+AILURE![] 
+ []
+
+
+Overfull \hbox (347.29637pt too wide) in paragraph at lines 1635--1635
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.multipleBlockPropertyTests(StringTemplateCSSHelperTest.java:133)[] 
+ []
+
+
+Overfull \hbox (505.73076pt too wide) in paragraph at lines 1635--1635
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.retrieves_properties_for_an_input_with_multiple_blocks(StringTemplateCSSHelp
+erTest.java:158)[] 
+ []
+
+
+Overfull \hbox (460.46379pt too wide) in paragraph at lines 1635--1635
+[]  \T1/cmtt/m/n/10.95 StringTemplateCSSHelperTest.retrieves_properties_for_an_
+input_with_multiple_blocks:158->multipleBlockPropertyTests:133 expected:<0> but
+ was:<1>[] 
+ []
+
+[38]
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 1649--1649
+[]\T1/cmtt/m/n/10.95 public void retrieves_properties_for_an_input_with_multipl
+e_blocks()[] 
+ []
+
+[39]
+Overfull \hbox (64.37782pt too wide) in paragraph at lines 1720--1720
+[]    \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplateCSS
+Helper(cssInput);[] 
+ []
+
+
+Overfull \hbox (41.74434pt too wide) in paragraph at lines 1720--1720
+[]    \T1/cmtt/m/n/10.95 Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream
+(javaInput));[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1720--1720
+[]    \T1/cmtt/m/n/10.95 Collection<ParseTree> matches = XPath.findAll(ast, "//
+';'", parser);[] 
+ []
+
+
+Overfull \hbox (58.71945pt too wide) in paragraph at lines 1720--1720
+[]    \T1/cmtt/m/n/10.95 String matchedSelectors = helper.retrieveMatchingSelec
+tors(semiColon);[] 
+ []
+
+
+Overfull \hbox (87.0113pt too wide) in paragraph at lines 1720--1720
+[]    \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration \";\"::before
+", matchedSelectors);[] 
+ []
+
+[40]
+Overfull \hbox (437.8303pt too wide) in paragraph at lines 1748--1748
+[]\T1/cmtt/m/n/10.95 Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time ela
+psed: 0.015 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelper
+Test[] 
+ []
+
+
+Overfull \hbox (302.0294pt too wide) in paragraph at lines 1748--1748
+[]\T1/cmtt/m/n/10.95 finds_the_matching_selector(org.acmsl.javacss.css.StringTe
+mplateCSSHelperTest)  Time elapsed: 0.007 sec  <<< FAILURE![] 
+ []
+
+
+Overfull \hbox (352.95474pt too wide) in paragraph at lines 1748--1748
+[]        \T1/cmtt/m/n/10.95 at org.acmsl.javacss.css.StringTemplateCSSHelperTe
+st.finds_the_matching_selector(StringTemplateCSSHelperTest.java:187)[] 
+ []
+
+
+Overfull \hbox (13.45248pt too wide) in paragraph at lines 1748--1748
+[]  \T1/cmtt/m/n/10.95 StringTemplateCSSHelperTest.finds_the_matching_selector:
+187 null[] 
+ []
+
+[41]
+Overfull \hbox (177.54524pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 StringTemplateCSSLexer lexer = new StringTemplateC
+SSLexer(new ANTLRInputStream(input));[] 
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 CommonTokenStream tokens = new CommonTokenStream(l
+exer);[] 
+ []
+
+
+Overfull \hbox (75.69456pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 StringTemplateCSSParser parser = new StringTemplat
+eCSSParser(tokens);[] 
+ []
+
+
+Overfull \hbox (239.78732pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 Collection<ParseTree> selectorCombinations = XPath
+.findAll(tree, "//selectorCombination", parser);[] 
+ []
+
+
+Overfull \hbox (103.98642pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 this.selectors = new ArrayList<List<String>>(selec
+torCombinations.size());[] 
+ []
+
+
+Overfull \hbox (64.37782pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 this.properties = new HashMap<List<String>, Map<St
+ring, String>>();[] 
+ []
+
+
+Overfull \hbox (13.45248pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 for (ParseTree selectorCombination : selectorCombi
+nations)[] 
+ []
+
+
+Overfull \hbox (222.81221pt too wide) in paragraph at lines 1847--1847
+[]            \T1/cmtt/m/n/10.95 List<String> currentSelectors = new ArrayList<
+String>(selectorCombination.getChildCount());[] 
+ []
+
+
+Overfull \hbox (120.96153pt too wide) in paragraph at lines 1847--1847
+[]            \T1/cmtt/m/n/10.95 for (int index = 0; index < selectorCombinatio
+n.getChildCount(); index++)[] 
+ []
+
+
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 1847--1847
+[]                \T1/cmtt/m/n/10.95 String text = selectorCombination.getChild
+(index).getText();[] 
+ []
+
+
+Overfull \hbox (137.93665pt too wide) in paragraph at lines 1847--1847
+[]            \T1/cmtt/m/n/10.95 Map<String, String> block = retrieveProperties
+(selectorCombination, parser);[] 
+ []
+
+[42]
+Overfull \hbox (256.76244pt too wide) in paragraph at lines 1847--1847
+[]    \T1/cmtt/m/n/10.95 protected Map<String, String> retrieveProperties(Parse
+Tree selectorEntry, StringTemplateCSSParser parser)[] 
+ []
+
+
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 Collection<ParseTree> properties = findPropertyNod
+es(selectorEntry);[] 
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 result = new HashMap<String, String>(properties.si
+ze());[] 
+ []
+
+
+Overfull \hbox (115.30316pt too wide) in paragraph at lines 1847--1847
+[]    \T1/cmtt/m/n/10.95 protected Collection<ParseTree> findPropertyNodes(fina
+l ParseTree selectorEntry)[] 
+ []
+
+
+Overfull \hbox (98.32805pt too wide) in paragraph at lines 1847--1847
+[]        \T1/cmtt/m/n/10.95 PropertyVisitor visitor = new PropertyVisitor(sele
+ctorEntry.getParent());[] 
+ []
+
+
+Overfull \hbox (19.11086pt too wide) in paragraph at lines 1847--1847
+[]    \T1/cmtt/m/n/10.95 public Map<String, String> getProperties(List<String> 
+selector)[] 
+ []
+
+[43]
+Overfull \hbox (70.0362pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplat
+eCSSHelper(input);[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 List<List<String>> selectorCombinations = helper.g
+etSelectors();[] 
+ []
+
+
+Overfull \hbox (30.4276pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals(".packageDeclaration", selecto
+rs.get(0));[] 
+ []
+
+
+Overfull \hbox (30.4276pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals("#identifier::before", selecto
+rs.get(1));[] 
+ []
+
+
+Overfull \hbox (24.76923pt too wide) in paragraph at lines 1947--1947
+[]            \T1/cmtt/m/n/10.95 input.append("::before {\n    content: \"  \";
+\n}\n\n");[] 
+ []
+
+[44]
+Overfull \hbox (132.27827pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 StringTemplateCSSHelper helper = new StringTemplat
+eCSSHelper(input.toString());[] 
+ []
+
+
+Overfull \hbox (47.40271pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 List<List<String>> selectorCombinations = helper.g
+etSelectors();[] 
+ []
+
+
+Overfull \hbox (2.13574pt too wide) in paragraph at lines 1947--1947
+[]        \T1/cmtt/m/n/10.95 Assert.assertEquals(count, selectorCombinations.si
+ze());[] 
+ []
+
+
+Overfull \hbox (30.4276pt too wide) in paragraph at lines 1947--1947
+[]            \T1/cmtt/m/n/10.95 List<String> selectors = selectorCombinations.
+get(index);[] 
+ []
+
+
+Overfull \hbox (53.06108pt too wide) in paragraph at lines 1947--1947
+[]       
