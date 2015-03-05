@@ -1,4 +1,4 @@
-% Created 2015-03-05 Thu 08:42
+% Created 2015-03-05 Thu 08:54
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -353,9 +353,11 @@ public class ASTHelper {
 
 Unfortunately, it fails with an unexpected exception:
 
+\begin{verbatim}
 java.lang.IllegalArgumentException: import at index 2 isn't a valid rule name
     at org.antlr.v4.runtime.tree.xpath.XPath.getXPathElement(XPath.java:175)
     at org.antlr.v4.runtime.tree.xpath.XPath.split(XPath.java:122)
+\end{verbatim}
 
 Maybe we chose an invalid XPath selector. Yes, we did. The grammar rule is not "import", but "importDeclaration".
 Now the test fails as it should, which allows us to move forward. The idea is to implement a visitor for the rule where
@@ -380,8 +382,7 @@ protected static class ImportAddOperation
     }
 
     @Override
-    public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-    {
+    public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
         ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
         newImport.addChild(new CommonToken(Java8Parser.IMPORT, "import"));
         newImport.addChild(new CommonToken(Java8Parser.Identifier, importType));
@@ -394,14 +395,15 @@ protected static class ImportAddOperation
 It was a start. But how to be sure our new tree is equivalent to a tree as if it was parsed by ANTLR? By looking at the grammar.
 In our current code, we are not respecting the grammar rules. Our import type must be represented by a tree of typeNameContext.
 
+\includegraphics[width=.9\linewidth]{antlr-tree.png}
+
 An easy way to review what our tree should look like is by adding a valid import statement to our test. It's pretty straightforward,
 but there's one more thing we have to take care of. We need to find out how to build a subtree of "packageOrTypeNameContext" from our type.
 But wait! Our grammar should handle that, we only need to parse our type, calling the "typeName" rule.
 
 \begin{verbatim}
 @Override
-public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-{
+public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
     ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
     SingleTypeImportDeclarationContext singleTypeImportDeclarationContext =
         new SingleTypeImportDeclarationContext(newImport, newImport.invokingState);
@@ -425,8 +427,7 @@ do the whole parsing, not just part of it.
 
 \begin{verbatim}
 @Override
-public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-{
+public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
     ImportDeclarationContext newImport = new ImportDeclarationContext(ctx, ctx.invokingState);
     Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream("import " + this.importType + ";"));
     CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -444,8 +445,7 @@ ImportDeclarationContext object that we've made up for no reason. ANTLR can hand
 
 \begin{verbatim}
 @Override
-public CompilationUnitContext visitCompilationUnit(@org.antlr.v4.runtime.misc.NotNull final CompilationUnitContext ctx)
-{
+public CompilationUnitContext visitCompilationUnit(CompilationUnitContext ctx) {
     Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream("import " + this.importType + ";"));
     CommonTokenStream tokens = new CommonTokenStream(lexer);
     Java8Parser parser = new Java8Parser(tokens);
@@ -471,76 +471,63 @@ first test.
 
 On the top of my mind, I dream of finding a way to somehow mirror a grammar automatically. Let's consider the following rules from our grammar:
 
+\begin{verbatim}
 packageDeclaration
-:        packageModifier* 'package' Identifier ('.' Identifier)* ';'
-;
+      :	packageModifier* 'package' Identifier ('.' Identifier)* ';'
+      ;
 
 packageModifier
-:        annotation
-;
+      :	annotation
+      ;
 
 annotation
-:        normalAnnotation
-\begin{center}
-\begin{tabular}{l}
-markerAnnotation\\
-singleElementAnnotation\\
-\end{tabular}
-\end{center}
-;
+      :	normalAnnotation
+      |	markerAnnotation
+      |	singleElementAnnotation
+      ;
 
 normalAnnotation
-:        '@' typeName '(' elementValuePairList? ')'
-;
+      :	'@' typeName '(' elementValuePairList? ')'
+      ;
 
 markerAnnotation
-:        '@' typeName
-;
+      :	'@' typeName
+      ;
 
 singleElementAnnotation
-:        '@' typeName '(' elementValue ')'
-;
+      :	'@' typeName '(' elementValue ')'
+      ;
 
 typeName
-:        Identifier
-\begin{center}
-\begin{tabular}{l}
-packageOrTypeName '.' Identifier\\
-\end{tabular}
-\end{center}
-;
+      :	Identifier
+      |	packageOrTypeName '.' Identifier
+      ;
 
 packageOrTypeName
-:        Identifier
-\begin{center}
-\begin{tabular}{l}
-packageOrTypeName '.' Identifier\\
-\end{tabular}
-\end{center}
-;
+      :	Identifier
+      |	packageOrTypeName '.' Identifier
+      ;
 
 elementValuePairList
-:        elementValuePair (',' elementValuePair)*
-;
+      :	elementValuePair (',' elementValuePair)*
+      ;
 
 elementValuePair
-:        Identifier '=' elementValue
-;
+      :	Identifier '=' elementValue
+      ;
 
 elementValue
-:        conditionalExpression
-\begin{center}
-\begin{tabular}{l}
-elementValueArrayInitializer\\
-annotation\\
-\end{tabular}
-\end{center}
-;
+      :	conditionalExpression
+      |	elementValueArrayInitializer
+      |	annotation
+      ;
+\end{verbatim}
 
 We could think of analogous StringTemplate rules:
 
+\begin{verbatim}
 packageDeclaration(modifiers, identifier, extraIdentifiers) ::= <<
-<modifiers:\{ m | <packageModifier(mod=m)>\}; separator=" "> package <identifier><extraIdentifiers:\{ e | .<e>\}>;
+<modifiers:{ m | <packageModifier(mod=m)>}; separator=" "> package <identifier><extraIdentifiers:{ e | .<e>}>;
 >>
 
 packageModifier(mod) ::= <<
@@ -560,7 +547,7 @@ endif>
 >>
 
 normalAnnotation(a) ::= <<
-@<typeName(i=a)>(<if(a.elementValuePairList)><a.elementValuePairList:\{ p |<elementValuePairList(pair=p)>\}><endif>)
+@<typeName(i=a)>(<if(a.elementValuePairList)><a.elementValuePairList:{ p |<elementValuePairList(pair=p)>}><endif>)
 >>
 
 markerAnnotation(a) ::= <<
@@ -580,7 +567,7 @@ packageOrTypeName(i, p) ::= << <! it's the same as typeName !>
 >>
 
 elementValuePairList(pair) ::= <<
-<pair:\{ p |<elementValuePair(i=p.identifier, v=p.elementValue)>\}; separator=",">
+<pair:{ p |<elementValuePair(i=p.identifier, v=p.elementValue)>}; separator=",">
 >>
 
 elementValuePair(p, v) ::= <<
@@ -598,6 +585,7 @@ else><
   endif><
 endif>
 >>
+\end{verbatim}
 
 I hope you get the idea. There seems to exist an automatically-generated template set for a given ANTLR grammar, given the AST/ParseTree
 provides getters for each subtree, so StringTemplate can access them.
@@ -732,11 +720,14 @@ public void parses_a_simple_input() {
       + "    content: \"  \";\n"
       + "}\n";
 
-    StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+    StringTemplateCSSLexer lexer =
+        new StringTemplateCSSLexer(
+            new ANTLRInputStream(input));
 
     CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-    StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+    StringTemplateCSSParser parser =
+        new StringTemplateCSSParser(tokens);
     ParseTree ast = parser.css();
     Assert.assertNotNull(ast);
 }
@@ -885,11 +876,14 @@ public void parses_another_simple_input() {
         + "    content: \"\\n\\n\";\n"
         + "  }";
 
-    StringTemplateCSSLexer lexer = new StringTemplateCSSLexer(new ANTLRInputStream(input));
+    StringTemplateCSSLexer lexer =
+        new StringTemplateCSSLexer(
+            new ANTLRInputStream(input));
 
     CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-    StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+    StringTemplateCSSParser parser =
+        new StringTemplateCSSParser(tokens);
     ParseTree ast = parser.css();
     Assert.assertNotNull(ast);
 }
@@ -1671,6 +1665,8 @@ For our AST, a good fit could be the one produced by parsing this package declar
 package com.foo.bar;
 
 That is,
+
+\includegraphics[width=.9\linewidth]{package-dot.png}
 
 For the CSS, this would be simple enough: add a blank space before the semicolon.
 
