@@ -156,11 +156,11 @@ public class StringTemplateCSSHelper
         return this.properties.get(selector);
     }
 
-    public String retrieveMatchingSelectors(ParseTree semiColon)
+    public String retrieveMatchingSelectors(ParseTree ast)
     {
         for (List<String> selectors : this.selectors)
         {
-            if (match(selectors, semiColon))
+            if (match(selectors, ast))
         }
     }
 
