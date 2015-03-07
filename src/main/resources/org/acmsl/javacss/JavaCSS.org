@@ -1937,4 +1937,4 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
  }
 #+END_SRC
 
-Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely.
+Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely. Now we can go back to work: implementing retrieveMatchingSelectors(ParseTree).
