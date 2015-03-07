@@ -2023,4 +2023,13 @@ We need to pass such complete AST as well.
     }
 #+END_SRC
 
-Now we have to implement the algorithm.
+Now we have to implement the algorithm. We can think of different approaches.
+
+**** Algorithm A
+
+- Iterate over the selectors.
+- Maintain a pointer to the current node in the AST.
+- For the current selector, find if the current node matches.
+- If it matches, then point to the next node, and process the next selector.
+  - If there're no selectors remaining, break.
+- If it doesn't match, then point to the next node and retry.
