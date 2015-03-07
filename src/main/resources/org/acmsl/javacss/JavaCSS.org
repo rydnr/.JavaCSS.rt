@@ -2017,4 +2017,10 @@ We need to pass such complete AST as well.
 
         return result;
     }
+
+    protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
+        return false;
+    }
 #+END_SRC
+
+Now we have to implement the algorithm.
