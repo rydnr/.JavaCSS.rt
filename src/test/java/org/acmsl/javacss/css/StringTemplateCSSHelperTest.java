@@ -189,7 +189,7 @@ public class StringTemplateCSSHelperTest
         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
         Assert.assertNotNull(semiColon);
 
-        String matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
+        List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
 
         Assert.assertNotNull(matchedSelectors);
         Assert.assertEquals(".packageDeclaration \";\"::before", matchedSelectors);
