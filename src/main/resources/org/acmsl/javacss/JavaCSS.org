@@ -1954,3 +1954,5 @@ Even though we've had to change the tests, the changes were pretty simple, and t
     }
 #+END_SRC
 
+I noticed I actually missed to complete the previous refactoring. The matching selectors are actually a list, not
+just a string made of selectors.
