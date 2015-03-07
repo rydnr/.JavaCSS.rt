@@ -156,15 +156,20 @@ public class StringTemplateCSSHelper
         return this.properties.get(selector);
     }
 
-    public String retrieveMatchingSelectors(ParseTree ast)
+    public List<String> retrieveMatchingSelectors(ParseTree ast)
     {
+        List<String> result = null;
+
         for (List<String> selectors : this.selectors)
         {
             if (match(selectors, ast))
             {
-
+                result = selectors;
+                break;
             }
         }
+
+        return result;
     }
 
     protected static class PropertyVisitor
