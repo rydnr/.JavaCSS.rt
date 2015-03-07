@@ -1938,3 +1938,19 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
 #+END_SRC
 
 Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely. Now we can go back to work: implementing retrieveMatchingSelectors(ParseTree).
+
+#+BEGIN_SRC java
+    public List<String> retrieveMatchingSelectors(ParseTree ast) {
+        List<String> result = null;
+
+        for (List<String> selectors : this.selectors) {
+            if (match(selectors, ast)) {
+                result = selectors;
+                break;
+            }
+        }
+
+        return result;
+    }
+#+END_SRC
+
