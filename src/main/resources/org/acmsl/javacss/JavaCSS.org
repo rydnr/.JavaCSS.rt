@@ -1958,4 +1958,40 @@ I noticed I actually missed to complete the previous refactoring. The matching s
 just a string made of selectors. That requires adapting the test as well.
 
 #+BEGIN_SRC java
+    @Test
+    public void finds_the_matching_selector(){
+        String javaInput = "package com.foo.bar;";
+
+        String cssInput =
+              ".packageDeclaration \";\"::before {\n"
+            + "   content: \" \";\n"
+            + "}\n";
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
+
+        Assert.assertNotNull(matchedSelectors);
+        Assert.assertEquals(2, matchedSelectors.size());
+        Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
+        Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+    }
 #+END_SRC
+
+In the implementation I've started writing, I introduced a new method, match(List<String>, ParseTree), to isolate the logic
+to check whether the root node is part of the nodes described by the selectors. However, that's not really what we need. We cannot
+restrain ourselves to checking the root node. The check requires evaluating the node not as a root, but in context of the complete AST.
+We need to pass such complete AST as well.
