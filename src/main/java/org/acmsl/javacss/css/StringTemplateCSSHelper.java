@@ -161,7 +161,7 @@ public class StringTemplateCSSHelper
 
         for (List<String> selectors : this.selectors)
         {
-            if (match(selectors, ast))
+            if (match(selectors, node, ast))
             {
                 result = selectors;
                 break;
