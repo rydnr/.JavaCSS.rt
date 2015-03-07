@@ -158,7 +158,7 @@ public class StringTemplateCSSHelper
 
     public String retrieveMatchingSelectors(ParseTree semiColon)
     {
-        for (List<String> selectors
+        for (List<String> selectors : this.selectors
     }
 
     protected static class PropertyVisitor
