@@ -160,7 +160,7 @@ public class StringTemplateCSSHelper
     {
         for (List<String> selectors : this.selectors)
         {
-            if (matche)
+            if (match(selectors, semiColon))
         }
     }
 
