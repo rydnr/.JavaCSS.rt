@@ -171,7 +171,9 @@ public class StringTemplateCSSHelper
         return result;
     }
 
-
+private boolean match(final List<String> selectors, final ParseTree node, final ParseTree ast)
+    {
+    }
 
     protected static class PropertyVisitor
         extends StringTemplateCSSBaseVisitor<ParseTree>
