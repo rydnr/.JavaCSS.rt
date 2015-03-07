@@ -1992,4 +1992,5 @@ just a string made of selectors. That requires adapting the test as well.
 #+END_SRC
 
 In the implementation I've started writing, I introduced a new method, match(List<String>, ParseTree), to isolate the logic
-to che
+to check whether the root node is part of the nodes described by the selectors. However, that's not really what we need. We cannot
+restrain ourselves to checking the root node. The check requires evaluating the node not
