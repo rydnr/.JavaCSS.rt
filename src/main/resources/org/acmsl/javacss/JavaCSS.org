@@ -1995,3 +1995,9 @@ In the implementation I've started writing, I introduced a new method, match(Lis
 to check whether the root node is part of the nodes described by the selectors. However, that's not really what we need. We cannot
 restrain ourselves to checking the root node. The check requires evaluating the node not as a root, but in context of the complete AST.
 We need to pass such complete AST as well.
+
+#+BEGIN_SRC java
+        [..]
+        List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon, ast);
+        [..]
+#+END_SRC
