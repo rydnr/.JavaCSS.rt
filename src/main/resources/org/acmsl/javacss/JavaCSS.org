@@ -2023,7 +2023,8 @@ We need to pass such complete AST as well.
     }
 #+END_SRC
 
-Now we have to implement the algorithm. We can think of different approaches.
+Now we have to implement the algorithm. We can think of different approaches. The definition of the problem could be summarized as:
+Given a node in a tree, and a list of ordered filters, find out whether given node matches the filters.
 
 **** Algorithm A
 
