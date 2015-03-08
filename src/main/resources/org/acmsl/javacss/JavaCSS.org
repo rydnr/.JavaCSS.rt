@@ -2040,3 +2040,6 @@ If it's not our node, but it's an ancestor of our node, then we apply the algori
 the list of selectors not processed yet.
 If it's not our node, and our node doesn't descend from it, then we skip that node, try to find another match in the tree, and apply the
 same steps for the next match.
+
+However, the simplest way to crawl a ParseTree is with a visitor. If we managed to implement the algorithm in a custom visitor, it
+would be simpler and shorter. For that, we need to find out whether we can stop the crawl on demand. Otherwise it'd be very innefficent.
