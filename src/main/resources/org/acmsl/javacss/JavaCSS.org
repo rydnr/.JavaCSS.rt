@@ -2027,14 +2027,3 @@ Now we have to implement the algorithm:
 Given a node in a tree, and a list of ordered filters describing node properties and inheritance relations among nodes, find out whether given node matches the filters.
 We should try to stop as soon as we know the node does not match. Otherwise, it'd be more useful to retrieve all matching nodes for given selectors, and afterwards check whether our node is part of such list.
 
-**** Algorithm A
-
-- Iterate over the selectors.
-- Maintain a pointer to the current node in the AST.
-- For the current selector, find if the current node matches.
-- If it matches,
-  - annotate the current node in a list.
-  - point to the next node.
-  - process the next selector, unless there're no selectors remaining.
-- If it doesn't match, then point to the next node and retry.
-- Finally, check if the node is included in the list of nodes.
