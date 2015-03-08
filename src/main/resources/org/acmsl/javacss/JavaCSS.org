@@ -2025,7 +2025,7 @@ We need to pass such complete AST as well.
 
 Now we have to implement the algorithm:
 Given a node in a tree, and a list of ordered filters describing node properties and inheritance relations among nodes, find out whether given node matches the filters.
-On the other hand, we 
+We should try to stop as soon as we know the node does not match. Otherwise, it'd be more useful to retrieve all matching nodes for given selectors, and afterwards check whether our node is part of such list.
 
 **** Algorithm A
 
