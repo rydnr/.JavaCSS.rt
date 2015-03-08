@@ -2044,4 +2044,5 @@ same steps for the next match.
 However, the simplest way to crawl a ParseTree is with a visitor. If we managed to implement the algorithm in a custom visitor, it
 would be simpler and shorter. For that, we need to find out whether we can stop the crawl on demand. Otherwise it'd be very innefficent.
 Fortunately, ANTLR visitor logic internally calls "parseTree.accept(visitor)", and such "accept" method calls "visitor.visitTerminal()"
-for a TerminalNode, "visitor.visitChildren()" for a "rule" node, or "visitor.visitErrorNode()" for an error node.
+for a TerminalNode, "visitor.visitChildren()" for a "rule" node, or "visitor.visitErrorNode()" for an error node. So it's the visitor
+who manages when to stop the crawl.
