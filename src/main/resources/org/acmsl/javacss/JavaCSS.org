@@ -2032,4 +2032,4 @@ We start with the first selector, and search the tree for the first node for whi
 If it's our node, and there're no other selectors, we conclude there's a match.
 If it's our node, and there're more selectors, we just have to check if our node matches the remaining selectors. That check defines the outcome of the algorithm.
 If it's not our node, but it's an ancestor of our node, then we apply the algorithm to the subtree whose root is the recent match, providing the list of selectors not processed yet.
-If it's not our node, and our node doesn't descend from it, then we skip that node and try to find another match in the tree.
+If it's not our node, and our node doesn't descend from it, then we skip that node, try to find another match in the tree, and apply the same steps for the next match.
