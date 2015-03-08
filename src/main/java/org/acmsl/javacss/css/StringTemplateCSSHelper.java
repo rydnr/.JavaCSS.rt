@@ -172,7 +172,7 @@ public class StringTemplateCSSHelper
     }
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
-        return false;
+        String currentSelector;
     }
 
     protected static class PropertyVisitor
