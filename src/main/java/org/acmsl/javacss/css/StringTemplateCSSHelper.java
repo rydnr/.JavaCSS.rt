@@ -171,8 +171,7 @@ public class StringTemplateCSSHelper
         return result;
     }
 
-    protected boolean match(List<String> selectors, ParseTree node, ParseTree ast)
-    {
+    protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
         return false;
     }
 
