@@ -2028,3 +2028,4 @@ Given a node in a tree, and a list of ordered filters describing node properties
 We should try to stop as soon as we know the node does not match. Otherwise, it'd be more useful to retrieve all matching nodes for given selectors, and afterwards check whether our node is part of such list.
 
 Let's do our first attempt to implement the algorithm. We'll be traversing two ordered structures: the selector list, and the tree, so we'll need two references.
+We start with the first selector, and search the tree for the first node for which the selector is true.
