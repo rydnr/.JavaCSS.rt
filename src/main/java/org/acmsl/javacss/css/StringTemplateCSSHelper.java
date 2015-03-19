@@ -220,7 +220,7 @@ public class StringTemplateCSSHelper
             this.selectors = selectors;
             this.iterator = selectors.iterator();
             if (this.iterator.hasNext()) {
-                this.currentSelector
+                this.currentSelector = this.iterator.next();
             }
         }
 
