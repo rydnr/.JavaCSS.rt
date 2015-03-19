@@ -264,5 +264,9 @@ public class StringTemplateCSSHelper
 
             return result;
         }
+
+        public boolean matchFound()
+        {
+        }
     }
 }
