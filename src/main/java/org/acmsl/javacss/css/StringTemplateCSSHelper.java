@@ -219,7 +219,9 @@ public class StringTemplateCSSHelper
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
             this.iterator = selectors.iterator();
-
+            if (this.iterator.hasNext()) {
+                this.currentSelector
+            }
         }
 
         @Override
