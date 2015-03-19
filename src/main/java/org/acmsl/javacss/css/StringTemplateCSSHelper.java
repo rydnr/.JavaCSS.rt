@@ -234,7 +234,7 @@ public class StringTemplateCSSHelper
                     this.currentSelector = this.iterator.next();
                     result = super.visitNode(node);
                 } else {
-
+                    result
                 }
             }
 
