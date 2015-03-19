@@ -239,7 +239,7 @@ public class StringTemplateCSSHelper
                 } else {
                     result = null;
                 }
-            }
+            } else {
 
             return result;
         }
