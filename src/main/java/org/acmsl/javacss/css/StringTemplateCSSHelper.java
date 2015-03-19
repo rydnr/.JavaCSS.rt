@@ -247,5 +247,9 @@ public class StringTemplateCSSHelper
 
             return result;
         }
+
+        private boolean matches(final ParseTree node, final String currentSelector)
+        {
+        }
     }
 }
