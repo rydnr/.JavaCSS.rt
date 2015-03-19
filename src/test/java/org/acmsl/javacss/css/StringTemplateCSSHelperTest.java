@@ -199,7 +199,7 @@ public class StringTemplateCSSHelperTest
 
         List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
 
-        boolean match = helper.match(selectors, semiColon, ast);
+        Assert.assertTrue(helper.match(selectors, semiColon, ast));
 
         Assert.assertTrue(match);
     }
