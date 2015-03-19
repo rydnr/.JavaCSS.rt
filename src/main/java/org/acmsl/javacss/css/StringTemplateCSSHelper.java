@@ -210,8 +210,6 @@ public class StringTemplateCSSHelper
 
         List<String> selectors;
 
-        final ParseTree parent;
-
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
         }
