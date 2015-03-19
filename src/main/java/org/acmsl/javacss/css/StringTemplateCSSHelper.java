@@ -235,7 +235,7 @@ public class StringTemplateCSSHelper
                 if (this.iterator.hasNext()) {
                     consumedSelectors.push(this.currentSelector);
                     this.currentSelector = this.iterator.next();
-                    result = super.visit(node);
+                    result = super.visitChildren(node);
                 } else if (focusNode.equals(node)) {
                     match = true;
                     result = null;
