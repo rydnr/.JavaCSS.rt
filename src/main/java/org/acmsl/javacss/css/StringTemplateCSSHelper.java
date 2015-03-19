@@ -220,6 +220,7 @@ public class StringTemplateCSSHelper
         public ParseTree visitNode(ParseTree node) {
 
         }
+
         @Override
         public ParseTree visitTerminal(@NotNull final TerminalNode ctx)
         {
