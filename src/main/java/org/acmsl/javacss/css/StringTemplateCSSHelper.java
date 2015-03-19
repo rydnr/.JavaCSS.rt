@@ -253,6 +253,7 @@ public class StringTemplateCSSHelper
 
             if (currentSelector.startsWith(".")) {
                 // class selector
+                result = node.getPayload()
             }
             return result;
         }
