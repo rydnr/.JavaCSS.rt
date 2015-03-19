@@ -169,6 +169,38 @@ public class StringTemplateCSSHelperTest
         String javaInput = "package com.foo.bar;";
 
         String cssInput =
+            ".packageDeclaration \";\"::before {\n"
+            + "   content: \" \";\n"
+            + "}\n";
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon, ast);
+
+        Assert.assertNotNull(matchedSelectors);
+        Assert.assertEquals(2, matchedSelectors.size());
+        Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
+        Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+    }
+
+    @Test
+    public void finds_the_matching_selector(){
+        String javaInput = "package com.foo.bar;";
+
+        String cssInput =
               ".packageDeclaration \";\"::before {\n"
             + "   content: \" \";\n"
             + "}\n";
