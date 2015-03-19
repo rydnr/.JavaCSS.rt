@@ -188,7 +188,7 @@ public class StringTemplateCSSHelperTest
         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
         Assert.assertNotNull(semiColon);
 
-        boolean match = helper.match()
+        boolean match = helper.match(selectors, )
         List<String> matchedSelectors = helper.match(helper.getSelectors(), )
 
         Assert.assertNotNull(matchedSelectors);
