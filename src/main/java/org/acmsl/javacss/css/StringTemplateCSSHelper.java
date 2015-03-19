@@ -201,4 +201,24 @@ public class StringTemplateCSSHelper
     }
 
     protected static class SelectorMatchVisitor
+        extends StringTemplateCSSBaseVisitor<ParseTree>
+    {
+        final List<ParseTree> properties = new ArrayList<ParseTree>();
+        final ParseTree parent;
+
+        public SelectorMatchVisitor(final ParseTree parent)
+        {
+            this.parent = parent;
+        }
+
+        @Override
+        public ParseTree visitProperty(@NotNull final PropertyContext ctx)
+        {
+            if (ctx.getParent() == this.parent)
+            {
+                this.properties.add(ctx);
+            }
+            return super.visitProperty(ctx);
+        }
+    }
 }
