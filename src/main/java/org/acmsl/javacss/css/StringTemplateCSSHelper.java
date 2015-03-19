@@ -236,6 +236,8 @@ public class StringTemplateCSSHelper
 
                 }
             }
+
+            return result;
         }
 
         @Override
