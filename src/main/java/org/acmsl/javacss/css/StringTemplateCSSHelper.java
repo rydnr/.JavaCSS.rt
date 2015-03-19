@@ -43,6 +43,7 @@ import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser.PropertyContext;
 import org.acmsl.javacss.css.parser.StringTemplateCSSVisitor;
+import org.acmsl.javacss.java8.parser.Java8BaseListener;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -202,7 +203,7 @@ public class StringTemplateCSSHelper
     }
 
     protected static class SelectorMatchVisitor
-        extends StringTemplateCSSBaseVisitor<ParseTree>
+        extends Java8BaseListener<ParseTree>
     {
         boolean match = false;
 
