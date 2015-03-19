@@ -46,6 +46,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -188,6 +189,7 @@ public class StringTemplateCSSHelperTest
         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
         Assert.assertNotNull(semiColon);
 
+        List<String> selectors = Arrays.asList(new String[] { ".packageDeclaration", "\";\"::before"})
         boolean match = helper.match(selectors, semiColon, ast);
 
         List<String> matchedSelectors = helper.match(helper.getSelectors(), )
