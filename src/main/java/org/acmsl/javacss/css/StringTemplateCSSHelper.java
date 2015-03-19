@@ -210,7 +210,7 @@ public class StringTemplateCSSHelper
         boolean match = false;
 
         List<String> selectors;
-        Stack<String> matchin
+        Stack<String>
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
         }
