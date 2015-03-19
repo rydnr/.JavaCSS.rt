@@ -226,12 +226,14 @@ public class StringTemplateCSSHelper
 
         @Override
         public ParseTree visitNode(ParseTree node) {
-            ParseTree result
+            ParseTree result;
+
             if (matches(node, this.currentSelector)) {
                 consumedSelectors.push(this.currentSelector);
                 if (this.iterator.hasNext()) {
                     this.currentSelector = this.iterator.next();
                     result = super.visitNode(node);
+
                 }
             }
         }
