@@ -2094,6 +2094,9 @@ It's easier to start with a test, even if we are dealing with ParseTree objects,
     }
 #+END_SRC
 
+What we're testing here is that, given two selectors (.packageDeclaration and ";"::before) and the AST
+resulting from parsing "package com.foo.bar;", the node associated to the semicolon matches the selectors, whereas
+the node associated to the "package" keyword, does not.
 #+BEGIN_SRC java
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
