@@ -189,6 +189,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertNotNull(semiColon);
 
         boolean match = helper.match(selectors, semicolon, ast);
+
         List<String> matchedSelectors = helper.match(helper.getSelectors(), )
 
         Assert.assertNotNull(matchedSelectors);
