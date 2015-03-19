@@ -218,7 +218,7 @@ public class StringTemplateCSSHelper
 
         @Override
         public ParseTree visitNode(ParseTree node) {
-
+            if
         }
 
         @Override
