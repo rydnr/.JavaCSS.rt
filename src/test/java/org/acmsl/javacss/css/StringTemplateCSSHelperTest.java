@@ -195,7 +195,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(1, matches.size());
 
         ParseTree packageNode = matches.toArray(new ParseTree[1])[0];
-        Assert.assertNotNull(semiColon);
+        Assert.assertNotNull(packageNode);
 
         List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
 
