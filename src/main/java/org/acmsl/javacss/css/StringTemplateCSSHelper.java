@@ -60,6 +60,7 @@ import org.checkthread.annotations.ThreadSafe;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
@@ -210,6 +211,8 @@ public class StringTemplateCSSHelper
         boolean match = false;
 
         List<String> selectors;
+        Iterator<String> iterator;
+
         Stack<String> selectorsInProcess = new Stack<String>();
 
         public SelectorMatchVisitor(List<String> selectors) {
