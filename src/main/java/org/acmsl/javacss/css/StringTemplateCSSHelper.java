@@ -203,6 +203,8 @@ public class StringTemplateCSSHelper
     protected static class SelectorMatchVisitor
         extends StringTemplateCSSBaseVisitor<ParseTree>
     {
+        boolean match = false;
+
         final List<ParseTree> properties = new ArrayList<ParseTree>();
         final ParseTree parent;
 
