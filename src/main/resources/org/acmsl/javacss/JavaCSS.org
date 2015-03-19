@@ -2052,6 +2052,8 @@ This approach would then iterate through the selector list, and call a visitor-b
 node matches that selector. If our node is in that set, we add the selector to the list of matching selectors, and repeat the
 process with the next selector.
 
+It's easier to start with a test, even if we are dealing with ParseTree objects, which add certain complexity to the test.
+
 #+BEGIN_SRC java
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
