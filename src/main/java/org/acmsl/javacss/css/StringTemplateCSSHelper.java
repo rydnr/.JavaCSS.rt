@@ -230,6 +230,7 @@ public class StringTemplateCSSHelper
                 consumedSelectors.push(this.currentSelector);
                 if (this.iterator.hasNext()) {
                     this.currentSelector = this.iterator.next();
+
                 }
             }
         }
