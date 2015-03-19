@@ -257,6 +257,7 @@ public class StringTemplateCSSHelper
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
+
             return result;
         }
     }
