@@ -193,12 +193,7 @@ public class StringTemplateCSSHelperTest
 
         boolean match = helper.match(selectors, semiColon, ast);
 
-        List<String> matchedSelectors = helper.match(helper.getSelectors(), )
-
-        Assert.assertNotNull(matchedSelectors);
-        Assert.assertEquals(2, matchedSelectors.size());
-        Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
-        Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+        Assert.assertTrue(match);
     }
 
     @Test
