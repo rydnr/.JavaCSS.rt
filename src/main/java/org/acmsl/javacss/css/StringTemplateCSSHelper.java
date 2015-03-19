@@ -217,6 +217,8 @@ public class StringTemplateCSSHelper
         }
 
         @Override
+        public ParseTree visit
+        @Override
         public ParseTree visitTerminal(@NotNull final TerminalNode ctx)
         {
             if (ctx.getParent() == this.parent)
