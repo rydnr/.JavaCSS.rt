@@ -226,7 +226,7 @@ public class StringTemplateCSSHelper
 
         @Override
         public ParseTree visitNode(ParseTree node) {
-            if (matches(node, ))
+            if (matches(node, this.currentSelector)) {
         }
 
         @Override
