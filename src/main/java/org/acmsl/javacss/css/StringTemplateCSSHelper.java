@@ -237,7 +237,7 @@ public class StringTemplateCSSHelper
                     match = true;
                     result = null;
                 } else {
-                    result =
+                    result = null;
                 }
             }
 
