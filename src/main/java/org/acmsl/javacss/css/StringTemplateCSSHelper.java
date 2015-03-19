@@ -47,6 +47,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 
 /*
@@ -214,7 +215,7 @@ public class StringTemplateCSSHelper
         }
 
         @Override
-        public ParseTree visitTerminal(@NotNull final PropertyContext ctx)
+        public ParseTree visitTerminal(@NotNull final TerminalNode ctx)
         {
             if (ctx.getParent() == this.parent)
             {
