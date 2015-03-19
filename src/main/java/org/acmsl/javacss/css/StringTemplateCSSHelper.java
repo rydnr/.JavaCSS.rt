@@ -223,6 +223,7 @@ public class StringTemplateCSSHelper
             if (this.iterator.hasNext()) {
                 this.currentSelector = this.iterator.next();
             }
+            this.focusNode = focusNode;
         }
 
         @Override
