@@ -251,7 +251,7 @@ public class StringTemplateCSSHelper
         protected boolean matches(final ParseTree node, final String currentSelector) {
             boolean result = false;
 
-
+            if ()
             return result;
         }
     }
