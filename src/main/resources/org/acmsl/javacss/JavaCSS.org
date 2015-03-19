@@ -2055,6 +2055,46 @@ process with the next selector.
 It's easier to start with a test, even if we are dealing with ParseTree objects, which add certain complexity to the test.
 
 #+BEGIN_SRC java
+    @Test
+    public void selector_found(){
+        String javaInput = "package com.foo.bar;";
+
+        String cssInput =
+            ".packageDeclaration \";\"::before {\n"
+            + "   content: \" \";\n"
+            + "}\n";
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        matches = XPath.findAll(ast, "//'package'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree packageNode = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(packageNode);
+
+        List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
+
+        Assert.assertTrue(helper.match(selectors, semiColon, ast));
+        Assert.assertFalse(helper.match(selectors, packageNode, ast));
+    }
+#+END_SRC
+
+#+BEGIN_SRC java
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
         boolean result = false;
