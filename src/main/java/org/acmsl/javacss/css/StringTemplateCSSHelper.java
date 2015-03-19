@@ -228,7 +228,7 @@ public class StringTemplateCSSHelper
         public ParseTree visitNode(ParseTree node) {
             if (matches(node, this.currentSelector)) {
                 consumedSelectors.push(this.currentSelector);
-                if ()
+                if (this.iterator.hasNext()) []
             }
         }
 
