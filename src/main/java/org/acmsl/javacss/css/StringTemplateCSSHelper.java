@@ -233,7 +233,7 @@ public class StringTemplateCSSHelper
                 if (this.iterator.hasNext()) {
                     this.currentSelector = this.iterator.next();
                     result = super.visitNode(node);
-                } else if (focusNode =={
+                } else if (focusNode{
 
                 }
             }
