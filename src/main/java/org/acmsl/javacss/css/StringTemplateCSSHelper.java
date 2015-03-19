@@ -222,7 +222,7 @@ public class StringTemplateCSSHelper
 
         @Override
         public ParseTree visitNode(ParseTree node) {
-            if (matches())
+            if (matches(node, ))
         }
 
         @Override
