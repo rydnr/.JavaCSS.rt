@@ -212,9 +212,8 @@ public class StringTemplateCSSHelper
 
         final ParseTree parent;
 
-        public SelectorMatchVisitor(List<String> selectors)
-        {
-            this.parent = parent;
+        public SelectorMatchVisitor(List<String> selectors) {
+            this.selectors = selectors;
         }
 
         @Override
