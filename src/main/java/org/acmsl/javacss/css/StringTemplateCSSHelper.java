@@ -212,7 +212,7 @@ public class StringTemplateCSSHelper
 
         final ParseTree parent;
 
-        public SelectorMatchVisitor(final ParseTree parent)
+        public SelectorMatchVisitor(List<String> selectors)
         {
             this.parent = parent;
         }
