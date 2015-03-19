@@ -235,6 +235,8 @@ public class StringTemplateCSSHelper
                     result = super.visitNode(node);
                 } else if (focusNode.equals(node)) {
                     match = true;
+                    result = null;
+                } else {
 
                 }
             }
