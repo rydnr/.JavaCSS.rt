@@ -248,8 +248,11 @@ public class StringTemplateCSSHelper
             return result;
         }
 
-        private boolean matches(final ParseTree node, final String currentSelector)
-        {
+        protected boolean matches(final ParseTree node, final String currentSelector) {
+            boolean result = false;
+
+
+            return result;
         }
     }
 }
