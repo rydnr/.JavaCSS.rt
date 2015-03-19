@@ -255,7 +255,7 @@ public class StringTemplateCSSHelper
                 // class selector
                 result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1));
             } else if (currentSelector.startsWith("\"")) {
-                result = node.getPayload().toString()
+                result = node.getPayload().toString().equals()
             }
             return result;
         }
