@@ -241,6 +241,8 @@ public class StringTemplateCSSHelper
                 }
             } else {
 
+            }
+
             return result;
         }
 
