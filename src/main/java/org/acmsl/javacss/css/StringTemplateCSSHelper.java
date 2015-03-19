@@ -208,8 +208,8 @@ public class StringTemplateCSSHelper
     {
         boolean match = false;
 
-        List<String> selectors
-        final List<ParseTree> properties = new ArrayList<ParseTree>();
+        List<String> selectors;
+
         final ParseTree parent;
 
         public SelectorMatchVisitor(final ParseTree parent)
