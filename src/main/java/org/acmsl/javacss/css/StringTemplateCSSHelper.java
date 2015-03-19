@@ -177,9 +177,6 @@ public class StringTemplateCSSHelper
     }
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
-        String currentSelector;
-        ParseTree currentMatch;
-
         SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, node);
 
         visitor.visit(ast);
@@ -265,9 +262,8 @@ public class StringTemplateCSSHelper
             return result;
         }
 
-        public boolean matchFound()
-        {
-            return false;  //To change body of created methods use File | Settings | File Templates.
+        public boolean matchFound() {
+            return this.match;
         }
     }
 }
