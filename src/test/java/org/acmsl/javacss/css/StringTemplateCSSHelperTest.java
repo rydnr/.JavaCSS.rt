@@ -189,7 +189,7 @@ public class StringTemplateCSSHelperTest
         ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
         Assert.assertNotNull(semiColon);
 
-        matches = XPath.findAll(ast, "//", parser);
+        matches = XPath.findAll(ast, "//'package', parser);
 
         Assert.assertNotNull(matches);
         Assert.assertEquals(1, matches.size());
