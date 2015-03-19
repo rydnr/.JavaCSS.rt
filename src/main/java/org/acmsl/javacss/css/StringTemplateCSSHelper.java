@@ -214,7 +214,7 @@ public class StringTemplateCSSHelper
         }
 
         @Override
-        public ParseTree visit(@NotNull final PropertyContext ctx)
+        public ParseTree visitTerminal(@NotNull final PropertyContext ctx)
         {
             if (ctx.getParent() == this.parent)
             {
