@@ -190,6 +190,7 @@ public class StringTemplateCSSHelperTest
         Assert.assertNotNull(semiColon);
 
         List<String> selectors = Arrays.asList(new String[] { ".packageDeclaration", "\";\"::before"});
+
         boolean match = helper.match(selectors, semiColon, ast);
 
         List<String> matchedSelectors = helper.match(helper.getSelectors(), )
