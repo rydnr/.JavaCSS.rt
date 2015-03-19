@@ -253,7 +253,7 @@ public class StringTemplateCSSHelper
 
             if (currentSelector.startsWith(".")) {
                 // class selector
-                result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1))
+                result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1));
             }
             return result;
         }
