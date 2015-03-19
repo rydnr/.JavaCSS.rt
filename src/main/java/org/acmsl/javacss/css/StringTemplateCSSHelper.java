@@ -245,15 +245,5 @@ public class StringTemplateCSSHelper
 
             return result;
         }
-
-        @Override
-        public ParseTree visitTerminal(@NotNull final TerminalNode ctx)
-        {
-            if (ctx.getParent() == this.parent)
-            {
-                this.properties.add(ctx);
-            }
-            return super.visitProperty(ctx);
-        }
     }
 }
