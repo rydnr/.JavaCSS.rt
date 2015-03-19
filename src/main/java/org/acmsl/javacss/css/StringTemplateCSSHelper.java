@@ -240,7 +240,7 @@ public class StringTemplateCSSHelper
                     result = null;
                 }
             } else {
-                result = super.visitNode()
+                result = super.visitNode(node);
             }
 
             return result;
