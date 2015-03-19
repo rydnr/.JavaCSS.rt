@@ -165,7 +165,7 @@ public class StringTemplateCSSHelperTest
     }
 
     @Test
-    public void finds_the_matching_selector(){
+    public void selector_found(){
         String javaInput = "package com.foo.bar;";
 
         String cssInput =
