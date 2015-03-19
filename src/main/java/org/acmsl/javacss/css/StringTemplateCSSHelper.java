@@ -229,9 +229,8 @@ public class StringTemplateCSSHelper
             if (matches(node, this.currentSelector)) {
                 consumedSelectors.push(this.currentSelector);
                 if (this.iterator.hasNext()) {
-
+                    this.currentSelector = this.iterator.next();
                 }
-
             }
         }
 
