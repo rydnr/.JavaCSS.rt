@@ -62,6 +62,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  *
@@ -209,7 +210,7 @@ public class StringTemplateCSSHelper
         boolean match = false;
 
         List<String> selectors;
-
+        Stack<String> matchi
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
         }
