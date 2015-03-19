@@ -210,13 +210,14 @@ public class StringTemplateCSSHelper
     {
         boolean match = false;
 
-        List<String> selectors;
-        Iterator<String> iterator;
+        final List<String> selectors;
+        final Iterator<String> iterator;
 
         Stack<String> selectorsInProcess = new Stack<String>();
 
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
+            this.iterator = selectors.iterator();
         }
 
         @Override
