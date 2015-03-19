@@ -225,14 +225,14 @@ public class StringTemplateCSSHelper
         }
 
         @Override
-        public ParseTree visitNode(ParseTree node) {
+        public ParseTree visit(ParseTree node) {
             ParseTree result;
 
             if (matches(node, this.currentSelector)) {
                 consumedSelectors.push(this.currentSelector);
                 if (this.iterator.hasNext()) {
                     this.currentSelector = this.iterator.next();
-                    result = super.visitNode(node);
+                    result = super.visit(node);
                 } else if (focusNode.equals(node)) {
                     match = true;
                     result = null;
@@ -240,7 +240,7 @@ public class StringTemplateCSSHelper
                     result = null;
                 }
             } else {
-                result = super.visitNode(node);
+                result = super.visit(node);
             }
 
             return result;
