@@ -180,7 +180,9 @@ public class StringTemplateCSSHelper
         String currentSelector;
         ParseTree currentMatch;
 
-        SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, )
+        SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, node);
+
+        visitor.visit(ast);
         return false;
     }
 
