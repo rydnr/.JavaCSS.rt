@@ -214,7 +214,7 @@ public class StringTemplateCSSHelper
         final Iterator<String> iterator;
         String currentSelector = null;
 
-        Stack<String> selectorsInProcess = new Stack<String>();
+        Stack<String> consumedSelectors = new Stack<String>();
 
         public SelectorMatchVisitor(List<String> selectors) {
             this.selectors = selectors;
