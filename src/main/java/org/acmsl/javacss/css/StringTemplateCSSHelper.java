@@ -183,6 +183,8 @@ public class StringTemplateCSSHelper
         SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, node);
 
         visitor.visit(ast);
+
+
         return false;
     }
 
