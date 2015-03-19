@@ -210,6 +210,7 @@ public class StringTemplateCSSHelper
     {
         boolean match = false;
 
+        final ParseTree focusNode;
         final List<String> selectors;
         final Iterator<String> iterator;
         String currentSelector = null;
