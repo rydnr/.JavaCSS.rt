@@ -1738,7 +1738,7 @@ And as expected, the null assertion makes the test fail.
    StringTemplateCSSHelperTest.finds_the_matching_selector:187 null
 #+END_SRC
 
-Now we have to actually implement the "retrieveMatchingSelectors()" method. It's not straight-forward: we
+Now we have to actually implement the "retrieveMatchingSelectors()" method, and it's not straight-forward. We
 have to find which selector defines a set which includes the input AST. Currently, we are storing the combination of 
 selectors as one piece of text. Parsing it again makes no sense whatsoever, so we should invest some time fixing this first.
 Instead of a list of Strings, it makes more sense to describe it as a list of list of Strings.
@@ -1937,7 +1937,8 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
  }
 #+END_SRC
 
-Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely. Now we can go back to work: implementing retrieveMatchingSelectors(ParseTree).
+Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely. Now we can go
+back to work: implementing retrieveMatchingSelectors(ParseTree).
 
 #+BEGIN_SRC java
     public List<String> retrieveMatchingSelectors(ParseTree node) {
