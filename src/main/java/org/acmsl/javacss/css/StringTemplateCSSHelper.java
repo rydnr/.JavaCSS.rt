@@ -184,8 +184,7 @@ public class StringTemplateCSSHelper
 
         visitor.visit(ast);
 
-        result =
-        return false;
+        return visitor.matchFound();
     }
 
     protected static class PropertyVisitor
