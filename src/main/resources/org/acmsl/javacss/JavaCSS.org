@@ -2054,5 +2054,13 @@ process with the next selector.
 
 #+BEGIN_SRC java
 
+    protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
+        boolean result = false;
+
+        for (String selector: selectors) {
+        }
+
+        return result;
+    }
 
 #+END_SRC
