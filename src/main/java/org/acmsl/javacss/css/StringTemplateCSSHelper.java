@@ -175,7 +175,6 @@ public class StringTemplateCSSHelper
         String currentSelector;
         ParseTree currentMatch;
 
-        PropertyVisitor
         return false;
     }
 
@@ -200,4 +199,6 @@ public class StringTemplateCSSHelper
             return super.visitProperty(ctx);
         }
     }
+
+    protected static class
 }
