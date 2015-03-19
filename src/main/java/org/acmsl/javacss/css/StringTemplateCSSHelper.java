@@ -217,7 +217,7 @@ public class StringTemplateCSSHelper
 
         Stack<String> consumedSelectors = new Stack<String>();
 
-        public SelectorMatchVisitor(List<String> selectors) {
+        public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
             this.selectors = selectors;
             this.iterator = selectors.iterator();
             if (this.iterator.hasNext()) {
