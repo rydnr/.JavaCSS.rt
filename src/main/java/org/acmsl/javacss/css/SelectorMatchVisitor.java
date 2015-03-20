@@ -118,7 +118,7 @@ public class SelectorMatchVisitor
         } else if (node.getChildCount() > 0) {
             result = super.visitChildren((RuleNode) node);
         } else {
-            result = super.visit(node);
+            result = null;
         }
 
         return result;
