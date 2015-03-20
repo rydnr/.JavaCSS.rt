@@ -97,7 +97,7 @@ public class SelectorMatchVisitorTest
 
         SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, ast);
 
-        Assert.assertTrue(visitor.matches(ast.getChild(0), ".packageDeclaration"));
+        Assert.assertTrue(visitor.matches(packageNode, ".packageDeclaration"));
         Assert.assertTrue(visitor.matches(semiColon, "\";\"::before"));
     }
 }
