@@ -108,8 +108,9 @@ public class SelectorMatchVisitor
                     result = null;
                 }
             } else if (node.getChildCount() > 0) {
-                if (!this.match)
-                result = super.visitChildren((RuleNode) node);
+                if (!this.match) {
+                    result = super.visitChildren((RuleNode) node);
+                }
             } else {
                 result = null;
             }
