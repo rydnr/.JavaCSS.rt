@@ -50,6 +50,7 @@ import org.checkthread.annotations.ThreadSafe;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Stack;
 
 /**
@@ -112,7 +113,7 @@ public class SelectorMatchVisitor
                 if (className.contains("$")) {
                     className = className.substring(className.lastIndexOf("$"));
                 }
-                className = className.substring()
+                className = className.substring(0, 1).toLowerCase(Locale.getDefault())
                 result = currentSelector.equals("." + className.substring(0, className.lastIndexOf("Context")));
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
