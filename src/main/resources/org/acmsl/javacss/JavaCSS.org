@@ -2180,4 +2180,4 @@ java.lang.AssertionError
 #+END_SRC
 
 The only problem is to figure out how can we retrieve the type of the node. The "payload" attribute of the ParseTree
-is just an object. Let's debug and find out the information it contains.
+is just an object, but after debugging it turns out it's can be either a CommonToken, or a Context. 
