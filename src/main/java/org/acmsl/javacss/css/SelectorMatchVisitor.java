@@ -59,7 +59,7 @@ import java.util.Stack;
  */
 @ThreadSafe
 public class SelectorMatchVisitor
-        extends Java8BaseVisitor<ParseTree>
+    extends Java8BaseVisitor<ParseTree>
     {
         boolean match = false;
 
