@@ -40,6 +40,7 @@ package org.acmsl.javacss.css;
  * Importing JetBrains annotations.
  */
 import org.acmsl.javacss.java8.parser.Java8BaseVisitor;
+import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.jetbrains.annotations.NotNull;
 
@@ -123,7 +124,9 @@ public class SelectorMatchVisitor
 
                 result = currentSelector.equals("." + className);
             } else if (currentSelector.startsWith("\"")) {
-                Object payload =
+                Object payload = node.getPayload();
+
+                if (payload instanceof CommonToken) {
                 String value =
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
