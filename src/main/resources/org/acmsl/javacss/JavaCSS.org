@@ -2258,4 +2258,4 @@ compare its value.
             }
 #+END_SRC
 
-We can implement the algorithm.
+We can implement the algorithm now.
