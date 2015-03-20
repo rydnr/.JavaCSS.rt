@@ -109,7 +109,7 @@ public class SelectorMatchVisitor
             } else {
                 result = null;
             }
-        } else if {
+        } else if ({
             result = super.visit(node);
         }
 
