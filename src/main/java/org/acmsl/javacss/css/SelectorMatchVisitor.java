@@ -85,12 +85,6 @@ public class SelectorMatchVisitor
     }
 
     @Override
-    public ParseTree visitPackageDeclaration(@org.antlr.v4.runtime.misc.NotNull final PackageDeclarationContext ctx)
-    {
-        return super.visitPackageDeclaration(ctx);
-    }
-
-    @Override
     public ParseTree visitChildren(RuleNode node) {
         return visit(node);
     }
