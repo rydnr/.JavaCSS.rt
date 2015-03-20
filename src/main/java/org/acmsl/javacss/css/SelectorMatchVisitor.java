@@ -44,6 +44,7 @@ import org.acmsl.javacss.java8.parser.Java8Parser.PackageDeclarationContext;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.jetbrains.annotations.NotNull;
 
 /*
@@ -95,7 +96,7 @@ public class SelectorMatchVisitor
     }
 
     @Override
-    public ParseTree visitTerminal(RuleNode node) {
+    public ParseTree visitTerminal(TerminalNode ) {
         return visit(node);
     }
 
