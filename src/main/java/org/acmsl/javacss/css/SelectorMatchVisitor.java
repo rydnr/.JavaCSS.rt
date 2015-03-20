@@ -119,8 +119,8 @@ public class SelectorMatchVisitor
                     className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
                 }
                 // remove the trailing "Context".
-
-                result = currentSelector.equals("." + className.substring(0, className.lastIndexOf("Context")));
+                className = className.substring(0, className.lastIndexOf("Context"));
+                result = currentSelector.equals("." + );
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
