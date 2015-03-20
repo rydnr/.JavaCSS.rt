@@ -112,7 +112,8 @@ public class SelectorMatchVisitor
                 if (className.contains("$")) {
                     className = className.substring(className.lastIndexOf("$"));
                 }
-                result = currentSelector.equals("." + StringUtils.getInstance().un className.substring(0, className.lastIndexOf("Context")));
+
+                result = currentSelector.equals("." + className.substring(0, className.lastIndexOf("Context")));
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
