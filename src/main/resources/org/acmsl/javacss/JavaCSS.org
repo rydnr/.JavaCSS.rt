@@ -2007,7 +2007,7 @@ We need to pass such complete AST as well.
     public List<String> retrieveMatchingSelectors(ParseTree node, ParseTree ast) {
         List<String> result = null;
 
-        for (List<String> selectors : this.selectors)
+        for (List<String> selectors : getSelectors())
         {
             if (match(selectors, node, ast))
             {
