@@ -99,7 +99,7 @@ public class SelectorMatchVisitor
         return visitNode(node);
     }
 
-    public ParseTree visitNode(node) {
+    public ParseTree visitNode(RuleNode node) {
         ParseTree result;
 
         if (matches(node, this.currentSelector)) {
