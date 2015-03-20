@@ -104,23 +104,26 @@ public class SelectorMatchVisitor
     public ParseTree visit(ParseTree node) {
         ParseTree result;
 
-        if (matches(node, this.currentSelector)) {
-            if (this.iterator.hasNext()) {
-                consumedSelectors.push(this.currentSelector);
-                this.currentSelector = this.iterator.next();
-                result = super.visit(node);
-            } else if (focusNode.equals(node)) {
-                match = true;
-                result = null;
+        if (!this.match) {
+            if (matches(node, this.currentSelector)) {
+                if (this.iterator.hasNext()) {
+                    consumedSelectors.push(this.currentSelector);
+                    this.currentSelector = this.iterator.next();
+                    result = super.visit(node);
+                } else if (focusNode.equals(node)) {
+                    match = true;
+                    result = null;
+                } else {
+                    result = null;
+                }
+            } else if (node.getChildCount() > 0) {
+                result = super.visitChildren((RuleNode) node);
             } else {
                 result = null;
             }
-        } else if (node.getChildCount() > 0) {
-            result = super.visitChildren((RuleNode) node);
         } else {
             result = null;
         }
-
         return result;
     }
 
