@@ -2168,3 +2168,13 @@ public class SelectorMatchVisitorTest {
 
 As we defined above, if the selector starts with a colon, we'll match those nodes whose "type" is
 precisely that selector.
+
+No surprise the test fails.
+
+#+BEGIN_SRC sh
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.acmsl.javacss.css.SelectorMatchVisitorTest.compares_ByClass_selectors_correctly(SelectorMatchVisitorTest.java:100)
+#+END_SRC
