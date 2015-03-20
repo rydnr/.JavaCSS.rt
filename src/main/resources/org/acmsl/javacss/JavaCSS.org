@@ -2268,3 +2268,66 @@ the tree traversal process continue, with the next selector in the list, unless 
 if the node being processed matches our original focus node. In such case, we have a match, and should stop the process.
 If there current node doesn't match the selector, we try to process its children.
 
+#+BEGIN_SRC java
+
+public class SelectorMatchVisitor
+    extends Java8BaseVisitor<ParseTree> {
+    boolean match = false;
+
+    final ParseTree focusNode;
+    final List<String> selectors;
+    final Iterator<String> iterator;
+    String currentSelector = null;
+
+    [..]
+
+    @Override
+    public ParseTree visitChildren(RuleNode node) {
+        ParseTree result;
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
+    }
+
+    @Override
+    public ParseTree visitTerminal(TerminalNode node) {
+        ParseTree result;
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
+    }
+
+    @Override
+    public ParseTree visit(ParseTree node) {
+        ParseTree result = null;
+
+        if (!this.match) {
+            if (matches(node, this.currentSelector)) {
+                if (this.iterator.hasNext()) {
+                    this.currentSelector = this.iterator.next();
+                    result = super.visit(node);
+                } else if (focusNode.equals(node)) {
+                    match = true;
+                }
+            } else if (node.getChildCount() > 0) {
+                if (!this.match) {
+                    result = super.visitChildren((RuleNode) node);
+                }
+            }
+        }
+        return result;
+    }
+
+    [..]
+}
+#+END_SRC
