@@ -165,7 +165,7 @@ public class StringTemplateCSSHelperTest
         multipleBlockPropertyTests((int) (Math.random() * 10) + 1);
     }
 
-    @Test
+//    @Test
     public void selector_found(){
         String javaInput = "package com.foo.bar;";
 
