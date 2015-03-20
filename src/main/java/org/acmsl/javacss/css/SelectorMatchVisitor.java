@@ -89,7 +89,8 @@ public class SelectorMatchVisitor
     }
 
     @Override
-    public ParseTree visit(ParseTree node) {
+    public ParseTree visitChildren(ParseTree node) {
+    }
 
         @Override
     public ParseTree visit(ParseTree node) {
