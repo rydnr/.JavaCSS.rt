@@ -164,10 +164,8 @@ public class StringTemplateCSSHelper
     public List<String> retrieveMatchingSelectors(ParseTree node, ParseTree ast) {
         List<String> result = null;
 
-        for (List<String> selectors : this.selectors)
-        {
-            if (match(selectors, node, ast))
-            {
+        for (List<String> selectors : this.selectors) {
+            if (match(selectors, node, ast)) {
                 result = selectors;
                 break;
             }
