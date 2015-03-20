@@ -40,6 +40,7 @@ package org.acmsl.javacss.css;
  * Importing JetBrains annotations.
  */
 import org.acmsl.javacss.java8.parser.Java8BaseVisitor;
+import org.acmsl.javacss.java8.parser.Java8Parser.PackageDeclarationContext;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.jetbrains.annotations.NotNull;
@@ -79,6 +80,12 @@ public class SelectorMatchVisitor
             this.currentSelector = this.iterator.next();
         }
         this.focusNode = focusNode;
+    }
+
+    @Override
+    public ParseTree visitPackageDeclaration(@org.antlr.v4.runtime.misc.NotNull final PackageDeclarationContext ctx)
+    {
+        return super.visitPackageDeclaration(ctx);
     }
 
     @Override
