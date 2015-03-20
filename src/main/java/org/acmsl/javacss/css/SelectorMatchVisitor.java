@@ -110,7 +110,7 @@ public class SelectorMatchVisitor
                 // class selector
                 String className = node.getPayload().getClass().getSimpleName();
 
-                // remove
+                // remove anonymou
                 if (className.contains("$")) {
                     className = className.substring(className.lastIndexOf("$"));
                 }
