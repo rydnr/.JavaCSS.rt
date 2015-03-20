@@ -85,12 +85,27 @@ public class SelectorMatchVisitor
     @Override
     public ParseTree visitChildren(RuleNode node) {
         ParseTree result;
-        return visit(node);
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
     }
 
     @Override
     public ParseTree visitTerminal(TerminalNode node) {
-        return visit(node);
+        ParseTree result;
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
     }
 
     @Override
