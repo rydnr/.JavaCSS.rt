@@ -2261,3 +2261,6 @@ compare its value.
 We can implement the algorithm now. ANTLR generates visitor methods for each rule. It'd be very inconvenient to
 implement all of them, and it'd make the visitor very fragile regarding changes on the Java grammar.
 Fortunately, we can influence the visitor's crawling process just by overriding three methods: visitChildren(), visitTerminal(), and visit().
+
+The algorithm works as follows: the AST is processed by ANTLR's visitor implementation. For each node, our visitor
+checks whether such node is matched by the current selector, taken from the list. If 
