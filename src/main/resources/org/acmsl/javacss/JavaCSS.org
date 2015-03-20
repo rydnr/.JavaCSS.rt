@@ -2101,12 +2101,11 @@ the node associated to the "package" keyword, does not.
 #+BEGIN_SRC java
 
     protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
-        boolean result = false;
+        SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, node);
 
-        for (String selector: selectors) {
-        }
+        visitor.visit(ast);
 
-        return result;
+        return visitor.matchFound();
     }
 
 #+END_SRC
