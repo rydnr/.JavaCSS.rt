@@ -2180,4 +2180,6 @@ java.lang.AssertionError
 #+END_SRC
 
 The only problem is to figure out how can we retrieve the type of the node. The "payload" attribute of the ParseTree
-is just an object, but after debugging it turns out it can be either a CommonToken, or a Context. 
+is just an object, but after debugging it turns out it can be either a CommonToken, or a Context.
+For our first assert to be true, we rely on ANTLR's internal convention of naming the Context object after the
+name of the rule that creates it.
