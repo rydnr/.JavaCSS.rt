@@ -2258,4 +2258,6 @@ compare its value.
             }
 #+END_SRC
 
-We can implement the algorithm now. For each node
+We can implement the algorithm now. ANTLR generates visitor methods for each rule. It'd be very inconvenient to
+implement all of them, and it'd make the visitor very fragile regarding changes on the Java grammar.
+Fortunately, we can influence the visitor's crawling process just by overriding three methods: visitChildren(), visitTerminal(), and visit().
