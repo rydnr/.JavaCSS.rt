@@ -38,12 +38,18 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.java8.parser.Java8BaseVisitor;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.jetbrains.annotations.NotNull;
 
 /*
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Stack;
 
 /**
  *
@@ -54,4 +60,66 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class SelectorMatchVisitor
 {
+    protected static class SelectorMatchVisitor
+        extends Java8BaseVisitor<ParseTree>
+    {
+        boolean match = false;
+
+        final ParseTree focusNode;
+        final List<String> selectors;
+        final Iterator<String> iterator;
+        String currentSelector = null;
+
+        Stack<String> consumedSelectors = new Stack<String>();
+
+        public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
+            this.selectors = selectors;
+            this.iterator = selectors.iterator();
+            if (this.iterator.hasNext()) {
+                this.currentSelector = this.iterator.next();
+            }
+            this.focusNode = focusNode;
+        }
+
+        @Override
+        public ParseTree visit(ParseTree node) {
+            ParseTree result;
+
+            if (matches(node, this.currentSelector)) {
+                if (this.iterator.hasNext()) {
+                    consumedSelectors.push(this.currentSelector);
+                    this.currentSelector = this.iterator.next();
+                    result = super.visit(node);
+                } else if (focusNode.equals(node)) {
+                    match = true;
+                    result = null;
+                } else {
+                    result = null;
+                }
+            } else {
+                result = super.visit(node);
+            }
+
+            return result;
+        }
+
+        protected boolean matches(final ParseTree node, final String currentSelector) {
+            boolean result = false;
+
+            if (currentSelector.startsWith(".")) {
+                // class selector
+                Object o = node.getPayload().getClass();
+                result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1));
+            } else if (currentSelector.startsWith("\"")) {
+                result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
+            }
+
+            return result;
+        }
+
+        public boolean matchFound() {
+            return this.match;
+        }
+    }
+
 }
