@@ -120,7 +120,8 @@ public class SelectorMatchVisitor
                 }
                 // remove the trailing "Context".
                 className = className.substring(0, className.lastIndexOf("Context"));
-                result = currentSelector.equals("." + );
+
+                result = currentSelector.equals("." + className);
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
