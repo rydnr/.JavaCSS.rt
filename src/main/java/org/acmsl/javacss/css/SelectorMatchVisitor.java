@@ -73,8 +73,6 @@ public class SelectorMatchVisitor
     final Iterator<String> iterator;
     String currentSelector = null;
 
-    Stack<String> consumedSelectors = new Stack<String>();
-
     public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
         this.selectors = selectors;
         this.iterator = selectors.iterator();
@@ -101,7 +99,6 @@ public class SelectorMatchVisitor
         if (!this.match) {
             if (matches(node, this.currentSelector)) {
                 if (this.iterator.hasNext()) {
-                    consumedSelectors.push(this.currentSelector);
                     this.currentSelector = this.iterator.next();
                     result = super.visit(node);
                 } else if (focusNode.equals(node)) {
