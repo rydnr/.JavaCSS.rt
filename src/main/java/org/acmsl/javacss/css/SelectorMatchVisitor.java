@@ -130,7 +130,7 @@ public class SelectorMatchVisitor
                     String value = ((CommonToken) payload).getText();
 
                     String selectorPart = currentSelector.substring(1);
-                    selectorPart = currentSelector.substring(0, currentSelector.indexOf("\""))
+                    selectorPart = currentSelector.substring(0, currentSelector.indexOf("\""));
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
 
