@@ -109,9 +109,9 @@ public class SelectorMatchVisitor
             } else {
                 result = null;
             }
-        } else if (node.getChildCount() > 0)
-        {
-        }
+        } else if (node.getChildCount() > 0) {
+
+        } else {
             result = super.visit(node);
         }
 
