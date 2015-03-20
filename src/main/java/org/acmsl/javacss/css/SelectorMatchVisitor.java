@@ -107,7 +107,7 @@ public class SelectorMatchVisitor
 
             if (currentSelector.startsWith(".")) {
                 // class selector
-                Object o = node.getPayload().getClass().getSimpleName();
+                String o = node.getPayload().getClass().getSimpleName();
                 result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1));
             } else if (currentSelector.startsWith("\"")) {
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
