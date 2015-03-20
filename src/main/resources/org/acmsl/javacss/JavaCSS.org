@@ -2212,3 +2212,7 @@ name of the rule that creates it.
         }
 #+END_SRC
 
+Now our first assert passes, so the by-class selector should work just fine. The other selector we need to support
+right now is the one matching node texts. In these cases, the payload of the node must be a CommonToken, and we can
+compare its value.
+
