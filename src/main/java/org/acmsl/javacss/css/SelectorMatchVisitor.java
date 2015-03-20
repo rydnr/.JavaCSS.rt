@@ -96,7 +96,7 @@ public class SelectorMatchVisitor
 
     @Override
     public ParseTree visit(ParseTree node)
-        return visit()
+        return visit
     }
 
     @Override
