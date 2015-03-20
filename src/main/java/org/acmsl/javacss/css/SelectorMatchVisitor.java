@@ -114,7 +114,7 @@ public class SelectorMatchVisitor
                 if (className.contains("$")) {
                     className = className.substring(className.lastIndexOf("$"));
                 }
-                // uncapitalize
+                // uncapitalize the first letter
                 if (className.length() > 1) {
                     className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
                 }
