@@ -2266,4 +2266,5 @@ The algorithm works as follows: the AST is processed by ANTLR's visitor implemen
 checks whether such node is matched by the current selector, taken from the list. If it matches, we "consume" the selector and let
 the tree traversal process continue, with the next selector in the list, unless there's no other selector remaining, in which case we check
 if the node being processed matches our original focus node. In such case, we have a match, and should stop the process.
-If
+If there current node doesn't match the selector, we try to process its children.
+
