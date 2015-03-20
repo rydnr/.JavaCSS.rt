@@ -104,6 +104,6 @@ public class SelectorMatchVisitorTest
 
         SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, ast);
 
-        Assert.assertTrue(visitor.matches())
+        Assert.assertTrue(visitor.matches(ast.getChild()))
     }
 }
