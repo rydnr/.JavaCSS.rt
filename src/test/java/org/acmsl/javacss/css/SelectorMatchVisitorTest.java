@@ -104,6 +104,6 @@ public class SelectorMatchVisitorTest
 
         SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, ast);
 
-        Assert.assertTrue(visitor.matches(ast.getChild(0), ))
+        Assert.assertTrue(visitor.matches(ast.getChild(0), ".pac"))
     }
 }
