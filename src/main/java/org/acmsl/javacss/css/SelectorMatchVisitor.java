@@ -126,8 +126,7 @@ public class SelectorMatchVisitor
             } else if (currentSelector.startsWith("\"")) {
                 Object payload = node.getPayload();
 
-                if (payload instanceof CommonToken)
-                {
+                if (payload instanceof CommonToken) {
                     String value = ((CommonToken) payload).getText();
 
                     String selectorPart = currentSelector.substring(1);
