@@ -123,6 +123,7 @@ public class SelectorMatchVisitor
 
                 result = currentSelector.equals("." + className);
             } else if (currentSelector.startsWith("\"")) {
+                if ()
                 String value =
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
