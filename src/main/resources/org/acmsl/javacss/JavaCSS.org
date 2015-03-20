@@ -2109,3 +2109,5 @@ the node associated to the "package" keyword, does not.
     }
 
 #+END_SRC
+
+We'll isolate everything in the SelectorMatchVisitor class.
