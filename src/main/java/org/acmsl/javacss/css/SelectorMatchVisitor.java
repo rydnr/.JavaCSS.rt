@@ -110,7 +110,7 @@ public class SelectorMatchVisitor
                 result = null;
             }
         } else if (node.getChildCount() > 0) {
-            result = super.visitChildren()
+            result = super.visitChildren(node);
         } else {
             result = super.visit(node);
         }
