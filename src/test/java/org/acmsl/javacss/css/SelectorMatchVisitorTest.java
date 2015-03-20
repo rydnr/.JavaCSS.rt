@@ -105,6 +105,6 @@ public class SelectorMatchVisitorTest
         Assert.assertTrue(helper.match(selectors, semiColon, ast));
         Assert.assertFalse(helper.match(selectors, packageNode, ast));
 
-        SelectorMatchVisitor visitor = new SelectorMatchVisitor();
+        SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors);
     }
 }
