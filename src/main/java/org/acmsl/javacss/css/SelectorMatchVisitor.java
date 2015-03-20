@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: An ANTLR visitor to find whether some selectors match certain subtrees of an AST.
  *
  * Date: 2015/03/20
  * Time: 10:35
@@ -52,7 +52,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * An ANTLR visitor to find whether some selectors match certain subtree
+ * An ANTLR visitor to find whether some selectors match certain subtrees of an AST.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/20 10:35
