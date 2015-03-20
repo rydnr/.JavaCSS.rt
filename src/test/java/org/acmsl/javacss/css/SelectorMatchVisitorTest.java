@@ -38,15 +38,26 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.acmsl.javacss.java8.parser.Java8Lexer;
+import org.acmsl.javacss.java8.parser.Java8Parser;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.jetbrains.annotations.NotNull;
 
 /*
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -59,6 +70,41 @@ public class SelectorMatchVisitorTest
 {
     @Test
     public void compares_ByClass_selectors_correctly() {
+        String javaInput = "package com.foo.bar;";
+
+        String cssInput =
+            ".packageDeclaration \";\"::before {\n"
+            + "   content: \" \";\n"
+            + "}\n";
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        matches = XPath.findAll(ast, "//'package'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree packageNode = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(packageNode);
+
+        List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
+
+        Assert.assertTrue(helper.match(selectors, semiColon, ast));
+        Assert.assertFalse(helper.match(selectors, packageNode, ast));
+
         SelectorMatchVisitor visitor = new SelectorMatchVisitor();
     }
 }
