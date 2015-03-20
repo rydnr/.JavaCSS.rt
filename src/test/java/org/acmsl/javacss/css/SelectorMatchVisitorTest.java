@@ -59,6 +59,6 @@ public class SelectorMatchVisitorTest
 {
     @Test
     public void compares_ByClass_selectors_correctly() {
-
+        SelectorMatchVisitor visitor = new SelectorMatchVisitor()
     }
 }
