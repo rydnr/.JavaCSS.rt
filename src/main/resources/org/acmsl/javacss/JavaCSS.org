@@ -2129,8 +2129,8 @@ Let's write our test then.
 #+BEGIN_SRC java
 
 @RunWith(JUnit4.class)
-public class SelectorMatchVisitorTest
-{
+public class SelectorMatchVisitorTest {
+
     @Test
     public void compares_selectors_correctly() {
         String javaInput = "package com.foo.bar;";
