@@ -2263,4 +2263,7 @@ implement all of them, and it'd make the visitor very fragile regarding changes 
 Fortunately, we can influence the visitor's crawling process just by overriding three methods: visitChildren(), visitTerminal(), and visit().
 
 The algorithm works as follows: the AST is processed by ANTLR's visitor implementation. For each node, our visitor
-checks whether such node is matched by the current selector, taken from the list. If 
+checks whether such node is matched by the current selector, taken from the list. If it matches, we "consume" the selector and let
+the tree traversal process continue, with the next selector in the list, unless there's no other selector remaining, in which case we check
+if the node being processed matches our original focus node. In such case, we have a match, and should stop the process.
+If
