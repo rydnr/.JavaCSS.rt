@@ -1,5 +1,5 @@
 /*
-                        devdel
+                        JavaCSS
 
     Copyright (C) 2002-today  Jose San Leandro Armendariz
                               chous@acm-sl.org
@@ -27,7 +27,8 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: An ANTLR visitor to find whether some selectors match certain subtrees of an AST.
+ * Description: An ANTLR visitor to find whether some selectors match certain
+ *              subtrees of an AST.
  *
  * Date: 2015/03/20
  * Time: 10:35
