@@ -92,7 +92,7 @@ public class SelectorMatchVisitor
     public ParseTree visitChildren(ParseTree node) {
     }
 
-        @Override
+    @Override
     public ParseTree visit(ParseTree node) {
         ParseTree result;
 
