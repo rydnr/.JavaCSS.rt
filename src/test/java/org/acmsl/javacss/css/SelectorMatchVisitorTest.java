@@ -72,11 +72,6 @@ public class SelectorMatchVisitorTest
     public void compares_ByClass_selectors_correctly() {
         String javaInput = "package com.foo.bar;";
 
-        String cssInput =
-            ".packageDeclaration \";\"::before {\n"
-            + "   content: \" \";\n"
-            + "}\n";
-
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
