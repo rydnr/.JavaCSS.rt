@@ -113,8 +113,7 @@ public class SelectorMatchVisitor
                 if (className.contains("$")) {
                     className = className.substring(className.lastIndexOf("$"));
                 }
-                if (className.length() > 1)
-                {
+                if (className.length() > 1) {
                     className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
                 }
 
