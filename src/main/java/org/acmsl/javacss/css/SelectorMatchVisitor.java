@@ -94,7 +94,7 @@ public class SelectorMatchVisitor
 
     @Override
     public ParseTree visit(ParseTree node) {
-        ParseTree result;
+        ParseTree result = null;
 
         if (!this.match) {
             if (matches(node, this.currentSelector)) {
