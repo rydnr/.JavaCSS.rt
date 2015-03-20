@@ -2165,3 +2165,6 @@ public class SelectorMatchVisitorTest {
     }
 }
 #+END_SRC
+
+As we defined above, if the selector starts with a colon, we'll match those nodes whose "type" is
+precisely that selector.
