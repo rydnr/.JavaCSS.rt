@@ -62,84 +62,83 @@ import java.util.Stack;
  */
 @ThreadSafe
 public class SelectorMatchVisitor
-    extends Java8BaseVisitor<ParseTree>
-    {
-        boolean match = false;
+    extends Java8BaseVisitor<ParseTree> {
+    boolean match = false;
 
-        final ParseTree focusNode;
-        final List<String> selectors;
-        final Iterator<String> iterator;
-        String currentSelector = null;
+    final ParseTree focusNode;
+    final List<String> selectors;
+    final Iterator<String> iterator;
+    String currentSelector = null;
 
-        Stack<String> consumedSelectors = new Stack<String>();
+    Stack<String> consumedSelectors = new Stack<String>();
 
-        public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
-            this.selectors = selectors;
-            this.iterator = selectors.iterator();
+    public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
+        this.selectors = selectors;
+        this.iterator = selectors.iterator();
+        if (this.iterator.hasNext()) {
+            this.currentSelector = this.iterator.next();
+        }
+        this.focusNode = focusNode;
+    }
+
+    @Override
+    public ParseTree visit(ParseTree node) {
+        ParseTree result;
+
+        if (matches(node, this.currentSelector)) {
             if (this.iterator.hasNext()) {
+                consumedSelectors.push(this.currentSelector);
                 this.currentSelector = this.iterator.next();
-            }
-            this.focusNode = focusNode;
-        }
-
-        @Override
-        public ParseTree visit(ParseTree node) {
-            ParseTree result;
-
-            if (matches(node, this.currentSelector)) {
-                if (this.iterator.hasNext()) {
-                    consumedSelectors.push(this.currentSelector);
-                    this.currentSelector = this.iterator.next();
-                    result = super.visit(node);
-                } else if (focusNode.equals(node)) {
-                    match = true;
-                    result = null;
-                } else {
-                    result = null;
-                }
-            } else {
                 result = super.visit(node);
+            } else if (focusNode.equals(node)) {
+                match = true;
+                result = null;
+            } else {
+                result = null;
             }
-
-            return result;
+        } else {
+            result = super.visit(node);
         }
 
-        protected boolean matches(final ParseTree node, final String currentSelector) {
-            boolean result = false;
+        return result;
+    }
 
-            if (currentSelector.startsWith(".")) {
-                // class selector
-                String className = node.getPayload().getClass().getSimpleName();
+    protected boolean matches(final ParseTree node, final String currentSelector) {
+        boolean result = false;
 
-                // remove any container class, if it's anonymous
-                if (className.contains("$")) {
-                    className = className.substring(className.lastIndexOf("$"));
-                }
-                // uncapitalize the first letter
-                if (className.length() > 1) {
-                    className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
-                }
-                // remove the trailing "Context".
-                className = className.substring(0, className.lastIndexOf("Context"));
+        if (currentSelector.startsWith(".")) {
+            // class selector
+            String className = node.getPayload().getClass().getSimpleName();
 
-                result = currentSelector.equals("." + className);
-            } else if (currentSelector.startsWith("\"")) {
-                Object payload = node.getPayload();
-
-                if (payload instanceof CommonToken) {
-                    String value = ((CommonToken) payload).getText();
-
-                    String selectorPart = currentSelector.substring(1);
-                    selectorPart = selectorPart.substring(0, selectorPart.indexOf("\""));
-
-                    result = value.equals(selectorPart);
-                }
+            // remove any container class, if it's anonymous
+            if (className.contains("$")) {
+                className = className.substring(className.lastIndexOf("$"));
             }
+            // uncapitalize the first letter
+            if (className.length() > 1) {
+                className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
+            }
+            // remove the trailing "Context".
+            className = className.substring(0, className.lastIndexOf("Context"));
 
-            return result;
+            result = currentSelector.equals("." + className);
+        } else if (currentSelector.startsWith("\"")) {
+            Object payload = node.getPayload();
+
+            if (payload instanceof CommonToken) {
+                String value = ((CommonToken) payload).getText();
+
+                String selectorPart = currentSelector.substring(1);
+                selectorPart = selectorPart.substring(0, selectorPart.indexOf("\""));
+
+                result = value.equals(selectorPart);
+            }
         }
 
-        public boolean matchFound() {
-            return this.match;
-        }
+        return result;
+    }
+
+    public boolean matchFound() {
+        return this.match;
+    }
 }
