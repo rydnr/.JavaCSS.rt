@@ -104,8 +104,6 @@ public class SelectorMatchVisitor
                 } else if (focusNode.equals(node)) {
                     match = true;
                     result = null;
-                } else {
-                    result = null;
                 }
             } else if (node.getChildCount() > 0) {
                 if (!this.match) {
