@@ -95,9 +95,11 @@ public class SelectorMatchVisitor
     }
 
     @Override
-    public ParseTree visit(RuleNode node) {
+    public ParseTree visit(ParseTree node)
 
-        @Override
+    }
+
+    @Override
     public ParseTree visit(RuleNode node) {
         ParseTree result;
 
