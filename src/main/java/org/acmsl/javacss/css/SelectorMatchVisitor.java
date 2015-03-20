@@ -91,7 +91,7 @@ public class SelectorMatchVisitor
 
     @Override
     public ParseTree visitChildren(RuleNode node) {
-
+        return visit(node)
     }
 
     @Override
