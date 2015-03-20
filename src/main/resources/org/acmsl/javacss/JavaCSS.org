@@ -2110,4 +2110,16 @@ the node associated to the "package" keyword, does not.
 
 #+END_SRC
 
-We'll isolate everything in the SelectorMatchVisitor class.
+We'll isolate everything in the SelectorMatchVisitor class. Before we think about the algorith itself,
+we know for sure we'll need to implement the logic to check whether a selector matches a given node
+in an AST.
+
+#+BEGIN_SRC java
+
+    protected boolean matches(final ParseTree node, final String currentSelector) {
+        boolean result = false;
+
+        return result;
+    }
+
+#+END_SRC
