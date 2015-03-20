@@ -129,7 +129,8 @@ public class SelectorMatchVisitor
                 if (payload instanceof CommonToken) {
                     String value = ((CommonToken) payload).getText();
 
-                    String selectorPart = currentSelector.substring()
+                    String selectorPart = currentSelector.substring(1);
+                    selectorPart = currentSelector.substring(0, )
                 result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
             }
 
