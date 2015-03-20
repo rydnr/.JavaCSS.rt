@@ -85,8 +85,7 @@ public class StringTemplateCSSHelper
 
     public List<List<String>> getSelectors()
     {
-        if (this.selectors == null)
-        {
+        if (this.selectors == null) {
             initialize(this.input);
         }
         
@@ -108,13 +107,11 @@ public class StringTemplateCSSHelper
         this.selectors = new ArrayList<List<String>>(selectorCombinations.size());
         this.properties = new HashMap<List<String>, Map<String, String>>();
 
-        for (ParseTree selectorCombination : selectorCombinations)
-        {
+        for (ParseTree selectorCombination : selectorCombinations) {
             List<String> currentSelectors = new ArrayList<String>(selectorCombination.getChildCount());
             this.selectors.add(currentSelectors);
 
-            for (int index = 0; index < selectorCombination.getChildCount(); index++)
-            {
+            for (int index = 0; index < selectorCombination.getChildCount(); index++) {
                 String text = selectorCombination.getChild(index).getText();
                 currentSelectors.add(text);
             }
@@ -132,8 +129,7 @@ public class StringTemplateCSSHelper
 
         result = new HashMap<String, String>(properties.size());
 
-        for (ParseTree property : properties)
-        {
+        for (ParseTree property : properties) {
             String key = property.getChild(0).getText();
             String value = property.getChild(2).getText();
             result.put(key, value);
@@ -153,8 +149,7 @@ public class StringTemplateCSSHelper
 
     public Map<String, String> getProperties(List<String> selector)
     {
-        if (this.properties == null)
-        {
+        if (this.properties == null) {
             initialize(this.input);
         }
 
