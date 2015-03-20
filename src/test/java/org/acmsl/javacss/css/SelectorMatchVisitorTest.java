@@ -69,7 +69,7 @@ import java.util.List;
 public class SelectorMatchVisitorTest
 {
     @Test
-    public void compares_ByClass_selectors_correctly() {
+    public void compares_selectors_correctly() {
         String javaInput = "package com.foo.bar;";
 
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
