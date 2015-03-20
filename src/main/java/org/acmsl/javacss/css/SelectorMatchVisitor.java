@@ -59,8 +59,6 @@ import java.util.Stack;
  */
 @ThreadSafe
 public class SelectorMatchVisitor
-{
-    protected static class SelectorMatchVisitor
         extends Java8BaseVisitor<ParseTree>
     {
         boolean match = false;
@@ -120,6 +118,4 @@ public class SelectorMatchVisitor
         public boolean matchFound() {
             return this.match;
         }
-    }
-
 }
