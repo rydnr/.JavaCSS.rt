@@ -84,6 +84,7 @@ public class SelectorMatchVisitor
 
     @Override
     public ParseTree visitChildren(RuleNode node) {
+        ParseTree result =
         return visit(node);
     }
 
