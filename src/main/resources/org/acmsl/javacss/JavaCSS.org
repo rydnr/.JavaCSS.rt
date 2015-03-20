@@ -2126,6 +2126,19 @@ in an AST.
 public class SelectorMatchVisitor
     extends Java8BaseVisitor<ParseTree> {
 
+    boolean match = false;
+    final ParseTree focusNode;
+    final List<String> selectors;
+
+    public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
+        this.selectors = selectors;
+        this.focusNode = focusNode;
+    }
+
+    public boolean matchFound() {
+        return this.match;
+    }
+
     protected boolean matches(final ParseTree node, final String currentSelector) {
         boolean result = false;
 
@@ -2244,3 +2257,5 @@ compare its value.
                 }
             }
 #+END_SRC
+
+We can implement the algorithm.
