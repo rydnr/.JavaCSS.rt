@@ -96,7 +96,7 @@ public class SelectorMatchVisitor
     }
 
     @Override
-    public ParseTree visitTerminal(TerminalNode ) {
+    public ParseTree visitTerminal(TerminalNode node) {
         return visit(node);
     }
 
