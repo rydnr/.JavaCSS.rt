@@ -111,11 +111,7 @@ public class SelectorMatchVisitor
                 if (!this.match) {
                     result = super.visitChildren((RuleNode) node);
                 }
-            } else {
-                result = null;
             }
-        } else {
-            result = null;
         }
         return result;
     }
