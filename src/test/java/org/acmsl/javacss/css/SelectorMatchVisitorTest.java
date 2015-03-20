@@ -58,5 +58,5 @@ import org.junit.runners.JUnit4;
 public class SelectorMatchVisitorTest
 {
     @Test
-    public void finds_the
+    public void compares_selectors_
 }
