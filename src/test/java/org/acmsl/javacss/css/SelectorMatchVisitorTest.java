@@ -77,8 +77,6 @@ public class SelectorMatchVisitorTest
             + "   content: \" \";\n"
             + "}\n";
 
-        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
-
         Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
