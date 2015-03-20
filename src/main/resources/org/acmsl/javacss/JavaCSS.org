@@ -2178,3 +2178,6 @@ java.lang.AssertionError
 	at org.junit.Assert.assertTrue(Assert.java:52)
 	at org.acmsl.javacss.css.SelectorMatchVisitorTest.compares_ByClass_selectors_correctly(SelectorMatchVisitorTest.java:100)
 #+END_SRC
+
+The only problem is to figure out how can we retrieve the type of the node. The "payload" attribute of the ParseTree
+is just an object. Let's debug and find out the information it contains.
