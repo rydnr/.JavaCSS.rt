@@ -110,7 +110,7 @@ public class SelectorMatchVisitor
                 String className = node.getPayload().getClass().getSimpleName();
 
                 if (className.contains("$")) {
-                    className =
+                    className = className.substring()
                 }
                 result = node.getPayload().getClass().getSimpleName().equals(currentSelector.substring(1));
             } else if (currentSelector.startsWith("\"")) {
