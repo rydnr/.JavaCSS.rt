@@ -2383,3 +2383,32 @@ Let's change our test accordingly:
         Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
     }
 #+END_SRC
+
+The changes were pretty simple. They include renaming /retrieveMatchingSelectors()/ to /retrieveMatchingCss()/.
+
+Our initial *Css* class is just a bean:
+
+#+BEGIN_SRC
+public class Css {
+    /**
+     * The selectors.
+     */
+    private List<String> selectors = new ArrayList<>();
+
+    /**
+     * Adds a new selector.
+     * @param selector the selector.
+     */
+    public void addSelector(String selector) {
+        this.selectors.add(selector);
+    }
+    
+    /**
+     * Retrieves the selectors.
+     * @return such information.
+     */
+    public List<String> getSelectors() {
+        return selectors;
+    }
+}
+#+END_SRC
