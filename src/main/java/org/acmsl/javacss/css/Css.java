@@ -85,4 +85,8 @@ public class Css {
     public List<Property<?>> getProperties() {
         return properties;
     }
+
+    public void addProperty(final Property<String> stringProperty)
+    {
+    }
 }
