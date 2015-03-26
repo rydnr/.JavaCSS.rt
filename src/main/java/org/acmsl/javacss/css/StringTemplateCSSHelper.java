@@ -165,6 +165,7 @@ public class StringTemplateCSSHelper
                 for (String selector : selectors) {
                     css.addSelector(selector);
                 }
+                result.add(css);
                 break;
             }
         }
