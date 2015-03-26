@@ -157,7 +157,7 @@ public class StringTemplateCSSHelper
     }
 
     public List<Css> retrieveMatchingCss(ParseTree node, ParseTree ast) {
-        List<Css> result = null;
+        List<Css> result = new ArrayList<Css>();
 
         for (List<String> selectors : getSelectors()) {
             if (match(selectors, node, ast)) {
