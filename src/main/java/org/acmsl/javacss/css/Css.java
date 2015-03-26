@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NotNull;
  */
 import org.checkthread.annotations.ThreadSafe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,5 +57,5 @@ import java.util.List;
 @ThreadSafe
 public class Css
 {
-    private List<String> selectors =
+    private List<String> selectors = new ArrayList<>()
 }
