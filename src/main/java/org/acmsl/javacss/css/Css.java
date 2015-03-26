@@ -88,7 +88,7 @@ public class Css {
 
     /**
      * Adds a new property.
-     * @param property
+     * @param property the property.
      */
     public void addProperty(final Property<?> property) {
         this.properties.add(property);
