@@ -229,6 +229,7 @@ public class StringTemplateCSSHelperTest
 
         List<Css> matchedCss = helper.retrieveMatchingCss(semiColon, ast);
 
+
         List<String> matchedSelectors = matchedCss.getSelectors();
         Assert.assertNotNull(matchedSelectors);
         Assert.assertEquals(2, matchedSelectors.size());
