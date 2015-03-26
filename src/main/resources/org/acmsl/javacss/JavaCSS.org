@@ -2517,3 +2517,5 @@ It shouldn't be too difficult to annotate the properties when building *Css* ins
         [..]
     }
 #+END_SRC
+
+We have to remember later to write tests for supporting different types of properties: integer, arrays, etc.
