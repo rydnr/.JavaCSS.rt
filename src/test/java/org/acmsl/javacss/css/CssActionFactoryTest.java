@@ -58,5 +58,5 @@ import org.junit.runners.JUnit4;
 public class CssActionFactoryTest
 {
     @Test
-    public void when_there_is_nothing_to_do_returns_Null
+    public void when_there_is_nothing_to_do_returns_NullCssAction
 }
