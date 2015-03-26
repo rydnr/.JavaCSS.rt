@@ -57,6 +57,9 @@ public class Css {
      * The selectors.
      */
     private List<String> selectors = new ArrayList<>();
+    /**
+     * The CSS properties.
+     */
     private List<Property<?>> properties = new ArrayList<>();
 
     /**
