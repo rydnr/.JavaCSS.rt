@@ -57,7 +57,7 @@ public class Css {
      * The selectors.
      */
     private List<String> selectors = new ArrayList<>();
-    private List<Property<?>> properties;
+    private List<Property<?>> properties = new ArrayList<>();
 
     /**
      * Adds a new selector.
@@ -79,8 +79,7 @@ public class Css {
      * Retrieves the properties.
      * @return such information.
      */
-    public List<Property<?>> getProperties()
-    {
+    public List<Property<?>> getProperties() {
         return properties;
     }
 }
