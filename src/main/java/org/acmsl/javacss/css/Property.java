@@ -63,4 +63,9 @@ public class Property<T> {
     {
         this.key = key;
     }
+
+    public String getValue()
+    {
+        return value;
+    }
 }
