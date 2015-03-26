@@ -2573,4 +2573,8 @@ However, this change is incompatible with our test block /multipleBlockPropertyT
 we have to update that as well.
 
 #+BEGIN_SRC
+        for (int index = 0; index < count; index++) {
+            [..]
+            Assert.assertEquals(String.valueOf(index), properties.get("content"));
+        }
 #+END_SRC
