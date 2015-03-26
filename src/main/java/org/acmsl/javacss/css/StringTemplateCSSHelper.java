@@ -38,6 +38,7 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
+import org.abego.treelayout.internal.util.java.lang.string.StringUtil;
 import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
@@ -103,6 +104,8 @@ public class StringTemplateCSSHelper
         ParseTree tree = parser.css();
 
         Collection<ParseTree> selectorCombinations = XPath.findAll(tree, "//selectorCombination", parser);
+
+        final StringUtils stringUtils = StringUtils.getInstance();
 
         this.selectors = new ArrayList<List<String>>(selectorCombinations.size());
         this.properties = new HashMap<List<String>, Map<String, String>>();
