@@ -39,6 +39,7 @@ package org.acmsl.javacss.css;
  * Importing JetBrains annotations.
  */
 import org.abego.treelayout.internal.util.java.lang.string.StringUtil;
+import org.acmsl.commons.utils.StringUtils;
 import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
