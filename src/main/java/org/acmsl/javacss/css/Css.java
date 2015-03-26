@@ -73,4 +73,9 @@ public class Css {
     public List<String> getSelectors() {
         return selectors;
     }
+
+    public List<Property<?>> getProperties()
+    {
+        return properties;
+    }
 }
