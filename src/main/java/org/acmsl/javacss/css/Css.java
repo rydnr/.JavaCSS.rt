@@ -49,8 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
+ * Represents CSS blocks.
  * @since 3.0
  * Created: 2015/03/26 12:12
  */
