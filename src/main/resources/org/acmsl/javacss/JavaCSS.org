@@ -2343,7 +2343,7 @@ Strings, but we need to return a list of /css/ entries, as defined in the CSS gr
 
 Let's change our test accordingly:
 
-#+BEGIN_SRC
+#+BEGIN_SRC java
     @Test
     public void finds_the_matching_css() {
         String javaInput = "package com.foo.bar;";
@@ -2388,7 +2388,7 @@ The changes were pretty simple. They include renaming /retrieveMatchingSelectors
 
 Our initial *Css* class is just a bean:
 
-#+BEGIN_SRC
+#+BEGIN_SRC java
 public class Css {
     /**
      * The selectors.
@@ -2415,3 +2415,22 @@ public class Css {
 
 We now have to refactor /retrieveMatchingCss()/ method, which now has to return a list
 of *Css* instances.
+
+#+BEGIN_SRC java
+    public List<Css> retrieveMatchingCss(ParseTree node, ParseTree ast) {
+        List<Css> result = new ArrayList<Css>();
+
+        for (List<String> selectors : getSelectors()) {
+            if (match(selectors, node, ast)) {
+                Css css = new Css();
+                for (String selector : selectors) {
+                    css.addSelector(selector);
+                }
+                result.add(css);
+                break;
+            }
+        }
+
+        return result;
+    }
+#+END_SRC
