@@ -2370,6 +2370,11 @@ Let's change our test accordingly:
 
         List<Css> matchedCss = helper.retrieveMatchingCss(semiColon, ast);
 
+        Assert.assertNotNull(matchedCss);
+        Assert.assertEquals(1, matchedCss.size());
+        Css css = matchedCss.get(1);
+        Assert.assertNotNull(css);
+
         List<String> matchedSelectors = matchedCss.getSelectors();
 
         Assert.assertNotNull(matchedSelectors);
