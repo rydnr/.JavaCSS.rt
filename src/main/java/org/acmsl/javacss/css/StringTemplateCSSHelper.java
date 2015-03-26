@@ -115,7 +115,7 @@ public class StringTemplateCSSHelper
                 String text = selectorCombination.getChild(index).getText();
                 currentSelectors.add(text);
             }
-            Map<String, String> block = retrieveProperties(selectorCombination, parser);
+            Map<String, String> block = retrieveProperties(selectorCombination, utils);
 
             this.properties.put(currentSelectors, block);
         }
