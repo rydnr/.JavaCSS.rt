@@ -61,7 +61,6 @@ public class Css
 
     /**
      * Retrieves the selectors.
-     *
      * @return such information.
      */
     public List<String> getSelectors()
