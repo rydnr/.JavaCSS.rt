@@ -645,6 +645,7 @@ That template is saying:
 as separator.
 - Append a blank space.
 - Add the "package" word.
+- Append a blank space.
 - Append the identifier value.
 - If there're any extra identifiers (the package is part of a tree), then append each part, preceded by a dot.
 - Append a semicolon.
@@ -2334,3 +2335,4 @@ public class SelectorMatchVisitor
 
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
+*** Fifth test: Implementing ::before pseudo-selector
