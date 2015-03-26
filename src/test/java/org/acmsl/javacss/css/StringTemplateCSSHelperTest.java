@@ -239,7 +239,9 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
         Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
 
-        List<Property>
+        List<Property> properties = css.getProperties();
+        Assert.assertNotNull(properties);
+
     }
 
 }
