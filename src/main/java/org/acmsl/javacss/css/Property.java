@@ -55,7 +55,10 @@ public class Property<T> {
     private final String key;
     private final T value;
 
-
+    public Property(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
     public String getKey() {
         return key;
     }
