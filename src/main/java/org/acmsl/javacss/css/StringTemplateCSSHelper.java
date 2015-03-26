@@ -38,20 +38,15 @@ package org.acmsl.javacss.css;
 /*
  * Importing JetBrains annotations.
  */
-import org.abego.treelayout.internal.util.java.lang.string.StringUtil;
 import org.acmsl.commons.utils.StringUtils;
 import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser.PropertyContext;
-import org.acmsl.javacss.css.parser.StringTemplateCSSVisitor;
-import org.acmsl.javacss.java8.parser.Java8BaseListener;
-import org.acmsl.javacss.java8.parser.Java8BaseVisitor;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.TerminalNode;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 
 /*
