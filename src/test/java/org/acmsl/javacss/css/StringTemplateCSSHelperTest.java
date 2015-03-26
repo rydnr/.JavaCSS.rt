@@ -140,8 +140,7 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertEquals(count, selectors.size());
 
-        for (int index = 0; index < count; index++)
-        {
+        for (int index = 0; index < count; index++) {
             Map<String, String> properties = helper.getProperties(selectors.get(index));
 
             Assert.assertNotNull(properties);
