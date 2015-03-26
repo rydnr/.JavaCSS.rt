@@ -121,7 +121,7 @@ public class StringTemplateCSSHelper
         }
     }
 
-    protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringTemplateCSSParser parser)
+    protected Map<String, String> retrieveProperties(ParseTree selectorEntry)
     {
         Map<String, String> result;
 
