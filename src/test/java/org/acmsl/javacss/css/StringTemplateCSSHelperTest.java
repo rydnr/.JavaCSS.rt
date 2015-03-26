@@ -245,8 +245,8 @@ public class StringTemplateCSSHelperTest
         @SuppressWarnings("unchecked")
         Property<String> content = (Property<String>) properties.get(0);
         Assert.assertNotNull(content);
-        Assert.assertEquals("content", property.getKey());
-        Assert.assertEquals(" ", property.getValue());
+        Assert.assertEquals("content", content.getKey());
+        Assert.assertEquals(" ", content.getValue());
     }
 
 }
