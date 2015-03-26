@@ -56,5 +56,5 @@ import java.util.List;
 @ThreadSafe
 public class Css
 {
-    private List<String> selectors
+    private List<String> selectors =
 }
