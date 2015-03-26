@@ -244,7 +244,8 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(1, properties.size());
         Property content = properties.get(0);
         Assert.assertNotNull(content);
-        Assert.assertEquals("property.getKey())
+        Assert.assertEquals("content", property.getKey());
+        Assert.assertEquals()
     }
 
 }
