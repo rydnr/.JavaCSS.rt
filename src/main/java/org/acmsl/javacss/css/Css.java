@@ -55,16 +55,14 @@ import java.util.List;
  * Created: 2015/03/26 12:12
  */
 @ThreadSafe
-public class Css
-{
+public class Css {
     private List<String> selectors = new ArrayList<>();
 
     /**
      * Retrieves the selectors.
      * @return such information.
      */
-    public List<String> getSelectors()
-    {
+    public List<String> getSelectors() {
         return selectors;
     }
 }
