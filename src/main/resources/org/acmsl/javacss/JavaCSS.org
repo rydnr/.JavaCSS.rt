@@ -2412,3 +2412,6 @@ public class Css {
     }
 }
 #+END_SRC
+
+We now have to refactor /retrieveMatchingCss()/ method, which now has to return a list
+of *Css* instances.
