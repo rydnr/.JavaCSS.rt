@@ -2497,7 +2497,7 @@ public class Property<T> {
 }
 #+END_SRC
 
-The test now fails, as expected, when checking how many properties are expected.
+The test now fails, as expected, when checking how many properties are found.
 
 #+BEGIN_SRC sh
 java.lang.AssertionError: 
