@@ -238,6 +238,9 @@ public class StringTemplateCSSHelperTest
         Assert.assertEquals(2, matchedSelectors.size());
         Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
         Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+
+        \
     }
+
 }
 
