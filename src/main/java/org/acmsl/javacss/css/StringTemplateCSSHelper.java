@@ -162,7 +162,7 @@ public class StringTemplateCSSHelper
         for (List<String> selectors : getSelectors()) {
             if (match(selectors, node, ast)) {
                 Css css = new Css();
-                for (String selector selector : )
+                for (String selector : selectors)
                 result = selectors;
                 break;
             }
