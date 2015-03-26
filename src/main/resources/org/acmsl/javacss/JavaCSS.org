@@ -2531,3 +2531,24 @@ public class Css {
 
 When running the tests, one assertion fails, and it has to do with a past decision of including the quotes
 in property values. It makes sense to fix that now.
+
+#+BEGIN_SRC java
+    protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringUtils stringUtls)
+    {
+        Map<String, String> result;
+
+        Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+
+        result = new HashMap<String, String>(properties.size());
+
+        for (ParseTree property : properties) {
+            String key = property.getChild(0).getText();
+            String value = stringUtls.unquote(stringUtls.unquote(property.getChild(2).getText(), '"'), '\'');
+            result.put(key, value);
+        }
+
+        return result;
+    }
+#+END_SRC
+
+We added a the reference to *StringUtils*, since it's being used in a loop.
