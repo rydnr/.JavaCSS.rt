@@ -2552,3 +2552,19 @@ in property values. It makes sense to fix that now.
 #+END_SRC
 
 We added a the reference to *StringUtils*, since it's being used in a loop.
+
+#+BEGIN_SRC java
+    protected void initialize(String input)
+    {
+        [..]
+
+        StringUtils stringUtils = StringUtils.getInstance();
+
+        for (ParseTree selectorCombination : selectorCombinations) {
+            [..]
+
+            Map<String, String> block = retrieveProperties(selectorCombination, stringUtils);
+            [..]
+        }
+    }
+#+END_SRC
