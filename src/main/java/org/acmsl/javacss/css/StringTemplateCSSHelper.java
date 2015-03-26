@@ -166,7 +166,7 @@ public class StringTemplateCSSHelper
                     css.addSelector(selector);
                 }
                 for (Map.Entry<String, String> entry : this.properties.get(selectors).entrySet()) {
-                    css.addProperty(new Property<String>(entry.getKey(), entry.getValue());
+                    css.addProperty(new Property<String>(entry.getKey(), entry.getValue()));
                 }
                 result.add(css);
                 break;
