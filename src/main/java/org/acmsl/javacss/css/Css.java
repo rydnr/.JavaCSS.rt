@@ -60,17 +60,6 @@ public class Css
     private List<String> selectors = new ArrayList<>();
 
     /**
-    /**
-     * Specifies the new selectors.
-     *
-     * @param selectors the new selectors.
-     */
-    protected final void setSelectors(List<String> selectors)
-    {
-        this.selectors = selectors;
-    }
-
-    /**
      * Retrieves the selectors.
      *
      * @return such information.
