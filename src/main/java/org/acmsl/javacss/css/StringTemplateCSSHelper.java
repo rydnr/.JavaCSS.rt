@@ -165,7 +165,8 @@ public class StringTemplateCSSHelper
                 for (String selector : selectors) {
                     css.addSelector(selector);
                 }
-                css.addP
+                Map<String, String> properties = this.properties.get(selectors)
+                css.addProperty(property);
                 result.add(css);
                 break;
             }
