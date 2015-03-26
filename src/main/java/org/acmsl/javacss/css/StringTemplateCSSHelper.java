@@ -128,7 +128,7 @@ public class StringTemplateCSSHelper
 
         for (ParseTree property : properties) {
             String key = property.getChild(0).getText();
-            String value = stringUtls.unquote()property.getChild(2).getText();
+            String value = stringUtls.unquote(property.getChild(2).getText(), '"');
             result.put(key, value);
         }
 
