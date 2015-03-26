@@ -36,15 +36,13 @@
 package org.acmsl.javacss.css;
 
 /*
- * Importing JetBrains annotations.
- */
-import org.jetbrains.annotations.NotNull;
-
-/*
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
 
+/*
+ * Importing JDK classes.
+ */
 import java.util.ArrayList;
 import java.util.List;
 
