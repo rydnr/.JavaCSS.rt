@@ -65,6 +65,6 @@ public class CssActionFactoryTest
         css.addSelector(".rule");
         css.addProperty(new Property<String>("content", "value"));
 
-        factory.createAction(css);
+        CssAction action = factory.createAction(css);
     }
 }
