@@ -65,7 +65,7 @@ public class Css
      *
      * @param selectors the new selectors.
      */
-    public void setSelectors(List<String> selectors)
+    protected final void setSelectors(List<String> selectors)
     {
         this.selectors = selectors;
     }
