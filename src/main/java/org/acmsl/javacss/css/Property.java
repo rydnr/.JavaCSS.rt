@@ -52,26 +52,15 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class Property<T> {
-    private String key;
-    private T value;
+    private final String key;
+    private final T value;
 
-    public String getKey()
-    {
+
+    public String getKey() {
         return key;
     }
 
-    public void setKey(final String key)
-    {
-        this.key = key;
-    }
-
-    public T getValue()
-    {
+    public T getValue() {
         return value;
-    }
-
-    public void setValue(final T value)
-    {
-        this.value = value;
     }
 }
