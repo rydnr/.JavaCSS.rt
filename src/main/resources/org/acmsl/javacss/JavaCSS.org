@@ -2497,7 +2497,10 @@ public class Property<T> {
 }
 #+END_SRC
 
-The test now fails, as expected.
+The test now fails, as expected, when checking how many properties are expected.
 
 #+BEGIN_SRC sh
+java.lang.AssertionError: 
+Expected :1
+Actual   :0
 #+END_SRC
