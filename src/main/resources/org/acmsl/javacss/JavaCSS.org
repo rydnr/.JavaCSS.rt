@@ -2578,3 +2578,5 @@ we have to update that as well.
             Assert.assertEquals(String.valueOf(index), properties.get("content"));
         }
 #+END_SRC
+
+Now we have a way to retrieve the properties to apply for any given node in the AST.
