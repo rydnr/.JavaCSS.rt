@@ -64,7 +64,7 @@ public class Property<T> {
         this.key = key;
     }
 
-    public String getValue()
+    public T getValue()
     {
         return value;
     }
