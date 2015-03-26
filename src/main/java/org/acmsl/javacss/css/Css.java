@@ -58,6 +58,6 @@ import java.util.List;
 public class Css
 {
     private final List<String> selectors = new ArrayList<>();
-    private final
+
 
 }
