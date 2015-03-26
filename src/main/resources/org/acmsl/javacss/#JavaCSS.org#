@@ -2338,4 +2338,7 @@ But meanwhile, it passes our tests.
 *** Fifth test: Implementing ::before pseudo-selector
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
-But we have a minor refactoring to do first: the /retrieveMatchingSelectors()/ method currently 
+But we have a minor refactoring to do first. The /retrieveMatchingSelectors()/ method currently retrieves a list of
+Strings, but we need to return a list of /css/ entries, as defined in the CSS grammar.
+
+
