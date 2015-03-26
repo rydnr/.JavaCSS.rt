@@ -2336,3 +2336,45 @@ public class SelectorMatchVisitor
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
 *** Fifth test: Implementing ::before pseudo-selector
+
+For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
+But we have a minor refactoring to do first. The /retrieveMatchingSelectors()/ method currently retrieves a list of
+Strings, but we need to return a list of /css/ entries, as defined in the CSS grammar.
+
+Let's change our test accordingly:
+
+#+BEGIN_SRC
+    @Test
+    public void finds_the_matching_selector() {
+        String javaInput = "package com.foo.bar;";
+
+        String cssInput =
+              ".packageDeclaration \";\"::before {\n"
+            + "   content: \" \";\n"
+            + "}\n";
+
+        StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        List<Css> matchedCss = helper.retrieveMatchingCss(semiColon, ast);
+
+        List<String> matchedSelectors = css.getSelectors();
+
+        Assert.assertNotNull(matchedSelectors);
+        Assert.assertEquals(2, matchedSelectors.size());
+        Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
+        Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+    }
+#+END_SRC
