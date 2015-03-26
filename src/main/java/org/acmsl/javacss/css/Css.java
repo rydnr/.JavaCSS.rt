@@ -59,7 +59,7 @@ public class Css
 {
     private List<String> selectors = new ArrayList<>();
 
-
+    /**
     /**
      * Specifies the new selectors.
      *
