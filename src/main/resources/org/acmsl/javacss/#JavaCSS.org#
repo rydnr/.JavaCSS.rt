@@ -2529,4 +2529,5 @@ public class Css {
 }
 #+END_SRC
 
-When running the tests, 
+When running the tests, one assertion fails, and it has to do with a past decision of including the quotes
+in property values.
