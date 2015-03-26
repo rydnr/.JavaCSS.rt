@@ -2580,3 +2580,6 @@ we have to update that as well.
 #+END_SRC
 
 Now we have a way to retrieve the properties to apply for any given node in the AST.
+Next step is to interpret the semantics of each CSS block, and perform the actions each one defines, if any.
+To keep this as simple as possible at the beginning, we'll use a /Factory method/ pattern, to
+be able to instantiate the correct entities representing the actions to perform, for each CSS block.
