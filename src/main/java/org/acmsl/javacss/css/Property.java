@@ -53,6 +53,7 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class Property<T> {
     private String key;
+    private T value;
 
     public String getKey()
     {
@@ -67,5 +68,10 @@ public class Property<T> {
     public T getValue()
     {
         return value;
+    }
+
+    public void setValue(final T value)
+    {
+        this.value = value;
     }
 }
