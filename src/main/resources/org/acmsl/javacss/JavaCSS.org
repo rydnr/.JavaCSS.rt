@@ -2504,3 +2504,16 @@ java.lang.AssertionError:
 Expected :1
 Actual   :0
 #+END_SRC
+
+It shouldn't be too difficult to annotate the properties when building *Css* instances.
+
+#+BEGIN_SRC java
+    public List<Css> retrieveMatchingCss(ParseTree node, ParseTree ast) {
+        [..]
+                for (Map.Entry<String, String> entry : this.properties.get(selectors).entrySet()) {
+                    css.addProperty(new Property<String>(entry.getKey(), entry.getValue()));
+                }
+                result.add(css);
+        [..]
+    }
+#+END_SRC
