@@ -75,13 +75,12 @@ public class Css {
         return selectors;
     }
 
+    /**
+     * Retrieves the properties.
+     * @return such information.
+     */
     public List<Property<?>> getProperties()
     {
         return properties;
-    }
-
-    public void setProperties(final List<Property<?>> properties)
-    {
-        this.properties = properties;
     }
 }
