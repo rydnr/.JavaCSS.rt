@@ -242,7 +242,7 @@ public class StringTemplateCSSHelperTest
         List<Property<?>> properties = css.getProperties();
         Assert.assertNotNull(properties);
         Assert.assertEquals(1, properties.size());
-        Property<String> content = properties.get(0);
+        Property<String> content = (Property<String>) properties.get(0);
         Assert.assertNotNull(content);
         Assert.assertEquals("content", property.getKey());
         Assert.assertEquals(" ", property.getValue());
