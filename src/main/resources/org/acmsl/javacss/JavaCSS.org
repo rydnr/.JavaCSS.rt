@@ -2452,3 +2452,4 @@ The tests still pass. Great! Now, we need to test whether the CSS properties are
 #+END_SRC
 
 That requires us to add the /Property/ collection the *Css* class, and implement the *Property* class as well.
+We'll use a parameter to represent the type of the value of each property.
