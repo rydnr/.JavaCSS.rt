@@ -52,4 +52,8 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class Property<T> {
+    public String getKey()
+    {
+        return key;
+    }
 }
