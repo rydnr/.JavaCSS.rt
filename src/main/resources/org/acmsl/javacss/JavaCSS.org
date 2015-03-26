@@ -2572,7 +2572,7 @@ We added a the reference to *StringUtils*, since it's being used in a loop.
 However, this change is incompatible with our test block /multipleBlockPropertyTests(int)/, so
 we have to update that as well.
 
-#+BEGIN_SRC
+#+BEGIN_SRC java
         for (int index = 0; index < count; index++) {
             [..]
             Assert.assertEquals(String.valueOf(index), properties.get("content"));
