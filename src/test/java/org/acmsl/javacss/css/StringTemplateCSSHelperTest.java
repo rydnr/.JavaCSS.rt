@@ -232,8 +232,9 @@ public class StringTemplateCSSHelperTest
         Assert.assertNotNull(matchedCss);
         Assert.assertEquals(1, matchedCss.size());
 
-        Css css
-        List<String> matchedSelectors = matchedCss.getSelectors();
+        Css css = matchedCss.get(1);
+
+        List<String> matchedSelectors = css.getSelectors();
         Assert.assertNotNull(matchedSelectors);
         Assert.assertEquals(2, matchedSelectors.size());
         Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
