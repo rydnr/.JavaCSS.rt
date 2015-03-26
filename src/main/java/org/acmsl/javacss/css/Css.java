@@ -45,6 +45,8 @@ import org.jetbrains.annotations.NotNull;
  */
 import org.checkthread.annotations.ThreadSafe;
 
+import java.util.List;
+
 /**
  *
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
@@ -54,5 +56,5 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class Css
 {
-    private
+    private List<String> selectors
 }
