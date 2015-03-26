@@ -65,7 +65,7 @@ public class CssActionFactoryTest
         Css css = new Css();
         css.addSelector(".rule");
         css.addProperty(new Property<String>("content", "value"));                                             https://es.wuaki.tv/movies/el-primer-caballero
-
+            https://es.wuaki.tv/tv_shows/babytv#season_8
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
         Assert.assertTrue(action instanceof NullCssAction);
