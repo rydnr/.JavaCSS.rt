@@ -2436,3 +2436,19 @@ of *Css* instances.
 #+END_SRC
 
 The tests still pass. Great! Now, we need to test whether the CSS properties are available as well.
+
+#+BEGIN_SRC java
+    @Test
+    public void finds_the_matching_css() {
+        [..]
+        List<Property<?>> properties = css.getProperties();
+        Assert.assertNotNull(properties);
+        Assert.assertEquals(1, properties.size());
+        Property<String> content = properties.get(0);
+        Assert.assertNotNull(content);
+        Assert.assertEquals("content", property.getKey());
+        Assert.assertEquals(" ", property.getValue());
+}
+#+END_SRC
+
+That requires us to add the /Property/ collection the *Css* class, and implement the *Property* class as well.
