@@ -59,6 +59,8 @@ public class CssActionFactoryTest
 {
     @Test
     public void when_there_is_nothing_to_do_creates_NullCssAction() {
-        CssActionFactory factory =
+        CssActionFactory factory = new CssActionFactory();
+
+        factory.create
     }
 }
