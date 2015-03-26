@@ -2337,3 +2337,5 @@ This algorithm has limitations and will be changed later, at least whenever we n
 But meanwhile, it passes our tests.
 *** Fifth test: Implementing ::before pseudo-selector
 
+For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
+But we have a minor refactoring to do first: the /retrieveMatchingSelectors()/ method currently 
