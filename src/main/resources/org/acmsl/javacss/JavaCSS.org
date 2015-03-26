@@ -2446,8 +2446,8 @@ The tests still pass. Great! Now, we need to test whether the CSS properties are
         Assert.assertEquals(1, properties.size());
         Property<String> content = properties.get(0);
         Assert.assertNotNull(content);
-        Assert.assertEquals("content", property.getKey());
-        Assert.assertEquals(" ", property.getValue());
+        Assert.assertEquals("content", content.getKey());
+        Assert.assertEquals(" ", content.getValue());
 }
 #+END_SRC
 
