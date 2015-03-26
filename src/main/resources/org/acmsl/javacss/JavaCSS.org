@@ -2435,4 +2435,4 @@ of *Css* instances.
     }
 #+END_SRC
 
-The tests still pass. Great!
+The tests still pass. Great! Now, we need to test whether the CSS properties are available as well.
