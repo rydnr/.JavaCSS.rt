@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: Represents CSS properties.
  *
  * Date: 2015/03/26
  * Time: 13:01
@@ -46,12 +46,10 @@ import org.jetbrains.annotations.NotNull;
 import org.checkthread.annotations.ThreadSafe;
 
 /**
- *
+ * Represents CSS properties.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
- * @since 3.0
  * Created: 2015/03/26 13:01
  */
 @ThreadSafe
-public class Property<T>
-{
+public class Property<T> {
 }
