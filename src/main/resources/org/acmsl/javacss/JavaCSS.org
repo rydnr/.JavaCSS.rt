@@ -2498,3 +2498,6 @@ public class Property<T> {
 #+END_SRC
 
 The test now fails, as expected.
+
+#+BEGIN_SRC sh
+#+END_SRC
