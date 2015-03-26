@@ -53,9 +53,19 @@ import java.util.List;
  */
 @ThreadSafe
 public class Css {
+    /**
+     * The selectors.
+     */
     private List<String> selectors = new ArrayList<>();
 
-    public void addSelector()
+    /**
+     * Adds a new selector.
+     * @param selector the selector.
+     */
+    public void addSelector(String selector) {
+        this.selectors.add(selector);
+    }
+
     /**
      * Retrieves the selectors.
      * @return such information.
