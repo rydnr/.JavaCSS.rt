@@ -156,7 +156,7 @@ public class StringTemplateCSSHelper
         return this.properties.get(selector);
     }
 
-    public List<String> retrieveMatchingSelectors(ParseTree node, ParseTree ast) {
+    public List<String> retrieveMatchingCss(ParseTree node, ParseTree ast) {
         List<String> result = null;
 
         for (List<String> selectors : getSelectors()) {
