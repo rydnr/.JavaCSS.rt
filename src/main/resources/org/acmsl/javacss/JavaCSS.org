@@ -2474,3 +2474,8 @@ public class Css {
     }
 }
 #+END_SRC
+
+The first version of the *Property* class could be as follows.
+
+#+BEGIN_SRC java
+#+END_SRC
