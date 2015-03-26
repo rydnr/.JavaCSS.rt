@@ -1,4 +1,4 @@
-% Created 2015-03-05 Thu 08:57
+% Created 2015-03-26 Thu 13:19
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -692,6 +692,7 @@ as separator.
 \begin{itemize}
 \item Append a blank space.
 \item Add the "package" word.
+\item Append a blank space.
 \item Append the identifier value.
 \item If there're any extra identifiers (the package is part of a tree), then append each part, preceded by a dot.
 \item Append a semicolon.
@@ -1703,24 +1704,6 @@ package com.foo.bar;
 
 That is,
 
-\begin{verbatim}
-packageDeclaration;
-packageLiteral [label="package"];
-comIdentifier [label="com"];
-dot1 [label="."];
-fooIdentifier [label="foo"];
-dot2 [label="."];
-barIdentifier [label="bar"];
-semicolon [label=";"];
-packageLiteral -> packageDeclaration;
-comIdentifier -> packageDeclaration;
-dot1 -> packageDeclaration;
-fooIdentifier -> packageDeclaration;
-dot2 -> packageDeclaration;
-barIdentifier -> packageDeclaration;
-semicolon -> packageDeclaration;
-\end{verbatim}
-
 For the CSS, this would be simple enough: add a blank space before the semicolon.
 
 \begin{verbatim}
@@ -1796,7 +1779,7 @@ Failed tests:
   StringTemplateCSSHelperTest.finds_the_matching_selector:187 null
 \end{verbatim}
 
-Now we have to actually implement the "retrieveMatchingSelectors()" method. It's not straight-forward: we
+Now we have to actually implement the "retrieveMatchingSelectors()" method, and it's not straight-forward. We
 have to find which selector defines a set which includes the input AST. Currently, we are storing the combination of 
 selectors as one piece of text. Parsing it again makes no sense whatsoever, so we should invest some time fixing this first.
 Instead of a list of Strings, it makes more sense to describe it as a list of list of Strings.
@@ -1995,6 +1978,590 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
 }
 \end{verbatim}
 
-Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely.
+Even though we've had to change the tests, the changes were pretty simple, and the test passed nicely. Now we can go
+back to work: implementing retrieveMatchingSelectors(ParseTree).
+
+\begin{verbatim}
+public List<String> retrieveMatchingSelectors(ParseTree node) {
+    List<String> result = null;
+
+    for (List<String> selectors : this.selectors) {
+        if (match(selectors, node)) {
+            result = selectors;
+            break;
+        }
+    }
+
+    return result;
+}
+\end{verbatim}
+
+I noticed I actually missed to complete the previous refactoring. The matching selectors are actually a list, not
+just a string made of selectors. That requires adapting the test as well.
+
+\begin{verbatim}
+@Test
+public void finds_the_matching_selector(){
+    String javaInput = "package com.foo.bar;";
+
+    String cssInput =
+          ".packageDeclaration \";\"::before {\n"
+        + "   content: \" \";\n"
+        + "}\n";
+
+    StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+    Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    Java8Parser parser = new Java8Parser(tokens);
+    ParseTree ast = parser.compilationUnit();
+
+    Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+    Assert.assertNotNull(matches);
+    Assert.assertEquals(1, matches.size());
+
+    ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+    Assert.assertNotNull(semiColon);
+
+    List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon);
+
+    Assert.assertNotNull(matchedSelectors);
+    Assert.assertEquals(2, matchedSelectors.size());
+    Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
+    Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+}
+\end{verbatim}
+
+In the implementation I've started writing, I introduced a new method, match(List<String>, ParseTree), to isolate the logic
+to check whether the root node is part of the nodes described by the selectors. However, that's not really what we need. We cannot
+restrain ourselves to checking the root node. The check requires evaluating the node not as a root, but in context of the complete AST.
+We need to pass such complete AST as well.
+
+\begin{verbatim}
+[..]
+List<String> matchedSelectors = helper.retrieveMatchingSelectors(semiColon, ast);
+[..]
+\end{verbatim}
+
+\begin{verbatim}
+public List<String> retrieveMatchingSelectors(ParseTree node, ParseTree ast) {
+    List<String> result = null;
+
+    for (List<String> selectors : getSelectors())
+    {
+        if (match(selectors, node, ast))
+        {
+            result = selectors;
+            break;
+        }
+    }
+
+    return result;
+}
+
+protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
+    return false;
+}
+\end{verbatim}
+
+Now we have to implement the algorithm:
+Given a node in a tree, and a list of ordered filters describing node properties and inheritance relations among nodes, find out whether
+given node matches the filters.
+We should try to stop as soon as we know the node does not match any filter. Otherwise, it'd be more useful to retrieve all matching
+nodes for given selectors, and afterwards check whether our node is part of such list.
+
+Let's do our first attempt to implement the algorithm. We'll be traversing two ordered structures: the selector list, and the tree, so we'll
+need two references.
+We start with the first selector, and search the tree for the first node for which the selector is true. If none is found, we are finished,
+otherwise we have to check if the matched node is our candidate.
+If it's our node, and there're no other selectors, we conclude there's a match.
+If it's our node, and there're more selectors, we just have to check if our node matches the remaining selectors. That check defines the
+outcome of the algorithm.
+If it's not our node, but it's an ancestor of our node, then we apply the algorithm to the subtree whose root is the recent match, providing
+the list of selectors not processed yet.
+If it's not our node, and our node doesn't descend from it, then we skip that node, try to find another match in the tree, and apply the
+same steps for the next match.
+
+However, the simplest way to crawl a ParseTree is with a visitor. If we managed to implement the algorithm in a custom visitor, it
+would be simpler and shorter. For that, we need to find out whether we can stop the crawl on demand. Otherwise it'd be very innefficent.
+Fortunately, ANTLR visitor logic internally calls "parseTree.accept(visitor)", and such "accept" method calls "visitor.visitTerminal()"
+for a TerminalNode, "visitor.visitChildren()" for a "rule" node, or "visitor.visitErrorNode()" for an error node. So it's the visitor
+who manages when to stop the crawl.
+
+This approach would then iterate through the selector list, and call a visitor-based tree traversal, finding the subtrees whose root
+node matches that selector. If our node is in that set, we add the selector to the list of matching selectors, and repeat the
+process with the next selector.
+
+It's easier to start with a test, even if we are dealing with ParseTree objects, which add certain complexity to the test.
+
+\begin{verbatim}
+@Test
+public void selector_found(){
+    String javaInput = "package com.foo.bar;";
+
+    String cssInput =
+        ".packageDeclaration \";\"::before {\n"
+        + "   content: \" \";\n"
+        + "}\n";
+
+    StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+    Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    Java8Parser parser = new Java8Parser(tokens);
+    ParseTree ast = parser.compilationUnit();
+
+    Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+    Assert.assertNotNull(matches);
+    Assert.assertEquals(1, matches.size());
+
+    ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+    Assert.assertNotNull(semiColon);
+
+    matches = XPath.findAll(ast, "//'package'", parser);
+
+    Assert.assertNotNull(matches);
+    Assert.assertEquals(1, matches.size());
+
+    ParseTree packageNode = matches.toArray(new ParseTree[1])[0];
+    Assert.assertNotNull(packageNode);
+
+    List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
+
+    Assert.assertTrue(helper.match(selectors, semiColon, ast));
+    Assert.assertFalse(helper.match(selectors, packageNode, ast));
+}
+\end{verbatim}
+
+What we're testing here is that, given two selectors (.packageDeclaration and ";"::before) and the AST
+resulting from parsing "package com.foo.bar;", the node associated to the semicolon matches the selectors, whereas
+the node associated to the "package" keyword, does not.
+
+\begin{verbatim}
+protected boolean match(List<String> selectors, ParseTree node, ParseTree ast) {
+    SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, node);
+
+    visitor.visit(ast);
+
+    return visitor.matchFound();
+}
+\end{verbatim}
+
+We'll isolate everything in the SelectorMatchVisitor class. Before we think about the algorith itself,
+we know for sure we'll need to implement the logic to check whether a selector matches a given node
+in an AST.
+
+\begin{verbatim}
+/**
+ * An ANTLR visitor to find whether some selectors match certain subtrees of an AST.
+ * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
+ * @since 3.0
+ * Created: 2015/03/20 10:35
+ */
+@ThreadSafe
+public class SelectorMatchVisitor
+    extends Java8BaseVisitor<ParseTree> {
+
+    boolean match = false;
+    final ParseTree focusNode;
+    final List<String> selectors;
+
+    public SelectorMatchVisitor(List<String> selectors, ParseTree focusNode) {
+        this.selectors = selectors;
+        this.focusNode = focusNode;
+    }
+
+    public boolean matchFound() {
+        return this.match;
+    }
+
+    protected boolean matches(final ParseTree node, final String currentSelector) {
+        boolean result = false;
+
+        return result;
+    }
+}
+\end{verbatim}
+
+Let's write our test then.
+
+\begin{verbatim}
+@RunWith(JUnit4.class)
+public class SelectorMatchVisitorTest {
+
+    @Test
+    public void compares_selectors_correctly() {
+        String javaInput = "package com.foo.bar;";
+
+        Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokens);
+        ParseTree ast = parser.compilationUnit();
+
+        Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(semiColon);
+
+        matches = XPath.findAll(ast, "//'package'", parser);
+
+        Assert.assertNotNull(matches);
+        Assert.assertEquals(1, matches.size());
+
+        ParseTree packageNode = matches.toArray(new ParseTree[1])[0];
+        Assert.assertNotNull(packageNode);
+
+        List<String> selectors = Arrays.asList(".packageDeclaration", "\";\"::before");
+
+        SelectorMatchVisitor visitor = new SelectorMatchVisitor(selectors, ast);
+
+        Assert.assertTrue(visitor.matches(ast.getChild(0), ".packageDeclaration"));
+        Assert.assertTrue(visitor.matches(semiColon, "\";\"::before"));
+    }
+}
+\end{verbatim}
+
+As we defined above, if the selector starts with a colon, we'll match those nodes whose "type" is
+precisely that selector.
+
+No surprise the test fails.
+
+\begin{verbatim}
+java.lang.AssertionError
+        at org.junit.Assert.fail(Assert.java:86)
+        at org.junit.Assert.assertTrue(Assert.java:41)
+        at org.junit.Assert.assertTrue(Assert.java:52)
+        at org.acmsl.javacss.css.SelectorMatchVisitorTest.compares_ByClass_selectors_correctly(SelectorMatchVisitorTest.java:100)
+\end{verbatim}
+
+The only problem is to figure out how can we retrieve the type of the node. The "payload" attribute of the ParseTree
+is just an object, but after debugging it turns out it can be either a CommonToken, or a Context.
+For our first assert to be true, we rely on ANTLR's internal convention of naming the Context object after the
+name of the rule that creates it.
+
+\begin{verbatim}
+protected boolean matches(final ParseTree node, final String currentSelector) {
+    boolean result = false;
+
+    if (currentSelector.startsWith(".")) {
+        // class selector
+        String className = node.getPayload().getClass().getSimpleName();
+
+        // remove any container class, if it's anonymous
+        if (className.contains("$")) {
+            className = className.substring(className.lastIndexOf("$"));
+        }
+        // uncapitalize the first letter
+        if (className.length() > 1) {
+            className = className.substring(0, 1).toLowerCase(Locale.getDefault()) + className.substring(1);
+        }
+        // remove the trailing "Context".
+        className = className.substring(0, className.lastIndexOf("Context"));
+
+        result = currentSelector.equals("." + className);
+    } else if (currentSelector.startsWith("\"")) {
+        result = node.getPayload().toString().equals(currentSelector.substring(1, currentSelector.lastIndexOf("\"")));
+    }
+
+    return result;
+}
+\end{verbatim}
+
+Now our first assert passes, so the by-class selector should work just fine. The other selector we need to support
+right now is the one matching node texts. In these cases, the payload of the node must be a CommonToken, and we can
+compare its value.
+
+\begin{verbatim}
+if (currentSelector.startsWith(".")) {
+    [..]
+} else if (currentSelector.startsWith("\"")) {
+    Object payload = node.getPayload();
+
+    if (payload instanceof CommonToken) {
+
+        String value = ((CommonToken) payload).getText();
+
+        String selectorPart = currentSelector.substring(1);
+        selectorPart = selectorPart.substring(0, selectorPart.indexOf("\""));
+
+        result = value.equals(selectorPart);
+    }
+}
+\end{verbatim}
+
+We can implement the algorithm now. ANTLR generates visitor methods for each rule. It'd be very inconvenient to
+implement all of them, and it'd make the visitor very fragile regarding changes on the Java grammar.
+Fortunately, we can influence the visitor's crawling process just by overriding three methods: visitChildren(), visitTerminal(), and visit().
+
+The algorithm works as follows: the AST is processed by ANTLR's visitor implementation. For each node, our visitor
+checks whether such node is matched by the current selector, taken from the list. If it matches, we "consume" the selector and let
+the tree traversal process continue, with the next selector in the list, unless there's no other selector remaining, in which case we check
+if the node being processed matches our original focus node. In such case, we have a match, and should stop the process.
+If there current node doesn't match the selector, we try to process its children.
+
+\begin{verbatim}
+public class SelectorMatchVisitor
+    extends Java8BaseVisitor<ParseTree> {
+    boolean match = false;
+
+    final ParseTree focusNode;
+    final List<String> selectors;
+    final Iterator<String> iterator;
+    String currentSelector = null;
+
+    [..]
+
+    @Override
+    public ParseTree visitChildren(RuleNode node) {
+        ParseTree result;
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
+    }
+
+    @Override
+    public ParseTree visitTerminal(TerminalNode node) {
+        ParseTree result;
+
+        if (!this.match) {
+            result = visit(node);
+        } else {
+            result = null;
+        }
+
+        return result;
+    }
+
+    @Override
+    public ParseTree visit(ParseTree node) {
+        ParseTree result = null;
+
+        if (!this.match) {
+            if (matches(node, this.currentSelector)) {
+                if (this.iterator.hasNext()) {
+                    this.currentSelector = this.iterator.next();
+                    result = super.visit(node);
+                } else if (focusNode.equals(node)) {
+                    match = true;
+                }
+            } else if (node.getChildCount() > 0) {
+                if (!this.match) {
+                    result = super.visitChildren((RuleNode) node);
+                }
+            }
+        }
+        return result;
+    }
+
+    [..]
+}
+\end{verbatim}
+
+This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
+But meanwhile, it passes our tests.
+\subsubsection{Fifth test: Implementing ::before pseudo-selector}
+\label{sec-1-4-6}
+
+For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
+But we have a minor refactoring to do first. The \emph{retrieveMatchingSelectors()} method currently retrieves a list of
+Strings, but we need to return a list of \emph{css} entries, as defined in the CSS grammar.
+
+Let's change our test accordingly:
+
+\begin{verbatim}
+@Test
+public void finds_the_matching_css() {
+    String javaInput = "package com.foo.bar;";
+
+    String cssInput =
+          ".packageDeclaration \";\"::before {\n"
+        + "   content: \" \";\n"
+        + "}\n";
+
+    StringTemplateCSSHelper helper = new StringTemplateCSSHelper(cssInput);
+
+    Java8Lexer lexer = new Java8Lexer(new ANTLRInputStream(javaInput));
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    Java8Parser parser = new Java8Parser(tokens);
+    ParseTree ast = parser.compilationUnit();
+
+    Collection<ParseTree> matches = XPath.findAll(ast, "//';'", parser);
+
+    Assert.assertNotNull(matches);
+    Assert.assertEquals(1, matches.size());
+
+    ParseTree semiColon = matches.toArray(new ParseTree[1])[0];
+    Assert.assertNotNull(semiColon);
+
+    List<Css> matchedCss = helper.retrieveMatchingCss(semiColon, ast);
+
+    Assert.assertNotNull(matchedCss);
+    Assert.assertEquals(1, matchedCss.size());
+    Css css = matchedCss.get(0);
+    Assert.assertNotNull(css);
+
+    List<String> matchedSelectors = matchedCss.getSelectors();
+
+    Assert.assertNotNull(matchedSelectors);
+    Assert.assertEquals(2, matchedSelectors.size());
+    Assert.assertEquals(".packageDeclaration", matchedSelectors.get(0));
+    Assert.assertEquals("\";\"::before", matchedSelectors.get(1));
+}
+\end{verbatim}
+
+The changes were pretty simple. They include renaming \emph{retrieveMatchingSelectors()} to \emph{retrieveMatchingCss()}.
+
+Our initial \textbf{Css} class is just a bean:
+
+\begin{verbatim}
+public class Css {
+    /**
+     * The selectors.
+     */
+    private List<String> selectors = new ArrayList<>();
+
+    /**
+     * Adds a new selector.
+     * @param selector the selector.
+     */
+    public void addSelector(String selector) {
+        this.selectors.add(selector);
+    }
+
+    /**
+     * Retrieves the selectors.
+     * @return such information.
+     */
+    public List<String> getSelectors() {
+        return selectors;
+    }
+}
+\end{verbatim}
+
+We now have to refactor \emph{retrieveMatchingCss()} method, which now has to return a list
+of \textbf{Css} instances.
+
+\begin{verbatim}
+public List<Css> retrieveMatchingCss(ParseTree node, ParseTree ast) {
+    List<Css> result = new ArrayList<Css>();
+
+    for (List<String> selectors : getSelectors()) {
+        if (match(selectors, node, ast)) {
+            Css css = new Css();
+            for (String selector : selectors) {
+                css.addSelector(selector);
+            }
+            result.add(css);
+            break;
+        }
+    }
+
+    return result;
+}
+\end{verbatim}
+
+The tests still pass. Great! Now, we need to test whether the CSS properties are available as well.
+
+\begin{verbatim}
+    @Test
+    public void finds_the_matching_css() {
+        [..]
+        List<Property<?>> properties = css.getProperties();
+        Assert.assertNotNull(properties);
+        Assert.assertEquals(1, properties.size());
+        Property<String> content = (Property<String>) properties.get(0);
+        Assert.assertNotNull(content);
+        Assert.assertEquals("content", content.getKey());
+        Assert.assertEquals(" ", content.getValue());
+}
+\end{verbatim}
+
+That requires us to add the \emph{Property} collection the \textbf{Css} class, and implement the \textbf{Property} class as well.
+We'll use a parameter to represent the type of the value of each property.
+
+\begin{verbatim}
+public class Css {
+    [..]
+
+    /**
+     * The CSS properties.
+     */
+    private List<Property<?>> properties = new ArrayList<>();
+
+    [..]
+
+    /**
+     * Retrieves the properties.
+     * @return such information.
+     */
+    public List<Property<?>> getProperties() {
+        return properties;
+    }
+}
+\end{verbatim}
+
+The first version of the \textbf{Property} class could be as follows.
+
+\begin{verbatim}
+public class Property<T> {
+    private final String key;
+    private final T value;
+
+    public Property(String key, T value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+\end{verbatim}
+
+The test now fails, as expected, when checking how many properties are found.
+
+\begin{verbatim}
+java.lang.AssertionError: 
+Expected :1
+Actual   :0
+\end{verbatim}
+
+It shouldn't be too difficult to annotate the properties when building \textbf{Css} instances.
+
+\begin{verbatim}
+public List<Css> retrieveMatchingCss(ParseTree node, ParseTree ast) {
+    [..]
+            for (Map.Entry<String, String> entry : this.properties.get(selectors).entrySet()) {
+                css.addProperty(new Property<String>(entry.getKey(), entry.getValue()));
+            }
+            result.add(css);
+    [..]
+}
+\end{verbatim}
+
+We have to remember later to write tests for supporting different types of properties: integer, arrays, etc.
+
+\begin{verbatim}
+public class Css {
+    [..]
+    public void addProperty(final Property<?> property) {
+        this.properties.add(property);
+    }
+}
+\end{verbatim}
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}
