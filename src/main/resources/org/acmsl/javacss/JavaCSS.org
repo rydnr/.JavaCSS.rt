@@ -2586,4 +2586,5 @@ be able to instantiate the correct entities representing the actions to perform,
 
 Let's call this factory *CssActionFactory*. Our initial test is simple: if the CSS block contains
 any /::before// pseudo selector, then we instantiate our first *CssAction* class. Otherwise a *NullCssAction*
-will be returned.
+will be returned. If we need it, we'll probably switch to a chain-of-responsibility approach, since it
+would simplify how to process several actions for a given CSS block.
