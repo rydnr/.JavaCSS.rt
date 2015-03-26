@@ -28,5 +28,9 @@
     <orderEntry type="library" name="Maven: org.checkthread:checkthread-annotations:1.0.9" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.3" level="project" />
     <orderEntry type="library" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.acmsl:java-commons:latest-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: oro:oro:2.0.8" level="project" />
   </component>
 </module>
