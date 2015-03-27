@@ -67,6 +67,6 @@ public class InsertAfterCssActionTest {
         Assert.assertNotNull(action);
         String newText = action.execute("my text");
         Assert.assertNotNull(newText);
-        Assert.assertEquals("css-prefix>my text", newText);
+        Assert.assertEquals("css-prefix>my text<", newText);
     }
 }
