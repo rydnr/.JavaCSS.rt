@@ -74,7 +74,7 @@ public class CssActionFactoryTest
         CssActionFactory factory = new CssActionFactory();
 
         Css css = new Css();
-        css.addSelector(".rule");
+        css.addSelector(".rule::before");
         css.addProperty(new Property<String>("content", "value"));
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
