@@ -95,6 +95,7 @@ public class StringTemplateCSSHelper
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
 
+        parser.setErrorHandler();
         ParseTree tree = parser.css();
 
         Collection<ParseTree> selectorCombinations = XPath.findAll(tree, "//selectorCombination", parser);
