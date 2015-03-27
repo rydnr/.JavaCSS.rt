@@ -54,7 +54,14 @@ import org.checkthread.annotations.ThreadSafe;
 public class InsertBeforeCssAction
     implements CssAction {
 
-    public InsertBeforeCssAction(Css )
+    /**
+     * The
+     */
+    private final Css css;
+
+    public InsertBeforeCssAction(Css css) {
+        this.css = css;
+    }
     @Override
     public String execute(String text) {
         return text;
