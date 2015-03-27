@@ -2588,3 +2588,21 @@ Let's call this factory *CssActionFactory*. Our initial test is simple: if the C
 any /::before// pseudo selector, then we instantiate our first *CssAction* class. Otherwise a *NullCssAction*
 will be returned. If we need it, we'll probably switch to a chain-of-responsibility approach, since it
 would simplify how to process several actions for a given CSS block.
+
+#+BEGIN_SRC java
+@RunWith(JUnit4.class)
+public class CssActionFactoryTest {
+    @Test
+    public void when_there_is_nothing_to_do_createAction_returns_NullCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+
+        Css css = new Css();
+        css.addSelector(".rule");
+        css.addProperty(new Property<String>("content", "value"));
+
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof NullCssAction);
+    }
+}
+#+END_SRC
