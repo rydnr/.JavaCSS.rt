@@ -62,5 +62,6 @@ public class InsertBeforeCssActionTest {
 
         css.addSelector(".rule::before");
         css.addProperty(new Property<String>("content", "css-prefix"));
+
     }
 }
