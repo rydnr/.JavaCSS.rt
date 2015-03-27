@@ -2673,3 +2673,9 @@ public class CssActionFactoryTest {
 #+END_SRC
 
 For the sake of the TDD cycle, let's write an empty *InsertBeforeCssAction*.
+
+#+BEGIN_SRC java
+public class InsertBeforeCssAction
+    implements CssAction {
+}
+#+END_SRC
