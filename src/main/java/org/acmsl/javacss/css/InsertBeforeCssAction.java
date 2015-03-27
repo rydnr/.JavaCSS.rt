@@ -55,7 +55,7 @@ public class InsertBeforeCssAction
     implements CssAction {
 
     /**
-     * The
+     * The associated {@link Css} block.
      */
     private final Css css;
 
