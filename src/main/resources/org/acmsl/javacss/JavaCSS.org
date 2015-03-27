@@ -2914,7 +2914,7 @@ public class InsertBeforeCssAction
 #+END_SRC
 
 And that is enough to make the test pass. However, the code is not just right.
-First, we are using the String literal "content" in several places. We should
+At least, we are using the String literal "content" in several places. We should
 use a constant to ensure a typo cannot be the cause of a future bug.
 
 #+BEGIN_SRC java
@@ -2927,5 +2927,25 @@ public class Property<T> {
 }
 #+END_SRC
 
+Although the temptation to refactor the method deeper is high, let's fight it
+and implement another easy *CssAction*: the *InsertAfterCssAction*.
+
+#+BEGIN_SRC java
+public class InsertAfterCssActionTest {
+    @Test
+    public void execute_inserts_the_content_after_correctly() {
+        Css css = new Css();
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "<css-suffix"));
+        CssActionFactory factory = new CssActionFactory();
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        String newText = action.execute("my text");
+        Assert.assertNotNull(newText);
+        Assert.assertEquals("my text<css-suffix", newText);
+    }
+}
+#+END_SRC
+
 Second, in *InsertBeforeCssAction* we are searching the "content" property to
-retrieve the text to prepend.
+retrieve the text to prepend. It's very likely we'll need this logic 
