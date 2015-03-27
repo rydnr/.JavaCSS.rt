@@ -56,6 +56,19 @@ public abstract class AbstractCssAction
     implements CssAction {
 
     /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    protected AbstractCssAction(final Css css) {
+        this.css = css;
+    }
+
+    /**
      * Retrieves the content property from given {@link Css}.
      * @param css the CSS block.
      * @return the "content" property.
