@@ -50,9 +50,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- *
+ * Tests for {}
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
- * @since 3.0
  * Created: 2015/03/27 19:07
  */
 @RunWith(JUnit4.class)
