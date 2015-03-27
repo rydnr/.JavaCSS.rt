@@ -2335,7 +2335,7 @@ public class SelectorMatchVisitor
 
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
-*** Fifth test: Implementing ::before pseudo-selector
+*** DONE Fifth test: Implementing ::before pseudo-selector
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
 But we have a minor refactoring to do first. The /retrieveMatchingSelectors()/ method currently retrieves a list of
@@ -2606,3 +2606,5 @@ public class CssActionFactoryTest {
     }
 }
 #+END_SRC
+
+Note: research tools to visually design ideas, diagrams, etc.
