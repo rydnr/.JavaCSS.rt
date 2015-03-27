@@ -122,7 +122,7 @@ public class StringTemplateCSSHelperTest
         try
         {
             multipleBlockSelectorTests(0);
-        } catch (ParseCancellationException parsingCancelled) {
+        } catch (RuntimeException parsingCancelled) {
             Assert.assertTrue()
         }
     }
