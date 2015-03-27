@@ -53,7 +53,7 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class Property<T> {
     /**
-     * The
+     * The "content" property.
      */
     public static final String CONTENT = "content";
     private final String key;
