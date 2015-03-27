@@ -3193,3 +3193,6 @@ The feedback of our current tests give us confidence we haven't broke anything.
 However, there's still some duplication in the /execute(String)/ methods of both
 *InsertBeforeCssAction* and *InsertAfterCssAction*. Shouldn't we extract the shared
 logic to the base class?
+
+Looking at the body of the methods, they're pretty obvious: retrieve the "content" property,
+and use it to generate the new text. 
