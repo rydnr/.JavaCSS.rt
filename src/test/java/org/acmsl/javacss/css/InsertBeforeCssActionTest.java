@@ -68,6 +68,6 @@ public class InsertBeforeCssActionTest {
         Assert.assertNotNull(action);
         String newText = action.execute("my text");
         Assert.assertNotNull(newText);
-        Assert.assertEquals()
+        Assert.assertEquals("css-prefix")
     }
 }
