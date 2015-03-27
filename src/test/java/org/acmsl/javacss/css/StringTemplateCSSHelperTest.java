@@ -122,7 +122,7 @@ public class StringTemplateCSSHelperTest
         try
         {
             multipleBlockSelectorTests(0);
-            Assert.fail("Should throw an exception ")
+            Assert.fail("Should throw an exception o")
         } catch (RuntimeException parsingCancelled) {
             Assert.assertTrue(parsingCancelled instanceof ParseCancellationException);
         }
