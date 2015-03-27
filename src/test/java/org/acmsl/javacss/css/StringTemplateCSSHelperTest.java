@@ -59,8 +59,7 @@ import java.util.Map;
  * Created: 2015/03/02 16:52
  */
 @RunWith(JUnit4.class)
-public class StringTemplateCSSHelperTest
-{
+public class StringTemplateCSSHelperTest {
     @Test
     public void retrieves_selectors_for_a_simple_input()
     {
