@@ -74,7 +74,7 @@ public class InsertAfterCssAction
         Property property = getContentProperty(this.css);
 
         if (property != null) {
-            result =
+            result = property.getValue() +
         }
         return result;
     }
