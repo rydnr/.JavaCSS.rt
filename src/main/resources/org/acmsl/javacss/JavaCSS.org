@@ -2641,6 +2641,4 @@ Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec <<< FA
 when_there_is_nothing_to_do_createAction_returns_NullCssAction(org.acmsl.javacss.css.CssActionFactoryTest)  Time elapsed: 0.006 sec  <<< FAILURE!
 java.lang.AssertionError: null
         at org.junit.Assert.fail(Assert.java:86)
-        at org.junit.Assert.assertTrue(Assert.java:41)
-        at org.junit.Assert.assertNotNull(Assert.java:621)
 #+END_SRC
