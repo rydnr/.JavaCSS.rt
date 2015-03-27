@@ -2691,3 +2691,24 @@ java.lang.AssertionError: null
 
 We can implement now the logic to map CSS selectors, to *CssAction* instances. To save our time, let's short-circuit the
 naive implementation of hard-coding the outcome expected by the test, but without worrying too much about it for now.
+
+#+BEGIN_SRC java
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        CssAction result = null;
+
+        for (String selector : css.getSelectors()) {
+            if (selector.contains("::before")) {
+                result = new InsertBeforeCssAction();
+                break;
+            }
+        }
+
+        if (result == null) {
+            result = new NullCssAction();
+        }
+
+        return result;
+    }
+}
+#+END_SRC
