@@ -100,9 +100,6 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(selectorCombinations);
 
-        if (count == 0) {
-            int a = 0;
-        }
         Assert.assertEquals(count, selectorCombinations.size());
 
         for (int index = 0; index < count; index++)
@@ -117,8 +114,7 @@ public class StringTemplateCSSHelperTest
     @Test
     public void retrieves_selectors_for_an_input_with_several_blocks()
     {
-        multipleBlockSelectorTests(0);
-        multipleBlockSelectorTests((int) (Math.random() * 10));
+        multipleBlockSelectorTests(Math.max(1, (int) (Math.random() * 10)));
     }
 
     protected void multipleBlockPropertyTests(int count)
