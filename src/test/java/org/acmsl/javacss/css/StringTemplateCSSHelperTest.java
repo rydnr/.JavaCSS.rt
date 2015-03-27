@@ -122,7 +122,9 @@ public class StringTemplateCSSHelperTest
         try
         {
             multipleBlockSelectorTests(0);
-        } catch (ParseCancellationException )
+        } catch (ParseCancellationException parsingCancelled) {
+
+        }
     }
 
     protected void multipleBlockPropertyTests(int count)
