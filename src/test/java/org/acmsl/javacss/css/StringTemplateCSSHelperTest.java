@@ -119,7 +119,7 @@ public class StringTemplateCSSHelperTest
     }
 
     @Test
-    public void throws_aretrieves_selectors_for_an_input_with_several_blocks() {
+    public void throws_a_runtime_exception_on_empty_inputretrieves_selectors_for_an_input_with_several_blocks() {
         multipleBlockSelectorTests(0);
         //(int) (Math.random() * 10));
     }
