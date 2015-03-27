@@ -60,11 +60,9 @@ public class InsertAfterCssAction
     private final Css css;
 
     /**
-     * Creates a new {@code InsertBeforeCssAction} instance.
+     * Creates a new {@code InsertAfterCssAction} instance.
      * @param css the {@link Css} block.
      */
-    private final Css css;
-
     public InsertAfterCssAction(final Css css) {
         this.css = css;
     }
