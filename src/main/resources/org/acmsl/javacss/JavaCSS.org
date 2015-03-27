@@ -2689,4 +2689,5 @@ java.lang.AssertionError: null
         at org.junit.Assert.fail(Assert.java:86)
 #+END_SRC
 
-We can implement now the logic to map CSS selectors, to *CssAction* instances.
+We can implement now the logic to map CSS selectors, to *CssAction* instances. To save our time, let's short-circuit the
+naive implementation of hard-coding the outcome expected by the test, but without worrying too much about it for now.
