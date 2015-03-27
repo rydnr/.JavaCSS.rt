@@ -53,5 +53,8 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class NullCssAction
     implements CssAction {
-
+    @Override
+    public String execute(String text) {
+        return text;
+    }
 }
