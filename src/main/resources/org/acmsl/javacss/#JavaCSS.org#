@@ -3196,4 +3196,6 @@ logic to the base class?
 
 Looking at the body of the methods, they're pretty obvious: retrieve the "content" property,
 and use it to generate the new text. Moving that logic up, and use a Strategy pattern,
-would not add real value: the lo
+would not add real value: the redundancy we are removing makes the classes more complex
+somehow. If we add other pseudo-classes that deal with text transformations (which are not
+part of CSS
