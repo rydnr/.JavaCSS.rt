@@ -69,13 +69,16 @@ public class InsertAfterCssAction
 
     @Override
     public String execute(final String text) {
-        String result = text;
+        final String result;
 
         Property property = getContentProperty(this.css);
 
         if (property != null) {
-            result = property.getValue() +
+            result = property.getValue() + text;
+        } else {
+            result = text;
         }
+
         return result;
     }
 
