@@ -27,7 +27,8 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: A CssAction that inserts contents after the matched block.
+
  *
  * Date: 2015/03/27
  * Time: 19:13

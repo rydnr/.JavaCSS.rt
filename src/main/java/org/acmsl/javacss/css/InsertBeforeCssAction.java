@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: A CssAction that inserts before the matched block.
+ * Description: A CssAction that inserts contents before the matched block.
  *
  * Date: 2015/03/27
  * Time: 16:53
