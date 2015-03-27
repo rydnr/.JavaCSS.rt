@@ -1,7 +1,7 @@
 /*
-                        devdel
+                        JavaCSS
 
-    Copyright (C) 2002-today  Jose San Leandro Armendariz
+    Copyright (C) 2015-today  Jose San Leandro Armendariz
                               chous@acm-sl.org
 
     This library is free software; you can redistribute it and/or
@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: Null object implementation for CssAction.
  *
  * Date: 2015/03/27
  * Time: 08:23
@@ -46,9 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import org.checkthread.annotations.ThreadSafe;
 
 /**
- * {@link }
+ * Null object implementation for {@link CssAction}.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
- * @since 3.0
  * Created: 2015/03/27 08:23
  */
 @ThreadSafe
