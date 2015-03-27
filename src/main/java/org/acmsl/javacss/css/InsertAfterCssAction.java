@@ -46,7 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.checkthread.annotations.ThreadSafe;
 
 /**
- * A {@link CssAction} that inserts before the matched block.
+ * A {@link CssAction} that inserts text after the matched block.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/27 19:13
