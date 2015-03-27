@@ -119,8 +119,7 @@ public class StringTemplateCSSHelperTest
 
     @Test
     public void throws_a_runtime_exception_on_empty_input() {
-        try
-        {
+        try {
             multipleBlockSelectorTests(0);
             Assert.fail("Should throw an exception when parsing empty input");
         } catch (RuntimeException parsingCancelled) {
