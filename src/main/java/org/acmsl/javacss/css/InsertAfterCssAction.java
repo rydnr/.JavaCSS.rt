@@ -54,6 +54,15 @@ import org.checkthread.annotations.ThreadSafe;
 public class InsertAfterCssAction
     implements CssAction {
 
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
     private final Css css;
 
     public InsertAfterCssAction(final Css css) {
@@ -62,6 +71,15 @@ public class InsertAfterCssAction
 
     @Override
     public String execute(final String text) {
-        return text;
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = text + property.getValue();
+                break;
+            }
+        }
+
+        return result;
     }
 }
