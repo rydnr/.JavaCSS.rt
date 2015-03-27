@@ -78,6 +78,6 @@ public class InsertBeforeCssAction
             }
         }
 
-
+        return result;
     }
 }
