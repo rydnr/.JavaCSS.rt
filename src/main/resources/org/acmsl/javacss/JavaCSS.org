@@ -3195,4 +3195,5 @@ However, there's still some duplication in the /execute(String)/ methods of both
 logic to the base class?
 
 Looking at the body of the methods, they're pretty obvious: retrieve the "content" property,
-and use it to generate the new text. 
+and use it to generate the new text. Moving that logic up, and use a Strategy pattern,
+would not add value.
