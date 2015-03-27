@@ -2607,4 +2607,4 @@ public class CssActionFactoryTest {
 }
 #+END_SRC
 
-Note: research tools to visually design ideas, diagrams, etc.
+TODO Note: research tools to visually design ideas, diagrams, etc.
