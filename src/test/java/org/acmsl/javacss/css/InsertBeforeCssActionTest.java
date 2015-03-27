@@ -60,6 +60,6 @@ public class InsertBeforeCssActionTest {
     public void execute_inserts_the_content_before_correctly() {
         Css css = new Css();
 
-        css.addSelector("\"");
+        css.addSelector(".rule::before");
     }
 }
