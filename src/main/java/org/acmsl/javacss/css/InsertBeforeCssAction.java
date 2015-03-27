@@ -46,7 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.checkthread.annotations.ThreadSafe;
 
 /**
- *
+ * A {@link CssAction} th
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * Created: 2015/03/27 16:53
  */
