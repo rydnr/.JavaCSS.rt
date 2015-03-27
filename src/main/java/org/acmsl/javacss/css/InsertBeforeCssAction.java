@@ -59,9 +59,14 @@ public class InsertBeforeCssAction
      */
     private final Css css;
 
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
     public InsertBeforeCssAction(Css css) {
         this.css = css;
     }
+
     @Override
     public String execute(String text) {
         return text;
