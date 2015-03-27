@@ -3157,3 +3157,34 @@ public class InsertBeforeCssAction
     }
 }
 #+END_SRC
+
+And similarly for *InsertAfterCssAction*.
+
+#+BEGIN_SRC java
+public class InsertAfterCssAction
+    extends AbstractCssAction {
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertAfterCssAction(final Css css) {
+        super(css);
+    }
+
+    @Override
+    public String execute(String text) {
+        final String result;
+
+        Property property = getContentProperty(getCss());
+
+        if (property != null) {
+            result = text + property.getValue();
+        } else {
+            result = text;
+        }
+
+        return result;
+    }
+}
+#+END_SRC
