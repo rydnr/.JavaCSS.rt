@@ -3190,3 +3190,6 @@ public class InsertAfterCssAction
 #+END_SRC
 
 The feedback of our current tests give us confidence we haven't broke anything.
+However, there's still some duplication in the /execute(String)/ methods of both
+*InsertBeforeCssAction* and *InsertAfterCssAction*. Shouldn't we extract the shared
+logic to the base class?
