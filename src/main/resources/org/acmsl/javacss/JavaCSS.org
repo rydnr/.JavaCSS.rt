@@ -2912,3 +2912,7 @@ public class InsertBeforeCssAction
     }
 }
 #+END_SRC
+
+And that is enough to make the test pass. However, the code is not just right.
+First, we are using the String literal "content" in several places. We should
+use a constant to ensure a typo cannot be the cause of a future bug.
