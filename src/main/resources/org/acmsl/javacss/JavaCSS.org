@@ -3079,3 +3079,52 @@ Now that our tests pass again, we are in need of a refactoring.
 In our current *CssAction* implementations we are searching the "content" property to
 retrieve the text to modify. We're duplicating code, so let's
 extract that logic to a common ancestor.
+
+First, the base class.
+
+#+BEGIN_SRC java
+public abstract class AbstractCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    protected AbstractCssAction(Css css) {
+        this.css = css;
+    }
+
+    /**
+     * Retrieves the {@link Css} block.
+     * @return such information.
+     */
+    public Css getCss() {
+        return this.css;
+    }
+
+    /**
+     * Retrieves the content property from given {@link Css}.
+     * @param css the CSS block.
+     * @return the "content" property.
+     */
+    protected Property getContentProperty(Css css) {
+        Property result = null;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = property;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+#+END_SRC
+
+Now we can refactor *InsertBeforeCssAction*.
