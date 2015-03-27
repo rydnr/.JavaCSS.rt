@@ -2759,3 +2759,13 @@ public class NullCssAction
 #+END_SRC
 
 Which is identical to the implementation for *InsertBeforeCssAction* at this stage of the TDD lifecycle.
+
+#+BEGIN_SRC java
+public class InsertBeforeCssAction
+    implements CssAction {
+    @Override
+    public String execute(String text) {
+        return text;
+    }
+}
+#+END_SRC
