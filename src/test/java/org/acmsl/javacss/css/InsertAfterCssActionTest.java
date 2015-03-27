@@ -58,7 +58,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class InsertAfterCssActionTest {
     @Test
-    public void execute_inserts_the_content__correctly() {
+    public void execute_inserts_the_content_after_correctly() {
         Css css = new Css();
         css.addSelector(".rule::before");
         css.addProperty(new Property<String>("content", "css-prefix>"));
