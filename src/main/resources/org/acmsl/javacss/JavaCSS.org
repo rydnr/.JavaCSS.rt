@@ -3024,7 +3024,36 @@ attribute, expect it as a parameter of the constructor, and make sure *CssAction
 creating *InsertAfterCssAction* instances.
 
 #+BEGIN_SRC java
+public class InsertAfterCssAction
+    implements CssAction {
 
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertAfterCssAction(final Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(final String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = text + property.getValue();
+                break;
+            }
+        }
+
+        return result;
+    }
+}
 #+END_SRC
 
 Second, in *InsertBeforeCssAction* we are searching the "content" property to
