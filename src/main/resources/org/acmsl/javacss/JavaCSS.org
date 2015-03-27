@@ -2769,3 +2769,11 @@ public class InsertBeforeCssAction
     }
 }
 #+END_SRC
+
+The test must fail since we're not modifying the original text.
+
+#+BEGIN_SRC java
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in org.acmsl.javacss.css.InsertBeforeCssActionTest
+execute_inserts_the_content_before_correctly(org.acmsl.javacss.css.InsertBeforeCssActionTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[css-prefix>]my text> but was:<[]my text>
+#+END_SRC
