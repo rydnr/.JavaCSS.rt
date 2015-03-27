@@ -60,7 +60,6 @@ public class InsertBeforeCssActionTest {
     @Test
     public void execute_inserts_the_content_before_correctly() {
         Css css = new Css();
-
         css.addSelector(".rule::before");
         css.addProperty(new Property<String>("content", "css-prefix>"));
         CssActionFactory factory = new CssActionFactory();
