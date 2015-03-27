@@ -73,7 +73,7 @@ public class InsertBeforeCssAction
 
         for (Property property : css.getProperties()) {
             if ("content".equals(property.getKey())) {
-
+                result =
             }
         }
     }
