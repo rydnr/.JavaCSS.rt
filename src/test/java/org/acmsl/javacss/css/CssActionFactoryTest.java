@@ -68,4 +68,17 @@ public class CssActionFactoryTest
         Assert.assertNotNull(action);
         Assert.assertTrue(action instanceof NullCssAction);
     }
+
+    @Test
+    public void a_before_when_there_is_nothing_to_do_createAction_returns_NullCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+
+        Css css = new Css();
+        css.addSelector(".rule");
+        css.addProperty(new Property<String>("content", "value"));
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof NullCssAction);
+    }
+
 }
