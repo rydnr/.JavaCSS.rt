@@ -3128,3 +3128,32 @@ public abstract class AbstractCssAction
 #+END_SRC
 
 Now we can refactor *InsertBeforeCssAction*.
+
+#+BEGIN_SRC java
+public class InsertBeforeCssAction
+    extends AbstractCssAction {
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(final Css css) {
+        super(css);
+    }
+
+    @Override
+    public String execute(String text) {
+        final String result;
+
+        Property property = getContentProperty(getCss());
+
+        if (property != null) {
+            result = property.getValue() + text;
+        } else {
+            result = text;
+        }
+
+        return result;
+    }
+}
+#+END_SRC
