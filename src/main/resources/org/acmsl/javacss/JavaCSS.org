@@ -2798,8 +2798,27 @@ The problem is that, if the test randomly chooses 0 as the number of CSS blocks 
 the logic misbehaves. But *StringTemplateCssHelper* cannot return any selectors for an empty CSS.
 After debugging, we can figure out why: ANTLR's /XPath.findAll()/ returns a single node representing the error,
 upon a wrong input. In this case, we prefer ANTLR not to try to recover, or swallow invalid input silently, but throw
-a runtime exception instead. Lucky us, ANTLR supports that out of the box, just by using a different error handling
-strategy:
+a runtime exception instead.
+
+To reproduce the error, we can write a test for it:
+
+#+BEGIN_SRC java
+public class StringTemplateCSSHelperTest {
+    [..]
+    @Test
+    public void throws_a_runtime_exception_on_empty_input() {
+        try {
+            multipleBlockSelectorTests(0);
+            Assert.fail("Should throw an exception when parsing empty input");
+        } catch (RuntimeException parsingCancelled) {
+            Assert.assertTrue(parsingCancelled instanceof ParseCancellationException);
+        }
+    }
+    [..]
+}
+#+END_SRC
+
+Lucky us, ANTLR supports that out of the box, just by using a different error handling strategy:
 
 #+BEGIN_SRC java
 public class StringTemplateCSSHelper {
@@ -2819,20 +2838,3 @@ public class StringTemplateCSSHelper {
 }
 #+END_SRC
 
-To reproduce the error, we can write a test for it:
-
-#+BEGIN_SRC java
-public class StringTemplateCSSHelperTest {
-    [..]
-    @Test
-    public void throws_a_runtime_exception_on_empty_input() {
-        try {
-            multipleBlockSelectorTests(0);
-            Assert.fail("Should throw an exception when parsing empty input");
-        } catch (RuntimeException parsingCancelled) {
-            Assert.assertTrue(parsingCancelled instanceof ParseCancellationException);
-        }
-    }
-    [..]
-}
-#+END_SRC
