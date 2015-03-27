@@ -69,6 +69,6 @@ public class InsertBeforeCssAction
 
     @Override
     public String execute(String text) {
-        return text;
+        return this.ctext;
     }
 }
