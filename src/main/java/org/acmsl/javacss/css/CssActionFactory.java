@@ -57,7 +57,7 @@ public class CssActionFactory {
 
         for (String selector : css.getSelectors()) {
             if (selector.contains("::before")) {
-                result = new InsertBeforeCssAction();
+                result = new InsertBeforeCssAction(css);
                 break;
             }
         }
