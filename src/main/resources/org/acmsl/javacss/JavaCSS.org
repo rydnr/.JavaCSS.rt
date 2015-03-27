@@ -2642,3 +2642,7 @@ when_there_is_nothing_to_do_createAction_returns_NullCssAction(org.acmsl.javacss
 java.lang.AssertionError: null
         at org.junit.Assert.fail(Assert.java:86)
 #+END_SRC
+
+The fix is simple, and allows us to move forward in our TDD iteration.
+
+#+BEGIN_SRC
