@@ -48,7 +48,6 @@ import org.checkthread.annotations.ThreadSafe;
 /**
  * Represents all actions to be performed according to CSS blocks.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
- * @since 3.0
  * Created: 2015/03/27 08:19
  */
 @ThreadSafe
