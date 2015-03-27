@@ -3056,5 +3056,22 @@ public class InsertAfterCssAction
 }
 #+END_SRC
 
+#+BEGIN_SRC java
+public class CssActionFactory {
+    [..]
+    public CssAction createAction(Css css) {
+        [..]
+        for (String selector : css.getSelectors()) {
+            [..]
+            } else if (selector.contains("::after")) {
+                result = new InsertAfterCssAction(css);
+                break;
+            }
+        }
+        [..]
+    }
+}
+#+END_SRC
+
 Second, in *InsertBeforeCssAction* we are searching the "content" property to
 retrieve the text to prepend. It's very likely we'll need this logic 
