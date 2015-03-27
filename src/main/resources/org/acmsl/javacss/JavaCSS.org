@@ -2609,4 +2609,8 @@ public class CssActionFactoryTest {
 
 TODO Note: research tools to visually design ideas, diagrams, etc.
 
+The *CssActionFactory*, as expected by our test, can be simply:
+
+#+BEGIN_SRC java
+#+END_SRC
 
