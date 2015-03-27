@@ -2335,6 +2335,70 @@ public class SelectorMatchVisitor
 
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
+
+**** An unexpected bug
+
+However, I found some other failing test, which was unexpected:
+
+#+BEGIN_SRC java
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
+retrieves_selectors_for_an_input_with_several_blocks(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+        at org.junit.Assert.fail(Assert.java:88)
+        at org.junit.Assert.failNotEquals(Assert.java:743)
+        at org.junit.Assert.assertEquals(Assert.java:118)
+        at org.junit.Assert.assertEquals(Assert.java:555)
+        at org.junit.Assert.assertEquals(Assert.java:542)
+        at org.acmsl.javacss.css.StringTemplateCSSHelperTest.multipleBlockSelectorTests(StringTemplateCSSHelperTest.java:103)
+#+END_SRC
+
+The problem is that, if the test randomly chooses 0 as the number of CSS blocks to parse, ANTLR cannot parse it, and
+the logic misbehaves. But *StringTemplateCssHelper* cannot return any selectors for an empty CSS.
+After debugging, we can figure out why: ANTLR's /XPath.findAll()/ returns a single node representing the error,
+upon a wrong input. In this case, we prefer ANTLR not to try to recover, or swallow invalid input silently, but throw
+a runtime exception instead.
+
+To reproduce the error, we can write a test for it:
+
+#+BEGIN_SRC java
+public class StringTemplateCSSHelperTest {
+    [..]
+    @Test
+    public void throws_a_runtime_exception_on_empty_input() {
+        try {
+            multipleBlockSelectorTests(0);
+            Assert.fail("Should throw an exception when parsing empty input");
+        } catch (RuntimeException parsingCancelled) {
+            Assert.assertTrue(parsingCancelled instanceof ParseCancellationException);
+        }
+    }
+    [..]
+}
+#+END_SRC
+
+The test fails as we were hoping. Lucky us, ANTLR supports that behavior out of the box, just by
+using a different error handling strategy:
+
+#+BEGIN_SRC java
+public class StringTemplateCSSHelper {
+    [..]
+    protected void initialize(String input) {
+        [..]
+        StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+
+        parser.setErrorHandler(new BailErrorStrategy());
+
+        ParseTree tree = parser.css();
+
+        [..]
+    }
+
+    [..]
+}
+#+END_SRC
+
+And now we're green again.
+
 *** Fifth test: Implementing ::before pseudo-selector
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
