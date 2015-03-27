@@ -2645,4 +2645,10 @@ java.lang.AssertionError: null
 
 The fix is simple, and allows us to move forward in our TDD iteration.
 
-#+BEGIN_SRC
+#+BEGIN_SRC java
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        return new NullCssAction();
+    }
+}
+#+END_SRC
