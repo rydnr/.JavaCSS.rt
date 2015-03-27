@@ -52,5 +52,6 @@ import org.checkthread.annotations.ThreadSafe;
  * Created: 2015/03/27 20:23
  */
 @ThreadSafe
-public class AbstractCssAction {
+public abstract class AbstractCssAction
+    implements CssAction {
 }
