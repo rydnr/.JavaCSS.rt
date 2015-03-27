@@ -100,6 +100,9 @@ public class StringTemplateCSSHelperTest
 
         Assert.assertNotNull(selectorCombinations);
 
+        if (count == 0) {
+            int a = 0;
+        }
         Assert.assertEquals(count, selectorCombinations.size());
 
         for (int index = 0; index < count; index++)
