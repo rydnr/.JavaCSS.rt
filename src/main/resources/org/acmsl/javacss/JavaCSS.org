@@ -2338,7 +2338,7 @@ But meanwhile, it passes our tests.
 
 **** An unexpected bug
 
-However, I found some other failing test, which was unexpected:
+However, I found some other failing test, which was unexpected, and seems to happen randomly:
 
 #+BEGIN_SRC java
 Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
