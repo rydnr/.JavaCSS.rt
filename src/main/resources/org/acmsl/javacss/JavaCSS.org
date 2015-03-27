@@ -2778,6 +2778,7 @@ execute_inserts_the_content_before_correctly(org.acmsl.javacss.css.InsertBeforeC
 org.junit.ComparisonFailure: expected:<[css-prefix>]my text> but was:<[]my text>
 #+END_SRC
 
+**** An unexpected bug
 
 However, I found some other failing test, which was unexpected:
 
