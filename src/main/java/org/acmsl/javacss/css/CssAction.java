@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: Represents all actions to be performed according to CSS blocks.
  *
  * Date: 2015/03/27
  * Time: 08:19
@@ -46,7 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.checkthread.annotations.ThreadSafe;
 
 /**
- * Represents all actions to be performed according to CSS bl
+ * Represents all actions to be performed according to CSS blocks.
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * @since 3.0
  * Created: 2015/03/27 08:19
