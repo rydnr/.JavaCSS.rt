@@ -2990,6 +2990,7 @@ that job.
 
 Similarly to the *InsertBeforeCssActionTest*, we can anticipate what we want our
 new CSS action class to do.
+
 #+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
@@ -3006,6 +3007,7 @@ public class InsertAfterCssActionTest {
     }
 }
 #+END_SRC
+
 
 
 Second, in *InsertBeforeCssAction* we are searching the "content" property to
