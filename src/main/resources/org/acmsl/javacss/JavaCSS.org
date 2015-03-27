@@ -2819,3 +2819,8 @@ public class StringTemplateCSSHelper {
     [..]
 }
 #+END_SRC
+
+To reproduce the error, we can write a test for it:
+
+#+BEGIN_SRC java
+#+END_SRC
