@@ -2679,3 +2679,12 @@ public class InsertBeforeCssAction
     implements CssAction {
 }
 #+END_SRC
+
+The new test fails, of course.
+
+#+BEGIN_SRC sh
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in org.acmsl.javacss.css.CssActionFactoryTest
+for_a_before_pseudo_selector_createAction_returns_InsertBeforeCssAction(org.acmsl.javacss.css.CssActionFactoryTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: null
+        at org.junit.Assert.fail(Assert.java:86)
+#+END_SRC
