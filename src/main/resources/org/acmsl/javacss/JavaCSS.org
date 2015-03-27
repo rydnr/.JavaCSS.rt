@@ -3065,7 +3065,7 @@ public class CssActionFactory {
             [..]
             } else if (selector.contains("::after")) {
                 result = new InsertAfterCssAction(css);
-                break;
+                [..]
             }
         }
         [..]
