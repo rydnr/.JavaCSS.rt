@@ -76,8 +76,8 @@ public class InsertAfterCssAction
         return result;
     }
 
-    protected String getContent(Css css)
-    {
+    protected String getContentProperty(Css css) {
+        Property result = null;
         for (Property property : css.getProperties()) {
             if (Property.CONTENT.equals(property.getKey())) {
                 result = text + property.getValue();
