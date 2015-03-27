@@ -1621,7 +1621,7 @@ to ensure we are not testing empty or wrong inputs.
      @Test
      public void retrieves_properties_for_an_input_with_multiple_blocks()
      {
-         multipleBlockPropertyTests((int) (Math.random() * 10) + 1);
+         multipleBlockPropertyTests(Math.max(1, (int) (Math.random() * 10) + 1));
      }
 #+END_SRC
 
@@ -1895,7 +1895,7 @@ The current StringTemplateCSSHelperTest needs to be modified because of the API 
      @Test
      public void retrieves_selectors_for_an_input_with_several_blocks()
      {
-         multipleBlockSelectorTests((int) (Math.random() * 10));
+         multipleBlockSelectorTests(Math.max(1, (int) (Math.random() * 10)));
      }
  
      protected void multipleBlockPropertyTests(int count)
