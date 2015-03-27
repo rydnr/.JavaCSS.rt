@@ -39,6 +39,7 @@ import org.acmsl.javacss.java8.parser.Java8Lexer;
 import org.acmsl.javacss.java8.parser.Java8Parser;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
 import org.junit.Assert;
@@ -118,7 +119,10 @@ public class StringTemplateCSSHelperTest
 
     @Test
     public void throws_a_runtime_exception_on_empty_input() {
-        multipleBlockSelectorTests(0);
+        try
+        {
+            multipleBlockSelectorTests(0);
+        } catch (ParseCancellationException )
     }
 
     protected void multipleBlockPropertyTests(int count)
