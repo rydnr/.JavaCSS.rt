@@ -2985,7 +2985,8 @@ public class CssActionFactory {
 }
 #+END_SRC
 
-It's not very elegant, but we are just trying to recover the green light.
+It's not very elegant, but we are just trying to recover the green light. And it does
+that job.
 #+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
