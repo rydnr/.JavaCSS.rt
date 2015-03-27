@@ -3201,3 +3201,6 @@ somehow, and introduces some assumptions in the base class.
 
 If we add other pseudo-classes that deal with text transformations (which are not
 currently part of CSS), then it would be worth reviewing.
+
+Now we can fit these new components together, so, given a AST and a CSS document,
+we can obtain another AST.
