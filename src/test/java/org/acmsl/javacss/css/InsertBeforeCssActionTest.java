@@ -64,5 +64,6 @@ public class InsertBeforeCssActionTest {
         css.addProperty(new Property<String>("content", "css-prefix"));
         CssActionFactory factory = new CssActionFactory();
         CssAction action = factory.createAction(css);
+
     }
 }
