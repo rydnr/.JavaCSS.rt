@@ -3058,7 +3058,6 @@ public class InsertAfterCssAction
 and make sure *CssActionFactory* pass the *Css* instance when
 creating *InsertAfterCssAction* instances.
 
-
 #+BEGIN_SRC java
 public class CssActionFactory {
     [..]
