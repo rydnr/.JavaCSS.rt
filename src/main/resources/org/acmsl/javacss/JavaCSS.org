@@ -2879,3 +2879,36 @@ public class InsertBeforeCssAction
 
 That forces us to modify *CssActionFactory* to provide the original *Css*
 when creating *InsertBeforeCssAction* instances.
+
+#+BEGIN_SRC java
+public class InsertBeforeCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if ("content".equals(property.getKey())) {
+                result = property.getValue() + text;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+#+END_SRC
