@@ -70,7 +70,7 @@ public class CssActionFactoryTest
     }
 
     @Test
-    public void a_before_action_createAction_returns_NullCssAction() {
+    public void a_before_pseudo_selector_createAction_returns_NullCssAction() {
         CssActionFactory factory = new CssActionFactory();
 
         Css css = new Css();
