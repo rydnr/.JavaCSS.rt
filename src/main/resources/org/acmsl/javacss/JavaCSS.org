@@ -2732,3 +2732,8 @@ public class InsertBeforeCssActionTest {
     }
 }
 #+END_SRC
+
+We haven't declared any /execute(String)/ method yet in *CssAction* yet, but now we actually need it.
+
+#+BEGIN_SRC java
+#+END_SRC
