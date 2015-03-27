@@ -81,22 +81,4 @@ public class InsertAfterCssAction
 
         return result;
     }
-
-    /**
-     * Retrieves the content property from given {@link Css}.
-     * @param css the CSS block.
-     * @return the "content" property.
-     */
-    protected Property getContentProperty(Css css) {
-        Property result = null;
-
-        for (Property property : css.getProperties()) {
-            if (Property.CONTENT.equals(property.getKey())) {
-                result = property;
-                break;
-            }
-        }
-
-        return result;
-    }
 }

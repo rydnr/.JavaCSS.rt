@@ -54,4 +54,22 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public abstract class AbstractCssAction
     implements CssAction {
+
+    /**
+     * Retrieves the content property from given {@link Css}.
+     * @param css the CSS block.
+     * @return the "content" property.
+     */
+    protected Property getContentProperty(Css css) {
+        Property result = null;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = property;
+                break;
+            }
+        }
+
+        return result;
+    }
 }
