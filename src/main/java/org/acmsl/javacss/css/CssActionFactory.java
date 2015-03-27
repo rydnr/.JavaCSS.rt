@@ -56,7 +56,9 @@ public class CssActionFactory {
         CssAction result;
 
         for (String selector : css.getSelectors()) {
-            if (selector.contains("::before"))
+            if (selector.contains("::before")) {
+
+            }
         }
     }
 }
