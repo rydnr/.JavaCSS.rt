@@ -89,6 +89,6 @@ public class CssActionFactoryTest
         css.addProperty(new Property<String>("content", "value"));
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
-        Assert.assertTrue(action instanceof InsertBeforeCssAction);
+        Assert.assertTrue(action instanceof InsertAfterCssAction);
     }
 }
