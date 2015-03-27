@@ -1,4 +1,4 @@
-% Created 2015-03-26 Thu 13:19
+% Created 2015-03-27 Fri 20:44
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -1676,7 +1676,7 @@ to ensure we are not testing empty or wrong inputs.
 @Test
 public void retrieves_properties_for_an_input_with_multiple_blocks()
 {
-    multipleBlockPropertyTests((int) (Math.random() * 10) + 1);
+    multipleBlockPropertyTests((int) (Math.random() * 10) + 1));
 }
 \end{verbatim}
 
@@ -2369,7 +2369,74 @@ public class SelectorMatchVisitor
 
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
-\subsubsection{Fifth test: Implementing ::before pseudo-selector}
+
+\begin{enumerate}
+\item An unexpected bug
+\label{sec-1-4-5-1}
+
+However, I found some other failing test, which was unexpected, and seems to happen randomly:
+
+\begin{verbatim}
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec <<< FAILURE! - in org.acmsl.javacss.css.StringTemplateCSSHelperTest
+retrieves_selectors_for_an_input_with_several_blocks(org.acmsl.javacss.css.StringTemplateCSSHelperTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+        at org.junit.Assert.fail(Assert.java:88)
+        at org.junit.Assert.failNotEquals(Assert.java:743)
+        at org.junit.Assert.assertEquals(Assert.java:118)
+        at org.junit.Assert.assertEquals(Assert.java:555)
+        at org.junit.Assert.assertEquals(Assert.java:542)
+        at org.acmsl.javacss.css.StringTemplateCSSHelperTest.multipleBlockSelectorTests(StringTemplateCSSHelperTest.java:103)
+\end{verbatim}
+
+The problem is that, if the test randomly chooses 0 as the number of CSS blocks to parse, ANTLR cannot parse it, and
+the logic misbehaves. But \textbf{StringTemplateCssHelper} cannot return any selectors for an empty CSS.
+After debugging, we can figure out why: ANTLR's \emph{XPath.findAll()} returns a single node representing the error,
+upon a wrong input. In this case, we prefer ANTLR not to try to recover, or swallow invalid input silently, but throw
+a runtime exception instead.
+
+To reproduce the error, we can write a test for it:
+
+\begin{verbatim}
+public class StringTemplateCSSHelperTest {
+    [..]
+    @Test
+    public void throws_a_runtime_exception_on_empty_input() {
+        try {
+            multipleBlockSelectorTests(0);
+            Assert.fail("Should throw an exception when parsing empty input");
+        } catch (RuntimeException parsingCancelled) {
+            Assert.assertTrue(parsingCancelled instanceof ParseCancellationException);
+        }
+    }
+    [..]
+}
+\end{verbatim}
+
+The test fails as we were hoping. Lucky us, ANTLR supports that behavior out of the box, just by
+using a different error handling strategy:
+
+\begin{verbatim}
+public class StringTemplateCSSHelper {
+    [..]
+    protected void initialize(String input) {
+        [..]
+        StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+
+        parser.setErrorHandler(new BailErrorStrategy());
+
+        ParseTree tree = parser.css();
+
+        [..]
+    }
+
+    [..]
+}
+\end{verbatim}
+
+And now we're green again.
+\end{enumerate}
+
+\subsubsection{Fifth test: Implementing ::before pseudo-class}
 \label{sec-1-4-6}
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
@@ -2563,5 +2630,620 @@ public class Css {
     }
 }
 \end{verbatim}
+
+When running the tests, one assertion fails, and it has to do with a past decision of including the quotes
+in property values. It makes sense to fix that now.
+
+\begin{verbatim}
+protected Map<String, String> retrieveProperties(ParseTree selectorEntry, StringUtils stringUtls)
+{
+    Map<String, String> result;
+
+    Collection<ParseTree> properties = findPropertyNodes(selectorEntry);
+
+    result = new HashMap<String, String>(properties.size());
+
+    for (ParseTree property : properties) {
+        String key = property.getChild(0).getText();
+        String value = stringUtls.unquote(stringUtls.unquote(property.getChild(2).getText(), '"'), '\'');
+        result.put(key, value);
+    }
+
+    return result;
+}
+\end{verbatim}
+
+We added a the reference to \textbf{StringUtils}, since it's being used in a loop.
+
+\begin{verbatim}
+protected void initialize(String input)
+{
+    [..]
+
+    StringUtils stringUtils = StringUtils.getInstance();
+
+    for (ParseTree selectorCombination : selectorCombinations) {
+        [..]
+
+        Map<String, String> block = retrieveProperties(selectorCombination, stringUtils);
+        [..]
+    }
+}
+\end{verbatim}
+
+However, this change is incompatible with our test block \emph{multipleBlockPropertyTests(int)}, so
+we have to update that as well.
+
+\begin{verbatim}
+for (int index = 0; index < count; index++) {
+    [..]
+    Assert.assertEquals(String.valueOf(index), properties.get("content"));
+}
+\end{verbatim}
+
+Now we have a way to retrieve the properties to apply for any given node in the AST.
+Next step is to interpret the semantics of each CSS block, and perform the actions each one defines, if any.
+To keep this as simple as possible at the beginning, we'll use a \emph{Factory method} pattern, to
+be able to instantiate the correct entities representing the actions to perform, for each CSS block.
+
+Let's call this factory \textbf{CssActionFactory}. Our initial test is simple: if the CSS block contains
+any \emph{::before/} pseudo selector, then we instantiate our first \textbf{CssAction} class. Otherwise a \textbf{NullCssAction}
+will be returned. If we need it, we'll probably switch to a chain-of-responsibility approach, since it
+would simplify how to process several actions for a given CSS block.
+
+\begin{verbatim}
+@RunWith(JUnit4.class)
+public class CssActionFactoryTest {
+    @Test
+    public void when_there_is_nothing_to_do_createAction_returns_NullCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+
+        Css css = new Css();
+        css.addSelector(".rule");
+        css.addProperty(new Property<String>("content", "value"));
+
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof NullCssAction);
+    }
+}
+\end{verbatim}
+
+TODO Note: research tools to visually design ideas, diagrams, etc.
+
+The \textbf{CssActionFactory}, as expected by our test, can be simply:
+
+\begin{verbatim}
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        return null;
+    }
+}
+\end{verbatim}
+
+We need the \textbf{CssAction} interface as well, but we can leave it empty for now.
+
+\begin{verbatim}
+public interface CssAction {
+}
+\end{verbatim}
+
+Last, our test demands a \emph{null object} implementation for that interface.
+
+\begin{verbatim}
+public class NullCssAction
+    implements CssAction {
+}
+\end{verbatim}
+
+Finally, our test compiles. We expect it to fail, since we're not using \textbf{NullCssAction} yet.
+
+\begin{verbatim}
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in org.acmsl.javacss.css.CssActionFactoryTest
+when_there_is_nothing_to_do_createAction_returns_NullCssAction(org.acmsl.javacss.css.CssActionFactoryTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+java.lang.AssertionError: null
+        at org.junit.Assert.fail(Assert.java:86)
+\end{verbatim}
+
+The fix is simple, and allows us to move forward in our TDD iteration.
+
+\begin{verbatim}
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        return new NullCssAction();
+    }
+}
+\end{verbatim}
+
+Now that the test passes, and there's not much refactoring to do until we evolve our \textbf{CssAction} design, we have to
+write another test. This time, we want to describe what it would be to have a real \textbf{CssAction} for a \emph{::before} pseudo selector.
+
+\begin{verbatim}
+public class CssActionFactoryTest {
+    [..]
+    @Test
+    public void for_a_before_pseudo_selector_createAction_returns_InsertBeforeCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+        Css css = new Css();
+        css.addSelector(".rule::before");
+        css.addProperty(new Property<String>("content", "value"));
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof InsertBeforeCssAction);
+    }
+}
+\end{verbatim}
+
+For the sake of the TDD cycle, let's write an empty \textbf{InsertBeforeCssAction}.
+
+\begin{verbatim}
+public class InsertBeforeCssAction
+    implements CssAction {
+}
+\end{verbatim}
+
+The new test fails, of course.
+
+\begin{verbatim}
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in org.acmsl.javacss.css.CssActionFactoryTest
+for_a_before_pseudo_selector_createAction_returns_InsertBeforeCssAction(org.acmsl.javacss.css.CssActionFactoryTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: null
+        at org.junit.Assert.fail(Assert.java:86)
+\end{verbatim}
+
+We can implement now the logic to map CSS selectors, to \textbf{CssAction} instances. To save our time, let's short-circuit the
+naive implementation of hard-coding the outcome expected by the test, but without worrying too much about it for now.
+
+\begin{verbatim}
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        CssAction result = null;
+
+        for (String selector : css.getSelectors()) {
+            if (selector.contains("::before")) {
+                result = new InsertBeforeCssAction();
+                break;
+            }
+        }
+
+        if (result == null) {
+            result = new NullCssAction();
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+The test passes. We can now write another test to allow us to implement the actual logic of the \textbf{::before} pseudo-selector.
+In our approach, CSS semantics apply to text, not AST or parse tree nodes. That makes our test much clearer.
+
+\begin{verbatim}
+public class InsertBeforeCssActionTest {
+    @Test
+    public void execute_inserts_the_content_before_correctly() {
+        Css css = new Css();
+        css.addSelector(".rule::before");
+        css.addProperty(new Property<String>("content", "css-prefix>"));
+        CssActionFactory factory = new CssActionFactory();
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        String newText = action.execute("my text");
+        Assert.assertNotNull(newText);
+        Assert.assertEquals("css-prefix>my text", newText);
+    }
+}
+\end{verbatim}
+
+We haven't declared any \emph{execute(String)} method yet in \textbf{CssAction} yet, but now we actually need it.
+
+\begin{verbatim}
+public interface CssAction {
+    /**
+     * Applies the action to given text.
+     * @param text the text.
+     * @return the outcome of applying the action.
+     */
+    String execute(String text);
+}
+\end{verbatim}
+
+Updating the \textbf{NullCssAction} is straightforward.
+
+\begin{verbatim}
+public class NullCssAction
+    implements CssAction {
+    @Override
+    public String execute(String text) {
+        return text;
+    }
+}
+\end{verbatim}
+
+Which is identical to the implementation for \textbf{InsertBeforeCssAction} at this stage of the TDD lifecycle.
+
+\begin{verbatim}
+public class InsertBeforeCssAction
+    implements CssAction {
+    @Override
+    public String execute(String text) {
+        return text;
+    }
+}
+\end{verbatim}
+
+The test must fail since we're not modifying the original text.
+
+\begin{verbatim}
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in org.acmsl.javacss.css.InsertBeforeCssActionTest
+execute_inserts_the_content_before_correctly(org.acmsl.javacss.css.InsertBeforeCssActionTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[css-prefix>]my text> but was:<[]my text>
+\end{verbatim}
+
+The simplest implementation would be:
+
+\begin{verbatim}
+public class InsertBeforeCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if ("content".equals(property.getKey())) {
+                result = property.getValue() + text;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+That forces us to modify \textbf{CssActionFactory} to provide the original \textbf{Css}
+when creating \textbf{InsertBeforeCssAction} instances.
+
+\begin{verbatim}
+public class InsertBeforeCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if ("content".equals(property.getKey())) {
+                result = property.getValue() + text;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+And that is enough to make the test pass. However, the code is not just right.
+At least, we are using the String literal "content" in several places. We should
+use a constant to ensure a typo cannot be the cause of a future bug.
+
+\begin{verbatim}
+public class Property<T> {
+    /**
+     * The "content" property.
+     */
+    public static final String CONTENT = "content";
+    [..]
+}
+\end{verbatim}
+
+Although the temptation to refactor the method deeper is high, let's fight it
+and implement another easy \textbf{CssAction}: the \textbf{InsertAfterCssAction}.
+
+\begin{verbatim}
+public class CssActionFactoryTest {
+    [..]
+    @Test
+    public void for_an_after_pseudo_selector_createAction_returns_InsertAfterCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+        Css css = new Css();
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "value"));
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof InsertAfterCssAction);
+    }
+}
+\end{verbatim}
+
+Next, we need to implement the bare minimum version of \textbf{InsertAfterCssAction} just to make the
+compiler happy at least.
+
+\begin{verbatim}
+public class InsertAfterCssAction
+    implements CssAction {
+    @Override
+    public String execute(final String text) {
+        return text;
+    }
+}
+\end{verbatim}
+
+And we're back into the red zone. Our \textbf{CssActionFactory} is not aware of the new class yet.
+
+\begin{verbatim}
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        CssAction result = null;
+
+        for (String selector : css.getSelectors()) {
+            if (selector.contains("::before")) {
+                result = new InsertBeforeCssAction(css);
+                break;
+            } else if (selector.contains("::after")) {
+                result = new InsertAfterCssAction();
+                break;
+            }
+        }
+
+        if (result == null) {
+            result = new NullCssAction();
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+It's not very elegant, but we are just trying to recover the green light. And it does
+that job.
+
+Similarly to the \textbf{InsertBeforeCssActionTest}, we can anticipate what we want our
+new CSS action class to do.
+
+\begin{verbatim}
+public class InsertAfterCssActionTest {
+    @Test
+    public void execute_inserts_the_content_after_correctly() {
+        Css css = new Css();
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "<css-suffix"));
+        CssActionFactory factory = new CssActionFactory();
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        String newText = action.execute("my text");
+        Assert.assertNotNull(newText);
+        Assert.assertEquals("my text<css-suffix", newText);
+    }
+}
+\end{verbatim}
+
+We check it fails:
+
+\begin{verbatim}
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in org.acmsl.javacss.css.InsertAfterCssActionTest
+execute_inserts_the_content_after_correctly(org.acmsl.javacss.css.InsertAfterCssActionTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<my text[<css-suffix]> but was:<my text[]>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at org.acmsl.javacss.css.InsertAfterCssActionTest.execute_inserts_the_content_after_correctly(InsertAfterCssActionTest.java:69)
+\end{verbatim}
+
+To fix it, we can follow the same steps as we did previously for \textbf{InsertBeforeCssAction}: add the \textbf{Css} class as an
+attribute, expect it as a parameter of the constructor,
+
+\begin{verbatim}
+public class InsertAfterCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertAfterCssAction(final Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(final String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = text + property.getValue();
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+and make sure \textbf{CssActionFactory} pass the \textbf{Css} instance when
+creating \textbf{InsertAfterCssAction} instances.
+
+\begin{verbatim}
+public class CssActionFactory {
+    [..]
+    public CssAction createAction(Css css) {
+        [..]
+        for (String selector : css.getSelectors()) {
+            [..]
+            } else if (selector.contains("::after")) {
+                result = new InsertAfterCssAction(css);
+                [..]
+            }
+        }
+        [..]
+    }
+}
+\end{verbatim}
+
+Now that our tests pass again, we are in need of a refactoring.
+In our current \textbf{CssAction} implementations we are searching the "content" property to
+retrieve the text to modify. We're duplicating code, so let's
+extract that logic to a common ancestor.
+
+First, the base class.
+
+\begin{verbatim}
+public abstract class AbstractCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    protected AbstractCssAction(Css css) {
+        this.css = css;
+    }
+
+    /**
+     * Retrieves the {@link Css} block.
+     * @return such information.
+     */
+    public Css getCss() {
+        return this.css;
+    }
+
+    /**
+     * Retrieves the content property from given {@link Css}.
+     * @param css the CSS block.
+     * @return the "content" property.
+     */
+    protected Property getContentProperty(Css css) {
+        Property result = null;
+
+        for (Property property : css.getProperties()) {
+            if (Property.CONTENT.equals(property.getKey())) {
+                result = property;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+Now we can refactor \textbf{InsertBeforeCssAction}.
+
+\begin{verbatim}
+public class InsertBeforeCssAction
+    extends AbstractCssAction {
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(final Css css) {
+        super(css);
+    }
+
+    @Override
+    public String execute(String text) {
+        final String result;
+
+        Property property = getContentProperty(getCss());
+
+        if (property != null) {
+            result = property.getValue() + text;
+        } else {
+            result = text;
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+And similarly for \textbf{InsertAfterCssAction}.
+
+\begin{verbatim}
+public class InsertAfterCssAction
+    extends AbstractCssAction {
+
+    /**
+     * Creates a new {@code InsertAfterCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertAfterCssAction(final Css css) {
+        super(css);
+    }
+
+    @Override
+    public String execute(String text) {
+        final String result;
+
+        Property property = getContentProperty(getCss());
+
+        if (property != null) {
+            result = text + property.getValue();
+        } else {
+            result = text;
+        }
+
+        return result;
+    }
+}
+\end{verbatim}
+
+The feedback of our current tests give us confidence we haven't broke anything.
+However, there's still some duplication in the \emph{execute(String)} methods of both
+\textbf{InsertBeforeCssAction} and \textbf{InsertAfterCssAction}. Shouldn't we extract the shared
+logic to the base class?
+
+Looking at the body of the methods, they're pretty obvious: retrieve the "content" property,
+and use it to generate the new text. Moving that logic up, and use a Strategy pattern,
+would not add real value: the redundancy we are removing makes the classes more complex
+somehow, and introduces some assumptions in the base class.
+
+If we add other pseudo-classes that deal with text transformations (which are not
+currently part of CSS), then it would be worth reviewing.
+
+\subsubsection{Sixth test: Process the first AST}
+\label{sec-1-4-7}
+
+Now we can fit these new components together, so, given an AST and a CSS document,
+we can obtain another AST.
 % Emacs 24.4.1 (Org mode 8.2.10)
 \end{document}
