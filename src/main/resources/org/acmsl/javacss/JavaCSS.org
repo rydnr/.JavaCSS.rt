@@ -2804,8 +2804,7 @@ strategy:
 #+BEGIN_SRC java
 public class StringTemplateCSSHelper {
     [..]
-    protected void initialize(String input)
-    {
+    protected void initialize(String input) {
         [..]
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
 
@@ -2823,4 +2822,5 @@ public class StringTemplateCSSHelper {
 To reproduce the error, we can write a test for it:
 
 #+BEGIN_SRC java
+
 #+END_SRC
