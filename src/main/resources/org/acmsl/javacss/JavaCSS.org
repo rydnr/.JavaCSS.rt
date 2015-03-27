@@ -3204,5 +3204,5 @@ currently part of CSS), then it would be worth reviewing.
 
 *** Sixth test: Process the first AST
 
-Now we can fit these new components together, so, given a AST and a CSS document,
+Now we can fit these new components together, so, given an AST and a CSS document,
 we can obtain another AST.
