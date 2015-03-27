@@ -2797,4 +2797,25 @@ java.lang.AssertionError: expected:<0> but was:<1>
 The problem is that, if the test randomly chooses 0 as the number of CSS blocks to parse, ANTLR cannot parse it, and
 the logic misbehaves. But *StringTemplateCssHelper* cannot return any selectors for an empty CSS.
 After debugging, we can figure out why: ANTLR's /XPath.findAll()/ returns a single node representing the error,
-upon a wrong input. We have
+upon a wrong input. In this case, we prefer ANTLR not to try to recover, or swallow invalid input silently, but throw
+a runtime exception instead. Lucky us, ANTLR supports that out of the box, just by using a different error handling
+strategy:
+
+#+BEGIN_SRC java
+public class StringTemplateCSSHelper {
+    [..]
+    protected void initialize(String input)
+    {
+        [..]
+        StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
+
+        parser.setErrorHandler(new BailErrorStrategy());
+
+        ParseTree tree = parser.css();
+
+        [..]
+    }
+
+    [..]
+}
+#+END_SRC
