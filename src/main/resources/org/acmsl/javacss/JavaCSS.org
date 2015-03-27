@@ -2820,6 +2820,9 @@ public class StringTemplateCSSHelperTest {
 
 The test fails as we were hoping.
 
+#+BEGIN_SRC sh
+#+END_SRC
+
 Lucky us, ANTLR supports that behavior out of the box, just by using a different error handling strategy:
 
 #+BEGIN_SRC java
