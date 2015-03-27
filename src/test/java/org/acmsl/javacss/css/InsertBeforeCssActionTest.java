@@ -58,6 +58,8 @@ import org.junit.runners.JUnit4;
 public class InsertBeforeCssActionTest {
     @Test
     public void execute_inserts_the_content_before_correctly() {
+        Css css = new Css();
 
+        css.addSelector("::");
     }
 }
