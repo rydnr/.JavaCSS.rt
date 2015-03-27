@@ -59,8 +59,7 @@ public class CssActionFactory {
             if (selector.contains("::before")) {
                 result = new InsertBeforeCssAction(css);
                 break;
-            }
-            else if (selector.contains("::after")) {
+            } else if (selector.contains("::after")) {
                 result = new InsertAfterCssAction();
                 break;
             }
