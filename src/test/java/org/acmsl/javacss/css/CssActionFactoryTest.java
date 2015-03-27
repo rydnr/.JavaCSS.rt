@@ -80,7 +80,6 @@ public class CssActionFactoryTest
         Assert.assertTrue(action instanceof InsertBeforeCssAction);
     }
 
-
     @Test
     public void for_an_after_pseudo_selector_createAction_returns_InsertAfterCssAction() {
         CssActionFactory factory = new CssActionFactory();
