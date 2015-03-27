@@ -69,7 +69,7 @@ public class InsertBeforeCssAction
         Property property = getContentProperty(getCss());
 
         if (property != null) {
-            result = text + property.getValue();
+            result = property.getValue() + text;
         } else {
             result = text;
         }
