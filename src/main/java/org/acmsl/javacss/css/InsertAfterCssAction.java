@@ -71,13 +71,19 @@ public class InsertAfterCssAction
     public String execute(final String text) {
         String result = text;
 
+        result = getContent(text, result);
+
+        return result;
+    }
+
+    private String getContent(final String text, String result)
+    {
         for (Property property : css.getProperties()) {
             if (Property.CONTENT.equals(property.getKey())) {
                 result = text + property.getValue();
                 break;
             }
         }
-
         return result;
     }
 }
