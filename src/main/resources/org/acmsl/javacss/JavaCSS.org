@@ -2916,3 +2916,13 @@ public class InsertBeforeCssAction
 And that is enough to make the test pass. However, the code is not just right.
 First, we are using the String literal "content" in several places. We should
 use a constant to ensure a typo cannot be the cause of a future bug.
+
+#+BEGIN_SRC java
+public class Property<T> {
+    /**
+     * The "content" property.
+     */
+    public static final String CONTENT = "content";
+    [..]
+}
+#+END_SRC
