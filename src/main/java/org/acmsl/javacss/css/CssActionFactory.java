@@ -53,6 +53,8 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class CssActionFactory {
     public CssAction createAction(Css css) {
-        return new NullCssAction();
+        CssAction result;
+
+        if (css )
     }
 }
