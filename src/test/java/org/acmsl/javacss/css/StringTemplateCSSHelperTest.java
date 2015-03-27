@@ -112,8 +112,7 @@ public class StringTemplateCSSHelperTest
     }
 
     @Test
-    public void retrieves_selectors_for_an_input_with_several_blocks()
-    {
+    public void retrieves_selectors_for_an_input_with_several_blocks() {
         multipleBlockSelectorTests((int) (Math.random() * 10));
     }
 
