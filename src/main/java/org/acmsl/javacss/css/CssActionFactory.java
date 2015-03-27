@@ -52,7 +52,7 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class CssActionFactory {
-    public CssAction createAction(final Css css) {
-        return null;
+    public CssAction createAction(Css css) {
+        return
     }
 }
