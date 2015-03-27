@@ -2627,3 +2627,6 @@ public interface CssAction {
 #+END_SRC
 
 Last, our test demands a /null object/ implementation for that interface.
+
+#+BEGIN_SRC java
+#+END_SRC
