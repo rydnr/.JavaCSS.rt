@@ -2613,7 +2613,7 @@ The *CssActionFactory*, as expected by our test, can be simply:
 
 #+BEGIN_SRC java
 public class CssActionFactory {
-    public CssAction createAction(final Css css) {
+    public CssAction createAction(Css css) {
         return null;
     }
 }
@@ -2622,4 +2622,5 @@ public class CssActionFactory {
 We need the *CssAction* interface as well:
 
 #+BEGIN_SRC java
+
 #+END_SRC
