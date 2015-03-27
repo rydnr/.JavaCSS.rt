@@ -2818,7 +2818,7 @@ public class StringTemplateCSSHelperTest {
 }
 #+END_SRC
 
-Lucky us, ANTLR supports that out of the box, just by using a different error handling strategy:
+Lucky us, ANTLR supports that behavior out of the box, just by using a different error handling strategy:
 
 #+BEGIN_SRC java
 public class StringTemplateCSSHelper {
