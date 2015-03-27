@@ -2335,7 +2335,7 @@ public class SelectorMatchVisitor
 
 This algorithm has limitations and will be changed later, at least whenever we need to implement selector operators.
 But meanwhile, it passes our tests.
-*** DONE Fifth test: Implementing ::before pseudo-selector
+*** Fifth test: Implementing ::before pseudo-selector
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
 But we have a minor refactoring to do first. The /retrieveMatchingSelectors()/ method currently retrieves a list of
@@ -2777,6 +2777,7 @@ Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FA
 execute_inserts_the_content_before_correctly(org.acmsl.javacss.css.InsertBeforeCssActionTest)  Time elapsed: 0.003 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[css-prefix>]my text> but was:<[]my text>
 #+END_SRC
+
 
 However, I found some other failing test, which was unexpected:
 
