@@ -72,7 +72,7 @@ public class InsertBeforeCssAction
         String result = text;
 
         for (Property property : css.getProperties()) {
-            if ("content".equals(property.getKey())) {
+            if (Css.CONTENT.equals(property.getKey())) {
                 result = property.getValue() + text;
                 break;
             }
