@@ -53,6 +53,13 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class InsertAfterCssAction
     implements CssAction {
+    private Css css;
+
+    public InsertAfterCssAction(final Css css)
+    {
+        this.css = css;
+    }
+
     @Override
     public String execute(final String text) {
         return text;
