@@ -52,5 +52,6 @@ import org.checkthread.annotations.ThreadSafe;
  * Created: 2015/03/27 08:23
  */
 @ThreadSafe
-public class NullCssAction {
+public class NullCssAction
+    implements CssAction {
 }
