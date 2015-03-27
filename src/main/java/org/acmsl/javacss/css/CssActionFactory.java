@@ -60,6 +60,10 @@ public class CssActionFactory {
                 result = new InsertBeforeCssAction(css);
                 break;
             }
+            else if (selector.contains("::after")) {
+                result = new InsertBeforeCssAction(css);
+                break;
+            }
         }
 
         if (result == null) {
