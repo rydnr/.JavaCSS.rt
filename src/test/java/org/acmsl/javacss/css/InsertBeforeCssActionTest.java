@@ -66,6 +66,6 @@ public class InsertBeforeCssActionTest {
         CssActionFactory factory = new CssActionFactory();
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
-        action.execute("")
+        String newText = action.execute("my text");
     }
 }
