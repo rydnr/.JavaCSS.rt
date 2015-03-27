@@ -2690,4 +2690,4 @@ java.lang.AssertionError: null
 #+END_SRC
 
 We can implement now the logic to map CSS selectors, to *CssAction* instances. To save our time, let's short-circuit the
-naive implementation of ha
+naive implementation of hard-coding the outcome expected by the test, but remain within the 
