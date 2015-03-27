@@ -44,6 +44,7 @@ import org.jetbrains.annotations.NotNull;
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -54,6 +55,7 @@ import org.junit.runners.JUnit4;
  * Created: 2015/03/27 19:07
  */
 @RunWith(JUnit4.class)
-public class InsertAfterCssActionTest
-{
+public class InsertAfterCssActionTest {
+    @Test
+    public
 }
