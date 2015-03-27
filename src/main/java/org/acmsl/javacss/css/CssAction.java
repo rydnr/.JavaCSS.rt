@@ -51,6 +51,5 @@ import org.checkthread.annotations.ThreadSafe;
  * Created: 2015/03/27 08:19
  */
 @ThreadSafe
-public interface CssAction
-{
+public interface CssAction {
 }
