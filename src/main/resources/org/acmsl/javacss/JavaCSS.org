@@ -3075,6 +3075,7 @@ public class CssActionFactory {
 }
 #+END_SRC
 
-
-Second, in *InsertBeforeCssAction* we are searching the "content" property to
-retrieve the text to prepend. It's very likely we'll need this logic 
+Now that our tests pass again, we are in need of a refactoring.
+In our current *CssAction* implementations we are searching the "content" property to
+retrieve the text to modify. We're duplicating code, so let's
+extract that logic to a common ancestor.
