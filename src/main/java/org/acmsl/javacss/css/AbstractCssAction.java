@@ -64,7 +64,7 @@ public abstract class AbstractCssAction
      * Creates a new {@code InsertAfterCssAction} instance.
      * @param css the {@link Css} block.
      */
-    protected AbstractCssAction(final Css css) {
+    protected AbstractCssAction(Css css) {
         this.css = css;
     }
 

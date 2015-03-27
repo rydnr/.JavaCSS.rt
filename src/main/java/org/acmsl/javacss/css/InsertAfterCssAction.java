@@ -52,19 +52,14 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class InsertAfterCssAction
-    implements CssAction {
-
-    /**
-     * The associated {@link Css} block.
-     */
-    private final Css css;
+    extends AbstractCssAction {
 
     /**
      * Creates a new {@code InsertAfterCssAction} instance.
      * @param css the {@link Css} block.
      */
     public InsertAfterCssAction(final Css css) {
-        this.css = css;
+        super(css);
     }
 
     @Override
