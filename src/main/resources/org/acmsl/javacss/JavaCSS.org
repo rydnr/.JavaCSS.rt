@@ -2793,3 +2793,6 @@ java.lang.AssertionError: expected:<0> but was:<1>
         at org.junit.Assert.assertEquals(Assert.java:542)
         at org.acmsl.javacss.css.StringTemplateCSSHelperTest.multipleBlockSelectorTests(StringTemplateCSSHelperTest.java:103)
 #+END_SRC
+
+The problem is that, if the test randomly chooses 0 as the number of CSS blocks to parse, ANTLR cannot parse it, and
+the logic misbehaves. But *StringTemplateCssHelper* cannot return any selectors for an empty CSS.
