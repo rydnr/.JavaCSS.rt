@@ -55,8 +55,7 @@ import org.checkthread.annotations.ThreadSafe;
 public class InsertAfterCssAction
     implements CssAction {
     @Override
-    public String execute(final String text)
-    {
-        return null;
+    public String execute(final String text) {
+        return text;
     }
 }
