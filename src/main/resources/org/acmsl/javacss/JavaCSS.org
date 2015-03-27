@@ -3200,4 +3200,4 @@ would not add real value: the redundancy we are removing makes the classes more 
 somehow, and introduces some assumptions in the base class.
 
 If we add other pseudo-classes that deal with text transformations (which are not
-currently part of CSS), then it would be worth reviewing. But we're not
+currently part of CSS), then it would be worth reviewing.
