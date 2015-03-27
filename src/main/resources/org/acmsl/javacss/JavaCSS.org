@@ -2839,3 +2839,4 @@ public class StringTemplateCSSHelper {
 }
 #+END_SRC
 
+And now we're green again.
