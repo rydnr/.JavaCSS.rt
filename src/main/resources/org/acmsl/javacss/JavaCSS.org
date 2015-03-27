@@ -2960,6 +2960,7 @@ public class InsertAfterCssAction
 #+END_SRC
 
 And we're back into the red zone. Our *CssActionFactory* is not aware of the new class yet.
+
 #+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
