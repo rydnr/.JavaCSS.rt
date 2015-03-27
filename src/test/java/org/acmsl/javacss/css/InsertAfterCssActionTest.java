@@ -50,7 +50,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests for {}
+ * Tests for {@link }
  * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
  * Created: 2015/03/27 19:07
  */
