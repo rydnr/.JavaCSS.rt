@@ -44,6 +44,7 @@ import org.jetbrains.annotations.NotNull;
  * Importing checkthread.org annotations.
  */
 import org.checkthread.annotations.ThreadSafe;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -57,5 +58,15 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class InsertAfterCssActionTest {
     @Test
-    public
+    public void execute_inserts_the_content__correctly() {
+        Css css = new Css();
+        css.addSelector(".rule::before");
+        css.addProperty(new Property<String>("content", "css-prefix>"));
+        CssActionFactory factory = new CssActionFactory();
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        String newText = action.execute("my text");
+        Assert.assertNotNull(newText);
+        Assert.assertEquals("css-prefix>my text", newText);
+    }
 }
