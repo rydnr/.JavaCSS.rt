@@ -2757,3 +2757,5 @@ public class NullCssAction
     }
 }
 #+END_SRC
+
+Which is identical to the implementation for *InsertBeforeCssAction* at this stage of the TDD lifecycle.
