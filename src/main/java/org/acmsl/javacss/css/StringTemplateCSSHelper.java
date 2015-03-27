@@ -72,14 +72,12 @@ import java.util.Map;
  * Created: 2015/03/02 17:13
  */
 @ThreadSafe
-public class StringTemplateCSSHelper
-{
+public class StringTemplateCSSHelper {
     private final String input;
     private List<List<String>> selectors;
     private Map<List<String>, Map<String, String>> properties;
 
-    public StringTemplateCSSHelper(final String input)
-    {
+    public StringTemplateCSSHelper(final String input) {
         this.input = input;
     }
 
