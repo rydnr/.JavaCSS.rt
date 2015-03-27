@@ -2619,8 +2619,9 @@ public class CssActionFactory {
 }
 #+END_SRC
 
-We need the *CssAction* interface as well:
+We need the *CssAction* interface as well, but we can leave it empty for now.
 
 #+BEGIN_SRC java
-
+public interface CssAction {
+}
 #+END_SRC
