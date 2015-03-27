@@ -81,7 +81,7 @@ public class InsertAfterCssAction
      * @param css the CSS block.
      * @return the "content" property.
      */
-    protected String getContentProperty(Css css) {
+    protected Property getContentProperty(Css css) {
         Property result = null;
 
         for (Property property : css.getProperties()) {
@@ -90,6 +90,7 @@ public class InsertAfterCssAction
                 break;
             }
         }
+
         return result;
     }
 }
