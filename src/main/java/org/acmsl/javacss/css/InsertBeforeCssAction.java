@@ -52,30 +52,26 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class InsertBeforeCssAction
-    implements CssAction {
-
-    /**
-     * The associated {@link Css} block.
-     */
-    private final Css css;
+    extends AbstractCssAction {
 
     /**
      * Creates a new {@code InsertBeforeCssAction} instance.
      * @param css the {@link Css} block.
      */
-    public InsertBeforeCssAction(Css css) {
-        this.css = css;
+    public InsertBeforeCssAction(final Css css) {
+        super(css);
     }
 
     @Override
     public String execute(String text) {
-        String result = text;
+        final String result;
 
-        for (Property property : css.getProperties()) {
-            if (Property.CONTENT.equals(property.getKey())) {
-                result = property.getValue() + text;
-                break;
-            }
+        Property property = getContentProperty(getCss());
+
+        if (property != null) {
+            result = text + property.getValue();
+        } else {
+            result = text;
         }
 
         return result;
