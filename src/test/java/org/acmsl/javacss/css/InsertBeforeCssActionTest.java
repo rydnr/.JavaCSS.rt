@@ -62,12 +62,12 @@ public class InsertBeforeCssActionTest {
         Css css = new Css();
 
         css.addSelector(".rule::before");
-        css.addProperty(new Property<String>("content", "css-prefix"));
+        css.addProperty(new Property<String>("content", "css-prefix>"));
         CssActionFactory factory = new CssActionFactory();
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
         String newText = action.execute("my text");
         Assert.assertNotNull(newText);
-        Assert.assertEquals("css-prefix")
+        Assert.assertEquals("css-prefix>my text", newText);
     }
 }
