@@ -2841,3 +2841,41 @@ Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FA
 execute_inserts_the_content_before_correctly(org.acmsl.javacss.css.InsertBeforeCssActionTest)  Time elapsed: 0.003 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[css-prefix>]my text> but was:<[]my text>
 #+END_SRC
+
+The simplest implementation would be:
+
+#+BEGIN_SRC java
+public class InsertBeforeCssAction
+    implements CssAction {
+
+    /**
+     * The associated {@link Css} block.
+     */
+    private final Css css;
+
+    /**
+     * Creates a new {@code InsertBeforeCssAction} instance.
+     * @param css the {@link Css} block.
+     */
+    public InsertBeforeCssAction(Css css) {
+        this.css = css;
+    }
+
+    @Override
+    public String execute(String text) {
+        String result = text;
+
+        for (Property property : css.getProperties()) {
+            if ("content".equals(property.getKey())) {
+                result = property.getValue() + text;
+                break;
+            }
+        }
+
+        return result;
+    }
+}
+#+END_SRC
+
+That forces us to modify *CssActionFactory* to provide the original *Css*
+when creating *InsertBeforeCssAction* instances.
