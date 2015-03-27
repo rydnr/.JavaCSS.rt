@@ -2962,6 +2962,30 @@ public class InsertAfterCssAction
 And we're back into the red zone. Our *CssActionFactory* is not aware of the new class yet.
 
 #+BEGIN_SRC java
+public class CssActionFactory {
+    public CssAction createAction(Css css) {
+        CssAction result = null;
+
+        for (String selector : css.getSelectors()) {
+            if (selector.contains("::before")) {
+                result = new InsertBeforeCssAction(css);
+                break;
+            } else if (selector.contains("::after")) {
+                result = new InsertAfterCssAction();
+                break;
+            }
+        }
+
+        if (result == null) {
+            result = new NullCssAction();
+        }
+
+        return result;
+    }
+}
+#+END_SRC
+
+#+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
     public void execute_inserts_the_content_after_correctly() {
