@@ -66,7 +66,7 @@ public class InsertAfterCssAction
     public String execute(String text) {
         final String result;
 
-        Property property = getContentProperty(this.css);
+        Property property = getContentProperty(getCss());
 
         if (property != null) {
             result = property.getValue() + text;

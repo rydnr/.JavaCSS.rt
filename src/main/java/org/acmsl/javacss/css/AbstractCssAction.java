@@ -69,6 +69,13 @@ public abstract class AbstractCssAction
     }
 
     /**
+     * Retrieves the {@link Css} block.
+     * @return such information.
+     */
+    public Css getCss() {
+        return this.css;
+    }
+    /**
      * Retrieves the content property from given {@link Css}.
      * @param css the CSS block.
      * @return the "content" property.
