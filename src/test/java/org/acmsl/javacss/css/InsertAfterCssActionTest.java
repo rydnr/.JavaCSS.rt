@@ -60,8 +60,8 @@ public class InsertAfterCssActionTest {
     @Test
     public void execute_inserts_the_content_after_correctly() {
         Css css = new Css();
-        css.addSelector(".rule::before");
-        css.addProperty(new Property<String>("content", "css-prefix>"));
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "<css-suffix"));
         CssActionFactory factory = new CssActionFactory();
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
