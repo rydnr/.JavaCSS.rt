@@ -2712,3 +2712,23 @@ public class CssActionFactory {
     }
 }
 #+END_SRC
+
+The test passes. We can now write another test to allow us to implement the actual logic of the *::before* pseudo-selector.
+In our approach, CSS semantics apply to text, not AST or parse tree nodes.
+
+#+BEGIN_SRC java
+public class InsertBeforeCssActionTest {
+    @Test
+    public void execute_inserts_the_content_before_correctly() {
+        Css css = new Css();
+        css.addSelector(".rule::before");
+        css.addProperty(new Property<String>("content", "css-prefix>"));
+        CssActionFactory factory = new CssActionFactory();
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        String newText = action.execute("my text");
+        Assert.assertNotNull(newText);
+        Assert.assertEquals("css-prefix>my text", newText);
+    }
+}
+#+END_SRC
