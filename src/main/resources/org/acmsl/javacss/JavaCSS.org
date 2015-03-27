@@ -2629,4 +2629,9 @@ public interface CssAction {
 Last, our test demands a /null object/ implementation for that interface.
 
 #+BEGIN_SRC java
+public class NullCssAction
+    implements CssAction {
+}
 #+END_SRC
+
+Finally, our test compiles. We expect it to fail, since we're not using *NullCssAction* yet.
