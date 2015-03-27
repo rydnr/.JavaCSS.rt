@@ -1,7 +1,7 @@
 /*
-                        devdel
+                        JavaCSS
 
-    Copyright (C) 2002-today  Jose San Leandro Armendariz
+    Copyright (C) 2015-today  Jose San Leandro Armendariz
                               chous@acm-sl.org
 
     This library is free software; you can redistribute it and/or
@@ -27,7 +27,7 @@
  *
  * Author: Jose San Leandro Armendariz
  *
- * Description: 
+ * Description: A CssAction that inserts before the matched block.
  *
  * Date: 2015/03/27
  * Time: 16:53
@@ -52,5 +52,5 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class InsertBeforeCssAction
-{
+    implements CssAction {
 }
