@@ -2399,7 +2399,7 @@ public class StringTemplateCSSHelper {
 
 And now we're green again.
 
-*** Fifth test: Implementing ::before pseudo-selector
+*** Fifth test: Implementing ::before pseudo-class
 
 For each node in the parse tree, we now can retrieve its selectors. It makes sense then to implement the first one.
 But we have a minor refactoring to do first. The /retrieveMatchingSelectors()/ method currently retrieves a list of
