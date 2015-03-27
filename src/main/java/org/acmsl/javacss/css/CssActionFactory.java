@@ -51,8 +51,7 @@ import org.checkthread.annotations.ThreadSafe;
  * Created: 2015/03/27 08:16
  */
 @ThreadSafe
-public class CssActionFactory
-{
+public class CssActionFactory {
     public CssAction createAction(final Css css) {
         return null;
     }
