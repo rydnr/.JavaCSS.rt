@@ -2988,6 +2988,8 @@ public class CssActionFactory {
 It's not very elegant, but we are just trying to recover the green light. And it does
 that job.
 
+Similarly to the *InsertBeforeCssActionTest*, we can anticipate what we want our
+new CSS action class to do.
 #+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
