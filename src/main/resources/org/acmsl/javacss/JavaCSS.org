@@ -2625,3 +2625,5 @@ We need the *CssAction* interface as well, but we can leave it empty for now.
 public interface CssAction {
 }
 #+END_SRC
+
+Last, our test demands a /null object/ implementation for that interface.
