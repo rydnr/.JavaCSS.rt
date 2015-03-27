@@ -52,4 +52,5 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public interface CssAction {
+    String execute(String s);
 }
