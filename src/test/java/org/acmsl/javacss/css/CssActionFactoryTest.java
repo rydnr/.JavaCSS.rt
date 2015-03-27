@@ -58,14 +58,13 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CssActionFactoryTest
 {
-    @Test                                                                                                    https://es.wuaki.tv/movies/50-primeras-citas
+    @Test
     public void when_there_is_nothing_to_do_createAction_returns_NullCssAction() {
-        CssActionFactory factory = new CssActionFacta{ory();
+        CssActionFactory factory = new CssActionFactory();
 
         Css css = new Css();
         css.addSelector(".rule");
-        css.addProperty(new Property<String>("content", "value"));                                             https://es.wuaki.tv/movies/el-primer-caballero
-            https://es.wuaki.tv/tv_shows/babytv#season_8
+        css.addProperty(new Property<String>("content", "value"));
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
         Assert.assertTrue(action instanceof NullCssAction);
