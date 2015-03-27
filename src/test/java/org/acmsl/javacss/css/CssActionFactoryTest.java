@@ -79,4 +79,16 @@ public class CssActionFactoryTest
         Assert.assertNotNull(action);
         Assert.assertTrue(action instanceof InsertBeforeCssAction);
     }
+
+
+    @Test
+    public void for_an_after_pseudo_selector_createAction_returns_InsertAfterCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+        Css css = new Css();
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "value"));
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof InsertBeforeCssAction);
+    }
 }
