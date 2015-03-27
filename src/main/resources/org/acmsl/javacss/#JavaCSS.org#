@@ -2796,4 +2796,5 @@ java.lang.AssertionError: expected:<0> but was:<1>
 
 The problem is that, if the test randomly chooses 0 as the number of CSS blocks to parse, ANTLR cannot parse it, and
 the logic misbehaves. But *StringTemplateCssHelper* cannot return any selectors for an empty CSS.
-Aft
+After debugging, we can figure out why: ANTLR's /XPath.findAll()/ returns a single node representing the error,
+upon a wrong input. We have
