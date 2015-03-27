@@ -52,7 +52,10 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class Property<T> {
-    public static final String CONTENT = ;
+    /**
+     * The
+     */
+    public static final String CONTENT = "content";
     private final String key;
     private final T value;
 
