@@ -2926,3 +2926,6 @@ public class Property<T> {
     [..]
 }
 #+END_SRC
+
+Second, in *InsertBeforeCssAction* we are searching the "content" property to
+retrieve the text to prepend.
