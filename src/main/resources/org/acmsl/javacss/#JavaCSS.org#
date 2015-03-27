@@ -2713,4 +2713,5 @@ public class CssActionFactory {
 }
 #+END_SRC
 
-The test passes.
+The test passes. We can now write another test to allow us to implement the actual logic of the *::before* pseudo-selector.
+It's based on pr
