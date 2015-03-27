@@ -53,7 +53,7 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class CssActionFactory {
     public CssAction createAction(Css css) {
-        CssAction result;
+        CssAction result = null;
 
         for (String selector : css.getSelectors()) {
             if (selector.contains("::before")) {
@@ -61,5 +61,11 @@ public class CssActionFactory {
                 break;
             }
         }
+
+        if (result == null) {
+            result = new NullCssAction();
+        }
+
+        return result;
     }
 }
