@@ -55,7 +55,7 @@ public class InsertBeforeCssAction
     implements CssAction {
 
     /**
-     * The origi
+     * The
      */
     private final Css css;
 
