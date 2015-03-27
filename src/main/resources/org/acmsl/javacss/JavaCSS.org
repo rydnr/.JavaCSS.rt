@@ -2946,6 +2946,19 @@ public class CssActionFactoryTest {
 }
 #+END_SRC
 
+Next, we need to implement the bare minimum version of *InsertAfterCssAction* just to make the
+compiler happy at least.
+
+#+BEGIN_SRC java
+public class InsertAfterCssAction
+    implements CssAction {
+    @Override
+    public String execute(final String text) {
+        return text;
+    }
+}
+#+END_SRC
+
 #+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
