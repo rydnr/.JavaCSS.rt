@@ -43,8 +43,12 @@ import org.acmsl.javacss.css.parser.StringTemplateCSSBaseVisitor;
 import org.acmsl.javacss.css.parser.StringTemplateCSSLexer;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser;
 import org.acmsl.javacss.css.parser.StringTemplateCSSParser.PropertyContext;
+import org.antlr.v4.runtime.ANTLRErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.Parser;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.xpath.XPath;
@@ -95,7 +99,53 @@ public class StringTemplateCSSHelper
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
 
-        parser.setErrorHandler();
+        parser.setErrorHandler(
+            new ANTLRErrorStrategy()
+            {
+                @Override
+                public void reset(@NotNull final Parser recognizer)
+                {
+
+                }
+
+                @Override
+                public Token recoverInline(@NotNull final Parser recognizer) throws RecognitionException
+                {
+                    return null;
+                }
+
+                @Override
+                public void recover(@NotNull final Parser recognizer, @NotNull final RecognitionException e)
+                    throws RecognitionException
+                {
+
+                }
+
+                @Override
+                public void sync(@NotNull final Parser recognizer) throws RecognitionException
+                {
+
+                }
+
+                @Override
+                public boolean inErrorRecoveryMode(@NotNull final Parser recognizer)
+                {
+                    return false;
+                }
+
+                @Override
+                public void reportMatch(@NotNull final Parser recognizer)
+                {
+
+                }
+
+                @Override
+                public void reportError(@NotNull final Parser recognizer, @NotNull final RecognitionException e)
+                {
+
+                }
+            }
+        );
         ParseTree tree = parser.css();
 
         Collection<ParseTree> selectorCombinations = XPath.findAll(tree, "//selectorCombination", parser);
