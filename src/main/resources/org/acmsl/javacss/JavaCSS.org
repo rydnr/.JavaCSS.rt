@@ -2653,4 +2653,5 @@ public class CssActionFactory {
 }
 #+END_SRC
 
-Now that the test passes, and there's not much refactoring to do until we evolve our *CssAction* design
+Now that the test passes, and there's not much refactoring to do until we evolve our *CssAction* design, we have to
+write another test. This time, we want to describe what it would be to have a real *CssAction* for a /::before/ pseudo selector.
