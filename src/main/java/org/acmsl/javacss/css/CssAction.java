@@ -53,8 +53,8 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public interface CssAction {
     /**
-     *
-     * @param text
+     * Applies the action to given text.
+     * @param text the text.
      * @return
      */
     String execute(String text);
