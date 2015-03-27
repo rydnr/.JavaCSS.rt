@@ -72,13 +72,12 @@ public class CssActionFactoryTest
     @Test
     public void for_a_before_pseudo_selector_createAction_returns_InsertBeforeCssAction() {
         CssActionFactory factory = new CssActionFactory();
-
         Css css = new Css();
         css.addSelector(".rule::before");
         css.addProperty(new Property<String>("content", "value"));
         CssAction action = factory.createAction(css);
         Assert.assertNotNull(action);
-        Assert.assertTrue(action instanceof NullCssAction);
+        Assert.assertTrue(action instanceof InsertBeforeCssAction);
     }
 
 }
