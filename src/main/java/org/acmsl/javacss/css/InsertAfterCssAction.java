@@ -53,10 +53,10 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 public class InsertAfterCssAction
     implements CssAction {
-    private Css css;
 
-    public InsertAfterCssAction(final Css css)
-    {
+    private final Css css;
+
+    public InsertAfterCssAction(final Css css) {
         this.css = css;
     }
 
