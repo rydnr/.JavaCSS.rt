@@ -98,7 +98,7 @@ public class StringTemplateCSSHelper {
 
         StringTemplateCSSParser parser = new StringTemplateCSSParser(tokens);
 
-        //parser.setErrorHandler(new BailErrorStrategy());
+        parser.setErrorHandler(new BailErrorStrategy());
 
         ParseTree tree = parser.css();
 
