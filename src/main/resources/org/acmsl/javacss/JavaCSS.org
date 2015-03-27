@@ -2612,5 +2612,11 @@ TODO Note: research tools to visually design ideas, diagrams, etc.
 The *CssActionFactory*, as expected by our test, can be simply:
 
 #+BEGIN_SRC java
+public class CssActionFactory {
+    public CssAction createAction(final Css css) {
+        return null;
+    }
+}
 #+END_SRC
 
+We need the *CssAction* interface as well.
