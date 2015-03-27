@@ -118,6 +118,12 @@ public class StringTemplateCSSHelperTest
         //(int) (Math.random() * 10));
     }
 
+    @Test
+    public void throws_aretrieves_selectors_for_an_input_with_several_blocks() {
+        multipleBlockSelectorTests(0);
+        //(int) (Math.random() * 10));
+    }
+
     protected void multipleBlockPropertyTests(int count)
     {
         StringBuilder input = new StringBuilder();
