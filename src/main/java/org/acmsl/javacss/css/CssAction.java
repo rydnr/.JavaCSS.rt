@@ -55,7 +55,7 @@ public interface CssAction {
     /**
      * Applies the action to given text.
      * @param text the text.
-     * @return
+     * @return the outcome of applying the action.
      */
     String execute(String text);
 }
