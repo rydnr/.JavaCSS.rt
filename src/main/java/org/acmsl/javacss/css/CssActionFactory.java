@@ -55,6 +55,6 @@ public class CssActionFactory {
     public CssAction createAction(Css css) {
         CssAction result;
 
-        if (css )
+        if (css.getSelectors())
     }
 }
