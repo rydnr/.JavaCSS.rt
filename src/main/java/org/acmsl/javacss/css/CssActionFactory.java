@@ -61,7 +61,7 @@ public class CssActionFactory {
                 break;
             }
             else if (selector.contains("::after")) {
-                result = new InsertAfterCssAction(css);
+                result = new InsertAfterCssAction();
                 break;
             }
         }
