@@ -71,6 +71,6 @@ public class InsertBeforeCssAction
     public String execute(String text) {
         String result = text;
 
-
+        for (Property property : )
     }
 }
