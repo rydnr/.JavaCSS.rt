@@ -2931,6 +2931,22 @@ Although the temptation to refactor the method deeper is high, let's fight it
 and implement another easy *CssAction*: the *InsertAfterCssAction*.
 
 #+BEGIN_SRC java
+public class CssActionFactoryTest {
+    [..]
+    @Test
+    public void for_an_after_pseudo_selector_createAction_returns_InsertAfterCssAction() {
+        CssActionFactory factory = new CssActionFactory();
+        Css css = new Css();
+        css.addSelector(".rule::after");
+        css.addProperty(new Property<String>("content", "value"));
+        CssAction action = factory.createAction(css);
+        Assert.assertNotNull(action);
+        Assert.assertTrue(action instanceof InsertAfterCssAction);
+    }
+}
+#+END_SRC
+
+#+BEGIN_SRC java
 public class InsertAfterCssActionTest {
     @Test
     public void execute_inserts_the_content_after_correctly() {
@@ -2946,6 +2962,7 @@ public class InsertAfterCssActionTest {
     }
 }
 #+END_SRC
+
 
 Second, in *InsertBeforeCssAction* we are searching the "content" property to
 retrieve the text to prepend. It's very likely we'll need this logic 
