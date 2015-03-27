@@ -2688,3 +2688,5 @@ for_a_before_pseudo_selector_createAction_returns_InsertBeforeCssAction(org.acms
 java.lang.AssertionError: null
         at org.junit.Assert.fail(Assert.java:86)
 #+END_SRC
+
+We can implement now the logic to map CSS selectors, to *CssAction* instances.
