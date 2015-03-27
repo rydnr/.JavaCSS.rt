@@ -69,7 +69,7 @@ public class InsertAfterCssAction
         Property property = getContentProperty(getCss());
 
         if (property != null) {
-            result = property.getValue() + text;
+            result = + text;
         } else {
             result = text;
         }
